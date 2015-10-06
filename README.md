@@ -2,7 +2,7 @@
 Nadir is a lightweight helper aiming to make coding auto layout views a breeze
 
 ## A classic Login View
-![alt text](https://github.com/s4cha/Nadir/blob/master/login.png  "Login view")
+![alt text](https://github.com/s4cha/Nadir/blob/master/login.png  "Login view" =200x)
 
 ## Show me the code !
 
