@@ -1,6 +1,8 @@
 # Nadir
 Nadir is a lightweight helper aiming to make coding auto layout views a breeze
 
+## A classic Login View
+![alt text](https://github.com/s4cha/Nadir/blob/master/login.png  "Login view")
 
 ## Show me the code !
 
@@ -59,7 +61,7 @@ class LoginViewA:UIView {
 }
 ```
 
-### After Nadir
+### Nadir: On
 
 ```swift
 
@@ -137,8 +139,8 @@ We know some things can look "easy" but be very complex under the hood.
 We tried to keep both.
 We wanted Nadir to be easy to use while remaining very simple.
 Most of Nadir's code is just simple shortcuts to UIKit Api.
-Nothing prevents you from mixing NAdir with pure UIKit code.
-Because NAdir IS pur UIKit code.
+Nothing prevents you from mixing Nadir with pure UIKit code.
+Because Nadir IS pur UIKit code.
 
 Why Nadir?
 ---
@@ -160,7 +162,7 @@ That's why we created Nadir.
 Advantages of UIView swift class over Xibs or storyboards
 --
 
-- No more XM (Thank God!)
+- No more XML (Thank God!)
 - No more constraints hell in Interface builder.
 - No more debugging in Interface builder toggling checkboxes.
 - The view Code is not split between 2 files anymore
@@ -175,4 +177,4 @@ Next
 
 Contributors
 ---
-[YannickDot](https://github.com/YannickDot),  [S4cha]((https://github.com/S4cha),  [Damien](https://github.com/damien-nd)
+[YannickDot](https://github.com/YannickDot),  [S4cha](https://github.com/S4cha),  [Damien](https://github.com/damien-nd)
