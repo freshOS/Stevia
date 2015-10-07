@@ -1,14 +1,99 @@
 # Nadir
 Nadir is a lightweight helper aiming to make coding auto layout views a breeze
 
-## A classic Login View
+## Constraints
+
+### Turn this
+
+```swift
+addConstraint(NSLayoutConstraint(item: emailField, attribute: .Left, relatedBy: .Equal,toItem: self, attribute: .Left, multiplier: 1, constant: 8))
+addConstraint(NSLayoutConstraint(item: emailField, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 8))
+addConstraint(NSLayoutConstraint(item: passwordField, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 8))
+addConstraint(NSLayoutConstraint(item: passwordField, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 8))
+addConstraint(NSLayoutConstraint(item: button, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0))
+addConstraint(NSLayoutConstraint(item: button, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0))
+for b in [emailField, passwordField, button] {
+    addConstraint(NSLayoutConstraint(item: b, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 80))
+}
+addConstraint(NSLayoutConstraint(item: emailField, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 100))
+addConstraint(NSLayoutConstraint(item: emailField, attribute: .Bottom, relatedBy: .Equal, toItem: passwordField, attribute: .Top, multiplier: 1, constant: 8))
+addConstraint(NSLayoutConstraint(item: button, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0))
+
+```
+
+### Into
+
+```swift
+stackV([
+    100,
+    8-emailField.height(80)-8,
+    8-passwordField.height(80)-8,
+    "",
+    button.height(80).fillH(),
+    0
+])
+```
+
+## Hierarchy
+
+### This
+```swift
+addSubview(emailField)
+addSubview(passwordField)
+addSubview(button)
+```
+
+### Into
+```swift
+sv([
+    emailField,
+    passwordField,
+    button
+])
+```
+## Styling
+### This
+```swift
+emailField.borderStyle = .RoundedRect
+emailField.autocorrectionType = .No
+emailField.keyboardType = .EmailAddress
+emailField.font = UIFont(name: "HelveticaNeue-Light", size: 26)
+emailField.returnKeyType = .Next
+```
+
+### Into
+```swift
+emailField.style { f in
+    f.borderStyle = .RoundedRect
+    f.autocorrectionType = .No
+    f.keyboardType = .EmailAddress
+    f.font = UIFont(name: "HelveticaNeue-Light", size: 26)
+    f.returnKeyType = .Next
+}
+```
+
+## Events
+### This
+```swift
+button.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
+```
+
+### Into
+```swift
+ button.tap(loginTapped)
+```
+
+
+
+## Real life example : a classic Login View
 ![alt text](https://raw.githubusercontent.com/s4cha/Nadir/master/login.png "Login view")
+
 
 ### Before Nadir
 
 ```swift
 
-class LoginViewA:UIView {
+class LoginView:UIView {
 
     let emailField = UITextField()
     let passwordField = UITextField()
@@ -63,7 +148,7 @@ class LoginViewA:UIView {
 
 ```swift
 
-class LoginViewD:UIView {
+class LoginView:UIView {
 
     let emailField = UITextField()
     let passwordField = UITextField()
@@ -82,10 +167,12 @@ class LoginViewD:UIView {
 
         stackV([
             100,
-            H(80)(v:emailField.fillH(m:8)),
-            H(80)(v:passwordField.fillH(m: 8))
+            8-emailField.height(80)-8,
+            8-passwordField.height(80)-8,
+            "",
+            button.height(80).fillH(),
+            0
         ])
-        button.height(80).bottom(0).fillH()
     }
 
     func fieldStyle(f:UITextField) {
