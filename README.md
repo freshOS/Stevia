@@ -24,12 +24,13 @@ addConstraint(NSLayoutConstraint(item: button, attribute: .Bottom, relatedBy: .E
 ### Into
 
 ```swift
-stackV([
+layout([
     100,
-    8-emailField.height(80)-8,
-    8-passwordField.height(80)-8,
+    |-emailField-|      ~ 80,
+    8,
+    |-passwordField-|   ~ 80,
     "",
-    button.height(80).fillH(),
+    |button|            ~ 80,
     0
 ])
 ```
@@ -165,12 +166,13 @@ class LoginView:UIView {
             button.text("Login").tap(loginTapped).style(buttonSytle)
         ])
 
-        stackV([
+        layout([
             100,
-            8-emailField.height(80)-8,
-            8-passwordField.height(80)-8,
+            |-emailField-|      ~ 80,
+            8,
+            |-passwordField-|   ~ 80,
             "",
-            button.height(80).fillH(),
+            |button|            ~ 80,
             0
         ])
     }
