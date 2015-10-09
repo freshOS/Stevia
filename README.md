@@ -6,18 +6,98 @@ Nadir is a lightweight helper aiming to make coding auto layout views a breeze
 ### Turn this
 
 ```swift
-addConstraint(NSLayoutConstraint(item: emailField, attribute: .Left, relatedBy: .Equal,toItem: self, attribute: .Left, multiplier: 1, constant: 8))
-addConstraint(NSLayoutConstraint(item: emailField, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 8))
-addConstraint(NSLayoutConstraint(item: passwordField, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 8))
-addConstraint(NSLayoutConstraint(item: passwordField, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 8))
-addConstraint(NSLayoutConstraint(item: button, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0))
-addConstraint(NSLayoutConstraint(item: button, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0))
+addConstraint(NSLayoutConstraint(
+        item: emailField,
+        attribute: .Left,
+        relatedBy: .Equal,
+        toItem: self,
+        attribute: .Left,
+        multiplier: 1,
+        constant: 8)
+)
+addConstraint(NSLayoutConstraint(
+        item: emailField,
+        attribute: .Right,
+        relatedBy: .Equal,
+        toItem: self,
+        attribute: .Right,
+        multiplier: 1,
+        constant: 8)
+)
+addConstraint(NSLayoutConstraint(
+    item: passwordField,
+    attribute: .Left,
+        relatedBy: .Equal,
+        toItem: self,
+        attribute: .Left,
+        multiplier: 1,
+        constant: 8)
+)
+addConstraint(NSLayoutConstraint(
+    item: passwordField,
+    attribute: .Right,
+    relatedBy: .Equal,
+    toItem: self,
+    attribute: .Right,
+    multiplier: 1,
+    constant: 8)
+)
+addConstraint(NSLayoutConstraint(
+    item: button,
+    attribute: .Left,
+    relatedBy: .Equal,
+    toItem: self,
+    attribute: .Left,
+    multiplier: 1,
+    constant: 0)
+)
+addConstraint(NSLayoutConstraint(
+    item: button,
+    attribute: .Right,
+    relatedBy: .Equal,
+    toItem: self,
+    attribute: .Right,
+    multiplier: 1,
+    constant: 0)
+)
 for b in [emailField, passwordField, button] {
-    addConstraint(NSLayoutConstraint(item: b, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 80))
+    addConstraint(NSLayoutConstraint(
+        item: b,
+        attribute: .Height,
+        relatedBy: .Equal,
+        toItem: nil,
+        attribute: .NotAnAttribute,
+        multiplier: 1,
+        constant: 80)
+    )
 }
-addConstraint(NSLayoutConstraint(item: emailField, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 100))
-addConstraint(NSLayoutConstraint(item: emailField, attribute: .Bottom, relatedBy: .Equal, toItem: passwordField, attribute: .Top, multiplier: 1, constant: 8))
-addConstraint(NSLayoutConstraint(item: button, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0))
+addConstraint(NSLayoutConstraint(
+    item: emailField,
+    attribute: .Top,
+    relatedBy: .Equal,
+    toItem: self,
+    attribute: .Top,
+    multiplier: 1,
+    constant: 100)
+)
+addConstraint(NSLayoutConstraint(
+    item:emailField,
+    attribute: .Bottom,
+    relatedBy: .Equal,
+    toItem: passwordField,
+    attribute: .Top,
+    multiplier: 1,
+    constant: 8)
+)
+addConstraint(NSLayoutConstraint(
+    item: button,
+    attribute: .Bottom,
+    relatedBy: .Equal,
+    toItem: self,
+    attribute: .Bottom,
+    multiplier: 1,
+    constant: 0)
+)
 
 ```
 
