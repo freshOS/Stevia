@@ -1,10 +1,29 @@
-# Nadir
-Nadir is a lightweight helper aiming to make coding auto layout views a breeze
+## Teaser <3
+```swift
+layout([
+    100,
+    |-emailField-|      ~ 80,
+    8,
+    |-passwordField-|   ~ 80,
+    "",
+    |button|            ~ 80,
+    0
+])
+```
 
-## Constraints
+# Nadir
+Nadir is an iOS Auto Layout DSL witten in swift.
+
+It is not a heavy layout engine, it is just a lightweight shortcut
+api for Auto Layout constraints.
+
+## Show me the code!
+
+Wanna layout a login view?
+
+![alt text](https://raw.githubusercontent.com/s4cha/Nadir/master/login.png "Login view")
 
 ### Turn this
-
 ```swift
 addConstraint(NSLayoutConstraint(
         item: emailField,
