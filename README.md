@@ -15,7 +15,7 @@ layout([
 Nadir is an iOS Auto Layout DSL witten in swift.
 
 It is not a heavy layout engine, it is just a lightweight shortcut
-api for Auto Layout constraints.
+api for creating Auto Layout constraints.
 
 ## Show me the code!
 
@@ -133,6 +133,33 @@ layout([
     0
 ])
 ```
+
+
+### Prefer Visual Format?
+
+```swift
+let views = ["emailField":emailField, "passwordField":passwordField]
+addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+  "V:|-[emailField]-|",
+  options: NSLayoutFormatOptions(rawValue: 0),
+  metrics: nil,
+  views: views)
+)
+```
+
+### We got your back
+```swift
+views = ["emailField":emailField, "passwordField":passwordField]
+v("|-[emailField]-|")
+```
+
+### But what about using this instead !?
+```swift
+|-emailField-|
+```
+
+We personally try to avoid visual format because it's more error prone.
+Plus the compiler has got you covered with this one :)
 
 ## Hierarchy
 
