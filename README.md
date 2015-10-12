@@ -1,7 +1,6 @@
 ## Teaser <3
 
-Layout
------
+### Layout
 
 ```swift
 layout([
@@ -26,6 +25,7 @@ button.tap(loginTapped)
 ```
 
 ### Localized text
+
 ```swift
 button.setTitle(NSLocalizedString("Login", comment: ""), forState: .Normal)
 ```
