@@ -9,8 +9,19 @@
 import UIKit
 
 extension UIButton {
+    
     func text(t:String) -> UIButton {
         setTitle(t, forState: .Normal)
+        return self
+    }
+    
+    func textKey(t:String) -> UIButton {
+        text(NSLocalizedString(t, comment: ""))
+        return self
+    }
+    
+    func image(s:String) -> UIButton {
+        setImage(UIImage(named:s), forState: .Normal)
         return self
     }
 }
@@ -22,10 +33,21 @@ extension UITextField {
     }
 }
 
-extension UIButton {
-    convenience init(image:UIImage) {
-        self.init()
-        setImage(image, forState: .Normal)
+extension UILabel {
+    func text(t:String) -> UILabel {
+        text = t
+        return self
+    }
+    
+    func textKey(t:String) -> UILabel {
+        text(NSLocalizedString(t, comment: ""))
+        return self
     }
 }
 
+extension UIImageView {
+    func image(t:String) -> UIImageView {
+        image = UIImage(named: t)
+        return self
+    }
+}
