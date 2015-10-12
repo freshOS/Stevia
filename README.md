@@ -1,19 +1,18 @@
-# Nadir
-Nadir is an iOS Auto Layout DSL written in swift.
+# Stevia
+Stevia is an iOS Auto Layout DSL written in swift.
 
 It is not a heavy layout engine, it is just a lightweight shortcut
 api for creating Auto Layout constraints and defining view only using code ! 😍
 
 
-
-## Features
+N
 - [x] Layout
 - [x] Component styling
 - [x] Event handling
 
 
 
-### Advantages of Nadir over the classic way
+### Advantages of Stevia over the classic way
 
 - [x] The view hierachy is clearer
 - [x] Constraints are (WAY) more readable, they actually look like the layout itself \o/
@@ -190,10 +189,10 @@ button.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
 
 
 ## Real life example : a classic Login View
-![alt text](https://raw.githubusercontent.com/s4cha/Nadir/master/login.png "Login view")
+![alt text](https://raw.githubusercontent.com/s4cha/Stevia/master/login.png "Login view")
 
 
-### Before Nadir
+### Before Stevia
 
 ```swift
 
@@ -248,7 +247,7 @@ class LoginView:UIView {
 }
 ```
 
-### Nadir: On
+### Stevia: On
 
 ```swift
 
@@ -317,12 +316,12 @@ Easy or simple ?
 --
 We know some things can look "easy" but be very complex under the hood.
 We tried to keep both.
-We wanted Nadir to be easy to use while remaining very simple.
-Most of Nadir's code is just simple shortcuts to UIKit Api.
-Nothing prevents you from mixing Nadir with pure UIKit code.
-Because Nadir IS pur UIKit code.
+We wanted Stevia to be easy to use while remaining very simple.
+Most of Stevia's code is just simple shortcuts to UIKit Api.
+Nothing prevents you from mixing Stevia with pure UIKit code.
+Because Stevia IS pur UIKit code.
 
-Why Nadir?
+Why Stevia?
 ---
 
 At [Yummypets](http://yummypets.com) we have loooots of views.
@@ -334,7 +333,7 @@ Why ? **Because CODE DON'T LIE**
 
 But coding views programatically had its issues too.
 
-That's why we created Nadir.
+That's why we created Stevia.
 
 
 
@@ -354,7 +353,7 @@ Advantages of UIView swift class over Xibs or storyboards
 Next
 ---
 - Live reload
-- Documenting Nadir shortcuts
+- Documenting Stevia shortcuts
 
 
 Contributors
