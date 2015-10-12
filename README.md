@@ -2,15 +2,34 @@
 Nadir is an iOS Auto Layout DSL written in swift.
 
 It is not a heavy layout engine, it is just a lightweight shortcut
-api for creating Auto Layout constraints and defining view only using code ! 🙈 😍
-
-## Features 
+api for creating Auto Layout constraints and defining view only using code ! 😍
 
 
 
-## Teaser <3
+## Features
+- [x] Layout
+- [x] Component styling
+- [x] Event handling
 
-### Layout definition
+
+
+### Advantages of Nadir over the classic way
+
+Not a lot less lines (40ish) but the number of total characters is halved!
+
+- [x] The view hierachy is clearer
+- [x] Constraints are (WAY) more readable, they actually look like the layout itself \o/
+- [x] Horizontal & vertical layout can be described at the same time
+- [x] Styles are well separated, concise, reusable and can be composed
+- [x] Content like text, placeholders are easier to visualize
+- [x] Events are a breeze
+
+Less code + More readable ==> easier to maintain
+
+
+## Teaser ... ❤️
+
+### Layout
 
 ```swift
 layout([
@@ -27,18 +46,10 @@ layout([
 ### Taps handling
 
 ```swift
-button.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
-```
-
-```swift
 button.tap(loginTapped)
 ```
 
 ### Localized text
-
-```swift
-button.setTitle(NSLocalizedString("Login", comment: ""), forState: .Normal)
-```
 
 ```swift
 button.textKey("Login")
@@ -46,10 +57,6 @@ button.textKey("Login")
 
 
 ### Notifications
-
-```swift
-NSNotificationCenter.defaultCenter().addObserver(self, selector: "refresh", name: UIApplicationDidBecomeActiveNotification, object: nil)
-```
 
 ```swift
 on(UIApplicationDidBecomeActiveNotification, refresh)
@@ -305,18 +312,7 @@ class LoginView:UIView {
 
 ```
 
-### Advantages of Nadir over classic Way
 
-Not a lot less lines (40ish) but the number of total characters is halved!
-
-- The view hierachy is clearer
-- Constraints are (WAY) more readable, they actually look like the layout itself \o/
-- Horizontal & vertical layout can be described at the same time
-- Styles are well separated, concise, reusable and can be composed
-- Content like text, placeholders are easier to visualize
-- Events are a breeze
-
-Less code + More readable == easier to maintain
 
 
 Rationale behind the project
@@ -339,9 +335,10 @@ At [Yummypets](http://yummypets.com) we have loooots of views.
 After trying diferent methods for building views (Xibs, Storyboard, Splitting Storyboards) React Native even!
 We found that coding views programatically was the best solution.
 
-Why ? Because CODE DON'T LIE
+Why ? **Because CODE DON'T LIE**
 
 But coding views programatically had its issues too.
+
 That's why we created Nadir.
 
 
@@ -350,20 +347,20 @@ That's why we created Nadir.
 
 Advantages of UIView swift class over Xibs or storyboards
 --
-
+- [x] Better readability consise ex: 1000lines XMl file vs. 30lines code
 - [x] No more XML (Thank God!)
 - [x] No more constraints hell in Interface builder.
 - [x] No more debugging in Interface builder toggling checkboxes.
 - [x] The view Code is not split between 2 files anymore
 - [x] What you see is what you get, your view code is in one place, there is no hidden logic elsewere (in the xib)
 - [x] No more refrencing Storyboards or Xibs by their names "ProfileStoryboard". We all know strings are bad identifiers.
-- [x] More consise ex: 1000lines XMl file vs. 30lines code
+
 
 Next
 ---
 - Live reload
 - Documenting Nadir shortcuts
-- **Port to ANDROID** 🐷 💩
+
 
 Contributors
 ---
