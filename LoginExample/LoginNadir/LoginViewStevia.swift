@@ -1,7 +1,6 @@
-
 //
-//  LoginViewD.swift
-//  LoginNadir
+//  LoginViewStevia.swift
+//  LoginStevia
 //
 //  Created by Sacha Durand Saint Omer on 01/10/15.
 //  Copyright © 2015 Sacha Durand Saint Omer. All rights reserved.
@@ -9,7 +8,7 @@
 
 import UIKit
 
-class LoginViewD:UIView {
+class LoginViewStevia:UIView {
     
     let emailField = UITextField()
     let passwordField = UITextField()
@@ -37,13 +36,20 @@ class LoginViewD:UIView {
             0
         ])
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refresh", name: UIApplicationDidBecomeActiveNotification, object: nil)
+        // Chainable syntax
+//        emailField.fillH(m: 8)
+//        passwordField.fillH(m: 8)
+//        button.fillH()
+//        for b in [emailField, passwordField, button] { b.height(80)}
+//        emailField.top(100).stackV(m: 8, v: passwordField)
+//        button.bottom(0)
         
-    
-        on(UIApplicationDidBecomeActiveNotification, refresh)
-    }
-    
-    func refresh() {
+        // Visual format
+//        views = [ "emailField" :emailField, "passwordField" : passwordField, "button" : button ]
+//        h("|-[emailField]-|")
+//        h("|-[passwordField]-|")
+//        h("|[button]|")
+//        v("|-100-[emailField(80)]-[passwordField(80)]-(>=8)-[button(80)]|")
         
     }
 
@@ -66,27 +72,3 @@ class LoginViewD:UIView {
         //Do something
     }
 }
-
-// | shot for self?? humm <3
-
-// | for sides, - for intermargins
-
-//  "|-30-[emailField]-30-[passwordField]-[button]|"  // v| ==0 in container
-
-//  |-30-emailField-30-passwordField-button|
-
-//  |30-emailField-30-passwordField-button|
-
-// todo <= >=
-
-
-
-//        |emailField-50-passwordField|
-
-//                3|emailField-passwordField|
-//    OR   |-3-emailField-passwordField|
-// OR |3-emailField-passwordField|
-
-//        emailField-20
-
-//

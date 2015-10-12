@@ -7,43 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		99366F461BCBD85E00F7B1BC /* Nadir+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F3F1BCBD85E00F7B1BC /* Nadir+Constraints.swift */; settings = {ASSET_TAGS = (); }; };
-		99366F471BCBD85E00F7B1BC /* Nadir+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F401BCBD85E00F7B1BC /* Nadir+Content.swift */; settings = {ASSET_TAGS = (); }; };
-		99366F481BCBD85E00F7B1BC /* Nadir+Hierachy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F411BCBD85E00F7B1BC /* Nadir+Hierachy.swift */; settings = {ASSET_TAGS = (); }; };
-		99366F491BCBD85E00F7B1BC /* Nadir+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F421BCBD85E00F7B1BC /* Nadir+Notifications.swift */; settings = {ASSET_TAGS = (); }; };
-		99366F4A1BCBD85E00F7B1BC /* Nadir+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F431BCBD85E00F7B1BC /* Nadir+Style.swift */; settings = {ASSET_TAGS = (); }; };
-		99366F4B1BCBD85E00F7B1BC /* Nadir+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F441BCBD85E00F7B1BC /* Nadir+Tap.swift */; settings = {ASSET_TAGS = (); }; };
-		99366F4C1BCBD85E00F7B1BC /* Nadir+VisualFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F451BCBD85E00F7B1BC /* Nadir+VisualFormat.swift */; settings = {ASSET_TAGS = (); }; };
+		99366F471BCBD85E00F7B1BC /* Stevia+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F401BCBD85E00F7B1BC /* Stevia+Content.swift */; settings = {ASSET_TAGS = (); }; };
+		99366F481BCBD85E00F7B1BC /* Stevia+Hierachy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F411BCBD85E00F7B1BC /* Stevia+Hierachy.swift */; settings = {ASSET_TAGS = (); }; };
+		99366F491BCBD85E00F7B1BC /* Stevia+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F421BCBD85E00F7B1BC /* Stevia+Notifications.swift */; settings = {ASSET_TAGS = (); }; };
+		99366F4A1BCBD85E00F7B1BC /* Stevia+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F431BCBD85E00F7B1BC /* Stevia+Style.swift */; settings = {ASSET_TAGS = (); }; };
+		99366F4B1BCBD85E00F7B1BC /* Stevia+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F441BCBD85E00F7B1BC /* Stevia+Tap.swift */; settings = {ASSET_TAGS = (); }; };
+		99366F4C1BCBD85E00F7B1BC /* Stevia+VisualFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F451BCBD85E00F7B1BC /* Stevia+VisualFormat.swift */; settings = {ASSET_TAGS = (); }; };
+		9968A17C1BCC15C20024373C /* Stevia+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9968A17B1BCC15C20024373C /* Stevia+Constraints.swift */; settings = {ASSET_TAGS = (); }; };
 		99FC80DF1BBD147B0068503C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80DE1BBD147B0068503C /* AppDelegate.swift */; };
 		99FC80E11BBD147B0068503C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80E01BBD147B0068503C /* ViewController.swift */; };
 		99FC80E41BBD147B0068503C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FC80E21BBD147B0068503C /* Main.storyboard */; };
 		99FC80E61BBD147B0068503C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99FC80E51BBD147B0068503C /* Assets.xcassets */; };
 		99FC80E91BBD147B0068503C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FC80E71BBD147B0068503C /* LaunchScreen.storyboard */; };
-		99FC80F11BBD149E0068503C /* LoginViewB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80F01BBD149E0068503C /* LoginViewB.swift */; settings = {ASSET_TAGS = (); }; };
-		99FC80F31BBD14BB0068503C /* LoginViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80F21BBD14BB0068503C /* LoginViewA.swift */; settings = {ASSET_TAGS = (); }; };
-		99FC80F81BBD15870068503C /* LoginViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80F71BBD15870068503C /* LoginViewC.swift */; settings = {ASSET_TAGS = (); }; };
-		99FC80FA1BBD16840068503C /* LoginViewD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80F91BBD16840068503C /* LoginViewD.swift */; settings = {ASSET_TAGS = (); }; };
+		99FC80F31BBD14BB0068503C /* LoginViewNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80F21BBD14BB0068503C /* LoginViewNative.swift */; settings = {ASSET_TAGS = (); }; };
+		99FC80FA1BBD16840068503C /* LoginViewStevia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80F91BBD16840068503C /* LoginViewStevia.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		99366F3F1BCBD85E00F7B1BC /* Nadir+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nadir+Constraints.swift"; sourceTree = "<group>"; };
-		99366F401BCBD85E00F7B1BC /* Nadir+Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nadir+Content.swift"; sourceTree = "<group>"; };
-		99366F411BCBD85E00F7B1BC /* Nadir+Hierachy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nadir+Hierachy.swift"; sourceTree = "<group>"; };
-		99366F421BCBD85E00F7B1BC /* Nadir+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nadir+Notifications.swift"; sourceTree = "<group>"; };
-		99366F431BCBD85E00F7B1BC /* Nadir+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nadir+Style.swift"; sourceTree = "<group>"; };
-		99366F441BCBD85E00F7B1BC /* Nadir+Tap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nadir+Tap.swift"; sourceTree = "<group>"; };
-		99366F451BCBD85E00F7B1BC /* Nadir+VisualFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nadir+VisualFormat.swift"; sourceTree = "<group>"; };
-		99FC80DB1BBD147B0068503C /* LoginNadir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginNadir.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		99366F401BCBD85E00F7B1BC /* Stevia+Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Content.swift"; sourceTree = "<group>"; };
+		99366F411BCBD85E00F7B1BC /* Stevia+Hierachy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Hierachy.swift"; sourceTree = "<group>"; };
+		99366F421BCBD85E00F7B1BC /* Stevia+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Notifications.swift"; sourceTree = "<group>"; };
+		99366F431BCBD85E00F7B1BC /* Stevia+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Style.swift"; sourceTree = "<group>"; };
+		99366F441BCBD85E00F7B1BC /* Stevia+Tap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Tap.swift"; sourceTree = "<group>"; };
+		99366F451BCBD85E00F7B1BC /* Stevia+VisualFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+VisualFormat.swift"; sourceTree = "<group>"; };
+		9968A17B1BCC15C20024373C /* Stevia+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Constraints.swift"; sourceTree = "<group>"; };
+		99FC80DB1BBD147B0068503C /* LoginStevia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginStevia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FC80DE1BBD147B0068503C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99FC80E01BBD147B0068503C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99FC80E31BBD147B0068503C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99FC80E51BBD147B0068503C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99FC80E81BBD147B0068503C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99FC80EA1BBD147B0068503C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		99FC80F01BBD149E0068503C /* LoginViewB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewB.swift; sourceTree = "<group>"; };
-		99FC80F21BBD14BB0068503C /* LoginViewA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewA.swift; sourceTree = "<group>"; };
-		99FC80F71BBD15870068503C /* LoginViewC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewC.swift; sourceTree = "<group>"; };
-		99FC80F91BBD16840068503C /* LoginViewD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewD.swift; sourceTree = "<group>"; };
+		99FC80F21BBD14BB0068503C /* LoginViewNative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewNative.swift; sourceTree = "<group>"; };
+		99FC80F91BBD16840068503C /* LoginViewStevia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewStevia.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +56,13 @@
 		99366F3E1BCBD85E00F7B1BC /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				99366F3F1BCBD85E00F7B1BC /* Nadir+Constraints.swift */,
-				99366F401BCBD85E00F7B1BC /* Nadir+Content.swift */,
-				99366F411BCBD85E00F7B1BC /* Nadir+Hierachy.swift */,
-				99366F421BCBD85E00F7B1BC /* Nadir+Notifications.swift */,
-				99366F431BCBD85E00F7B1BC /* Nadir+Style.swift */,
-				99366F441BCBD85E00F7B1BC /* Nadir+Tap.swift */,
-				99366F451BCBD85E00F7B1BC /* Nadir+VisualFormat.swift */,
+				9968A17B1BCC15C20024373C /* Stevia+Constraints.swift */,
+				99366F401BCBD85E00F7B1BC /* Stevia+Content.swift */,
+				99366F411BCBD85E00F7B1BC /* Stevia+Hierachy.swift */,
+				99366F421BCBD85E00F7B1BC /* Stevia+Notifications.swift */,
+				99366F431BCBD85E00F7B1BC /* Stevia+Style.swift */,
+				99366F441BCBD85E00F7B1BC /* Stevia+Tap.swift */,
+				99366F451BCBD85E00F7B1BC /* Stevia+VisualFormat.swift */,
 			);
 			name = Source;
 			path = ../../Source;
@@ -83,7 +79,7 @@
 		99FC80DC1BBD147B0068503C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				99FC80DB1BBD147B0068503C /* LoginNadir.app */,
+				99FC80DB1BBD147B0068503C /* LoginStevia.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,10 +89,8 @@
 			children = (
 				99FC80DE1BBD147B0068503C /* AppDelegate.swift */,
 				99FC80E01BBD147B0068503C /* ViewController.swift */,
-				99FC80F21BBD14BB0068503C /* LoginViewA.swift */,
-				99FC80F01BBD149E0068503C /* LoginViewB.swift */,
-				99FC80F71BBD15870068503C /* LoginViewC.swift */,
-				99FC80F91BBD16840068503C /* LoginViewD.swift */,
+				99FC80F21BBD14BB0068503C /* LoginViewNative.swift */,
+				99FC80F91BBD16840068503C /* LoginViewStevia.swift */,
 				99366F3E1BCBD85E00F7B1BC /* Source */,
 				99FC80E21BBD147B0068503C /* Main.storyboard */,
 				99FC80E51BBD147B0068503C /* Assets.xcassets */,
@@ -109,9 +103,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		99FC80DA1BBD147B0068503C /* LoginNadir */ = {
+		99FC80DA1BBD147B0068503C /* LoginStevia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99FC80ED1BBD147B0068503C /* Build configuration list for PBXNativeTarget "LoginNadir" */;
+			buildConfigurationList = 99FC80ED1BBD147B0068503C /* Build configuration list for PBXNativeTarget "LoginStevia" */;
 			buildPhases = (
 				99FC80D71BBD147B0068503C /* Sources */,
 				99FC80D81BBD147B0068503C /* Frameworks */,
@@ -121,9 +115,9 @@
 			);
 			dependencies = (
 			);
-			name = LoginNadir;
+			name = LoginStevia;
 			productName = LoginNadir;
-			productReference = 99FC80DB1BBD147B0068503C /* LoginNadir.app */;
+			productReference = 99FC80DB1BBD147B0068503C /* LoginStevia.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -140,7 +134,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 99FC80D61BBD147B0068503C /* Build configuration list for PBXProject "LoginNadir" */;
+			buildConfigurationList = 99FC80D61BBD147B0068503C /* Build configuration list for PBXProject "LoginStevia" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -153,7 +147,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				99FC80DA1BBD147B0068503C /* LoginNadir */,
+				99FC80DA1BBD147B0068503C /* LoginStevia */,
 			);
 		};
 /* End PBXProject section */
@@ -176,19 +170,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99366F4C1BCBD85E00F7B1BC /* Nadir+VisualFormat.swift in Sources */,
-				99FC80F81BBD15870068503C /* LoginViewC.swift in Sources */,
-				99FC80F31BBD14BB0068503C /* LoginViewA.swift in Sources */,
-				99366F471BCBD85E00F7B1BC /* Nadir+Content.swift in Sources */,
-				99FC80FA1BBD16840068503C /* LoginViewD.swift in Sources */,
-				99FC80F11BBD149E0068503C /* LoginViewB.swift in Sources */,
+				99366F4C1BCBD85E00F7B1BC /* Stevia+VisualFormat.swift in Sources */,
+				99FC80F31BBD14BB0068503C /* LoginViewNative.swift in Sources */,
+				99366F471BCBD85E00F7B1BC /* Stevia+Content.swift in Sources */,
+				99FC80FA1BBD16840068503C /* LoginViewStevia.swift in Sources */,
 				99FC80E11BBD147B0068503C /* ViewController.swift in Sources */,
 				99FC80DF1BBD147B0068503C /* AppDelegate.swift in Sources */,
-				99366F491BCBD85E00F7B1BC /* Nadir+Notifications.swift in Sources */,
-				99366F4B1BCBD85E00F7B1BC /* Nadir+Tap.swift in Sources */,
-				99366F461BCBD85E00F7B1BC /* Nadir+Constraints.swift in Sources */,
-				99366F4A1BCBD85E00F7B1BC /* Nadir+Style.swift in Sources */,
-				99366F481BCBD85E00F7B1BC /* Nadir+Hierachy.swift in Sources */,
+				9968A17C1BCC15C20024373C /* Stevia+Constraints.swift in Sources */,
+				99366F491BCBD85E00F7B1BC /* Stevia+Notifications.swift in Sources */,
+				99366F4B1BCBD85E00F7B1BC /* Stevia+Tap.swift in Sources */,
+				99366F4A1BCBD85E00F7B1BC /* Stevia+Style.swift in Sources */,
+				99366F481BCBD85E00F7B1BC /* Stevia+Hierachy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +294,7 @@
 				INFOPLIST_FILE = LoginNadir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.octopepper.LoginNadir;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LoginStevia;
 			};
 			name = Debug;
 		};
@@ -313,14 +305,14 @@
 				INFOPLIST_FILE = LoginNadir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.octopepper.LoginNadir;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LoginStevia;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		99FC80D61BBD147B0068503C /* Build configuration list for PBXProject "LoginNadir" */ = {
+		99FC80D61BBD147B0068503C /* Build configuration list for PBXProject "LoginStevia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99FC80EB1BBD147B0068503C /* Debug */,
@@ -329,7 +321,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99FC80ED1BBD147B0068503C /* Build configuration list for PBXNativeTarget "LoginNadir" */ = {
+		99FC80ED1BBD147B0068503C /* Build configuration list for PBXNativeTarget "LoginStevia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99FC80EE1BBD147B0068503C /* Debug */,

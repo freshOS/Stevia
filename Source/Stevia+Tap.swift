@@ -1,6 +1,6 @@
 //
-//  Nadir+Tap.swift
-//  LoginNadir
+//  Stevia+Tap.swift
+//  LoginStevia
 //
 //  Created by Sacha Durand Saint Omer on 01/10/15.
 //  Copyright © 2015 Sacha Durand Saint Omer. All rights reserved.
