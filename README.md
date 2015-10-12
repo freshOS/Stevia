@@ -94,7 +94,8 @@ addConstraint(NSLayoutConstraint(
         relatedBy: .Equal
 
     // [...] (80+ more lines ...)
-
+    //
+    // CENSORED.
     // We decided to strip that part because it was WAAYY TO LONG ... 🙉🙈🙊
 
 ```
