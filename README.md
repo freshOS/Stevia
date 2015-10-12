@@ -1,6 +1,16 @@
+# Nadir
+Nadir is an iOS Auto Layout DSL written in swift.
+
+It is not a heavy layout engine, it is just a lightweight shortcut
+api for creating Auto Layout constraints and defining view only using code ! 🙈 😍
+
+## Features 
+
+
+
 ## Teaser <3
 
-### Layout
+### Layout definition
 
 ```swift
 layout([
@@ -14,7 +24,7 @@ layout([
 ])
 ```
 
-### Taps
+### Taps handling
 
 ```swift
 button.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
@@ -34,6 +44,7 @@ button.setTitle(NSLocalizedString("Login", comment: ""), forState: .Normal)
 button.textKey("Login")
 ```
 
+
 ### Notifications
 
 ```swift
@@ -45,11 +56,6 @@ on(UIApplicationDidBecomeActiveNotification, refresh)
 ```
 
 
-# Nadir
-Nadir is an iOS Auto Layout DSL witten in swift.
-
-It is not a heavy layout engine, it is just a lightweight shortcut
-api for creating Auto Layout constraints.
 
 ## Show me the code!
 
@@ -57,7 +63,7 @@ Wanna layout a login view?
 
 ![alt text](https://raw.githubusercontent.com/s4cha/Nadir/master/login.png "Login view")
 
-### Turn this
+### Turn this ...
 ```swift
 addConstraint(NSLayoutConstraint(
         item: emailField,
@@ -80,81 +86,15 @@ addConstraint(NSLayoutConstraint(
 addConstraint(NSLayoutConstraint(
     item: passwordField,
     attribute: .Left,
-        relatedBy: .Equal,
-        toItem: self,
-        attribute: .Left,
-        multiplier: 1,
-        constant: 8)
-)
-addConstraint(NSLayoutConstraint(
-    item: passwordField,
-    attribute: .Right,
-    relatedBy: .Equal,
-    toItem: self,
-    attribute: .Right,
-    multiplier: 1,
-    constant: 8)
-)
-addConstraint(NSLayoutConstraint(
-    item: button,
-    attribute: .Left,
-    relatedBy: .Equal,
-    toItem: self,
-    attribute: .Left,
-    multiplier: 1,
-    constant: 0)
-)
-addConstraint(NSLayoutConstraint(
-    item: button,
-    attribute: .Right,
-    relatedBy: .Equal,
-    toItem: self,
-    attribute: .Right,
-    multiplier: 1,
-    constant: 0)
-)
-for b in [emailField, passwordField, button] {
-    addConstraint(NSLayoutConstraint(
-        item: b,
-        attribute: .Height,
-        relatedBy: .Equal,
-        toItem: nil,
-        attribute: .NotAnAttribute,
-        multiplier: 1,
-        constant: 80)
-    )
-}
-addConstraint(NSLayoutConstraint(
-    item: emailField,
-    attribute: .Top,
-    relatedBy: .Equal,
-    toItem: self,
-    attribute: .Top,
-    multiplier: 1,
-    constant: 100)
-)
-addConstraint(NSLayoutConstraint(
-    item:emailField,
-    attribute: .Bottom,
-    relatedBy: .Equal,
-    toItem: passwordField,
-    attribute: .Top,
-    multiplier: 1,
-    constant: 8)
-)
-addConstraint(NSLayoutConstraint(
-    item: button,
-    attribute: .Bottom,
-    relatedBy: .Equal,
-    toItem: self,
-    attribute: .Bottom,
-    multiplier: 1,
-    constant: 0)
-)
+        relatedBy: .Equal
+
+  [...] (80+ more lines ...)
+
+  // We decided to strip that part because it was WAAYY TO LONG ... 🙉🙈🙊
 
 ```
 
-### Into
+### ... into this !
 
 ```swift
 layout([
@@ -169,7 +109,7 @@ layout([
 ```
 
 
-### Prefer Visual Format?
+### Maybe you prefer Visual Format ?
 
 ```swift
 let views = ["emailField":emailField, "passwordField":passwordField]
@@ -181,13 +121,13 @@ addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
 )
 ```
 
-### We got your back
+### we got your back 😘
 ```swift
 views = ["emailField":emailField, "passwordField":passwordField]
 v("|-[emailField]-|")
 ```
 
-### But what about using this instead !?
+### But what about using this instead !? Much better ❤️
 ```swift
 |-emailField-|
 ```
@@ -195,7 +135,7 @@ v("|-[emailField]-|")
 We personally try to avoid visual format because it's more error prone.
 Plus the compiler has got you covered with this one :)
 
-## Hierarchy
+## Components hierarchy
 
 ### This
 ```swift
@@ -204,7 +144,7 @@ addSubview(passwordField)
 addSubview(button)
 ```
 
-### Into
+### Into this !
 ```swift
 sv([
     emailField,
@@ -212,7 +152,8 @@ sv([
     button
 ])
 ```
-## Styling
+
+## Styling elements
 ### This
 ```swift
 emailField.borderStyle = .RoundedRect
@@ -222,7 +163,7 @@ emailField.font = UIFont(name: "HelveticaNeue-Light", size: 26)
 emailField.returnKeyType = .Next
 ```
 
-### Into
+### Into this !
 ```swift
 emailField.style { f in
     f.borderStyle = .RoundedRect
@@ -233,13 +174,13 @@ emailField.style { f in
 }
 ```
 
-## Events
+## Events handling
 ### This
 ```swift
 button.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
 ```
 
-### Into
+### Into this !
 ```swift
  button.tap(loginTapped)
 ```
@@ -410,18 +351,19 @@ That's why we created Nadir.
 Advantages of UIView swift class over Xibs or storyboards
 --
 
-- No more XML (Thank God!)
-- No more constraints hell in Interface builder.
-- No more debugging in Interface builder toggling checkboxes.
-- The view Code is not split between 2 files anymore
-- What you see is what you get, your view code is in one place, there is no hidden logic elsewere (in the xib)
-- No more refrencing Storyboards or Xibs by their names "ProfileStoryboard". We all know strings are bad identifiers.
-- More consise ex: 1000lines XMl file vs. 30lines code
+- [x] No more XML (Thank God!)
+- [x] No more constraints hell in Interface builder.
+- [x] No more debugging in Interface builder toggling checkboxes.
+- [x] The view Code is not split between 2 files anymore
+- [x] What you see is what you get, your view code is in one place, there is no hidden logic elsewere (in the xib)
+- [x] No more refrencing Storyboards or Xibs by their names "ProfileStoryboard". We all know strings are bad identifiers.
+- [x] More consise ex: 1000lines XMl file vs. 30lines code
 
 Next
 ---
 - Live reload
 - Documenting Nadir shortcuts
+- **Port to ANDROID** 🐷 💩
 
 Contributors
 ---
