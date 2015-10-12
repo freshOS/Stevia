@@ -15,8 +15,6 @@ api for creating Auto Layout constraints and defining view only using code ! �
 
 ### Advantages of Nadir over the classic way
 
-Not a lot less lines (40ish) but the number of total characters is halved!
-
 - [x] The view hierachy is clearer
 - [x] Constraints are (WAY) more readable, they actually look like the layout itself \o/
 - [x] Horizontal & vertical layout can be described at the same time
@@ -95,9 +93,9 @@ addConstraint(NSLayoutConstraint(
     attribute: .Left,
         relatedBy: .Equal
 
-  [...] (80+ more lines ...)
+    // [...] (80+ more lines ...)
 
-  // We decided to strip that part because it was WAAYY TO LONG ... 🙉🙈🙊
+    // We decided to strip that part because it was WAAYY TO LONG ... 🙉🙈🙊
 
 ```
 
