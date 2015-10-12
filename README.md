@@ -64,11 +64,7 @@ on(UIApplicationDidBecomeActiveNotification, refresh)
 
 ## Show me the code!
 
-Wanna layout a login view?
-
-![alt text](https://raw.githubusercontent.com/s4cha/Nadir/master/login.png "Login view")
-
-### Turn this ...
+### Turn this legacy code ...
 ```swift
 addConstraint(NSLayoutConstraint(
         item: emailField,
@@ -143,14 +139,14 @@ Plus the compiler has got you covered with this one :)
 
 ## Components hierarchy
 
-### This
+### This ...
 ```swift
 addSubview(emailField)
 addSubview(passwordField)
 addSubview(button)
 ```
 
-### Into this !
+### into this !
 ```swift
 sv([
     emailField,
@@ -160,7 +156,7 @@ sv([
 ```
 
 ## Styling elements
-### This
+### This ...
 ```swift
 emailField.borderStyle = .RoundedRect
 emailField.autocorrectionType = .No
@@ -169,7 +165,7 @@ emailField.font = UIFont(name: "HelveticaNeue-Light", size: 26)
 emailField.returnKeyType = .Next
 ```
 
-### Into this !
+### into this !
 ```swift
 emailField.style { f in
     f.borderStyle = .RoundedRect
