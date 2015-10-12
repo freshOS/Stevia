@@ -1,4 +1,7 @@
 ## Teaser <3
+
+### Layout
+
 ```swift
 layout([
     100,
@@ -11,6 +14,7 @@ layout([
 ])
 ```
 
+### Taps
 
 ```swift
 button.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
@@ -19,6 +23,8 @@ button.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
 ```swift
 button.tap(loginTapped)
 ```
+
+### Localized text
 
 ```swift
 button.setTitle(NSLocalizedString("Login", comment: ""), forState: .Normal)
