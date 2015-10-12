@@ -11,6 +11,25 @@ layout([
 ])
 ```
 
+
+```swift
+button.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
+```
+
+```swift
+button.tap(loginTapped)
+```
+
+```swift
+button.setTitle(NSLocalizedString("Login", comment: ""), forState: .Normal)
+```
+
+```swift
+button.textKey("Login")
+```
+
+
+
 # Nadir
 Nadir is an iOS Auto Layout DSL witten in swift.
 
@@ -336,6 +355,7 @@ Not a lot less lines (40ish) but the number of total characters is halved!
 
 - The view hierachy is clearer
 - Constraints are (WAY) more readable, they actually look like the layout itself \o/
+- Horizontal & vertical layout can be described at the same time
 - Styles are well separated, concise, reusable and can be composed
 - Content like text, placeholders are easier to visualize
 - Events are a breeze
