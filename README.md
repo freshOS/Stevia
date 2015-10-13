@@ -1,5 +1,4 @@
-<div style="text-align:center; margin-bottom:50px;"><img src="http://raw.githubusercontent.com/s4cha/Stevia/master/stevia.png" alt="Stevia Logo"
-/></div>
+![Stevia logo](https://raw.githubusercontent.com/s4cha/Stevia/master/stevia.png "Stevia logo")
 
 Stevia is an iOS Auto Layout DSL written in swift.
 
