@@ -189,7 +189,7 @@ button.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
 
 
 ## Real life example : a classic Login View
-![alt text](https://raw.githubusercontent.com/s4cha/Stevia/master/login.png "Login view")
+![alt text](https://raw.githubusercontent.com/s4cha/Stevia/master/examples/LoginExample/login.png "Login view")
 
 
 #### Before Stevia
