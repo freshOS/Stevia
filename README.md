@@ -135,6 +135,16 @@ v("|-[emailField]-|")
 We personally try to avoid visual format because it's more error prone.
 Plus the compiler has got you covered with this one :)
 
+## Getting started
+
+### Manual
+Copy Stevia source files to your XCode project
+
+### Carthage
+```
+github "s4cha/Stevia"
+```
+
 ## Components hierarchy
 
 ### This ...
@@ -384,6 +394,10 @@ func render() {
 And Voila :)
 
 ## Next
+- Add Carthage Framework suport
+- Table of content
+- Add full api reference
+- Getting started
 - Documenting Stevia shortcuts
 - Documenting chainable api
 
