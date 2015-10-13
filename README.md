@@ -4,7 +4,6 @@ Stevia is an iOS Auto Layout DSL written in swift.
 It is not a heavy layout engine, it is just a lightweight shortcut
 api for creating Auto Layout constraints and defining view only using code ! 😍
 
-
 ## Features
 - [x] Layout
 - [x] Component styling
@@ -135,6 +134,16 @@ v("|-[emailField]-|")
 
 We personally try to avoid visual format because it's more error prone.
 Plus the compiler has got you covered with this one :)
+
+## Getting started
+
+### Manual
+Copy Stevia source files to your XCode project
+
+### Carthage
+```
+github "s4cha/Stevia"
+```
 
 ## Components hierarchy
 
@@ -347,10 +356,50 @@ That's why we created Stevia.
 - [x] What you see is what you get, your view code is in one place, there is no hidden logic elsewere (in the xib)
 - [x] No more refrencing Storyboards or Xibs by their names "ProfileStoryboard". We all know strings are bad identifiers.
 
+## Live Reload
+
+Stevia + [InjectionForXCode](http://injectionforxcode.com/) = <3 (WhoNeedsReactNative??)
+
+![Output sample](http://g.recordit.co/i6kQfTMEpg.gif)
+
+In order to support live reload with InjectionForXCode, we simply need to tell our ViewController to rebuild a view after an injection occured.
+
+```swift
+on("INJECTION_BUNDLE_NOTIFICATION") {
+    self.v = CodeRequestView()
+    self.view = self.v
+}
+```
+
+Currently InjectionForXcode doesn't seem to swizzle "init" methods for some reason. So we have to move our view code in another methods
+```swift
+convenience init() {
+    self.init(frame:CGRectZero)
+    //View code
+}
+```
+Becomes
+```swift
+convenience init() {
+    self.init(frame:CGRectZero)
+    render()
+}
+
+func render() {
+  //View code
+}
+
+```
+
+And Voila :)
 
 ## Next
-- Live reload
+- Add Carthage Framework suport
+- Table of content
+- Add full api reference
+- Getting started
 - Documenting Stevia shortcuts
+- Documenting chainable api
 
 
 ## Contributors
