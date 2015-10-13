@@ -1,6 +1,6 @@
-![Stevia Logo](https://raw.githubusercontent.com/s4cha/Stevia/master/stevia.png "Stevia Logo")
+<div style="text-align:center; margin-bottom:50px;"><img src="http://raw.githubusercontent.com/s4cha/Stevia/master/stevia.png" alt="Stevia Logo"
+/></div>
 
-# Stevia
 Stevia is an iOS Auto Layout DSL written in swift.
 
 It is not a heavy layout engine, it is just a lightweight shortcut
