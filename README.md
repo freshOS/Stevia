@@ -1,3 +1,5 @@
+![Stevia Logo](https://raw.githubusercontent.com/s4cha/Stevia/master/stevia.png "Stevia Logo")
+
 # Stevia
 Stevia is an iOS Auto Layout DSL written in swift.
 
