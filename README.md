@@ -5,14 +5,14 @@ It is not a heavy layout engine, it is just a lightweight shortcut
 api for creating Auto Layout constraints and defining view only using code ! 😍
 
 
-N
+## Features
 - [x] Layout
 - [x] Component styling
 - [x] Event handling
 
 
 
-### Advantages of Stevia over the classic way
+#### Advantages of Stevia over the classic way
 
 - [x] The view hierachy is clearer
 - [x] Constraints are (WAY) more readable, they actually look like the layout itself \o/
@@ -26,7 +26,7 @@ Less code + More readable ==> easier to maintain
 
 ## Teaser ... ❤️
 
-### Layout
+#### Layout
 
 ```swift
 layout([
@@ -40,20 +40,20 @@ layout([
 ])
 ```
 
-### Taps handling
+#### Taps handling
 
 ```swift
 button.tap(loginTapped)
 ```
 
-### Localized text
+#### Localized text
 
 ```swift
 button.textKey("Login")
 ```
 
 
-### Notifications
+#### Notifications
 
 ```swift
 on(UIApplicationDidBecomeActiveNotification, refresh)
@@ -192,7 +192,7 @@ button.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
 ![alt text](https://raw.githubusercontent.com/s4cha/Stevia/master/login.png "Login view")
 
 
-### Before Stevia
+#### Before Stevia
 
 ```swift
 
@@ -247,7 +247,7 @@ class LoginView:UIView {
 }
 ```
 
-### Stevia: On
+### Stevia Enabled
 
 ```swift
 
@@ -337,10 +337,8 @@ That's why we created Stevia.
 
 
 
+### Advantages of UIView swift class over Xibs or storyboards
 
-
-Advantages of UIView swift class over Xibs or storyboards
---
 - [x] Better readability consise ex: 1000lines XMl file vs. 30lines code
 - [x] No more XML (Thank God!)
 - [x] No more constraints hell in Interface builder.
@@ -348,14 +346,15 @@ Advantages of UIView swift class over Xibs or storyboards
 - [x] The view Code is not split between 2 files anymore
 - [x] What you see is what you get, your view code is in one place, there is no hidden logic elsewere (in the xib)
 - [x] No more refrencing Storyboards or Xibs by their names "ProfileStoryboard". We all know strings are bad identifiers.
+BLABLABLAH
 
 
-Next
----
+## Next
 - Live reload
 - Documenting Stevia shortcuts
 
 
-Contributors
----
-[YannickDot](https://github.com/YannickDot),  [S4cha](https://github.com/S4cha),  [Damien](https://github.com/damien-nd)
+## Contributors
+
+[YannickDot](https://github.com/YannickDot),  [S4cha](https://github.com/S4cha),  [Damien](https://github.com/damien-nd),
+[Snowcraft](https://github.com/Snowcraft)
