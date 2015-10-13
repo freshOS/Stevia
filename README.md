@@ -346,7 +346,6 @@ That's why we created Stevia.
 - [x] The view Code is not split between 2 files anymore
 - [x] What you see is what you get, your view code is in one place, there is no hidden logic elsewere (in the xib)
 - [x] No more refrencing Storyboards or Xibs by their names "ProfileStoryboard". We all know strings are bad identifiers.
-BLABLABLAH
 
 
 ## Next
