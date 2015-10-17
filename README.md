@@ -2,8 +2,7 @@
 
 Stevia is an iOS Auto Layout DSL written in swift.
 
-It is not a heavy layout engine, it is just a lightweight shortcut
-api for creating Auto Layout constraints and defining view only using code ! 😍
+It's not another heavy layout engine, it is just fine set of shortcuts and extensions for creating AutoLayout constraints and defining views using code ! 😍
 
 ## Features
 - [x] Layout
@@ -14,8 +13,8 @@ api for creating Auto Layout constraints and defining view only using code ! �
 
 #### Advantages of Stevia over the classic way
 
-- [x] The view hierachy is clearer
-- [x] Constraints are (WAY) more readable, they actually look like the layout itself \o/
+- [x] A clearer view hierachy
+- [x] Readable constraints (they actually look like the layout itself \o/)
 - [x] Horizontal & vertical layout can be described at the same time
 - [x] Styles are well separated, concise, reusable and can be composed
 - [x] Content like text, placeholders are easier to visualize
@@ -327,21 +326,20 @@ Easy or simple ?
 We know some things can look "easy" but be very complex under the hood.
 We tried to keep both.
 We wanted Stevia to be easy to use while remaining very simple.
-Most of Stevia's code is just simple shortcuts to UIKit Api.
+Most of Stevia's code is just simple shortcuts to UIKit API.
 Nothing prevents you from mixing Stevia with pure UIKit code.
-Because Stevia IS pur UIKit code.
+Because Stevia **IS** pure UIKit code.
 
 Why Stevia?
 ---
 
-At [Yummypets](http://yummypets.com) we have loooots of views.
+On the [Yummypets](http://yummypets.com) app, we needed to deals with looooooots of views.
 
-After trying diferent methods for building views (Xibs, Storyboard, Splitting Storyboards) React Native even!
-We found that coding views programatically was the best solution.
+After trying different methods for building views (Xibs, Storyboards, Splitting Storyboards, React Native even(!), we found that coding views programmatically was the best solution for us.
 
-Why ? **Because CODE DON'T LIE**
+Why ? **Because CODE DOESN'T LIE**
 
-But coding views programatically had its issues too.
+But coding views programmatically had its issues too : UIKit exposes an imperative verbose API, and it's really easy to create a mess with it.
 
 That's why we created Stevia.
 
@@ -349,17 +347,19 @@ That's why we created Stevia.
 
 ### Advantages of UIView swift class over Xibs or storyboards
 
-- [x] Better readability consise ex: 1000lines XMl file vs. 30lines code
+- [x] Better readability ex: 1000lines XML file vs. 30lines code
 - [x] No more XML (Thank God!)
 - [x] No more constraints hell in Interface builder.
 - [x] No more debugging in Interface builder toggling checkboxes.
-- [x] The view Code is not split between 2 files anymore
+- [x] The view code is not split between 2 files anymore
 - [x] What you see is what you get, your view code is in one place, there is no hidden logic elsewere (in the xib)
-- [x] No more refrencing Storyboards or Xibs by their names "ProfileStoryboard". We all know strings are bad identifiers.
+- [x] No more referencing Storyboards or Xibs by their names "ProfileStoryboard". We all know strings are bad identifiers.
 
 ## Live Reload
 
-Stevia + [InjectionForXCode](http://injectionforxcode.com/) = <3 (WhoNeedsReactNative??)
+You can even enable LiveReload during your development phase! 🎉🎉🎉  
+
+Stevia + [InjectionForXCode](http://injectionforxcode.com/) = <3 (WhoNeedsReactNative??) 🚀
 
 ![Output sample](http://g.recordit.co/i6kQfTMEpg.gif)
 
@@ -394,10 +394,11 @@ func render() {
 
 And Voila :)
 
-## Next
-- Add Carthage Framework suport
-- Table of content
-- Add full api reference
+
+## Next steps
+- Add Carthage Framework support
+- Table of contents
+- Api reference
 - Getting started
 - Documenting Stevia shortcuts
 - Documenting chainable api
