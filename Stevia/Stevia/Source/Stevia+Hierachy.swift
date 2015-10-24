@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UIView {
-    func sv(subViews:[UIView]) -> UIView {
+public extension UIView {
+    public func sv(subViews:[UIView]) -> UIView {
         for sv in subViews {
             addSubview(sv)
             sv.translatesAutoresizingMaskIntoConstraints = false
