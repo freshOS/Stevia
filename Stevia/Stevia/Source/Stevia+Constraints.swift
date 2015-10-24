@@ -54,16 +54,14 @@ public postfix func -| (v: UIView) -> UIView {
 }
 
 
-
 infix operator - {}
 public func - (left: CGFloat, right: UIView) -> UIView {
     return right.left(left)
 }
 
-// Try partial
-//public func - (left: UIView, right: CGFloat) -> UIView {
-//    return left.right(right)
-//}
+public func - (left: UIView, right: CGFloat) -> UIView {
+    return left.right(right)
+}
 
 //TEST
 
