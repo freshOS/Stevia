@@ -181,10 +181,9 @@ public func - (left: [UIView], right: UIView) -> [UIView] {
 // MARK: - Shortcut
 
 
-extension UIView {
+public extension UIView {
     
-    //Todo use shurtcut everywhere (DRY)
-    func c(item view1: AnyObject,
+    public func c(item view1: AnyObject,
         attribute attr1: NSLayoutAttribute,
         relatedBy: NSLayoutRelation = .Equal,
         toItem view2: AnyObject? = nil,
@@ -197,7 +196,7 @@ extension UIView {
     }
 }
 
-func constraint(item view1: AnyObject,
+public func constraint(item view1: AnyObject,
     attribute attr1: NSLayoutAttribute,
     relatedBy: NSLayoutRelation = .Equal,
     toItem view2: AnyObject? = nil,
@@ -209,14 +208,14 @@ func constraint(item view1: AnyObject,
 
 // MARK: - Alignment
 
-func alignHorizontally(v1:UIView, with v2:UIView) {
+public func alignHorizontally(v1:UIView, with v2:UIView) {
     if let spv = v1.superview {
         let c = constraint(item: v1, attribute: .CenterY, toItem: v2)
         spv.addConstraint(c)
     }
 }
 
-func alignHorizontally(views:[UIView]) {
+public func alignHorizontally(views:[UIView]) {
     for (i,v) in views.enumerate() {
         if views.count > i+1 {
             let v2 = views[i+1]
@@ -225,14 +224,14 @@ func alignHorizontally(views:[UIView]) {
     }
 }
 
-func alignVertically(v1:UIView, with v2:UIView) {
+public func alignVertically(v1:UIView, with v2:UIView) {
     if let spv = v1.superview {
         let c = constraint(item: v1, attribute: .CenterX, toItem: v2)
         spv.addConstraint(c)
     }
 }
 
-func alignVertically(views:[UIView]) {
+public func alignVertically(views:[UIView]) {
     for (i,v) in views.enumerate() {
         if views.count > i+1 {
             let v2 = views[i+1]
@@ -241,7 +240,7 @@ func alignVertically(views:[UIView]) {
     }
 }
 
-func fillHorizontally(v:UIView) {
+public func fillHorizontally(v:UIView) {
     if let spv = v.superview {
         let c1 = constraint(item: v, attribute: .Left, toItem: spv)
         let c2 = constraint(item: v, attribute: .Right, toItem: spv)
@@ -249,28 +248,28 @@ func fillHorizontally(v:UIView) {
     }
 }
 
-func alignCenter(v1:UIView, with v2:UIView) {
+public func alignCenter(v1:UIView, with v2:UIView) {
     alignHorizontally(v1, with: v2)
     alignVertically(v1, with: v2)
 }
 
 // MARK: - Size
 
-extension UIView {
+public extension UIView {
     
-    func height(points:CGFloat) -> UIView {
+    public func height(points:CGFloat) -> UIView {
         let c = constraint(item: self, attribute: .Height, constant: points)
         addConstraint(c)
         return self
     }
     
-    func width(points:CGFloat) -> UIView {
+    public func width(points:CGFloat) -> UIView {
         let c = constraint(item: self, attribute: .Width, constant: points)
         addConstraint(c)
         return self
     }
     
-    func size(points:CGFloat) -> UIView {
+    public func size(points:CGFloat) -> UIView {
         width(points)
         height(points)
         return self
@@ -279,9 +278,9 @@ extension UIView {
 
 // MARK: - Position
 
-extension UIView {
+public extension UIView {
     
-    func left(points:CGFloat) -> UIView {
+    public func left(points:CGFloat) -> UIView {
         if let spv = superview {
             let c = constraint(item: self, attribute: .Left, toItem: spv, constant: points)
             spv.addConstraint(c)
@@ -289,7 +288,7 @@ extension UIView {
         return self
     }
     
-    func right(points:CGFloat) -> UIView {
+    public func right(points:CGFloat) -> UIView {
         if let spv = superview {
             let c = constraint(item: self, attribute: .Right, toItem: spv, constant: -points)
             spv.addConstraint(c)
@@ -297,7 +296,7 @@ extension UIView {
         return self
     }
     
-    func top(points:CGFloat) -> UIView {
+    public func top(points:CGFloat) -> UIView {
         if let spv = superview {
             let c = constraint(item: self, attribute: .Top, toItem: spv, constant: points)
             spv.addConstraint(c)
@@ -305,7 +304,7 @@ extension UIView {
         return self
     }
     
-    func bottom(points:CGFloat) -> UIView {
+    public func bottom(points:CGFloat) -> UIView {
         if let spv = superview {
             let c = constraint(item: self, attribute: .Bottom, toItem: spv, constant: -points)
             spv.addConstraint(c)
@@ -313,7 +312,7 @@ extension UIView {
         return self
     }
     
-    func minimumBottomSpace(points:CGFloat) -> UIView {
+    public func minimumBottomSpace(points:CGFloat) -> UIView {
         if let spv = superview {
             let c = constraint(item: self, attribute: .Bottom, relatedBy: .LessThanOrEqual, toItem: spv, attribute: .Bottom, constant: -points)
             spv.addConstraint(c)
@@ -321,27 +320,7 @@ extension UIView {
         return self
     }
     
-    
-    //    func margin(top top:CGFloat? = nil, right:CGFloat? = nil, bottom:CGFloat? = nil, left:CGFloat? = nil) -> UIView {
-    //        if let t = top {
-    //            self.top(t)
-    //        }
-    //
-    //        if let r = right {
-    //            self.right(r)
-    //        }
-    //
-    //        if let b = bottom {
-    //            self.bottom(b)
-    //        }
-    //
-    //        if let l = left {
-    //            self.left(l)
-    //        }
-    //        return self
-    //    }
-    
-    func fillH(m points:CGFloat = 0) -> UIView {
+    public func fillH(m points:CGFloat = 0) -> UIView {
         if let spv = superview {
             let c1 = constraint(item: self, attribute: .Left, toItem: spv, constant: points)
             let c2 = constraint(item: self, attribute: .Right, toItem: spv, constant: -points)
@@ -350,7 +329,7 @@ extension UIView {
         return self
     }
     
-    func fillV(m points:CGFloat = 0) -> UIView {
+    public func fillV(m points:CGFloat = 0) -> UIView {
         if let spv = superview {
             let c1 = constraint(item: self, attribute: .Top, toItem: spv, constant: points)
             let c2 = constraint(item: self, attribute: .Bottom, toItem: spv, constant: -points)
@@ -359,19 +338,19 @@ extension UIView {
         return self
     }
     
-    func centerInContainer() {
+    public func centerInContainer() {
         if let spv = superview {
             alignCenter(self, with: spv)
         }
     }
     
-    func centerHorizontallyInContainer() {
+    public func centerHorizontallyInContainer() {
         if let spv = superview {
             alignVertically(self, with: spv)
         }
     }
     
-    func centerVerticallyInContainer() {
+    public func centerVerticallyInContainer() {
         if let spv = superview {
             alignHorizontally(self, with: spv)
         }
@@ -380,9 +359,9 @@ extension UIView {
 
 // MARK: - Stacks
 
-extension UIView {
+public extension UIView {
     
-    func stackH(m points:CGFloat = 0, v:UIView) -> UIView {
+    public func stackH(m points:CGFloat = 0, v:UIView) -> UIView {
         if let spv = superview {
             let c = constraint(item: v, attribute: .Left, toItem: self, attribute: .Right, constant:points)
             spv.addConstraint(c)
@@ -390,11 +369,11 @@ extension UIView {
         return v
     }
     
-    func layout(objects:[AnyObject]) -> [UIView] {
+    public func layout(objects:[AnyObject]) -> [UIView] {
         return stackV(objects)
     }
     
-    func stackV(m points:CGFloat = 0, v:UIView) -> UIView {
+    public func stackV(m points:CGFloat = 0, v:UIView) -> UIView {
         if let spv = superview {
             let c = constraint(item: v, attribute: .Top, toItem: self, attribute: .Bottom, constant:points)
             spv.addConstraint(c)
@@ -405,7 +384,7 @@ extension UIView {
     
     // # MAGICK cant you see the matrix?????  10101010100001100010101
     
-    func stackV(objects:[AnyObject]) -> [UIView] {
+    public func stackV(objects:[AnyObject]) -> [UIView] {
         var previousMargin:CGFloat? = nil
         for (i,o) in objects.enumerate() {
             if let v = o as? UIView {
@@ -439,7 +418,7 @@ extension UIView {
         return objects.filter {$0 is UIView } as! [UIView]
     }
     
-    func stackH(objects:[AnyObject]) -> [UIView] {
+    public func stackH(objects:[AnyObject]) -> [UIView] {
         var previousMargin:CGFloat? = nil
         for (i,o) in objects.enumerate() {
             if let v = o as? UIView {
@@ -483,8 +462,8 @@ extension UIView {
 
 //MARK: - Other
 
-extension UIView {
-    func fillContainer(padding:CGFloat = 0) {
+public extension UIView {
+    public func fillContainer(padding:CGFloat = 0) {
         if let spv = superview {
             let cs = [
                 constraint(item: self, attribute: .Top, toItem: spv, constant: padding),
@@ -496,8 +475,7 @@ extension UIView {
         }
     }
     
-    
-    func followEdges(otherView:UIView) {
+    public func followEdges(otherView:UIView) {
         if let spv = superview {
             let cs = [
                 constraint(item: self, attribute: .Top, toItem: otherView),
@@ -509,7 +487,7 @@ extension UIView {
         }
     }
     
-    func heightEqualsWidth() {
+    public func heightEqualsWidth() {
         if let spv = superview {
             let c = constraint(item: self, attribute: .Height, toItem: self, attribute: .Width)
             spv.addConstraint(c)
@@ -518,12 +496,12 @@ extension UIView {
     
 }
 
-func H(points:CGFloat) -> (v:UIView) -> UIView {
+public func H(points:CGFloat) -> (v:UIView) -> UIView {
     return { v in
         return v.height(points)
     }
 }
 
-func margin(x:CGFloat) -> CGFloat {
+public func margin(x:CGFloat) -> CGFloat {
     return x
 }

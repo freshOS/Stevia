@@ -19,9 +19,9 @@ class ClosureWrapper {
 }
 
 private var kButtonBlockAssociationKey: UInt8 = 0
-extension UIButton {
+public extension UIButton {
     
-    var testButtonBlock:ActionBlock {
+    internal var testButtonBlock:ActionBlock {
         get {
             if let cw = objc_getAssociatedObject(self, &kButtonBlockAssociationKey) as? ClosureWrapper {
                 return cw.closure
@@ -33,7 +33,7 @@ extension UIButton {
         }
     }
     
-    func tap(block:() -> Void) -> UIButton {
+    public func tap(block:() -> Void) -> UIButton {
         addTarget(self, action: "tapped", forControlEvents: .TouchUpInside)
         testButtonBlock = block
         return self

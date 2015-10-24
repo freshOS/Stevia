@@ -10,9 +10,9 @@ import UIKit
 
 private var kViewDictionaryAssociationKey: UInt8 = 0
 
-extension UIView {
+public extension UIView {
     
-    var views:[String: AnyObject]! {
+    public var views:[String: AnyObject]! {
         get {
             let dic = objc_getAssociatedObject(self, &kViewDictionaryAssociationKey) as? [String: AnyObject]
             return dic ?? [String: AnyObject]()
@@ -27,19 +27,19 @@ extension UIView {
         }
     }
     
-    func h(string:String) {
+    public func h(string:String) {
         h("\(string)", withOption: NSLayoutFormatOptions(rawValue: 0))
     }
     
-    func h(string:String, withOption:NSLayoutFormatOptions) {
+    public func h(string:String, withOption:NSLayoutFormatOptions) {
         kaddVisualConstraint("H:\(string)", withOption: withOption)
     }
     
-    func v(string:String) {
+    public func v(string:String) {
         v("\(string)", withOption: NSLayoutFormatOptions(rawValue: 0))
     }
     
-    func v(string:String, withOption:NSLayoutFormatOptions) {
+    public func v(string:String, withOption:NSLayoutFormatOptions) {
         kaddVisualConstraint("V:\(string)", withOption: withOption)
     }
     
