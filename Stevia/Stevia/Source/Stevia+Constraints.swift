@@ -53,18 +53,6 @@ public postfix func -| (v: UIView) -> UIView {
     return v
 }
 
-
-infix operator - {}
-//public func - (left: CGFloat, right: UIView) -> UIView {
-//    return right.left(left)
-//}
-//
-//public func - (left: UIView, right: CGFloat) -> UIView {
-//    return left.right(right)
-//}
-
-//TEST
-
 public struct SideConstraint {
     var constant:CGFloat!
 }
