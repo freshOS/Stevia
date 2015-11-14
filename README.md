@@ -1,5 +1,9 @@
 ![Stevia logo](https://raw.githubusercontent.com/s4cha/Stevia/master/stevia.png "Stevia logo")
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://www.bitrise.io/app/4478e29045c5f12e.svg?token=pti6g-HVKBUPv9mIR3baIw&branch=master)](https://www.bitrise.io/app/4478e29045c5f12e)
+
+
 Stevia is an iOS Auto Layout DSL written in swift.
 
 It's not another heavy layout engine, it is just fine set of shortcuts and extensions for creating AutoLayout constraints and defining views using code ! 😍
