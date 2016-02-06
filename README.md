@@ -413,3 +413,10 @@ And Voila :)
 
 [YannickDot](https://github.com/YannickDot),  [S4cha](https://github.com/S4cha),  [Damien](https://github.com/damien-nd),
 [Snowcraft](https://github.com/Snowcraft)
+
+## Other repos ❤️
+
+Stevia is part of a series of lightweight libraries aiming to make developping iOs Apps a breeze :
+
+Json Parsing : https://github.com/s4cha/Arrow
+Async code : https://github.com/s4cha/then
