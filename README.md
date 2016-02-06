@@ -418,5 +418,5 @@ And Voila :)
 
 Stevia is part of a series of lightweight libraries aiming to make developping iOs Apps a breeze :
 
-Json Parsing : https://github.com/s4cha/Arrow
-Async code : https://github.com/s4cha/then
+- Json Parsing : https://github.com/s4cha/Arrow
+- Async code : https://github.com/s4cha/then
