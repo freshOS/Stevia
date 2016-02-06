@@ -9,6 +9,8 @@ Stevia is an iOS Auto Layout DSL written in swift.
 It's not another heavy layout engine, it is just fine set of shortcuts and extensions for creating AutoLayout constraints and defining views using code ! 😍
 
 ## Features
+
+[![Join the chat at https://gitter.im/s4cha/Stevia](https://badges.gitter.im/s4cha/Stevia.svg)](https://gitter.im/s4cha/Stevia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 - [x] Layout
 - [x] Component styling
 - [x] Event handling
