@@ -1,9 +1,4 @@
-![Stevia logo](https://raw.githubusercontent.com/s4cha/Stevia/master/stevia.png "Stevia logo")
-
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Build Status](https://www.bitrise.io/app/4478e29045c5f12e.svg?token=pti6g-HVKBUPv9mIR3baIw&branch=master)](https://www.bitrise.io/app/4478e29045c5f12e)
-[![Join the chat at https://gitter.im/s4cha/Stevia](https://badges.gitter.im/s4cha/Stevia.svg)](https://gitter.im/s4cha/Stevia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
+# Stevia 🍃 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)[![Build Status](https://www.bitrise.io/app/4478e29045c5f12e.svg?token=pti6g-HVKBUPv9mIR3baIw&branch=master)](https://www.bitrise.io/app/4478e29045c5f12e)[![Join the chat at https://gitter.im/s4cha/Stevia](https://badges.gitter.im/s4cha/Stevia.svg)](https://gitter.im/s4cha/Stevia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Elegant view layout on iOS
 
@@ -110,33 +105,6 @@ layout([
     0
 ])
 ```
-
-
-### Maybe you prefer Visual Format ?
-
-```swift
-let views = ["emailField":emailField, "passwordField":passwordField]
-addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-  "V:|-[emailField]-|",
-  options: NSLayoutFormatOptions(rawValue: 0),
-  metrics: nil,
-  views: views)
-)
-```
-
-### we got your back 😘
-```swift
-views = ["emailField":emailField, "passwordField":passwordField]
-v("|-[emailField]-|")
-```
-
-### But what about using this instead !? Much better ❤️
-```swift
-|-emailField-|
-```
-
-We personally try to avoid visual format because it's more error prone.
-Plus the compiler has got you covered with this one :)
 
 ## Getting started
 
@@ -259,7 +227,7 @@ class LoginView:UIView {
 }
 ```
 
-### Stevia Enabled
+### With Stevia 🍃
 
 ```swift
 
@@ -322,18 +290,7 @@ class LoginView:UIView {
 
 
 Rationale behind the project
---
 
-Easy or simple ?
---
-We know some things can look "easy" but be very complex under the hood.
-We tried to keep both.
-We wanted Stevia to be easy to use while remaining very simple.
-Most of Stevia's code is just simple shortcuts to UIKit API.
-Nothing prevents you from mixing Stevia with pure UIKit code.
-Because Stevia **IS** pure UIKit code.
-
-Why Stevia?
 ---
 
 On the [Yummypets](http://yummypets.com) app, we needed to deals with looooooots of views.
