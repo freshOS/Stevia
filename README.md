@@ -5,32 +5,7 @@
 [![Join the chat at https://gitter.im/s4cha/Stevia](https://badges.gitter.im/s4cha/Stevia.svg)](https://gitter.im/s4cha/Stevia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
-Stevia is an iOS Auto Layout DSL written in swift.
-
-It's not another heavy layout engine, it is just fine set of shortcuts and extensions for creating AutoLayout constraints and defining views using code ! 😍
-
-## Features
-- [x] Layout
-- [x] Component styling
-- [x] Event handling
-
-
-
-#### Advantages of Stevia over the classic way
-
-- [x] A clearer view hierachy
-- [x] Readable constraints (they actually look like the layout itself \o/)
-- [x] Horizontal & vertical layout can be described at the same time
-- [x] Styles are well separated, concise, reusable and can be composed
-- [x] Content like text, placeholders are easier to visualize
-- [x] Events are a breeze
-
-Less code + More readable ==> easier to maintain
-
-
-## Teaser ... ❤️
-
-#### Layout
+Elegant view layout on iOS
 
 ```swift
 layout([
@@ -43,6 +18,30 @@ layout([
     0
 ])
 ```
+
+### Why
+Because **nothing holds more truth than pure code** 🤓  
+Xibs and storyboards are **heavy, hard to maintain, hard to merge.**  
+They split the view concept into 2 separate files making making debugging a **nightmare**    
+*There must be a better way*
+
+## How
+By creating a tool that makes Auto layout code finally **readable by a human being**.  
+By coupling it with live code injection such as *injectionForXcode* we can **design views in real time**  
+View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beautiful* ❤️
+
+## What
+- [x] Auto Layout DSL
+- [x] Pure Swift
+- [x] Simple, this is just NSLayoutConstraint shortcuts, pure UIKit code, no voodoo magic
+- [x] Live reload, WHAT YOU SEE IS WHAT YOU GET
+- [x] Clear view Hierarchy
+- [x] Readable constraints (they actually look like the layout itself \o/)
+- [x] Horizontal & vertical layout can be described at the same time
+- [x] Styles are well separated, concise, reusable and can be composed
+- [x] Content like text, placeholders are easier to visualize
+- [x] Events are a breeze
+- [x] Code views Faster
 
 #### Taps handling
 
@@ -63,11 +62,9 @@ button.textKey("Login")
 on(UIApplicationDidBecomeActiveNotification, refresh)
 ```
 
-
-
 ## Show me the code!
 
-### Turn this legacy code ...
+### Before ...
 ```swift
 addConstraint(NSLayoutConstraint(
         item: emailField,
@@ -98,8 +95,9 @@ addConstraint(NSLayoutConstraint(
     // We decided to strip that part because it was WAAYY TO LONG ... 🙉🙈🙊
 
 ```
+------
 
-### ... into this !
+### After !
 
 ```swift
 layout([
@@ -401,8 +399,6 @@ And Voila :)
 
 
 ## Next steps
-- Add Carthage Framework support
-- Table of contents
 - Api reference
 - Getting started
 - Documenting Stevia shortcuts
@@ -414,9 +410,9 @@ And Voila :)
 [YannickDot](https://github.com/YannickDot),  [S4cha](https://github.com/S4cha),  [Damien](https://github.com/damien-nd),
 [Snowcraft](https://github.com/Snowcraft)
 
+
 ## Other repos ❤️
-
-Stevia is part of a series of lightweight libraries aiming to make developping iOs Apps a breeze :
-
-- Json Parsing : https://github.com/s4cha/Arrow
-- Async code : https://github.com/s4cha/then
+Stevia is part of a series of lightweight libraries aiming to make developing iOS Apps a *breeze* :
+- Async code : [then](https://github.com/s4cha/then)
+- JSON WebServices : [ws](https://github.com/s4cha/ws)
+- JSON Parsing : [Arrow](https://github.com/s4cha/Arrow)
