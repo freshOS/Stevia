@@ -1,4 +1,4 @@
-# Stevia 🍃 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)[![Build Status](https://www.bitrise.io/app/4478e29045c5f12e.svg?token=pti6g-HVKBUPv9mIR3baIw&branch=master)](https://www.bitrise.io/app/4478e29045c5f12e)[![Join the chat at https://gitter.im/s4cha/Stevia](https://badges.gitter.im/s4cha/Stevia.svg)](https://gitter.im/s4cha/Stevia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# Stevia 🍃 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://www.bitrise.io/app/4478e29045c5f12e.svg?token=pti6g-HVKBUPv9mIR3baIw&branch=master)](https://www.bitrise.io/app/4478e29045c5f12e) [![Join the chat at https://gitter.im/s4cha/Stevia](https://badges.gitter.im/s4cha/Stevia.svg)](https://gitter.im/s4cha/Stevia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Elegant view layout on iOS
 
@@ -31,6 +31,7 @@ View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beau
 - [x] Simple, this is just NSLayoutConstraint shortcuts, pure UIKit code, no voodoo magic
 - [x] Live reload, WHAT YOU SEE IS WHAT YOU GET
 - [x] Clear view Hierarchy
+- [x] Chainable api
 - [x] Readable constraints (they actually look like the layout itself \o/)
 - [x] Horizontal & vertical layout can be described at the same time
 - [x] Styles are well separated, concise, reusable and can be composed
@@ -38,141 +39,12 @@ View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beau
 - [x] Events are a breeze
 - [x] Code views Faster
 
-#### Taps handling
-
-```swift
-button.tap(loginTapped)
-```
-
-#### Localized text
-
-```swift
-button.textKey("Login")
-```
-
-
-#### Notifications
-
-```swift
-on(UIApplicationDidBecomeActiveNotification, refresh)
-```
-
-## Show me the code!
-
-### Before ...
-```swift
-addConstraint(NSLayoutConstraint(
-        item: emailField,
-        attribute: .Left,
-        relatedBy: .Equal,
-        toItem: self,
-        attribute: .Left,
-        multiplier: 1,
-        constant: 8)
-)
-addConstraint(NSLayoutConstraint(
-        item: emailField,
-        attribute: .Right,
-        relatedBy: .Equal,
-        toItem: self,
-        attribute: .Right,
-        multiplier: 1,
-        constant: 8)
-)
-addConstraint(NSLayoutConstraint(
-    item: passwordField,
-    attribute: .Left,
-        relatedBy: .Equal
-
-    // [...] (80+ more lines ...)
-    //
-    // CENSORED.
-    // We decided to strip that part because it was WAAYY TO LONG ... 🙉🙈🙊
-
-```
-------
-
-### After !
-
-```swift
-layout([
-    100,
-    |-emailField-|      ~ 80,
-    8,
-    |-passwordField-|   ~ 80,
-    "",
-    |button|            ~ 80,
-    0
-])
-```
-
-## Getting started
-
-### Manual
-Copy Stevia source files to your XCode project
-
-### Carthage
-```
-github "s4cha/Stevia"
-```
-
-## Components hierarchy
-
-### This ...
-```swift
-addSubview(emailField)
-addSubview(passwordField)
-addSubview(button)
-```
-
-### into this !
-```swift
-sv([
-    emailField,
-    passwordField,
-    button
-])
-```
-
-## Styling elements
-### This ...
-```swift
-emailField.borderStyle = .RoundedRect
-emailField.autocorrectionType = .No
-emailField.keyboardType = .EmailAddress
-emailField.font = UIFont(name: "HelveticaNeue-Light", size: 26)
-emailField.returnKeyType = .Next
-```
-
-### into this !
-```swift
-emailField.style { f in
-    f.borderStyle = .RoundedRect
-    f.autocorrectionType = .No
-    f.keyboardType = .EmailAddress
-    f.font = UIFont(name: "HelveticaNeue-Light", size: 26)
-    f.returnKeyType = .Next
-}
-```
-
-## Events handling
-### This
-```swift
-button.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
-```
-
-### Into this !
-```swift
- button.tap(loginTapped)
-```
-
-
 
 ## Real life example : a classic Login View
 ![alt text](https://raw.githubusercontent.com/s4cha/Stevia/master/examples/LoginExample/login.png "Login view")
 
 
-#### Before Stevia
+#### Before
 
 ```swift
 
@@ -190,8 +62,24 @@ class LoginView:UIView {
         addSubview(passwordField)
         addSubview(button)
 
-        addConstraint(NSLayoutConstraint(item: emailField, attribute: .Left, relatedBy: .Equal,toItem: self, attribute: .Left, multiplier: 1, constant: 8))
-        addConstraint(NSLayoutConstraint(item: emailField, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 8))
+        addConstraint(NSLayoutConstraint(
+          item: emailField,
+          attribute: .Left,
+          relatedBy: .Equal,
+          toItem: self,
+          attribute: .Left,
+          multiplier: 1,
+          constant: 8)
+        )
+        addConstraint(NSLayoutConstraint(
+          item: emailField,
+          attribute: .Right,
+          relatedBy: .Equal,
+          toItem: self,
+          attribute: .Right,
+          multiplier: 1,
+          constant: 8)
+        )
         addConstraint(NSLayoutConstraint(item: passwordField, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 8))
         addConstraint(NSLayoutConstraint(item: passwordField, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 8))
         addConstraint(NSLayoutConstraint(item: button, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0))
@@ -287,22 +175,27 @@ class LoginView:UIView {
 ```
 
 
+## Getting started
+
+### Manual
+Copy Stevia source files to your XCode project
+
+### Carthage
+```
+github "s4cha/Stevia"
+```
+
 
 
 Rationale behind the project
 
 ---
 
-On the [Yummypets](http://yummypets.com) app, we needed to deals with looooooots of views.
-
-After trying different methods for building views (Xibs, Storyboards, Splitting Storyboards, React Native even(!), we found that coding views programmatically was the best solution for us.
-
-Why ? **Because CODE DOESN'T LIE**
-
+On the [Yummypets](http://yummypets.com) app, we needed to deal with looooooots of views.  
+After trying different methods for building views (Xibs, Storyboards, Splitting Storyboards, React Native even(!).  
+We found that coding views programmatically was the best solution for us.
 But coding views programmatically had its issues too : UIKit exposes an imperative verbose API, and it's really easy to create a mess with it.
-
 That's why we created Stevia.
-
 
 
 ### Advantages of UIView swift class over Xibs or storyboards
@@ -353,14 +246,6 @@ func render() {
 ```
 
 And Voila :)
-
-
-## Next steps
-- Api reference
-- Getting started
-- Documenting Stevia shortcuts
-- Documenting chainable api
-
 
 ## Contributors
 
