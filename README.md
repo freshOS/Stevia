@@ -1,6 +1,6 @@
 # Stevia 🍃 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://www.bitrise.io/app/4478e29045c5f12e.svg?token=pti6g-HVKBUPv9mIR3baIw&branch=master)](https://www.bitrise.io/app/4478e29045c5f12e) [![Join the chat at https://gitter.im/s4cha/Stevia](https://badges.gitter.im/s4cha/Stevia.svg)](https://gitter.im/s4cha/Stevia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Elegant view layout on iOS
+Elegant view layout for iOS
 
 ```swift
 layout([
@@ -29,15 +29,30 @@ View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beau
 - [x] Auto Layout DSL
 - [x] Pure Swift
 - [x] Simple, this is just NSLayoutConstraint shortcuts, pure UIKit code, no voodoo magic
-- [x] Live reload, WHAT YOU SEE IS WHAT YOU GET
-- [x] Clear view Hierarchy
 - [x] Chainable api
+
+## Advantages of Stevia 🍃over Xibs or storyboards
+- [x] No more constraints hell in Interface builder.
+- [x] No more debugging in Interface builder toggling checkboxes.
+- [x] The view code is not split between 2 files anymore
+- [x] What you see is what you get, your view code is in one place, there is no hidden logic elsewere (in the xib)
+- [x] No more referencing Storyboards or Xibs by their names "ProfileStoryboard". We all know strings are bad identifiers.
+- [x] Clear view Hierarchy
+- [x] Live reload, WHAT YOU SEE IS WHAT YOU GET
+- [x] Events are a breeze
+- [x] Code views Faster
+- [x] No more XML (Thank God!)
+- [x] Better readability 1000lines XML file vs. 30lines code
 - [x] Readable constraints (they actually look like the layout itself \o/)
 - [x] Horizontal & vertical layout can be described at the same time
 - [x] Styles are well separated, concise, reusable and can be composed
 - [x] Content like text, placeholders are easier to visualize
-- [x] Events are a breeze
-- [x] Code views Faster
+
+###
+
+
+
+
 
 
 ## Real life example : a classic Login View
@@ -174,40 +189,6 @@ class LoginView:UIView {
 
 ```
 
-
-## Getting started
-
-### Manual
-Copy Stevia source files to your XCode project
-
-### Carthage
-```
-github "s4cha/Stevia"
-```
-
-
-
-Rationale behind the project
-
----
-
-On the [Yummypets](http://yummypets.com) app, we needed to deal with looooooots of views.  
-After trying different methods for building views (Xibs, Storyboards, Splitting Storyboards, React Native even(!).  
-We found that coding views programmatically was the best solution for us.
-But coding views programmatically had its issues too : UIKit exposes an imperative verbose API, and it's really easy to create a mess with it.
-That's why we created Stevia.
-
-
-### Advantages of UIView swift class over Xibs or storyboards
-
-- [x] Better readability ex: 1000lines XML file vs. 30lines code
-- [x] No more XML (Thank God!)
-- [x] No more constraints hell in Interface builder.
-- [x] No more debugging in Interface builder toggling checkboxes.
-- [x] The view code is not split between 2 files anymore
-- [x] What you see is what you get, your view code is in one place, there is no hidden logic elsewere (in the xib)
-- [x] No more referencing Storyboards or Xibs by their names "ProfileStoryboard". We all know strings are bad identifiers.
-
 ## Live Reload
 
 You can even enable LiveReload during your development phase! 🎉🎉🎉  
@@ -247,6 +228,26 @@ func render() {
 
 And Voila :)
 
+
+## Installation
+
+### Manual
+Copy Stevia source files to your XCode project
+
+### Carthage
+```
+github "s4cha/Stevia"
+```
+
+##Rationale behind the project
+
+On the [Yummypets](http://yummypets.com) app, we needed to deal with looooooots of views.  
+After trying different methods for building views (Xibs, Storyboards, Splitting Storyboards, React Native even(!).  
+We found that coding views programmatically was the best solution for us.
+But coding views programmatically had its issues too : UIKit exposes an imperative verbose API, and it's really easy to create a mess with it.
+That's why we created Stevia.
+
+
 ## Contributors
 
 [YannickDot](https://github.com/YannickDot),  [S4cha](https://github.com/S4cha),  [Damien](https://github.com/damien-nd),
@@ -254,7 +255,7 @@ And Voila :)
 
 
 ## Other repos ❤️
-Stevia is part of a series of lightweight libraries aiming to make developing iOS Apps a *breeze* :
+Stevia 🍃 is part of a series of lightweight libraries aiming to make developing iOS Apps a *breeze* :
 - Async code : [then](https://github.com/s4cha/then)
 - JSON WebServices : [ws](https://github.com/s4cha/ws)
 - JSON Parsing : [Arrow](https://github.com/s4cha/Arrow)
