@@ -5,11 +5,11 @@ Elegant view layout for iOS
 ```swift
 layout([
     100,
-    |-emailField-|      ~ 80,
+    |-email-| ~ 80,
     8,
-    |-passwordField-|   ~ 80,
+    |-password-| ~ 80,
     "",
-    |button|            ~ 80,
+    |login| ~ 80,
     0
 ])
 ```
