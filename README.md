@@ -64,8 +64,7 @@ View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beau
 
 
 ## Real life example : a classic Login View
-![alt text](https://raw.githubusercontent.com/s4cha/Stevia/master/examples/LoginExample/login.png "Login view")
-
+![alt text](https://raw.githubusercontent.com/s4cha/Stevia/master/Stevia/LoginExample/login.png "Login view")
 
 #### Before (Native Autolayout)
 
