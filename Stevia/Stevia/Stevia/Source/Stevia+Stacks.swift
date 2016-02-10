@@ -11,16 +11,18 @@ import Foundation
 public extension UIView {
 
     public func stackH(m points:CGFloat = 0, v:UIView) -> UIView {
-        if let spv = superview {
-            let c = constraint(item: v, attribute: .Left, toItem: self, attribute: .Right, constant:points)
-            spv.addConstraint(c)
-        }
-        return v
+        return stack(.Horizontal, points: points, v: v)
     }
     
     public func stackV(m points:CGFloat = 0, v:UIView) -> UIView {
+        return stack(.Vertical, points: points, v: v)
+    }
+    
+    public func stack(axis:UILayoutConstraintAxis, points:CGFloat = 0, v:UIView) -> UIView {
+        let a:NSLayoutAttribute = axis == .Vertical ? .Top : .Left
+        let b:NSLayoutAttribute = axis == .Vertical ? .Bottom : .Right
         if let spv = superview {
-            let c = constraint(item: v, attribute: .Top, toItem: self, attribute: .Bottom, constant:points)
+            let c = constraint(item: v, attribute: a, toItem: self, attribute: b, constant:points)
             spv.addConstraint(c)
         }
         return v
@@ -39,12 +41,7 @@ public extension UIView {
                     }
                     previousMargin = nil
                 } else {
-                    
-                    if i != 0 {
-                        if let previousView = objects[i-1] as? UIView {
-                            previousView.stackV(v: v) // Stacks two consecutive views
-                        }
-                    }
+                    tryStackViewVerticallyWithPreviousView(v, index: i, objects: objects)
                 }
             } else if let m = o as? CGFloat {
                 previousMargin = m // Store margin for next pass
@@ -74,11 +71,7 @@ public extension UIView {
                     }
                     previousMargin = nil
                 } else {
-                    if i != 0 {
-                        if let previousView = objects[i-1] as? UIView {
-                            previousView.stackH(v: v) // Stacks two consecutive views
-                        }
-                    }
+                    tryStackViewHorizontallyWithPreviousView(v, index: i, objects: objects)
                 }
             } else if let m = o as? CGFloat {
                 previousMargin = m // Store margin for next pass
@@ -93,5 +86,25 @@ public extension UIView {
         return objects.filter {$0 is UIView } as! [UIView]
     }
     
+    func tryStackViewHorizontallyWithPreviousView(view:UIView, index:Int,objects:[AnyObject]) {
+        if let pv = previousViewFromIndex(index, objects: objects) {
+            pv.stackV(v: view)
+        }
+    }
+    
+    func tryStackViewVerticallyWithPreviousView(view:UIView, index:Int,objects:[AnyObject]) {
+        if let pv = previousViewFromIndex(index, objects: objects) {
+            pv.stackH(v: view)
+        }
+    }
+    
+    func previousViewFromIndex(index:Int,objects:[AnyObject]) -> UIView? {
+        if index != 0 {
+            if let previousView = objects[index-1] as? UIView {
+                return previousView
+            }
+        }
+        return nil
+    }
     
 }

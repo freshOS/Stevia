@@ -16,23 +16,23 @@ public extension UIView {
     }
 
     public func fillH(m points:CGFloat = 0) -> UIView {
-        if let spv = superview {
-            let c1 = constraint(item: self, attribute: .Left, toItem: spv, constant: points)
-            let c2 = constraint(item: self, attribute: .Right, toItem: spv, constant: -points)
-            spv.addConstraints([c1,c2])
-        }
-        return self
+        return fill(.Horizontal, points: points)
     }
     
     public func fillV(m points:CGFloat = 0) -> UIView {
+        return fill(.Vertical, points: points)
+    }
+    
+    public func fill(axis:UILayoutConstraintAxis, points:CGFloat = 0) -> UIView {
+        let a:NSLayoutAttribute = axis == .Vertical ? .Top : .Left
+        let b:NSLayoutAttribute = axis == .Vertical ? .Bottom : .Right
         if let spv = superview {
-            let c1 = constraint(item: self, attribute: .Top, toItem: spv, constant: points)
-            let c2 = constraint(item: self, attribute: .Bottom, toItem: spv, constant: -points)
+            let c1 = constraint(item: self, attribute: a, toItem: spv, constant: points)
+            let c2 = constraint(item: self, attribute: b, toItem: spv, constant: -points)
             spv.addConstraints([c1,c2])
         }
         return self
     }
-    
 }
 
 public func fillHorizontally(v:UIView) {
