@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     override func loadView() {
         view = LoginViewStevia()
+//        view = LoginViewNative()
     }
 }
 

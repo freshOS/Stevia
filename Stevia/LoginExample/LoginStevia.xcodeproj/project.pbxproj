@@ -7,30 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		99366F471BCBD85E00F7B1BC /* Stevia+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F401BCBD85E00F7B1BC /* Stevia+Content.swift */; settings = {ASSET_TAGS = (); }; };
-		99366F481BCBD85E00F7B1BC /* Stevia+Hierachy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F411BCBD85E00F7B1BC /* Stevia+Hierachy.swift */; settings = {ASSET_TAGS = (); }; };
-		99366F491BCBD85E00F7B1BC /* Stevia+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F421BCBD85E00F7B1BC /* Stevia+Notifications.swift */; settings = {ASSET_TAGS = (); }; };
-		99366F4A1BCBD85E00F7B1BC /* Stevia+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F431BCBD85E00F7B1BC /* Stevia+Style.swift */; settings = {ASSET_TAGS = (); }; };
-		99366F4B1BCBD85E00F7B1BC /* Stevia+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F441BCBD85E00F7B1BC /* Stevia+Tap.swift */; settings = {ASSET_TAGS = (); }; };
-		99366F4C1BCBD85E00F7B1BC /* Stevia+VisualFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99366F451BCBD85E00F7B1BC /* Stevia+VisualFormat.swift */; settings = {ASSET_TAGS = (); }; };
-		9968A17C1BCC15C20024373C /* Stevia+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9968A17B1BCC15C20024373C /* Stevia+Constraints.swift */; settings = {ASSET_TAGS = (); }; };
+		9910C1F81C6BA4D2008C689E /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9910C1F71C6BA4D2008C689E /* Stevia.framework */; };
 		99FC80DF1BBD147B0068503C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80DE1BBD147B0068503C /* AppDelegate.swift */; };
 		99FC80E11BBD147B0068503C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80E01BBD147B0068503C /* ViewController.swift */; };
 		99FC80E41BBD147B0068503C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FC80E21BBD147B0068503C /* Main.storyboard */; };
 		99FC80E61BBD147B0068503C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99FC80E51BBD147B0068503C /* Assets.xcassets */; };
 		99FC80E91BBD147B0068503C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FC80E71BBD147B0068503C /* LaunchScreen.storyboard */; };
-		99FC80F31BBD14BB0068503C /* LoginViewNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80F21BBD14BB0068503C /* LoginViewNative.swift */; settings = {ASSET_TAGS = (); }; };
-		99FC80FA1BBD16840068503C /* LoginViewStevia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80F91BBD16840068503C /* LoginViewStevia.swift */; settings = {ASSET_TAGS = (); }; };
+		99FC80F31BBD14BB0068503C /* LoginViewNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80F21BBD14BB0068503C /* LoginViewNative.swift */; };
+		99FC80FA1BBD16840068503C /* LoginViewStevia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80F91BBD16840068503C /* LoginViewStevia.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		99366F401BCBD85E00F7B1BC /* Stevia+Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Content.swift"; sourceTree = "<group>"; };
-		99366F411BCBD85E00F7B1BC /* Stevia+Hierachy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Hierachy.swift"; sourceTree = "<group>"; };
-		99366F421BCBD85E00F7B1BC /* Stevia+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Notifications.swift"; sourceTree = "<group>"; };
-		99366F431BCBD85E00F7B1BC /* Stevia+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Style.swift"; sourceTree = "<group>"; };
-		99366F441BCBD85E00F7B1BC /* Stevia+Tap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Tap.swift"; sourceTree = "<group>"; };
-		99366F451BCBD85E00F7B1BC /* Stevia+VisualFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+VisualFormat.swift"; sourceTree = "<group>"; };
-		9968A17B1BCC15C20024373C /* Stevia+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Constraints.swift"; sourceTree = "<group>"; };
+		9910C1F71C6BA4D2008C689E /* Stevia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stevia.framework; path = Carthage/Build/iOS/Stevia.framework; sourceTree = "<group>"; };
 		99FC80DB1BBD147B0068503C /* LoginStevia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginStevia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FC80DE1BBD147B0068503C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99FC80E01BBD147B0068503C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,30 +35,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9910C1F81C6BA4D2008C689E /* Stevia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		99366F3E1BCBD85E00F7B1BC /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				9968A17B1BCC15C20024373C /* Stevia+Constraints.swift */,
-				99366F401BCBD85E00F7B1BC /* Stevia+Content.swift */,
-				99366F411BCBD85E00F7B1BC /* Stevia+Hierachy.swift */,
-				99366F421BCBD85E00F7B1BC /* Stevia+Notifications.swift */,
-				99366F431BCBD85E00F7B1BC /* Stevia+Style.swift */,
-				99366F441BCBD85E00F7B1BC /* Stevia+Tap.swift */,
-				99366F451BCBD85E00F7B1BC /* Stevia+VisualFormat.swift */,
-			);
-			name = Source;
-			path = ../../Source;
-			sourceTree = "<group>";
-		};
 		99FC80D21BBD147B0068503C = {
 			isa = PBXGroup;
 			children = (
+				9910C1F71C6BA4D2008C689E /* Stevia.framework */,
 				99FC80DD1BBD147B0068503C /* LoginNadir */,
 				99FC80DC1BBD147B0068503C /* Products */,
 			);
@@ -91,7 +66,6 @@
 				99FC80E01BBD147B0068503C /* ViewController.swift */,
 				99FC80F21BBD14BB0068503C /* LoginViewNative.swift */,
 				99FC80F91BBD16840068503C /* LoginViewStevia.swift */,
-				99366F3E1BCBD85E00F7B1BC /* Source */,
 				99FC80E21BBD147B0068503C /* Main.storyboard */,
 				99FC80E51BBD147B0068503C /* Assets.xcassets */,
 				99FC80E71BBD147B0068503C /* LaunchScreen.storyboard */,
@@ -170,17 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99366F4C1BCBD85E00F7B1BC /* Stevia+VisualFormat.swift in Sources */,
 				99FC80F31BBD14BB0068503C /* LoginViewNative.swift in Sources */,
-				99366F471BCBD85E00F7B1BC /* Stevia+Content.swift in Sources */,
 				99FC80FA1BBD16840068503C /* LoginViewStevia.swift in Sources */,
 				99FC80E11BBD147B0068503C /* ViewController.swift in Sources */,
 				99FC80DF1BBD147B0068503C /* AppDelegate.swift in Sources */,
-				9968A17C1BCC15C20024373C /* Stevia+Constraints.swift in Sources */,
-				99366F491BCBD85E00F7B1BC /* Stevia+Notifications.swift in Sources */,
-				99366F4B1BCBD85E00F7B1BC /* Stevia+Tap.swift in Sources */,
-				99366F4A1BCBD85E00F7B1BC /* Stevia+Style.swift in Sources */,
-				99366F481BCBD85E00F7B1BC /* Stevia+Hierachy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +258,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = LoginNadir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.octopepper.LoginNadir;
@@ -302,6 +273,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = LoginNadir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.octopepper.LoginNadir;

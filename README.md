@@ -67,73 +67,141 @@ View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beau
 ![alt text](https://raw.githubusercontent.com/s4cha/Stevia/master/examples/LoginExample/login.png "Login view")
 
 
-#### Before
+#### Before (Native Autolayout)
 
 ```swift
+class LoginViewNative:UIView {
 
-class LoginView:UIView {
-
-    let emailField = UITextField()
-    let passwordField = UITextField()
-    let button = UIButton()
+    let email = UITextField()
+    let password = UITextField()
+    let login = UIButton()
 
     convenience init() {
         self.init(frame:CGRectZero)
         backgroundColor = .whiteColor()
 
-        addSubview(emailField)
-        addSubview(passwordField)
-        addSubview(button)
+        addSubview(email)
+        addSubview(password)
+        addSubview(login)
+
+        email.translatesAutoresizingMaskIntoConstraints = false
+        password.translatesAutoresizingMaskIntoConstraints = false
+        login.translatesAutoresizingMaskIntoConstraints = false
 
         addConstraint(NSLayoutConstraint(
-          item: emailField,
-          attribute: .Left,
-          relatedBy: .Equal,
-          toItem: self,
-          attribute: .Left,
-          multiplier: 1,
-          constant: 8)
+                item: email,
+                attribute: .Left,
+                relatedBy: .Equal,
+                toItem: self,
+                attribute: .Left,
+                multiplier: 1,
+                constant: 8)
         )
         addConstraint(NSLayoutConstraint(
-          item: emailField,
-          attribute: .Right,
-          relatedBy: .Equal,
-          toItem: self,
-          attribute: .Right,
-          multiplier: 1,
-          constant: 8)
+                item: email,
+                attribute: .Right,
+                relatedBy: .Equal,
+                toItem: self,
+                attribute: .Right,
+                multiplier: 1,
+                constant: -8)
         )
-        addConstraint(NSLayoutConstraint(item: passwordField, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 8))
-        addConstraint(NSLayoutConstraint(item: passwordField, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 8))
-        addConstraint(NSLayoutConstraint(item: button, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: button, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0))
-        for b in [emailField, passwordField, button] {
-            addConstraint(NSLayoutConstraint(item: b, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 80))
+        addConstraint(NSLayoutConstraint(
+            item: password,
+            attribute: .Left,
+                relatedBy: .Equal,
+                toItem: self,
+                attribute: .Left,
+                multiplier: 1,
+                constant: 8)
+        )
+        addConstraint(NSLayoutConstraint(
+            item: password,
+            attribute: .Right,
+            relatedBy: .Equal,
+            toItem: self,
+            attribute: .Right,
+            multiplier: 1,
+            constant: -8)
+        )
+        addConstraint(NSLayoutConstraint(
+            item: login,
+            attribute: .Left,
+            relatedBy: .Equal,
+            toItem: self,
+            attribute: .Left,
+            multiplier: 1,
+            constant: 0)
+        )
+        addConstraint(NSLayoutConstraint(
+            item: login,
+            attribute: .Right,
+            relatedBy: .Equal,
+            toItem: self,
+            attribute: .Right,
+            multiplier: 1,
+            constant: 0)
+        )
+        for b in [email, password, login] {
+            addConstraint(NSLayoutConstraint(
+                item: b,
+                attribute: .Height,
+                relatedBy: .Equal,
+                toItem: nil,
+                attribute: .NotAnAttribute,
+                multiplier: 1,
+                constant: 80)
+            )
         }
-        addConstraint(NSLayoutConstraint(item: emailField, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 100))
-        addConstraint(NSLayoutConstraint(item: emailField, attribute: .Bottom, relatedBy: .Equal, toItem: passwordField, attribute: .Top, multiplier: 1, constant: 8))
-        addConstraint(NSLayoutConstraint(item: button, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(
+            item: email,
+            attribute: .Top,
+            relatedBy: .Equal,
+            toItem: self,
+            attribute: .Top,
+            multiplier: 1,
+            constant: 100)
+        )
+        addConstraint(NSLayoutConstraint(
+            item:email,
+            attribute: .Bottom,
+            relatedBy: .Equal,
+            toItem: password,
+            attribute: .Top,
+            multiplier: 1,
+            constant: -8)
+        )
+        addConstraint(NSLayoutConstraint(
+            item: login,
+            attribute: .Bottom,
+            relatedBy: .Equal,
+            toItem: self,
+            attribute: .Bottom,
+            multiplier: 1,
+            constant: 0)
+        )
 
-        emailField.placeholder = "Email"
-        emailField.borderStyle = .RoundedRect
-        emailField.autocorrectionType = .No
-        emailField.keyboardType = .EmailAddress
-        emailField.font = UIFont(name: "HelveticaNeue-Light", size: 26)
-        emailField.returnKeyType = .Next
+        email.placeholder = "Email"
+        email.borderStyle = .RoundedRect
+        email.autocorrectionType = .No
+        email.keyboardType = .EmailAddress
+        email.font = UIFont(name: "HelveticaNeue-Light", size: 26)
+        email.returnKeyType = .Next
 
-        passwordField.placeholder = "Password"
-        passwordField.borderStyle = .RoundedRect
-        passwordField.font = UIFont(name: "HelveticaNeue-Light", size: 26)
-        passwordField.secureTextEntry = true
-        passwordField.returnKeyType = .Done
+        password.placeholder = "Password"
+        password.borderStyle = .RoundedRect
+        password.font = UIFont(name: "HelveticaNeue-Light", size: 26)
+        password.secureTextEntry = true
+        password.returnKeyType = .Done
 
-        button.setTitle("Login", forState: .Normal)
-        button.backgroundColor = .lightGrayColor()
-        button.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
+        login.setTitle("Login", forState: .Normal)
+        login.backgroundColor = .lightGrayColor()
+        login.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
+        login.setTitle(NSLocalizedString("Login", comment: ""), forState: .Normal)
     }
 
     func loginTapped() {
-    //Do something
+        //Do something
     }
 }
 ```
@@ -142,30 +210,29 @@ class LoginView:UIView {
 
 ```swift
 
-class LoginView:UIView {
+class LoginViewStevia:UIView {
 
-    let emailField = UITextField()
-    let passwordField = UITextField()
-    let name = UITextField()
-    let button = UIButton()
+    let email = UITextField()
+    let password = UITextField()
+    let login = UIButton()
 
     convenience init() {
         self.init(frame:CGRectZero)
         backgroundColor = .whiteColor()
 
         sv([
-            emailField.placeholder("Email").style(fieldStyle).style(emailFieldStyle),
-            passwordField.placeholder("Password").style(fieldStyle).style(passwordFieldStyle),
-            button.text("Login").tap(loginTapped).style(buttonSytle)
+            email.placeholder("Email").style(fieldStyle), //.style(emailFieldStyle),
+            password.placeholder("Password").style(fieldStyle).style(passwordFieldStyle),
+            login.text("Login").style(buttonSytle).tap(loginTapped)
         ])
 
         layout([
             100,
-            |-emailField-|      ~ 80,
+            |-email-| ~ 80,
             8,
-            |-passwordField-|   ~ 80,
+            |-password-| ~ 80,
             "",
-            |button|            ~ 80,
+            |login| ~ 80,
             0
         ])
     }
@@ -174,11 +241,6 @@ class LoginView:UIView {
         f.borderStyle = .RoundedRect
         f.font = UIFont(name: "HelveticaNeue-Light", size: 26)
         f.returnKeyType = .Next
-    }
-
-    func emailFieldStyle(f:UITextField) {
-        f.autocorrectionType = .No
-        f.keyboardType = .EmailAddress
     }
 
     func passwordFieldStyle(f:UITextField) {
@@ -191,11 +253,15 @@ class LoginView:UIView {
     }
 
     func loginTapped() {
-    //Do something
+        //Do something
     }
 }
-
 ```
+
+**Number of lines** From 144 -> 57 **( ~ divided by 2.5)**  
+**Number of characters** From 4231 -> 1338 **( ~ divided by 3)**
+
+Write **3 times less code** that is actually **10X more expressive and maintainable** <3
 
 ## Live Reload
 

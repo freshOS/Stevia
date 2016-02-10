@@ -10,20 +10,24 @@ import UIKit
 
 class LoginViewNative:UIView {
     
-    let emailField = UITextField()
-    let passwordField = UITextField()
-    let button = UIButton()
+    let email = UITextField()
+    let password = UITextField()
+    let login = UIButton()
     
     convenience init() {
         self.init(frame:CGRectZero)
         backgroundColor = .whiteColor()
     
-        addSubview(emailField)
-        addSubview(passwordField)
-        addSubview(button)
+        addSubview(email)
+        addSubview(password)
+        addSubview(login)
+        
+        email.translatesAutoresizingMaskIntoConstraints = false
+        password.translatesAutoresizingMaskIntoConstraints = false
+        login.translatesAutoresizingMaskIntoConstraints = false
         
         addConstraint(NSLayoutConstraint(
-                item: emailField,
+                item: email,
                 attribute: .Left,
                 relatedBy: .Equal,
                 toItem: self,
@@ -32,16 +36,16 @@ class LoginViewNative:UIView {
                 constant: 8)
         )
         addConstraint(NSLayoutConstraint(
-                item: emailField,
+                item: email,
                 attribute: .Right,
                 relatedBy: .Equal,
                 toItem: self,
                 attribute: .Right,
                 multiplier: 1,
-                constant: 8)
+                constant: -8)
         )
         addConstraint(NSLayoutConstraint(
-            item: passwordField,
+            item: password,
             attribute: .Left,
                 relatedBy: .Equal,
                 toItem: self,
@@ -50,16 +54,16 @@ class LoginViewNative:UIView {
                 constant: 8)
         )
         addConstraint(NSLayoutConstraint(
-            item: passwordField,
+            item: password,
             attribute: .Right,
             relatedBy: .Equal,
             toItem: self,
             attribute: .Right,
             multiplier: 1,
-            constant: 8)
+            constant: -8)
         )
         addConstraint(NSLayoutConstraint(
-            item: button,
+            item: login,
             attribute: .Left,
             relatedBy: .Equal,
             toItem: self,
@@ -68,7 +72,7 @@ class LoginViewNative:UIView {
             constant: 0)
         )
         addConstraint(NSLayoutConstraint(
-            item: button,
+            item: login,
             attribute: .Right,
             relatedBy: .Equal,
             toItem: self,
@@ -76,7 +80,7 @@ class LoginViewNative:UIView {
             multiplier: 1,
             constant: 0)
         )
-        for b in [emailField, passwordField, button] {
+        for b in [email, password, login] {
             addConstraint(NSLayoutConstraint(
                 item: b,
                 attribute: .Height,
@@ -88,7 +92,7 @@ class LoginViewNative:UIView {
             )
         }
         addConstraint(NSLayoutConstraint(
-            item: emailField,
+            item: email,
             attribute: .Top,
             relatedBy: .Equal,
             toItem: self,
@@ -97,16 +101,16 @@ class LoginViewNative:UIView {
             constant: 100)
         )
         addConstraint(NSLayoutConstraint(
-            item:emailField,
+            item:email,
             attribute: .Bottom,
             relatedBy: .Equal,
-            toItem: passwordField,
+            toItem: password,
             attribute: .Top,
             multiplier: 1,
-            constant: 8)
+            constant: -8)
         )
         addConstraint(NSLayoutConstraint(
-            item: button,
+            item: login,
             attribute: .Bottom,
             relatedBy: .Equal,
             toItem: self,
@@ -115,25 +119,23 @@ class LoginViewNative:UIView {
             constant: 0)
         )
         
-        emailField.placeholder = "Email"
-        emailField.borderStyle = .RoundedRect
-        emailField.autocorrectionType = .No
-        emailField.keyboardType = .EmailAddress
-        emailField.font = UIFont(name: "HelveticaNeue-Light", size: 26)
-        emailField.returnKeyType = .Next
+        email.placeholder = "Email"
+        email.borderStyle = .RoundedRect
+        email.autocorrectionType = .No
+        email.keyboardType = .EmailAddress
+        email.font = UIFont(name: "HelveticaNeue-Light", size: 26)
+        email.returnKeyType = .Next
         
-        passwordField.placeholder = "Password"
-        passwordField.borderStyle = .RoundedRect
-        passwordField.font = UIFont(name: "HelveticaNeue-Light", size: 26)
-        passwordField.secureTextEntry = true
-        passwordField.returnKeyType = .Done
+        password.placeholder = "Password"
+        password.borderStyle = .RoundedRect
+        password.font = UIFont(name: "HelveticaNeue-Light", size: 26)
+        password.secureTextEntry = true
+        password.returnKeyType = .Done
         
-        button.setTitle("Login", forState: .Normal)
-        button.backgroundColor = .lightGrayColor()
-        
-        button.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
-        
-        button.setTitle(NSLocalizedString("Login", comment: ""), forState: .Normal)
+        login.setTitle("Login", forState: .Normal)
+        login.backgroundColor = .lightGrayColor()
+        login.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
+        login.setTitle(NSLocalizedString("Login", comment: ""), forState: .Normal)
     }
     
     func loginTapped() {
