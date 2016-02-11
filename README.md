@@ -25,7 +25,7 @@ layout([
 ### Why
 Because **nothing holds more truth than pure code** 🤓  
 Xibs and storyboards are **heavy, hard to maintain, hard to merge.**  
-They split the view concept into 2 separate files making making debugging a **nightmare**    
+They split the view concept into 2 separate files making debugging a **nightmare**    
 *There must be a better way*
 
 ## How
