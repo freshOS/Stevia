@@ -22,8 +22,11 @@
 		9991C86C1BDB6C9C007D9B75 /* Stevia+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991C8651BDB6C9C007D9B75 /* Stevia+Style.swift */; };
 		9991C86D1BDB6C9C007D9B75 /* Stevia+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991C8661BDB6C9C007D9B75 /* Stevia+Tap.swift */; };
 		9991C86E1BDB6C9C007D9B75 /* Stevia+VisualFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991C8671BDB6C9C007D9B75 /* Stevia+VisualFormat.swift */; };
-		99B6217B1BF75D0E00A54B05 /* SteviaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B6217A1BF75D0E00A54B05 /* SteviaTests.swift */; };
 		99B6217D1BF75D0E00A54B05 /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9991C8551BDB6C8B007D9B75 /* Stevia.framework */; };
+		CBC5334E1C6E12890008F340 /* ContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC5334D1C6E12890008F340 /* ContentTests.swift */; };
+		CBC533501C6E20660008F340 /* HierarchyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC5334F1C6E20660008F340 /* HierarchyTests.swift */; };
+		CBC533521C6E24970008F340 /* FillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC533511C6E24970008F340 /* FillTests.swift */; };
+		CBC533541C6E2CCF0008F340 /* SizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC533531C6E2CCF0008F340 /* SizeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +58,11 @@
 		9991C8661BDB6C9C007D9B75 /* Stevia+Tap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Tap.swift"; sourceTree = "<group>"; };
 		9991C8671BDB6C9C007D9B75 /* Stevia+VisualFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+VisualFormat.swift"; sourceTree = "<group>"; };
 		99B621781BF75D0E00A54B05 /* SteviaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SteviaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99B6217A1BF75D0E00A54B05 /* SteviaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteviaTests.swift; sourceTree = "<group>"; };
 		99B6217C1BF75D0E00A54B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBC5334D1C6E12890008F340 /* ContentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTests.swift; sourceTree = "<group>"; };
+		CBC5334F1C6E20660008F340 /* HierarchyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HierarchyTests.swift; sourceTree = "<group>"; };
+		CBC533511C6E24970008F340 /* FillTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillTests.swift; sourceTree = "<group>"; };
+		CBC533531C6E2CCF0008F340 /* SizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +136,11 @@
 		99B621791BF75D0E00A54B05 /* SteviaTests */ = {
 			isa = PBXGroup;
 			children = (
-				99B6217A1BF75D0E00A54B05 /* SteviaTests.swift */,
 				99B6217C1BF75D0E00A54B05 /* Info.plist */,
+				CBC5334D1C6E12890008F340 /* ContentTests.swift */,
+				CBC5334F1C6E20660008F340 /* HierarchyTests.swift */,
+				CBC533511C6E24970008F340 /* FillTests.swift */,
+				CBC533531C6E2CCF0008F340 /* SizeTests.swift */,
 			);
 			path = SteviaTests;
 			sourceTree = "<group>";
@@ -265,7 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99B6217B1BF75D0E00A54B05 /* SteviaTests.swift in Sources */,
+				CBC533541C6E2CCF0008F340 /* SizeTests.swift in Sources */,
+				CBC533521C6E24970008F340 /* FillTests.swift in Sources */,
+				CBC5334E1C6E12890008F340 /* ContentTests.swift in Sources */,
+				CBC533501C6E20660008F340 /* HierarchyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
