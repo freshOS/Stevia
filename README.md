@@ -324,7 +324,7 @@ That's why we created Stevia.
 ## Contributors
 
 [YannickDot](https://github.com/YannickDot),  [S4cha](https://github.com/S4cha),  [Damien](https://github.com/damien-nd),
-[Snowcraft](https://github.com/Snowcraft)
+[Snowcraft](https://github.com/Snowcraft), [Mathieu-o]https://github.com/Mathieu-o
 
 
 ## Other repos ❤️
