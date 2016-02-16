@@ -84,6 +84,7 @@
 				99FC80D71BBD147B0068503C /* Sources */,
 				99FC80D81BBD147B0068503C /* Frameworks */,
 				99FC80D91BBD147B0068503C /* Resources */,
+				9983C1A11C73C41100E57EE0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -138,6 +139,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9983C1A11C73C41100E57EE0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Stevia.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		99FC80D71BBD147B0068503C /* Sources */ = {

@@ -17,7 +17,7 @@ class LoginViewStevia:UIView {
     
     convenience init() {
         self.init(frame:CGRectZero)
-        backgroundColor = .whiteColor()
+        backgroundColor = .grayColor()
 
         sv([
             email.placeholder("Email").style(fieldStyle), //.style(emailFieldStyle),
