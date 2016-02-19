@@ -22,18 +22,26 @@ layout([
 ])
 ```
 
+## Contents
+- [Reason](#reason)
+- [Advantages of Stevia 🍃over Xibs or storyboards](#Advantages-of-stevia-🍃over-xibs-or-storyboards)
+- [Real life example : a classic Login View](#real-life-example-:-a-classic-login-view)
+- [Live Reload](#live-reload)
+- [Installation](#installation)
+
+## Reason
 ### Why
 Because **nothing holds more truth than pure code** 🤓  
 Xibs and storyboards are **heavy, hard to maintain, hard to merge.**  
 They split the view concept into 2 separate files making making debugging a **nightmare**    
 *There must be a better way*
 
-## How
+### How
 By creating a tool that makes Auto layout code finally **readable by a human being**.  
 By coupling it with live code injection such as *injectionForXcode* we can **design views in real time**  
 View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beautiful* ❤️
 
-## What
+### What
 - [x] Auto Layout DSL
 - [x] Pure Swift
 - [x] Simple, this is just NSLayoutConstraint shortcuts, pure UIKit code, no voodoo magic
