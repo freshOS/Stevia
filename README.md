@@ -24,7 +24,7 @@ layout([
 
 ## Contents
 - [Reason](#reason)
-- [Advantages of Stevia 🍃](#advantages-of-stevia-🍃)
+- [Advantages of Stevia](#advantages-of-stevia)
 - [Login View Example](#login-view-example)
 - [Live Reload](#live-reload)
 - [Installation](#installation)
@@ -47,7 +47,7 @@ View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beau
 - [x] Simple, this is just NSLayoutConstraint shortcuts, pure UIKit code, no voodoo magic
 - [x] Chainable api
 
-## Advantages of Stevia 🍃
+## Advantages of Stevia
 - [x] No more constraints hell in Interface builder.
 - [x] No more debugging in Interface builder toggling checkboxes.
 - [x] The view code is not split between 2 files anymore
