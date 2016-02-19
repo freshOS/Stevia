@@ -33,7 +33,7 @@ layout([
 ### Why
 Because **nothing holds more truth than pure code** 🤓  
 Xibs and storyboards are **heavy, hard to maintain, hard to merge.**  
-They split the view concept into 2 separate files making making debugging a **nightmare**    
+They split the view concept into 2 separate files making debugging a **nightmare**    
 *There must be a better way*
 
 ### How
@@ -278,16 +278,22 @@ Stevia + [InjectionForXCode](http://injectionforxcode.com/) = <3 (WhoNeedsReactN
 
 ![Output sample](http://g.recordit.co/i6kQfTMEpg.gif)
 
-In order to support live reload with InjectionForXCode, we simply need to tell our ViewController to rebuild a view after an injection occured.
+- Download [InjectionForXCode](http://injectionforxcode.johnholdsworth.com/InjectionPluginV6.4.pkg)
 
+- Install it, Launch it and Go to `File>Intall Plugins` (cmd+i)
+
+- Restart Xcode and make sure to click `Load bundles` on the popup
+
+In order to support **live reload** with InjectionForXCode, we simply need to tell our ViewController to rebuild a view after an injection occured.
+
+in `viewDidLoad()` add :
 ```swift
 on("INJECTION_BUNDLE_NOTIFICATION") {
-    self.v = CodeRequestView()
-    self.view = self.v
+    self.view = MyView()
 }
 ```
 
-Currently InjectionForXcode doesn't seem to swizzle "init" methods for some reason. So we have to move our view code in another methods
+Currently InjectionForXcode doesn't seem to swizzle `init` methods for some reason. So we have to move our view code in another methods
 ```swift
 convenience init() {
     self.init(frame:CGRectZero)
@@ -309,6 +315,8 @@ func render() {
 
 And Voila :)
 
+Now you can launch the app and modify whatever you want in the `render()` method. simply hit ^= or `Product>Inject source` and you'll see your changes Live ! 🎉🎉🎉
+
 
 ## Installation
 
@@ -316,11 +324,22 @@ And Voila :)
 Copy Stevia source files to your XCode project
 
 ### Carthage
-```
-github "s4cha/Stevia"
-```
 
-##Rationale behind the project
+- Create a `Cartfile` file at the root of your project folder
+
+- Add `github "s4cha/Stevia"` to your Cartfile
+
+- Run `carthage update`
+
+- Drag and drop `Stevia.framework` from `/Carthage/Build/iOS/` to Linked frameworks and libraries in Xcode (Project>Target>General>Linked frameworks and libraries)
+
+- Add new run script (Project>Target>Build Phases>+> New run script phase) `/usr/local/bin/carthage copy-frameworks`
+
+- Add Input files `$(SRCROOT)/Carthage/Build/iOS/Stevia.framework`
+
+There you go!
+
+## Rationale behind the project
 
 On the [Yummypets](http://yummypets.com) app, we needed to deal with looooooots of views.  
 After trying different methods for building views (Xibs, Storyboards, Splitting Storyboards, React Native even(!).  
@@ -332,7 +351,7 @@ That's why we created Stevia.
 ## Contributors
 
 [YannickDot](https://github.com/YannickDot),  [S4cha](https://github.com/S4cha),  [Damien](https://github.com/damien-nd),
-[Snowcraft](https://github.com/Snowcraft)
+[Snowcraft](https://github.com/Snowcraft), [Mathieu-o](https://github.com/Mathieu-o)
 
 
 ## Other repos ❤️

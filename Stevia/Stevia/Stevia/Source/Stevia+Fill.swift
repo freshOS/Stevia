@@ -34,11 +34,3 @@ public extension UIView {
         return self
     }
 }
-
-public func fillHorizontally(v:UIView) {
-    if let spv = v.superview {
-        let c1 = constraint(item: v, attribute: .Left, toItem: spv)
-        let c2 = constraint(item: v, attribute: .Right, toItem: spv)
-        spv.addConstraints([c1,c2])
-    }
-}

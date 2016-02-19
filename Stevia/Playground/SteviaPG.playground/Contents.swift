@@ -1,13 +1,10 @@
-//
-//  LoginViewStevia.swift
-//  LoginStevia
-//
-//  Created by Sacha Durand Saint Omer on 01/10/15.
-//  Copyright © 2015 Sacha Durand Saint Omer. All rights reserved.
-//
-
+//: Playground - noun: a place where people can play
 import UIKit
+import XCPlayground
 import Stevia
+
+// Open the Workspace and
+// play around with the constraints! 
 
 class LoginViewStevia:UIView {
     
@@ -17,16 +14,10 @@ class LoginViewStevia:UIView {
     
     convenience init() {
         self.init(frame:CGRectZero)
-        // This is only needed for live reload as injectionForXcode
-        // doesn't swizzle init methods.
-        render()
-    }
-    
-    func render() {
-        backgroundColor = .grayColor()
-
+        backgroundColor = .darkGrayColor()
+        
         sv([
-            email.placeholder("Email").style(fieldStyle), //.style(emailFieldStyle),
+            email.placeholder("Email").style(fieldStyle),
             password.placeholder("Password").style(fieldStyle).style(passwordFieldStyle),
             login.text("Login").style(buttonSytle).tap(loginTapped)
         ])
@@ -41,7 +32,7 @@ class LoginViewStevia:UIView {
             0
         ])
     }
-
+    
     func fieldStyle(f:UITextField) {
         f.borderStyle = .RoundedRect
         f.font = UIFont(name: "HelveticaNeue-Light", size: 26)
@@ -62,18 +53,7 @@ class LoginViewStevia:UIView {
     }
 }
 
+let v = LoginViewStevia()
+v.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
+XCPlaygroundPage.currentPage.liveView = v
 
-// Chainable syntax
-//        emailField.fillH(m: 8)
-//        passwordField.fillH(m: 8)
-//        button.fillH()
-//        for b in [emailField, passwordField, button] { b.height(80)}
-//        emailField.top(100).stackV(m: 8, v: passwordField)
-//        button.bottom(0)
-
-// Visual format
-//        views = [ "emailField" :emailField, "passwordField" : passwordField, "button" : button ]
-//        h("|-[emailField]-|")
-//        h("|-[passwordField]-|")
-//        h("|[button]|")
-//        v("|-100-[emailField(80)]-[passwordField(80)]-(>=8)-[button(80)]|")
