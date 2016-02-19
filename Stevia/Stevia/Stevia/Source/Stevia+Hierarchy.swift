@@ -8,24 +8,50 @@
 
 import UIKit
 
+//public extension UITableViewCell {
+//    public override func sv(subViews:[UIView]) -> UIView {
+//        contentView.sv(subViews)
+//        return self
+//    }
+//}
+//
+//public extension UICollectionViewCell {
+//    public override func sv(subViews:[UIView]) -> UIView {
+//        contentView.sv(subViews)
+//        return self
+//    }
+//}
+//
+//
+//
+
+
+public extension UIView {
+    public func sv(subViews:[UIView]) -> UIView {
+        for sv in subViews {
+            addSubview(sv)
+            sv.translatesAutoresizingMaskIntoConstraints = false
+        }
+        return self
+    }
+}
+
+
+
 public extension UITableViewCell {
     public override func sv(subViews:[UIView]) -> UIView {
-        contentView.sv(subViews)
+        for sv in subViews {
+            contentView.addSubview(sv)
+            sv.translatesAutoresizingMaskIntoConstraints = false
+        }
         return self
     }
 }
 
 public extension UICollectionViewCell {
     public override func sv(subViews:[UIView]) -> UIView {
-        contentView.sv(subViews)
-        return self
-    }
-}
-
-public extension UIView {
-    public func sv(subViews:[UIView]) -> UIView {
         for sv in subViews {
-            addSubview(sv)
+            contentView.addSubview(sv)
             sv.translatesAutoresizingMaskIntoConstraints = false
         }
         return self
