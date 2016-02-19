@@ -17,6 +17,12 @@ class LoginViewStevia:UIView {
     
     convenience init() {
         self.init(frame:CGRectZero)
+        // This is only needed for live reload as injectionForXcode
+        // doesn't swizzle init methods.
+        render()
+    }
+    
+    func render() {
         backgroundColor = .whiteColor()
 
         sv([
