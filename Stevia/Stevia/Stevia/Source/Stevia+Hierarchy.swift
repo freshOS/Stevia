@@ -1,5 +1,5 @@
 //
-//  Stevia+Hierachy.swift
+//  Stevia+Hierarchy.swift
 //  LoginStevia
 //
 //  Created by Sacha Durand Saint Omer on 01/10/15.
@@ -7,6 +7,20 @@
 //
 
 import UIKit
+
+public extension UITableViewCell {
+    public override func sv(subViews:[UIView]) -> UIView {
+        contentView.sv(subViews)
+        return self
+    }
+}
+
+public extension UICollectionViewCell {
+    public override func sv(subViews:[UIView]) -> UIView {
+        contentView.sv(subViews)
+        return self
+    }
+}
 
 public extension UIView {
     public func sv(subViews:[UIView]) -> UIView {

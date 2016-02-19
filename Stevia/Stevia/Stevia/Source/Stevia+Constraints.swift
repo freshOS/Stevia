@@ -49,17 +49,6 @@ public extension UIView {
     }
 }
 
-// MARK: - Layout
-
-public extension UIView {
-
-    public func layout(objects:[AnyObject]) -> [UIView] {
-        return stackV(objects)
-    }
-  
-}
-
-
 //MARK: - Other
 
 public extension UIView {

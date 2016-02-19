@@ -17,7 +17,7 @@
 		9991C8591BDB6C8B007D9B75 /* Stevia.h in Headers */ = {isa = PBXBuildFile; fileRef = 9991C8581BDB6C8B007D9B75 /* Stevia.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9991C8681BDB6C9C007D9B75 /* Stevia+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991C8611BDB6C9C007D9B75 /* Stevia+Constraints.swift */; };
 		9991C8691BDB6C9C007D9B75 /* Stevia+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991C8621BDB6C9C007D9B75 /* Stevia+Content.swift */; };
-		9991C86A1BDB6C9C007D9B75 /* Stevia+Hierachy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991C8631BDB6C9C007D9B75 /* Stevia+Hierachy.swift */; };
+		9991C86A1BDB6C9C007D9B75 /* Stevia+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991C8631BDB6C9C007D9B75 /* Stevia+Hierarchy.swift */; };
 		9991C86B1BDB6C9C007D9B75 /* Stevia+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991C8641BDB6C9C007D9B75 /* Stevia+Notifications.swift */; };
 		9991C86C1BDB6C9C007D9B75 /* Stevia+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991C8651BDB6C9C007D9B75 /* Stevia+Style.swift */; };
 		9991C86D1BDB6C9C007D9B75 /* Stevia+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991C8661BDB6C9C007D9B75 /* Stevia+Tap.swift */; };
@@ -49,7 +49,7 @@
 		9991C85A1BDB6C8B007D9B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9991C8611BDB6C9C007D9B75 /* Stevia+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Constraints.swift"; sourceTree = "<group>"; };
 		9991C8621BDB6C9C007D9B75 /* Stevia+Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Content.swift"; sourceTree = "<group>"; };
-		9991C8631BDB6C9C007D9B75 /* Stevia+Hierachy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Hierachy.swift"; sourceTree = "<group>"; };
+		9991C8631BDB6C9C007D9B75 /* Stevia+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Hierarchy.swift"; sourceTree = "<group>"; };
 		9991C8641BDB6C9C007D9B75 /* Stevia+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Notifications.swift"; sourceTree = "<group>"; };
 		9991C8651BDB6C9C007D9B75 /* Stevia+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Style.swift"; sourceTree = "<group>"; };
 		9991C8661BDB6C9C007D9B75 /* Stevia+Tap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Tap.swift"; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				9910C1FE1C6BD17E008C689E /* Stevia+Position.swift */,
 				9910C1FA1C6BD10A008C689E /* Stevia+Aligngment.swift */,
 				9991C8621BDB6C9C007D9B75 /* Stevia+Content.swift */,
-				9991C8631BDB6C9C007D9B75 /* Stevia+Hierachy.swift */,
+				9991C8631BDB6C9C007D9B75 /* Stevia+Hierarchy.swift */,
 				9991C8641BDB6C9C007D9B75 /* Stevia+Notifications.swift */,
 				9991C8651BDB6C9C007D9B75 /* Stevia+Style.swift */,
 				9991C8661BDB6C9C007D9B75 /* Stevia+Tap.swift */,
@@ -251,7 +251,7 @@
 				9991C86E1BDB6C9C007D9B75 /* Stevia+VisualFormat.swift in Sources */,
 				9910C1FF1C6BD17E008C689E /* Stevia+Position.swift in Sources */,
 				9910C1FD1C6BD144008C689E /* Stevia+Size.swift in Sources */,
-				9991C86A1BDB6C9C007D9B75 /* Stevia+Hierachy.swift in Sources */,
+				9991C86A1BDB6C9C007D9B75 /* Stevia+Hierarchy.swift in Sources */,
 				9991C86C1BDB6C9C007D9B75 /* Stevia+Style.swift in Sources */,
 				9991C86B1BDB6C9C007D9B75 /* Stevia+Notifications.swift in Sources */,
 				9991C8691BDB6C9C007D9B75 /* Stevia+Content.swift in Sources */,
