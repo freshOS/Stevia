@@ -28,6 +28,7 @@ layout([
 - [Login View Example](#login-view-example)
 - [Live Reload](#live-reload)
 - [Installation](#installation)
+- [Documentation](#documentation)
 
 ## Reason
 ### Why
@@ -338,6 +339,252 @@ Copy Stevia source files to your XCode project
 - Add Input files `$(SRCROOT)/Carthage/Build/iOS/Stevia.framework`
 
 There you go!
+
+## Documentation
+
+### View Hierarchy
+```swift
+sv([
+    subview1,
+    subview2,
+    subview3
+])
+```
+`sv([])` is essentially a shortcut that calls `addSubview()` and  
+`view.translatesAutoresizingMaskIntoConstraints = false`
+
+It also has the benefit of being **very visual** so that your can actually **see** what the view hierarchy is.
+This is especially true for nested hierarchies :
+
+```swift
+sv([
+    subview1,
+    subview2.sv([
+        nestedView1,
+        nestedView2̨
+    ]),
+    subview3
+])
+```
+
+### Horizontal layout
+This is intended to look like **Apple's visual format**, so you should be very familiar with the syntax.  
+Stevia only removes the `[]` and the String.
+
+Stick a label to the left of the screen
+```swift
+|label
+```
+
+With the default margin (8)
+```swift
+|-label
+```
+
+With a custom margin
+```swift
+|-42-label
+```
+
+Just to be very clear we want to **emphasize** that this is **pure syntactic sugar**.  
+This equivalent of the following using the chainable api :
+
+```swift
+label.left(42)
+```
+Which in turn will create **Native Autolayout constraints** :
+```swift
+label.superview?.addConstraint(
+  NSLayoutConstraint(
+    item: label,
+    attribute:.Left,
+    relatedBy: .Equal,
+    toItem: label.superview!,
+    attribute:.Left,
+    multiplier: 1,
+    constant: 42
+  )
+)
+```
+
+Combine all at once.
+
+```swift
+|-avatar-15-name-20-followButton-|
+```
+
+### Vertical layout
+
+```swift
+avatar.top(50)
+```
+==
+```swift
+layout([
+    50,
+    avatar
+  ])
+```
+
+While using `layout` for a single element might seem a bit overkill, it really **shines** when **combined with horizontal layout.**  
+Then we have the full **layout in one place** (hence the name).
+
+```swift
+layout([
+    50,
+    |-15-avatar.size(60)
+  ])
+```
+*The avatar is 50px from the top with a left margin of 15px and a size of 60px*
+
+Another great example is the login view, representable in **one** single statement !
+
+```swift
+layout([
+    100,
+    |-email-| ~ 80,
+    8,
+    |-password-| ~ 80,
+    "",
+    |login| ~ 80,
+    0
+])
+```
+
+In case you wonder `~` operator == `.height(x)`, it's just more readable in a layout statement that way.
+
+## Chainable Api
+
+
+The avatar example above could've been written that way using the chainable api :
+```swift
+avatar.top(50).left(15).size(50)
+```
+
+Using `layout` is just clearer in most of the cases but it's yours to choose which way you prefer :)
+
+### Centering
+
+Horizontally
+```swift
+imageView.centerHorizontallyInContainer()
+```
+
+Vertically
+```swift
+imageView.centerVerticallyInContainer()
+```
+
+On both axis
+```swift
+imageView.centerInContainer()
+```
+
+
+### Alignment
+
+Horizontally
+```swift
+alignHorizontally([avatar,name,followButton])
+```
+
+Vertically
+```swift
+alignVertically([title,subtitle,text])
+```
+
+Align the center of one view with another one :
+```swift
+alignCenter(view1, with: view2)
+```
+
+
+In the example above of a follow Cell, here is how the layout code would look like :
+```swift
+|-avatar-15-name-20-followButton-|
+alignHorizontally([avatar,name,followButton])
+```
+But `|-avatar-15-name-20-followButton-|` actually **returns the array of views!!!** so we can write it in one **single** statement :
+
+```swift
+alignHorizontally(|-avatar-15-name-20-followButton-|)
+```
+🎉🎉🎉
+
+### Button taps
+
+```swift
+button.addTarget(self, action: "follow", forControlEvents: .TouchUpInside)
+```
+
+Becomes:
+
+```swift
+button.tap(follow)
+```
+
+This is **shorter** and **less error-prone** since `follow` is is not referenced by a string value anymore \o/
+
+### Styles
+
+Well, just call `style` on a UIView subclass :  
+
+**In-line** for small or unique styles
+
+```swift
+detail.style { l in
+  l.numberOfLines = 0
+  l.textAlignment = .Center
+  l.textColor = .blueColor()
+  l.text = NSLocalizedString("NeedPetMessage", comment: "")
+}
+```
+
+Or in a separate to make them reusable
+
+```swift
+// My style method, kinda like CSS
+func detailStyle(l:UILabel) {
+  l.numberOfLines = 0
+  l.textAlignment = .Center
+  l.textColor = .blueColor()
+  l.text = NSLocalizedString("NeedPetMessage", comment: "")
+}
+
+// Later
+{
+  // Set my style
+  detail.style(detailStyle)
+}
+```
+
+This is the **prefrerred** way because the styles become **reusable** and **composable** (you can chain them !)
+You can even create a Style File grouping high level functions for common styles.
+Usage then becomes very similar to CSS!
+
+
+### Content
+
+```swift
+button.setTitle("Hello", forState: .Normal)
+```
+Becomes :
+
+```swift
+button.text("Hello")
+```
+
+
+```swift
+button.setImage(UIImage(named:"CommentIcon"), forState: .Normal)
+```
+Becomes :
+
+```swift
+button.image("CommentIcon")
+```
+
+
 
 ## Rationale behind the project
 
