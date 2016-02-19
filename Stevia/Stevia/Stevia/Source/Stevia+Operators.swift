@@ -146,39 +146,39 @@ public func - (left: [UIView], right: UIView) -> [UIView] {
 }
 
 ///
-
-infix operator >= { associativity left precedence 140  }
-public func >= (left: CGFloat, right: UIView) -> UIView {
-    if let spv = right.superview {
-        let c = constraint(item: right, attribute: .Left, relatedBy: .GreaterThanOrEqual, toItem: spv, attribute: .Left, constant: left)
-        spv.addConstraint(c)
-    }
-    return right
-}
-
-
-public func >= (left: UIView, right: CGFloat) -> UIView {
-    if let spv = left.superview {
-        let c = constraint(item: left, attribute: .Right, relatedBy: .LessThanOrEqual, toItem: spv, attribute: .Right, constant: -right)
-        spv.addConstraint(c)
-    }
-    return left
-}
-
-infix operator <= { associativity left precedence 140  }
-public func <= (left: CGFloat, right: UIView) -> UIView {
-    if let spv = right.superview {
-        let c = constraint(item: right, attribute: .Left, relatedBy: .LessThanOrEqual, toItem: spv, attribute: .Left, constant: left)
-        spv.addConstraint(c)
-    }
-    return right
-}
-
-public func <= (left: UIView, right: CGFloat) -> UIView {
-    if let spv = left.superview {
-        let c = constraint(item: left, attribute: .Right, relatedBy: .GreaterThanOrEqual, toItem: spv, attribute: .Right, constant: -right)
-        spv.addConstraint(c)
-    }
-    return left
-}
-
+//
+//infix operator >= { associativity left precedence 140  }
+//public func >= (left: CGFloat, right: UIView) -> UIView {
+//    if let spv = right.superview {
+//        let c = constraint(item: right, attribute: .Left, relatedBy: .GreaterThanOrEqual, toItem: spv, attribute: .Left, constant: left)
+//        spv.addConstraint(c)
+//    }
+//    return right
+//}
+//
+//
+//public func >= (left: UIView, right: CGFloat) -> UIView {
+//    if let spv = left.superview {
+//        let c = constraint(item: left, attribute: .Right, relatedBy: .LessThanOrEqual, toItem: spv, attribute: .Right, constant: -right)
+//        spv.addConstraint(c)
+//    }
+//    return left
+//}
+//
+//infix operator <= { associativity left precedence 140  }
+//public func <= (left: CGFloat, right: UIView) -> UIView {
+//    if let spv = right.superview {
+//        let c = constraint(item: right, attribute: .Left, relatedBy: .LessThanOrEqual, toItem: spv, attribute: .Left, constant: left)
+//        spv.addConstraint(c)
+//    }
+//    return right
+//}
+//
+//public func <= (left: UIView, right: CGFloat) -> UIView {
+//    if let spv = left.superview {
+//        let c = constraint(item: left, attribute: .Right, relatedBy: .GreaterThanOrEqual, toItem: spv, attribute: .Right, constant: -right)
+//        spv.addConstraint(c)
+//    }
+//    return left
+//}
+//
