@@ -8,24 +8,6 @@
 
 import UIKit
 
-//public extension UITableViewCell {
-//    public override func sv(subViews:[UIView]) -> UIView {
-//        contentView.sv(subViews)
-//        return self
-//    }
-//}
-//
-//public extension UICollectionViewCell {
-//    public override func sv(subViews:[UIView]) -> UIView {
-//        contentView.sv(subViews)
-//        return self
-//    }
-//}
-//
-//
-//
-
-
 public extension UIView {
     public func sv(subViews:[UIView]) -> UIView {
         for sv in subViews {
@@ -36,24 +18,14 @@ public extension UIView {
     }
 }
 
-
-
 public extension UITableViewCell {
     public override func sv(subViews:[UIView]) -> UIView {
-        for sv in subViews {
-            contentView.addSubview(sv)
-            sv.translatesAutoresizingMaskIntoConstraints = false
-        }
-        return self
+        return contentView.sv(subViews)
     }
 }
 
 public extension UICollectionViewCell {
     public override func sv(subViews:[UIView]) -> UIView {
-        for sv in subViews {
-            contentView.addSubview(sv)
-            sv.translatesAutoresizingMaskIntoConstraints = false
-        }
-        return self
+        return contentView.sv(subViews)
     }
 }
