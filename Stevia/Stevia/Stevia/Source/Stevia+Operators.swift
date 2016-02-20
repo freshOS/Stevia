@@ -28,6 +28,11 @@ public func ~ (left: UIView, right: CGFloat) -> UIView {
     return left.height(right)
 }
 
+public func ~ (left: [UIView], right: CGFloat) -> [UIView] {
+    for l in left { l.height(right) }
+    return left
+}
+
 prefix operator |- {}
 public prefix func |- (p: CGFloat) -> SideConstraint {
     var s = SideConstraint()
