@@ -13,11 +13,15 @@ public extension UIView {
     public func layout(objects:[AnyObject]) -> [UIView] {
         return stackV(objects)
     }
-    
+
     private func stackV(objects:[AnyObject]) -> [UIView] {
         var previousMargin:CGFloat? = nil
         for (i,o) in objects.enumerate() {
-            if let v = o as? UIView {
+            
+            switch o {
+                
+            case let v as UIView:
+                
                 if let pm = previousMargin {
                     if i == 1 {
                         v.top(pm) // only if first view
@@ -29,7 +33,9 @@ public extension UIView {
                 } else {
                     tryStackViewVerticallyWithPreviousView(v, index: i, objects: objects)
                 }
-            } else if let m = o as? CGFloat {
+                
+                
+            case let m as CGFloat:
                 previousMargin = m // Store margin for next pass
                 
                 if i == (objects.count - 1) {
@@ -38,36 +44,31 @@ public extension UIView {
                         previousView.bottom(m)
                     }
                 }
-            }
-        }
-        return objects.filter {$0 is UIView } as! [UIView]
-    }
-    
-    private func stackH(objects:[AnyObject]) -> [UIView] {
-        var previousMargin:CGFloat? = nil
-        for (i,o) in objects.enumerate() {
-            if let v = o as? UIView {
-                if let pm = previousMargin {
-                    if i == 1 {
-                        v.left(pm) // only if first view
-                    } else {
-                        print(objects[i-2])
-                        let vx = objects[i-2] as! UIView
-                        vx.stackH(m:pm, v:v)
-                    }
-                    previousMargin = nil
+            case _ as String:() //Do nothin' !
+            case let a as [UIView]:()
+            
+            // Align them horizontally!
+            
+            alignHorizontally(a)
+            
+            
+            let v = a.first!
+            if let pm = previousMargin {
+                if i == 1 {
+                    v.top(pm) // only if first view
                 } else {
-                    tryStackViewHorizontallyWithPreviousView(v, index: i, objects: objects)
+                    let vx = objects[i-2] as! UIView
+                    vx.stackV(m:pm, v:v)
                 }
-            } else if let m = o as? CGFloat {
-                previousMargin = m // Store margin for next pass
-                if i == (objects.count - 1) {
-                    //Last Margin, Bottom
-                    if let previousView = objects[i-1] as? UIView {
-                        previousView.right(m)
-                    }
-                }
+                previousMargin = nil
+            } else {
+                tryStackViewVerticallyWithPreviousView(v, index: i, objects: objects)
             }
+                
+                
+            default: ()
+            }
+    
         }
         return objects.filter {$0 is UIView } as! [UIView]
     }

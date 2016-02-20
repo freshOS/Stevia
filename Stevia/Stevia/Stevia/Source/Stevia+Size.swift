@@ -24,7 +24,7 @@ public extension UIView {
         return size(.Width, points: points)
     }
     
-    public func size(attribute:NSLayoutAttribute, points:CGFloat) -> UIView {
+    private func size(attribute:NSLayoutAttribute, points:CGFloat) -> UIView {
         let c = constraint(item: self, attribute:attribute, constant: points)
         addConstraint(c)
         return self

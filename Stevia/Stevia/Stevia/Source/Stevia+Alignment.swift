@@ -1,5 +1,5 @@
 //
-//  Stevia+Aligngment.swift
+//  Stevia+Alignment.swift
 //  Stevia
 //
 //  Created by Sacha Durand Saint Omer on 10/02/16.
@@ -8,8 +8,9 @@
 
 import Foundation
 
-public func alignHorizontally(views:[UIView]) {
+public func alignHorizontally(views:[UIView]) -> [UIView] {
     align(.Horizontal, views: views)
+    return views
 }
 
 public func alignVertically(views:[UIView]) {

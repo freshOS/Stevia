@@ -12,6 +12,8 @@ class LoginViewStevia:UIView {
     let password = UITextField()
     let login = UIButton()
     
+    let forgot = UILabel()
+    
     convenience init() {
         self.init(frame:CGRectZero)
         backgroundColor = .darkGrayColor()
@@ -19,18 +21,23 @@ class LoginViewStevia:UIView {
         sv([
             email.placeholder("Email").style(fieldStyle),
             password.placeholder("Password").style(fieldStyle).style(passwordFieldStyle),
-            login.text("Login").style(buttonSytle).tap(loginTapped)
+            login.text("Login").style(buttonSytle).tap(loginTapped),
+            forgot.text("Forgot ?")
         ])
         
         layout([
             100,
             |-email-| ~ 80,
             8,
-            |-password-| ~ 80,
+            |-password-forgot-| ~ 80,
             "",
-            |login| ~ 80,
+            |login|,// ~ 80,
             0
         ])
+        
+        password.setContentHuggingPriority(0, forAxis: .Horizontal)
+        
+        forgot.backgroundColor = .redColor()
     }
     
     func fieldStyle(f:UITextField) {
