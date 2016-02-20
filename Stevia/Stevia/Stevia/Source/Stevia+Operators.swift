@@ -150,6 +150,28 @@ public func - (left: [UIView], right: UIView) -> [UIView] {
     return left + [right]
 }
 
+
+//// Test space in Horizointal layout ""
+public struct Space {
+    var previousViews:[UIView]!
+}
+
+public func - (left: UIView, right: String) -> Space {
+    return Space(previousViews: [left])
+}
+
+public func - (left: [UIView], right: String) -> Space {
+    return Space(previousViews: left)
+}
+
+public func - (left: Space, right: UIView) -> [UIView] {
+    var va = left.previousViews
+    va.append(right)
+    return va
+}
+
+
+
 ///
 //
 //infix operator >= { associativity left precedence 140  }
