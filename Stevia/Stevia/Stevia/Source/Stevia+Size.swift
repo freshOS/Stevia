@@ -32,23 +32,23 @@ public extension UIView {
     
 }
 
-func equalSizes(views:[UIView]) -> [UIView] {
+public func equalSizes(views:[UIView]) -> [UIView] {
     equalHeights(views)
     equalWidths(views)
     return views
 }
 
-func equalWidths(views:[UIView]) -> [UIView] {
+public func equalWidths(views:[UIView]) -> [UIView] {
     equal(.Width, views: views)
     return views
 }
 
-func equalHeights(views:[UIView]) -> [UIView] {
+public func equalHeights(views:[UIView]) -> [UIView] {
     equal(.Height, views: views)
     return views
 }
 
-func equal(attribute:NSLayoutAttribute,views:[UIView]) {
+private func equal(attribute:NSLayoutAttribute,views:[UIView]) {
     var previousView:UIView?
     for v in views {
         if let pv = previousView {
