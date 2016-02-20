@@ -10,21 +10,24 @@ import UIKit
 
 public extension UIView {
     
-    public func centerInContainer() {
+    public func centerInContainer() -> UIView  {
         if let spv = superview {
             alignCenter(self, with: spv)
         }
+        return self
     }
     
-    public func centerHorizontallyInContainer() {
+    public func centerHorizontally() -> UIView {
         if let spv = superview {
             alignVertically([self,spv])
         }
+        return self
     }
     
-    public func centerVerticallyInContainer() {
+    public func centerVertically() -> UIView {
         if let spv = superview {
             alignHorizontally([self,spv])
         }
+        return self
     }
 }
