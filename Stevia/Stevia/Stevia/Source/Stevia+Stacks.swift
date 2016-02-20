@@ -74,13 +74,13 @@ public extension UIView {
     
     private func tryStackViewHorizontallyWithPreviousView(view:UIView, index:Int,objects:[AnyObject]) {
         if let pv = previousViewFromIndex(index, objects: objects) {
-            pv.stackV(v: view)
+            pv.stackH(v: view)
         }
     }
     
     private func tryStackViewVerticallyWithPreviousView(view:UIView, index:Int,objects:[AnyObject]) {
         if let pv = previousViewFromIndex(index, objects: objects) {
-            pv.stackH(v: view)
+            pv.stackV(v: view)
         }
     }
     
