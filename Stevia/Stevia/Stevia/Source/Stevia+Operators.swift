@@ -63,7 +63,6 @@ public struct SideConstraint {
 public struct PartialConstraint {
     var view1:UIView!
     var constant:CGFloat!
-    
     var views:[UIView]?
 }
 
