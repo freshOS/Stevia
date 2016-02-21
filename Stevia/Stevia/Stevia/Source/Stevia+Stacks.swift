@@ -48,7 +48,7 @@ public extension UIView {
                     }
                 }
             case _ as String:() //Do nothin' !
-            case let a as [UIView]:()
+            case let a as [UIView]:
             
             // Align them horizontally!
             
@@ -76,12 +76,6 @@ public extension UIView {
         return objects.filter {$0 is UIView } as! [UIView]
     }
     
-    private func tryStackViewHorizontallyWithPreviousView(view:UIView, index:Int,objects:[AnyObject]) {
-        if let pv = previousViewFromIndex(index, objects: objects) {
-            pv.stackH(v: view)
-        }
-    }
-    
     private func tryStackViewVerticallyWithPreviousView(view:UIView, index:Int,objects:[AnyObject]) {
         if let pv = previousViewFromIndex(index, objects: objects) {
             pv.stackV(v: view)
@@ -99,11 +93,6 @@ public extension UIView {
     
     private func stackV(m points:CGFloat = 0, v:UIView) -> UIView {
         return stack(.Vertical, points: points, v: v)
-    }
-    
-    
-    private func stackH(m points:CGFloat = 0, v:UIView) -> UIView {
-        return stack(.Horizontal, points: points, v: v)
     }
     
     private func stack(axis:UILayoutConstraintAxis, points:CGFloat = 0, v:UIView) -> UIView {
