@@ -20,9 +20,6 @@ public postfix func | (p:UIView) -> UIView {
 
 
 infix operator ~ {}
-public func ~ (left: CGFloat, right: UIView) -> UIView {
-    return right.height(left)
-}
 
 public func ~ (left: UIView, right: CGFloat) -> UIView {
     return left.height(right)

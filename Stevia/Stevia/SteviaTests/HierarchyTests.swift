@@ -21,19 +21,47 @@ class HierarchyTests: XCTestCase {
     }
 
     func testSv() {
-        let ui = UIView()
-        var inner = [UIView]()
-        
-        inner.append(UIButton())
-        
-        ui.sv(inner)
-        XCTAssertEqual(ui.subviews.count, 1)
-        
-        inner.removeAll()
-        inner.append(UIButton())
-        inner.append(UILabel())
-        
-        ui.sv(inner)
-        XCTAssertEqual(ui.subviews.count, 3)
+        let view = UIView()
+        let v1 = UIView()
+        let v2 = UIView()
+        view.sv([
+            v1,
+            v2
+        ])
+        XCTAssertEqual(view.subviews.count, 2)
+        XCTAssertTrue(view.subviews.contains(v1))
+        XCTAssertTrue(view.subviews.contains(v2))
+        XCTAssertFalse(v1.translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(v2.translatesAutoresizingMaskIntoConstraints)
+    }
+    
+    func testTableViewCellSV() {
+        let cell = UITableViewCell()
+        let v1 = UIView()
+        let v2 = UIView()
+        cell.sv([
+            v1,
+            v2
+        ])
+        XCTAssertEqual(cell.contentView.subviews.count, 2)
+        XCTAssertTrue(cell.contentView.subviews.contains(v1))
+        XCTAssertTrue(cell.contentView.subviews.contains(v2))
+        XCTAssertFalse(v1.translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(v2.translatesAutoresizingMaskIntoConstraints)
+    }
+    
+    func testCollectionViewCellSV() {
+        let cell = UICollectionViewCell()
+        let v1 = UIView()
+        let v2 = UIView()
+        cell.sv([
+            v1,
+            v2
+            ])
+        XCTAssertEqual(cell.contentView.subviews.count, 2)
+        XCTAssertTrue(cell.contentView.subviews.contains(v1))
+        XCTAssertTrue(cell.contentView.subviews.contains(v2))
+        XCTAssertFalse(v1.translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(v2.translatesAutoresizingMaskIntoConstraints)
     }
 }
