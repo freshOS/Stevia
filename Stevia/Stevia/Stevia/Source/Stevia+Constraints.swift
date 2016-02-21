@@ -35,20 +35,6 @@ public func constraint(item view1: AnyObject,
         return NSLayoutConstraint(item: view1, attribute: attr1, relatedBy: relatedBy, toItem: view2, attribute: ((attr2 == nil) ? attr1 : attr2! ), multiplier: multiplier, constant: constant)
 }
 
-
-// MARK: - Position
-
-public extension UIView {
-    
-    public func minimumBottomSpace(points:CGFloat) -> UIView {
-        if let spv = superview {
-            let c = constraint(item: self, attribute: .Bottom, relatedBy: .LessThanOrEqual, toItem: spv, attribute: .Bottom, constant: -points)
-            spv.addConstraint(c)
-        }
-        return self
-    }
-}
-
 //MARK: - Other
 
 public extension UIView {
@@ -72,14 +58,4 @@ public extension UIView {
         }
     }
     
-}
-
-public func H(points:CGFloat) -> (v:UIView) -> UIView {
-    return { v in
-        return v.height(points)
-    }
-}
-
-public func margin(x:CGFloat) -> CGFloat {
-    return x
 }

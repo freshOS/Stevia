@@ -9,14 +9,19 @@
 import XCTest
 
 class PositionTests: XCTestCase {
+    
     var win:UIWindow!
     var ctrler:UIViewController!
+    var v:UIView!
     
     override func setUp() {
         super.setUp()
         win = UIWindow(frame: UIScreen.mainScreen().bounds)
         ctrler =  UIViewController()
         win.rootViewController = ctrler
+        v = UIView()
+        ctrler.view.sv([v])
+        v.size(100.0)
     }
     
     override func tearDown() {
@@ -24,47 +29,18 @@ class PositionTests: XCTestCase {
     }
     
     func testTop() {
-        let padding:CGFloat = 10.0
-        let v = UIView()
-        ctrler.view.sv([v])
-        v.size(100.0)
-        v.layoutIfNeeded() // This is needed to force auto-layout to kick-in
-
-        
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
-        
-        v.top(padding)
-        v.setNeedsLayout()
-        v.layoutIfNeeded() // This is needed to force auto-layout to kick-in
-        
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, padding, accuracy: CGFloat(FLT_EPSILON))
+        v.top(23)
+        v.layoutIfNeeded()
+        XCTAssertEqualWithAccuracy(v.frame.origin.y, 23, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
     }
     
-    
     func testBottom() {
-        let padding:CGFloat = 10.0
-        let v = UIView()
-        ctrler.view.sv([v])
-        v.size(100.0)
-        v.layoutIfNeeded() // This is needed to force auto-layout to kick-in
-        
-        
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
-        
-        v.bottom(padding)
-        v.setNeedsLayout()
-        v.layoutIfNeeded() // This is needed to force auto-layout to kick-in
-        
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, ctrler.view.frame.height - v.frame.height - padding, accuracy: CGFloat(FLT_EPSILON))
+        v.bottom(45)
+        v.layoutIfNeeded()
+        XCTAssertEqualWithAccuracy(v.frame.origin.y, ctrler.view.frame.height - v.frame.height - 45, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
@@ -72,48 +48,19 @@ class PositionTests: XCTestCase {
     
     
     func testLeft() {
-        let padding:CGFloat = 10.0
-        let v = UIView()
-        ctrler.view.sv([v])
-        v.size(100.0)
-        v.layoutIfNeeded() // This is needed to force auto-layout to kick-in
-        
-        
+        v.left(12)
+        v.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
-        
-        v.left(padding)
-        v.setNeedsLayout()
-        v.layoutIfNeeded() // This is needed to force auto-layout to kick-in
-        
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, padding, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, 12, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
     }
     
-    
     func testRight() {
-        let padding:CGFloat = 10.0
-        let v = UIView()
-        ctrler.view.sv([v])
-        v.size(100.0)
-        v.layoutIfNeeded() // This is needed to force auto-layout to kick-in
-        
-        
+        v.right(74)
+        v.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
-        
-        v.right (padding)
-        v.setNeedsLayout()
-        v.layoutIfNeeded() // This is needed to force auto-layout to kick-in
-        
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - padding, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - 74, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
     }
