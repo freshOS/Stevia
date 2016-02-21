@@ -40,7 +40,7 @@ public func - (left: [UIView], right: SteviaFlexibleMargin) -> PartialFlexibleCo
 
 public func - (left: PartialFlexibleConstraint, right:UIView) -> [UIView] {
     if let spv = right.superview {
-        let c = constraint(item: left.view1!, attribute: .Right, toItem: right, attribute: .Left, relatedBy:left.fm.relation, constant: left.fm.points)
+        let c = constraint(item: right, attribute: .Left, toItem: left.view1!, attribute: .Right, relatedBy:left.fm.relation, constant: left.fm.points)
         spv.addConstraint(c)
     }
     return [left.view1!, right]
