@@ -15,10 +15,10 @@ class FillTests: XCTestCase {
     var ctrler:UIViewController!
 
     override func setUp() {
+        super.setUp()
         win = UIWindow(frame: UIScreen.mainScreen().bounds)
         ctrler =  UIViewController()
         win.rootViewController = ctrler
-        super.setUp()
     }
     
     override func tearDown() {
