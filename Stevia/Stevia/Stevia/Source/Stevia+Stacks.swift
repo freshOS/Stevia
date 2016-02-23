@@ -45,7 +45,7 @@ public extension UIView {
                     //Last Margin, Bottom
                     if let previousView = objects[i-1] as? UIView {
                         previousView.bottom(m)
-                    } else if let va = objects[i-2] as? [UIView] {
+                    } else if let va = objects[i-1] as? [UIView] {
                         va.first!.bottom(m)
                     }
                 }
