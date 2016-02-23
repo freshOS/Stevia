@@ -62,8 +62,11 @@ public extension UIView {
                 if i == 1 {
                     v.top(pm) // only if first view
                 } else {
-                    let vx = objects[i-2] as! UIView
-                    vx.stackV(m:pm, v:v)
+                    if let vx = objects[i-2] as? UIView {
+                        vx.stackV(m:pm, v:v)
+                    } else if let va = objects[i-2] as? [UIView] {
+                        va.first!.stackV(m:pm, v:v)
+                    }
                 }
                 previousMargin = nil
             } else {
