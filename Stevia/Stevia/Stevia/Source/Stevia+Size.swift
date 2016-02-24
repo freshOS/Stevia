@@ -24,10 +24,42 @@ public extension UIView {
         return size(.Width, points: points)
     }
     
-    public func size(attribute:NSLayoutAttribute, points:CGFloat) -> UIView {
+    private func size(attribute:NSLayoutAttribute, points:CGFloat) -> UIView {
         let c = constraint(item: self, attribute:attribute, constant: points)
         addConstraint(c)
         return self
     }
     
 }
+
+public func equalSizes(views:[UIView]) -> [UIView] {
+    equalHeights(views)
+    equalWidths(views)
+    return views
+}
+
+public func equalWidths(views:[UIView]) -> [UIView] {
+    equal(.Width, views: views)
+    return views
+}
+
+public func equalHeights(views:[UIView]) -> [UIView] {
+    equal(.Height, views: views)
+    return views
+}
+
+private func equal(attribute:NSLayoutAttribute,views:[UIView]) {
+    var previousView:UIView?
+    for v in views {
+        if let pv = previousView {
+            if let spv = v.superview {
+                spv.c(item: v, attribute: attribute, toItem: pv)
+            }
+        }
+        previousView = v
+    }
+}
+
+
+
+
