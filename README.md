@@ -476,12 +476,12 @@ Using `layout` is just clearer in most of the cases but it's yours to choose whi
 
 Horizontally
 ```swift
-imageView.centerHorizontallyInContainer()
+imageView.centerHorizontally()
 ```
 
 Vertically
 ```swift
-imageView.centerVerticallyInContainer()
+imageView.centerVertically()
 ```
 
 On both axis
