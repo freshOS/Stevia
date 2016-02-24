@@ -14,13 +14,13 @@ public extension UIView {
         fillH(m: padding)
         fillV(m: padding)
     }
-
-    public func fillH(m points:CGFloat = 0) -> UIView {
-        return fill(.Horizontal, points: points)
-    }
     
     public func fillV(m points:CGFloat = 0) -> UIView {
         return fill(.Vertical, points: points)
+    }
+    
+    private func fillH(m points:CGFloat = 0) -> UIView {
+        return fill(.Horizontal, points: points)
     }
     
     public func fill(axis:UILayoutConstraintAxis, points:CGFloat = 0) -> UIView {

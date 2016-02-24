@@ -20,12 +20,14 @@ public postfix func | (p:UIView) -> UIView {
 
 
 infix operator ~ {}
-public func ~ (left: CGFloat, right: UIView) -> UIView {
-    return right.height(left)
-}
 
 public func ~ (left: UIView, right: CGFloat) -> UIView {
     return left.height(right)
+}
+
+public func ~ (left: [UIView], right: CGFloat) -> [UIView] {
+    for l in left { l.height(right) }
+    return left
 }
 
 prefix operator |- {}
@@ -61,7 +63,6 @@ public struct SideConstraint {
 public struct PartialConstraint {
     var view1:UIView!
     var constant:CGFloat!
-    
     var views:[UIView]?
 }
 
@@ -145,3 +146,62 @@ public func - (left: [UIView], right: UIView) -> [UIView] {
     return left + [right]
 }
 
+
+//// Test space in Horizointal layout ""
+public struct Space {
+    var previousViews:[UIView]!
+}
+
+public func - (left: UIView, right: String) -> Space {
+    return Space(previousViews: [left])
+}
+
+public func - (left: [UIView], right: String) -> Space {
+    return Space(previousViews: left)
+}
+
+public func - (left: Space, right: UIView) -> [UIView] {
+    var va = left.previousViews
+    va.append(right)
+    return va
+}
+
+
+
+///
+//
+//infix operator >= { associativity left precedence 140  }
+//public func >= (left: CGFloat, right: UIView) -> UIView {
+//    if let spv = right.superview {
+//        let c = constraint(item: right, attribute: .Left, relatedBy: .GreaterThanOrEqual, toItem: spv, attribute: .Left, constant: left)
+//        spv.addConstraint(c)
+//    }
+//    return right
+//}
+//
+//
+//public func >= (left: UIView, right: CGFloat) -> UIView {
+//    if let spv = left.superview {
+//        let c = constraint(item: left, attribute: .Right, relatedBy: .LessThanOrEqual, toItem: spv, attribute: .Right, constant: -right)
+//        spv.addConstraint(c)
+//    }
+//    return left
+//}
+//
+//infix operator <= { associativity left precedence 140  }
+//public func <= (left: CGFloat, right: UIView) -> UIView {
+//    if let spv = right.superview {
+//        let c = constraint(item: right, attribute: .Left, relatedBy: .LessThanOrEqual, toItem: spv, attribute: .Left, constant: left)
+//        spv.addConstraint(c)
+//    }
+//    return right
+//}
+//
+//public func <= (left: UIView, right: CGFloat) -> UIView {
+//    if let spv = left.superview {
+//        let c = constraint(item: left, attribute: .Right, relatedBy: .GreaterThanOrEqual, toItem: spv, attribute: .Right, constant: -right)
+//        spv.addConstraint(c)
+//    }
+//    return left
+//}
+//
