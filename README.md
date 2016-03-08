@@ -226,7 +226,7 @@ class LoginViewStevia:UIView {
         sv([
             email.placeholder("Email").style(fieldStyle), //.style(emailFieldStyle),
             password.placeholder("Password").style(fieldStyle).style(passwordFieldStyle),
-            login.text("Login").style(buttonSytle).tap(loginTapped)
+            login.text("Login").style(buttonStyle).tap(loginTapped)
         ])
 
         layout([
@@ -251,7 +251,7 @@ class LoginViewStevia:UIView {
         f.returnKeyType = .Done
     }
 
-    func buttonSytle(b:UIButton) {
+    func buttonStyle(b:UIButton) {
         b.backgroundColor = .lightGrayColor()
     }
 
