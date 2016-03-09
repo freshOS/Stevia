@@ -31,3 +31,5 @@ DerivedData
 # Carthage/Checkouts
 Stevia/LoginExample/Carthage/Checkouts
 Stevia/LoginExample/iOSInjectionProject/
+
+.DS_Store
