@@ -9,7 +9,11 @@
 import Foundation
 
 public extension UIView {
-    
+
+    public func layout(objects:AnyObject...) -> [UIView] {
+        return layout(objects)
+    }
+
     public func layout(objects:[AnyObject]) -> [UIView] {
         return stackV(objects)
     }
