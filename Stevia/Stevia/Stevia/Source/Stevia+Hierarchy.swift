@@ -9,6 +9,10 @@
 import UIKit
 
 public extension UIView {
+    public func sv(subViews:UIView...) -> UIView {
+        return sv(subViews)
+    }
+
     public func sv(subViews:[UIView]) -> UIView {
         for sv in subViews {
             addSubview(sv)
