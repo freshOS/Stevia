@@ -276,7 +276,7 @@ Stevia + [InjectionForXCode](http://injectionforxcode.com/) = <3 (WhoNeedsReactN
 
 - Download [InjectionForXCode](http://injectionforxcode.johnholdsworth.com/InjectionPluginV6.4.pkg)
 
-- Install it, Launch it and Go to `File>Intall Plugins` (cmd+i)
+- Install it, Launch it and Go to `File>Install Plugins` (cmd+i)
 
 - Restart Xcode and make sure to click `Load bundles` on the popup
 
@@ -564,7 +564,7 @@ func detailStyle(l:UILabel) {
 }
 ```
 
-This is the **prefrerred** way because the styles become **reusable** and **composable** (you can chain them !)
+This is the **preferred** way because the styles become **reusable** and **composable**: you can chain them!
 You can even create a Style File grouping high level functions for common styles.
 Usage then becomes very similar to CSS!
 
@@ -597,7 +597,7 @@ button.image("CommentIcon")
 On the [Yummypets](http://yummypets.com) app, we needed to deal with looooooots of views.  
 After trying different methods for building views (Xibs, Storyboards, Splitting Storyboards, React Native even(!).  
 We found that coding views programmatically was the best solution for us.
-But coding views programmatically had its issues too : UIKit exposes an imperative verbose API, and it's really easy to create a mess with it.
+But coding views programmatically had its issues too: UIKit exposes an imperative, verbose API, and it's really easy to create a mess with it.
 That's why we created Stevia.
 
 
