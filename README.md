@@ -276,7 +276,7 @@ Stevia + [InjectionForXCode](http://injectionforxcode.com/) = <3 (WhoNeedsReactN
 
 - Download [InjectionForXCode](http://injectionforxcode.johnholdsworth.com/InjectionPluginV6.4.pkg)
 
-- Install it, Launch it and Go to `File>Insall Plugins` (cmd+i)
+- Install it, Launch it and Go to `File>Install Plugins` (cmd+i)
 
 - Restart Xcode and make sure to click `Load bundles` on the popup
 
