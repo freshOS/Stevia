@@ -55,7 +55,7 @@ class SizeTests: XCTestCase {
         ctrler.view.sv([
             v1
             ,v2
-        ])
+            ])
         v1.height(height)
         v1.width(width)
         equalSizes([v1,v2])
@@ -63,7 +63,24 @@ class SizeTests: XCTestCase {
         XCTAssertEqualWithAccuracy(v1.frame.width, v2.frame.width, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v1.frame.height, v2.frame.height, accuracy: CGFloat(FLT_EPSILON))
     }
-    
+
+    func testVariadicEqualSizes() {
+        let width:CGFloat = 24
+        let height:CGFloat = 267
+        let v1 = UIView()
+        let v2 = UIView()
+        ctrler.view.sv(
+            v1
+            ,v2
+            )
+        v1.height(height)
+        v1.width(width)
+        equalSizes(v1,v2)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqualWithAccuracy(v1.frame.width, v2.frame.width, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v1.frame.height, v2.frame.height, accuracy: CGFloat(FLT_EPSILON))
+    }
+
     func testFollwEdges() {
         let v1 = UIView()
         let v2 = UIView()
@@ -107,9 +124,9 @@ class SizeTests: XCTestCase {
         XCTAssertEqualWithAccuracy(v.frame.origin.x,  0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 85, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 85, accuracy: CGFloat(FLT_EPSILON))
-        
+
     }
-    
+
     func testWidthEqualHeight() {
         v.height(192)
         v.heightEqualsWidth()
