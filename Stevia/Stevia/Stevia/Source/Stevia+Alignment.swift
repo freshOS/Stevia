@@ -8,9 +8,17 @@
 
 import Foundation
 
+public func alignHorizontally(views:UIView...) -> [UIView] {
+    return alignHorizontally(views)
+}
+
 public func alignHorizontally(views:[UIView]) -> [UIView] {
     align(.Horizontal, views: views)
     return views
+}
+
+public func alignVertically(views:UIView...) {
+    alignVertically(views)
 }
 
 public func alignVertically(views:[UIView]) {
@@ -21,7 +29,6 @@ public func alignCenter(v1:UIView, with v2:UIView) {
     alignHorizontally(v1, with: v2)
     alignVertically(v1, with: v2)
 }
-
 
 private func align(axis:UILayoutConstraintAxis, views:[UIView]) {
     for (i,v) in views.enumerate() {
