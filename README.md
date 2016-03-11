@@ -14,7 +14,7 @@
 
 
 ```swift
-layout([
+layout(
     100,
     |-email-| ~ 80,
     8,
@@ -22,7 +22,7 @@ layout([
     "",
     |login| ~ 80,
     0
-])
+)
 ```
 
 ## Reason
@@ -223,13 +223,13 @@ class LoginViewStevia:UIView {
         self.init(frame:CGRectZero)
         backgroundColor = .whiteColor()
 
-        sv([
+        sv(
             email.placeholder("Email").style(fieldStyle), //.style(emailFieldStyle),
             password.placeholder("Password").style(fieldStyle).style(passwordFieldStyle),
             login.text("Login").style(buttonStyle).tap(loginTapped)
-        ])
+        )
 
-        layout([
+        layout(
             100,
             |-email-| ~ 80,
             8,
@@ -237,7 +237,7 @@ class LoginViewStevia:UIView {
             "",
             |login| ~ 80,
             0
-        ])
+        )
     }
 
     func fieldStyle(f:UITextField) {
@@ -270,17 +270,17 @@ Write **3 times less code** that is actually **10X more expressive and maintaina
 
 You can even enable LiveReload during your development phase! 🎉🎉🎉  
 
-Stevia + [InjectionForXCode](http://injectionforxcode.com/) = <3 (WhoNeedsReactNative??) 🚀
+Stevia + [InjectionForXcode](http://injectionforxcode.com/) = <3 (WhoNeedsReactNative??) 🚀
 
 ![Output sample](http://g.recordit.co/i6kQfTMEpg.gif)
 
-- Download [InjectionForXCode](http://injectionforxcode.johnholdsworth.com/InjectionPluginV6.4.pkg)
+- Download [InjectionForXcode](http://injectionforxcode.johnholdsworth.com/InjectionPluginV6.4.pkg)
 
 - Install it, Launch it and Go to `File>Install Plugins` (cmd+i)
 
 - Restart Xcode and make sure to click `Load bundles` on the popup
 
-In order to support **live reload** with InjectionForXCode, we simply need to tell our ViewController to rebuild a view after an injection occured.
+In order to support **live reload** with InjectionForXcode, we simply need to tell our ViewController to rebuild a view after an injection occured.
 
 in `viewDidLoad()` add :
 ```swift
@@ -343,34 +343,34 @@ github "s4cha/Stevia"
 There you go!
 
 ### Manual
-Copy Stevia source files to your XCode project
+Copy Stevia source files to your Xcode project
 
 
 ## Documentation
 
 ### View Hierarchy
 ```swift
-sv([
+sv(
     subview1,
     subview2,
     subview3
-])
+)
 ```
-`sv([])` is essentially a shortcut that calls `addSubview()` and  
+`sv([])` and `sv()` are essentially shortcuts that call `addSubview()` and  
 `view.translatesAutoresizingMaskIntoConstraints = false`
 
 It also has the benefit of being **very visual** so that your can actually **see** what the view hierarchy is.
 This is especially true for nested hierarchies :
 
 ```swift
-sv([
+sv(
     subview1,
-    subview2.sv([
+    subview2.sv(
         nestedView1,
         nestedView2̨
-    ]),
+    ),
     subview3
-])
+)
 ```
 
 ### Horizontal layout
@@ -426,27 +426,27 @@ avatar.top(50)
 ```
 ==
 ```swift
-layout([
+layout(
     50,
     avatar
-  ])
+  )
 ```
 
 While using `layout` for a single element might seem a bit overkill, it really **shines** when **combined with horizontal layout.**  
 Then we have the full **layout in one place** (hence the name).
 
 ```swift
-layout([
+layout(
     50,
     |-15-avatar.size(60)
-  ])
+  )
 ```
 *The avatar is 50px from the top with a left margin of 15px and a size of 60px*
 
 Another great example is the login view, representable in **one** single statement !
 
 ```swift
-layout([
+layout(
     100,
     |-email-| ~ 80,
     8,
@@ -454,7 +454,7 @@ layout([
     "",
     |login| ~ 80,
     0
-])
+)
 ```
 
 In case you wonder `~` operator == `.height(x)`, it's just more readable in a layout statement that way.
@@ -491,12 +491,12 @@ imageView.centerInContainer()
 
 Horizontally
 ```swift
-alignHorizontally([avatar,name,followButton])
+alignHorizontally(avatar,name,followButton)
 ```
 
 Vertically
 ```swift
-alignVertically([title,subtitle,text])
+alignVertically(title,subtitle,text)
 ```
 
 Align the center of one view with another one :
@@ -508,7 +508,7 @@ alignCenter(view1, with: view2)
 In the example above of a follow Cell, here is how the layout code would look like :
 ```swift
 |-avatar-15-name-20-followButton-|
-alignHorizontally([avatar,name,followButton])
+alignHorizontally(avatar,name,followButton)
 ```
 But `|-avatar-15-name-20-followButton-|` actually **returns the array of views!!!** so we can write it in one **single** statement :
 
