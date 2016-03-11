@@ -32,15 +32,27 @@ public extension UIView {
     
 }
 
+public func equalSizes(views:UIView...) -> [UIView] {
+    return equalSizes(views)
+}
+
 public func equalSizes(views:[UIView]) -> [UIView] {
     equalHeights(views)
     equalWidths(views)
     return views
 }
 
+public func equalWidths(views: UIView...) -> [UIView] {
+    return equalWidths(views)
+}
+
 public func equalWidths(views:[UIView]) -> [UIView] {
     equal(.Width, views: views)
     return views
+}
+
+public func equalHeights(views: UIView...) -> [UIView] {
+    return equalHeights(views)
 }
 
 public func equalHeights(views:[UIView]) -> [UIView] {
