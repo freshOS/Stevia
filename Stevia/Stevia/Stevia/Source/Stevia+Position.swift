@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 prefix operator >= {}
 public prefix func >= (p: CGFloat) -> SteviaFlexibleMargin {
