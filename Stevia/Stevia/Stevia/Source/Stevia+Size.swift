@@ -25,8 +25,10 @@ public extension UIView {
     }
     
     private func size(attribute:NSLayoutAttribute, points:CGFloat) -> UIView {
-        let c = constraint(item: self, attribute:attribute, constant: points)
-        addConstraint(c)
+        if let spv = superview {
+            let c = constraint(item: self, attribute:attribute, constant: points)
+            spv.addConstraint(c)
+        }
         return self
     }
     
