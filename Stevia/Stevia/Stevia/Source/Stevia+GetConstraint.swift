@@ -8,29 +8,29 @@
 
 import Foundation
 
-extension UIView {
+public extension UIView {
     
-    var leftConstraint:NSLayoutConstraint? {
+    public var leftConstraint:NSLayoutConstraint? {
         return constraintForView(self, attribute: .Left)
     }
     
-    var rightConstraint:NSLayoutConstraint? {
+    public var rightConstraint:NSLayoutConstraint? {
         return constraintForView(self, attribute: .Right)
     }
     
-    var topConstraint:NSLayoutConstraint? {
+    public var topConstraint:NSLayoutConstraint? {
         return constraintForView(self, attribute: .Top)
     }
     
-    var bottomConstraint:NSLayoutConstraint? {
+    public var bottomConstraint:NSLayoutConstraint? {
         return constraintForView(self, attribute: .Bottom)
     }
     
-    var heightConstraint:NSLayoutConstraint? {
+    public var heightConstraint:NSLayoutConstraint? {
         return constraintForView(self, attribute: .Height)
     }
     
-    var widthConstraint:NSLayoutConstraint? {
+    public var widthConstraint:NSLayoutConstraint? {
         return constraintForView(self, attribute: .Width)
     }
     
