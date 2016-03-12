@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public func alignHorizontally(views:UIView...) -> [UIView] {
     return alignHorizontally(views)
