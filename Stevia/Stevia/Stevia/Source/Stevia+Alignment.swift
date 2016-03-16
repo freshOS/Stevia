@@ -6,7 +6,6 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 public func alignHorizontally(views:UIView...) -> [UIView] {
