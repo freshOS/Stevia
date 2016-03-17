@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F00D53D1C9AD18A00B90965 /* StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D53C1C9AD18A00B90965 /* StyleTests.swift */; };
 		9910C1FB1C6BD10A008C689E /* Stevia+Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9910C1FA1C6BD10A008C689E /* Stevia+Alignment.swift */; };
 		9910C1FD1C6BD144008C689E /* Stevia+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9910C1FC1C6BD144008C689E /* Stevia+Size.swift */; };
 		9910C1FF1C6BD17E008C689E /* Stevia+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9910C1FE1C6BD17E008C689E /* Stevia+Position.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F00D53C1C9AD18A00B90965 /* StyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleTests.swift; sourceTree = "<group>"; };
 		9910C1FA1C6BD10A008C689E /* Stevia+Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Alignment.swift"; sourceTree = "<group>"; };
 		9910C1FC1C6BD144008C689E /* Stevia+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Size.swift"; sourceTree = "<group>"; };
 		9910C1FE1C6BD17E008C689E /* Stevia+Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Position.swift"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				99C5A4821C7A477C003EDE10 /* CenterTests.swift */,
 				99C5A4841C7A4971003EDE10 /* FullLayoutTests.swift */,
 				99C5A4871C7A5B93003EDE10 /* FlexibleMarginTests.swift */,
+				1F00D53C1C9AD18A00B90965 /* StyleTests.swift */,
 			);
 			path = SteviaTests;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				99C5A4831C7A477C003EDE10 /* CenterTests.swift in Sources */,
 				99C5A4851C7A4971003EDE10 /* FullLayoutTests.swift in Sources */,
 				99C5A4811C7A3524003EDE10 /* LayoutTests.swift in Sources */,
+				1F00D53D1C9AD18A00B90965 /* StyleTests.swift in Sources */,
 				CBC533501C6E20660008F340 /* HierarchyTests.swift in Sources */,
 				CB8E5C951C6F979C00D8C6B1 /* PositionTests.swift in Sources */,
 			);
