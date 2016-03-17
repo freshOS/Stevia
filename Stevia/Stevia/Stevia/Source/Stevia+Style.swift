@@ -70,3 +70,10 @@ public extension UISegmentedControl {
         return self
     }
 }
+
+public extension UIStackView {
+    public override func style(styleClosure:(sv:UIStackView) -> Void) -> UIStackView {
+        styleClosure(sv:self)
+        return self
+    }
+}
