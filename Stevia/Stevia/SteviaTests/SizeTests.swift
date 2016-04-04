@@ -117,8 +117,7 @@ class SizeTests: XCTestCase {
     
     
     func testHeightEqualWidth() {
-        v.width(85)
-        v.heightEqualsWidth()
+        v.heightEqualsWidth().width(85)
         v.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x,  0, accuracy: CGFloat(FLT_EPSILON))
