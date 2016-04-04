@@ -34,7 +34,11 @@ public extension UIButton {
     }
     
     public func tap(block:() -> Void) -> UIButton {
+        #if swift(>=2.2)
+        addTarget(self, action: #selector(UIButton.tapped), forControlEvents: .TouchUpInside)
+        #else
         addTarget(self, action: "tapped", forControlEvents: .TouchUpInside)
+        #endif
         testButtonBlock = block
         return self
     }
