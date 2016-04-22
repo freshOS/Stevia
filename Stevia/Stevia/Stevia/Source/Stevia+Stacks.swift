@@ -45,7 +45,7 @@ public extension UIView {
             case let m as CGFloat:
                 previousMargin = m // Store margin for next pass
                 
-                if i == (objects.count - 1) {
+                if i != 0 && i == (objects.count - 1) {
                     //Last Margin, Bottom
                     if let previousView = objects[i-1] as? UIView {
                         previousView.bottom(m)
