@@ -24,14 +24,21 @@ public extension UIView {
         return size(.Width, points: points)
     }
     
-    private func size(attribute:NSLayoutAttribute, points:CGFloat) -> UIView {
+    public func height(fm:SteviaFlexibleMargin) -> UIView {
+        return size(.Height, relatedBy: fm.relation, points: fm.points)
+    }
+    
+    public func width(fm:SteviaFlexibleMargin) -> UIView {
+        return size(.Width, relatedBy: fm.relation, points: fm.points)
+    }
+    
+    private func size(attribute:NSLayoutAttribute, relatedBy:NSLayoutRelation = .Equal, points:CGFloat) -> UIView {
         if let spv = superview {
-            let c = constraint(item: self, attribute:attribute, constant: points)
+            let c = constraint(item: self, attribute:attribute, relatedBy:relatedBy, constant: points)
             spv.addConstraint(c)
         }
         return self
     }
-    
 }
 
 public func equalSizes(views:UIView...) -> [UIView] {
