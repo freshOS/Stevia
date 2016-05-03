@@ -16,6 +16,7 @@
 		9910C2051C6BD36B008C689E /* Stevia+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9910C2041C6BD36B008C689E /* Stevia+Operators.swift */; };
 		9910C2071C6BD3FE008C689E /* Stevia+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9910C2061C6BD3FE008C689E /* Stevia+Center.swift */; };
 		9925F1D31C947BEF0050FFD1 /* Stevia+GetConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9925F1D21C947BEF0050FFD1 /* Stevia+GetConstraint.swift */; };
+		9926C0E91CD8626C0040DA8D /* Stevia+DoubleDash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926C0E81CD8626C0040DA8D /* Stevia+DoubleDash.swift */; };
 		9991C8591BDB6C8B007D9B75 /* Stevia.h in Headers */ = {isa = PBXBuildFile; fileRef = 9991C8581BDB6C8B007D9B75 /* Stevia.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9991C8681BDB6C9C007D9B75 /* Stevia+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991C8611BDB6C9C007D9B75 /* Stevia+Constraints.swift */; };
 		9991C8691BDB6C9C007D9B75 /* Stevia+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991C8621BDB6C9C007D9B75 /* Stevia+Content.swift */; };
@@ -55,6 +56,7 @@
 		9910C2041C6BD36B008C689E /* Stevia+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Operators.swift"; sourceTree = "<group>"; };
 		9910C2061C6BD3FE008C689E /* Stevia+Center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Center.swift"; sourceTree = "<group>"; };
 		9925F1D21C947BEF0050FFD1 /* Stevia+GetConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+GetConstraint.swift"; sourceTree = "<group>"; };
+		9926C0E81CD8626C0040DA8D /* Stevia+DoubleDash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+DoubleDash.swift"; sourceTree = "<group>"; };
 		9991C8551BDB6C8B007D9B75 /* Stevia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stevia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9991C8581BDB6C8B007D9B75 /* Stevia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stevia.h; sourceTree = "<group>"; };
 		9991C85A1BDB6C8B007D9B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				9991C8641BDB6C9C007D9B75 /* Stevia+Notifications.swift */,
 				9991C8651BDB6C9C007D9B75 /* Stevia+Style.swift */,
 				9991C8661BDB6C9C007D9B75 /* Stevia+Tap.swift */,
+				9926C0E81CD8626C0040DA8D /* Stevia+DoubleDash.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9910C2071C6BD3FE008C689E /* Stevia+Center.swift in Sources */,
+				9926C0E91CD8626C0040DA8D /* Stevia+DoubleDash.swift in Sources */,
 				9991C8681BDB6C9C007D9B75 /* Stevia+Constraints.swift in Sources */,
 				9910C2051C6BD36B008C689E /* Stevia+Operators.swift in Sources */,
 				9910C2011C6BD268008C689E /* Stevia+Fill.swift in Sources */,
