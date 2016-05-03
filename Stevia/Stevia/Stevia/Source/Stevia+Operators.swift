@@ -25,7 +25,16 @@ public func ~ (left: UIView, right: CGFloat) -> UIView {
     return left.height(right)
 }
 
+public func ~ (left: UIView, right: SteviaFlexibleMargin) -> UIView {
+    return left.height(right)
+}
+
 public func ~ (left: [UIView], right: CGFloat) -> [UIView] {
+    for l in left { l.height(right) }
+    return left
+}
+
+public func ~ (left: [UIView], right: SteviaFlexibleMargin) -> [UIView] {
     for l in left { l.height(right) }
     return left
 }
