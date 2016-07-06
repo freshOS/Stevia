@@ -11,40 +11,47 @@ import Foundation
 public extension UIView {
     
     public var leftConstraint:NSLayoutConstraint? {
-        return constraintForView(self, attribute: .Left)
+        return constraintForView(self, attribute: .Left, existsOnView: self.superview)
     }
     
     public var rightConstraint:NSLayoutConstraint? {
-        return constraintForView(self, attribute: .Right)
+        return constraintForView(self, attribute: .Right, existsOnView: self.superview)
     }
     
     public var topConstraint:NSLayoutConstraint? {
-        return constraintForView(self, attribute: .Top)
+        return constraintForView(self, attribute: .Top, existsOnView: self.superview)
     }
     
     public var bottomConstraint:NSLayoutConstraint? {
-        return constraintForView(self, attribute: .Bottom)
+        return constraintForView(self, attribute: .Bottom, existsOnView: self.superview)
     }
     
     public var heightConstraint:NSLayoutConstraint? {
-        return constraintForView(self, attribute: .Height)
+        return constraintForView(self, attribute: .Height, existsOnView: self)
     }
     
     public var widthConstraint:NSLayoutConstraint? {
-        return constraintForView(self, attribute: .Width)
+        return constraintForView(self, attribute: .Width, existsOnView: self)
+    }
+    
+    public var trailingConstraint:NSLayoutConstraint? {
+        return constraintForView(self, attribute: .Trailing, existsOnView: self.superview)
+    }
+    
+    public var leadingConstraint:NSLayoutConstraint? {
+        return constraintForView(self, attribute: .Leading, existsOnView: self.superview)
     }
     
 }
 
-func constraintForView(v:UIView, attribute:NSLayoutAttribute) -> NSLayoutConstraint? {
-    if let spv = v.superview {
-        for c in spv.constraints {
-            if let fi = c.firstItem as? NSObject where fi == v && c.firstAttribute == attribute {
-                return c
-            }
-            if let si = c.secondItem as? NSObject where si == v && c.secondAttribute == attribute {
-                return c
-            }
+func constraintForView(v:UIView, attribute:NSLayoutAttribute, existsOnView:UIView?) -> NSLayoutConstraint? {
+    let target = existsOnView ?? v
+    for c in target.constraints {
+        if let fi = c.firstItem as? NSObject where fi == v && c.firstAttribute == attribute {
+            return c
+        }
+        if let si = c.secondItem as? NSObject where si == v && c.secondAttribute == attribute {
+            return c
         }
     }
     return nil
