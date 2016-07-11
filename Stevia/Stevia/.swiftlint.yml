@@ -1,0 +1,19 @@
+disabled_rules:
+- cyclomatic_complexity
+- trailing_whitespace
+- variable_name
+- opening_brace
+- comma
+- trailing_newline
+- line_length
+- return_arrow_whitespace
+- function_body_length
+- type_body_length
+- statement_position
+- legacy_constant
+# - valid_docs
+# - type_name
+# opt_in_rules:
+# - empty_count
+# - missing_docs
+# - force_unwrapping

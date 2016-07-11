@@ -187,6 +187,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9991C85D1BDB6C8B007D9B75 /* Build configuration list for PBXNativeTarget "Stevia" */;
 			buildPhases = (
+				99013D0B1D33A9E3002327BD /* ShellScript */,
 				9991C8501BDB6C8B007D9B75 /* Sources */,
 				9991C8511BDB6C8B007D9B75 /* Frameworks */,
 				9991C8521BDB6C8B007D9B75 /* Headers */,
@@ -271,6 +272,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		99013D0B1D33A9E3002327BD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9991C8501BDB6C8B007D9B75 /* Sources */ = {
