@@ -20,7 +20,7 @@ class CenterTests: XCTestCase {
         ctrler =  UIViewController()
         win.rootViewController = ctrler
         v = UIView()
-        ctrler.view.sv([v])
+        ctrler.view.sv(v)
         verifyViewHasDefaultValues()
     }
     
