@@ -65,7 +65,7 @@ public prefix func |- (fm: SteviaFlexibleMargin) -> SteviaLeftFlexibleMargin {
     return SteviaLeftFlexibleMargin(fm: fm)
 }
 
-public func - (left: SteviaLeftFlexibleMargin,right: UIView) -> UIView {
+public func - (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
     if let spv = right.superview {
         let c = constraint(item: right, attribute: .Left, toItem: spv, attribute: .Left, relatedBy:left.fm.relation, constant: left.fm.points)
         spv.addConstraint(c)

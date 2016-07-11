@@ -62,7 +62,7 @@ class LayoutTests: XCTestCase {
         v|
         v.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
     }
@@ -71,7 +71,7 @@ class LayoutTests: XCTestCase {
         v-|
         v.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - 8, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 8, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         
@@ -81,7 +81,7 @@ class LayoutTests: XCTestCase {
         v-14-|
         v.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - 14, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 14, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         
@@ -101,14 +101,14 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1,v2,v3)
+        ctrler.view.sv(v1, v2, v3)
         for view in ctrler.view.subviews {
             XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
             XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
             XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
             XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         }
-        [v1,v2,v3] ~ 63
+        [v1, v2, v3] ~ 63
         ctrler.view.layoutIfNeeded()
         for view in ctrler.view.subviews {
             XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
@@ -123,7 +123,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1,v2)
+        ctrler.view.sv(v1, v2)
         for view in ctrler.view.subviews {
             XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
             XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
@@ -149,7 +149,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1,v2)
+        ctrler.view.sv(v1, v2)
         for view in ctrler.view.subviews {
             XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
             XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
@@ -175,7 +175,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1,v2)
+        ctrler.view.sv(v1, v2)
         for view in ctrler.view.subviews {
             XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
             XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
@@ -202,7 +202,7 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1,v2,v3)
+        ctrler.view.sv(v1, v2, v3)
         for view in ctrler.view.subviews {
             XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
             XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
@@ -234,7 +234,7 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1,v2,v3)
+        ctrler.view.sv(v1, v2, v3)
         for view in ctrler.view.subviews {
             XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
             XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
@@ -250,7 +250,7 @@ class LayoutTests: XCTestCase {
         XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         
         XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.origin.x, v1.frame.origin.x + v1.frame.width + 43 , accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.x, v1.frame.origin.x + v1.frame.width + 43, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v2.frame.width, 20, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v3.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
@@ -264,7 +264,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1,v2)
+        ctrler.view.sv(v1, v2)
         for view in ctrler.view.subviews {
             XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
             XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
@@ -291,7 +291,7 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1,v2,v3)
+        ctrler.view.sv(v1, v2, v3)
         for view in ctrler.view.subviews {
             XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
             XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))

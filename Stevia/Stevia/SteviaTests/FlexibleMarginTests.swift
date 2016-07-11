@@ -62,7 +62,7 @@ class FlexibleMarginTests: XCTestCase {
         v.right(>=74)
         v.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - 74, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 74, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
     }
@@ -108,7 +108,7 @@ class FlexibleMarginTests: XCTestCase {
         v.right(<=74)
         v.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - 74, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 74, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
     }
@@ -118,7 +118,7 @@ class FlexibleMarginTests: XCTestCase {
         v-(<=74)-|
         v.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - 74, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 74, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
     }
@@ -127,7 +127,7 @@ class FlexibleMarginTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1,v2)
+        ctrler.view.sv(v1, v2)
         for view in ctrler.view.subviews {
             XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
             XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
@@ -153,7 +153,7 @@ class FlexibleMarginTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1,v2)
+        ctrler.view.sv(v1, v2)
         for view in ctrler.view.subviews {
             XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
             XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
