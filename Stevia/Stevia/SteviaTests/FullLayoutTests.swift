@@ -16,7 +16,7 @@ class TestView: UIView {
     let login = UIButton()
     
     convenience init() {
-        self.init(frame: CGRectZero)
+        self.init(frame: CGRect.zero)
         
         sv(
             email,
