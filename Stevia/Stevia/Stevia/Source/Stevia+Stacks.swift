@@ -125,8 +125,7 @@ public extension UIView {
                     }
                 }
                 previousFlexibleMargin = nil
-            }
-            else {
+            } else {
                 tryStackViewVerticallyWithPreviousView(v, index: i, objects: objects)
             }
             default: ()

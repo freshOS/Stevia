@@ -5,11 +5,8 @@ disabled_rules:
 - opening_brace
 - trailing_newline
 - line_length
-- return_arrow_whitespace
 - function_body_length
 - type_body_length
-- statement_position
-- legacy_constant
 # - valid_docs
 # - type_name
 # opt_in_rules:
