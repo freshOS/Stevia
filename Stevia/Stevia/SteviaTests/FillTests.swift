@@ -27,7 +27,7 @@ class FillTests: XCTestCase {
 
     func testFillContainer() {
         let b = UIButton()
-        ctrler.view.sv([b])
+        ctrler.view.sv(b)
         b.fillContainer()
         b.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         
@@ -38,7 +38,7 @@ class FillTests: XCTestCase {
     func testFillContainerWithPadding() {
         let padding:CGFloat = 10.0
         let b = UIButton()
-        ctrler.view.sv([b])
+        ctrler.view.sv(b)
         b.fillContainer(padding)
         b.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         

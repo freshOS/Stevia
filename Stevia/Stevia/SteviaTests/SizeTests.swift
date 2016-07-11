@@ -21,7 +21,7 @@ class SizeTests: XCTestCase {
         ctrler =  UIViewController()
         win.rootViewController = ctrler
         v = UIView()
-        ctrler.view.sv([v])
+        ctrler.view.sv(v)
     }
     
     override func tearDown() {
@@ -52,10 +52,10 @@ class SizeTests: XCTestCase {
         let height:CGFloat = 267
         let v1 = UIView()
         let v2 = UIView()
-        ctrler.view.sv([
+        ctrler.view.sv(
             v1
             ,v2
-            ])
+        )
         v1.height(height)
         v1.width(width)
         equalSizes([v1,v2])
@@ -84,15 +84,15 @@ class SizeTests: XCTestCase {
     func testFollwEdges() {
         let v1 = UIView()
         let v2 = UIView()
-        ctrler.view.sv([
+        ctrler.view.sv(
             v1
             ,v2
-            ])
+        )
         
-        ctrler.view.layout([
+        ctrler.view.layout(
             10,
             |-20-v1| ~ 32
-        ])
+        )
 
         ctrler.view.layoutIfNeeded()
         

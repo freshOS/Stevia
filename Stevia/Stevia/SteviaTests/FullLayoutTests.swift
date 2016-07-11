@@ -18,13 +18,13 @@ class TestView:UIView {
     convenience init() {
         self.init(frame:CGRectZero)
         
-        sv([
+        sv(
             email,
             password,
             login
-        ])
+        )
         
-        layout([
+        layout(
             100,
             |-email-22-| ~ 80,
             20,
@@ -32,7 +32,7 @@ class TestView:UIView {
             "",
             login.centerHorizontally() ~ 99,
             7
-        ])
+        )
     }
 }
 
@@ -80,8 +80,5 @@ class FullLayoutTests: XCTestCase {
         XCTAssertEqualWithAccuracy(v.login.frame.origin.y, win.frame.height - v.login.frame.height - 7, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.login.frame.origin.x, win.frame.width/2.0 - (v.login.frame.width/2.0), accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.login.frame.height, 99, accuracy: CGFloat(FLT_EPSILON))
-
-        
     }
-    
 }

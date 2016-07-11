@@ -24,10 +24,10 @@ class HierarchyTests: XCTestCase {
         let view = UIView()
         let v1 = UIView()
         let v2 = UIView()
-        view.sv([
+        view.sv(
             v1,
             v2
-        ])
+        )
         XCTAssertEqual(view.subviews.count, 2)
         XCTAssertTrue(view.subviews.contains(v1))
         XCTAssertTrue(view.subviews.contains(v2))
@@ -54,10 +54,10 @@ class HierarchyTests: XCTestCase {
         let cell = UITableViewCell()
         let v1 = UIView()
         let v2 = UIView()
-        cell.sv([
+        cell.sv(
             v1,
             v2
-            ])
+            )
         XCTAssertEqual(cell.contentView.subviews.count, 2)
         XCTAssertTrue(cell.contentView.subviews.contains(v1))
         XCTAssertTrue(cell.contentView.subviews.contains(v2))
@@ -84,10 +84,10 @@ class HierarchyTests: XCTestCase {
         let cell = UICollectionViewCell()
         let v1 = UIView()
         let v2 = UIView()
-        cell.sv([
+        cell.sv(
             v1,
             v2
-            ])
+            )
         XCTAssertEqual(cell.contentView.subviews.count, 2)
         XCTAssertTrue(cell.contentView.subviews.contains(v1))
         XCTAssertTrue(cell.contentView.subviews.contains(v2))
