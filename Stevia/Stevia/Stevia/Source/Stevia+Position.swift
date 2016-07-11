@@ -31,7 +31,16 @@ public extension UIView {
     }
     
     public func right(fm:SteviaFlexibleMargin) -> UIView {
-        return position(.Right, relatedBy:fm.relation, points: -fm.points)
+        // For right this should be inverted.
+        var n = SteviaFlexibleMargin()
+        n.points = -fm.points
+        if fm.relation == .GreaterThanOrEqual {
+            n.relation = .LessThanOrEqual
+        }
+        if fm.relation == .LessThanOrEqual {
+            n.relation = .GreaterThanOrEqual
+        }
+        return position(.Right, relatedBy:n.relation, points: n.points)
     }
     
     public func top(fm:SteviaFlexibleMargin) -> UIView {
