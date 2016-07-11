@@ -43,13 +43,19 @@ public extension UIView {
                         if let vx = objects[i-2] as? UIView {
                             addConstraint(
                                 NSLayoutConstraint(
-                                    item: v, attribute: .Top, relatedBy: pfm.relation, toItem: vx, attribute: .Bottom, multiplier: 1, constant: pfm.points
+                                    item: v, attribute: .Top,
+                                    relatedBy: pfm.relation,
+                                    toItem: vx, attribute: .Bottom,
+                                    multiplier: 1, constant: pfm.points
                                 )
                             )
                         } else if let va = objects[i-2] as? [UIView] {
                             addConstraint(
                                 NSLayoutConstraint(
-                                    item: v, attribute: .Top, relatedBy: pfm.relation, toItem: va.first!, attribute: .Bottom, multiplier: 1, constant: pfm.points
+                                    item: v, attribute: .Top,
+                                    relatedBy: pfm.relation,
+                                    toItem: va.first!, attribute: .Bottom,
+                                    multiplier: 1, constant: pfm.points
                                 )
                             )
                         }
@@ -113,13 +119,19 @@ public extension UIView {
                     if let vx = objects[i-2] as? UIView {
                         addConstraint(
                             NSLayoutConstraint(
-                                item: v, attribute: .Top, relatedBy: pfm.relation, toItem: vx, attribute: .Bottom, multiplier: 1, constant: pfm.points
+                                item: v, attribute: .Top,
+                                relatedBy: pfm.relation,
+                                toItem: vx, attribute: .Bottom,
+                                multiplier: 1, constant: pfm.points
                             )
                         )
                     } else if let va = objects[i-2] as? [UIView] {                        
                         addConstraint(
                             NSLayoutConstraint(
-                                item: v, attribute: .Top, relatedBy: pfm.relation, toItem: va.first!, attribute: .Bottom, multiplier: 1, constant: pfm.points
+                                item: v, attribute: .Top,
+                                relatedBy: pfm.relation,
+                                toItem: va.first!, attribute: .Bottom,
+                                multiplier: 1, constant: pfm.points
                             )
                         )
                     }
@@ -131,7 +143,7 @@ public extension UIView {
             default: ()
             }
         }
-        return objects.map {$0 as? UIView }.flatMap{$0}
+        return objects.map {$0 as? UIView }.flatMap {$0}
     }
     
     private func tryStackViewVerticallyWithPreviousView(view: UIView, index: Int, objects: [Any]) {

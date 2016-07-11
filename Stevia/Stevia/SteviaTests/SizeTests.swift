@@ -95,7 +95,8 @@ class SizeTests: XCTestCase {
         
         XCTAssertEqualWithAccuracy(v1.frame.origin.y, 10, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v1.frame.origin.x,  20, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.width, ctrler.view.frame.width - 20, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v1.frame.width, ctrler.view.frame.width - 20,
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v1.frame.height, 32, accuracy: CGFloat(FLT_EPSILON))
         
         
@@ -106,8 +107,10 @@ class SizeTests: XCTestCase {
         
         v2.followEdges(v1)
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v2.frame.origin.y, v1.frame.origin.y, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.origin.x, v1.frame.origin.x, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.y, v1.frame.origin.y,
+                                   accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.x, v1.frame.origin.x,
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v2.frame.width, v1.frame.width, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v2.frame.height, v1.frame.height, accuracy: CGFloat(FLT_EPSILON))
     }

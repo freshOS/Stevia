@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIView {
     
-    public func centerInContainer() -> UIView  {
+    public func centerInContainer() -> UIView {
         if let spv = superview {
             alignCenter(self, with: spv)
         }

@@ -19,7 +19,11 @@ public extension UIView {
         attribute attr2: NSLayoutAttribute? = nil,
         multiplier: CGFloat = 1,
         constant: CGFloat = 0) -> NSLayoutConstraint {
-            let c = constraint(item: view1, attribute: attr1, relatedBy: relatedBy, toItem: view2, attribute: attr2, multiplier: multiplier, constant: constant)
+            let c = constraint(
+                item: view1, attribute: attr1,
+                relatedBy: relatedBy,
+                toItem: view2, attribute: attr2,
+                multiplier: multiplier, constant: constant)
             addConstraint(c)
             return c
     }
@@ -32,7 +36,10 @@ public func constraint(item view1: AnyObject,
     attribute attr2: NSLayoutAttribute? = nil, // Not an attribute??
     multiplier: CGFloat = 1,
     constant: CGFloat = 0) -> NSLayoutConstraint {
-        return NSLayoutConstraint(item: view1, attribute: attr1, relatedBy: relatedBy, toItem: view2, attribute: ((attr2 == nil) ? attr1 : attr2! ), multiplier: multiplier, constant: constant)
+        return NSLayoutConstraint(item: view1, attribute: attr1,
+                                  relatedBy: relatedBy,
+                                  toItem: view2, attribute: ((attr2 == nil) ? attr1 : attr2! ),
+                                  multiplier: multiplier, constant: constant)
 }
 
 //MARK: - Other

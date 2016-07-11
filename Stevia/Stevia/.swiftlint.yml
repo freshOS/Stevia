@@ -2,8 +2,7 @@ disabled_rules:
 - cyclomatic_complexity
 - trailing_whitespace
 - variable_name
-- opening_brace
-- line_length
+# - line_length
 - function_body_length
 - type_body_length
 # - valid_docs
@@ -12,3 +11,6 @@ disabled_rules:
 # - empty_count
 # - missing_docs
 # - force_unwrapping
+
+
+# - opening_brace
