@@ -15,5 +15,4 @@ public extension NSObject {
             callback()
         }
     }
-
 }

@@ -80,7 +80,3 @@ private func equal(attribute: NSLayoutAttribute, views: [UIView]) {
         previousView = v
     }
 }
-
-
-
-

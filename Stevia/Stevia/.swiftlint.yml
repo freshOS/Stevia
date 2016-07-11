@@ -3,7 +3,6 @@ disabled_rules:
 - trailing_whitespace
 - variable_name
 - opening_brace
-- trailing_newline
 - line_length
 - function_body_length
 - type_body_length
