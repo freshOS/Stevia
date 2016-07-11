@@ -25,8 +25,7 @@ public extension UIView {
     public func bottom(points:CGFloat) -> UIView {
         return position(.Bottom, points: -points)
     }
-    
-    ///
+
     public func left(fm:SteviaFlexibleMargin) -> UIView {
         return position(.Left, relatedBy:fm.relation, points: fm.points)
     }
@@ -40,10 +39,17 @@ public extension UIView {
     }
     
     public func bottom(fm:SteviaFlexibleMargin) -> UIView {
-        return position(.Bottom, relatedBy:fm.relation, points: -fm.points)
+        // For bottom this should be inverted.
+        var n = SteviaFlexibleMargin()
+        n.points = -fm.points
+        if fm.relation == .GreaterThanOrEqual {
+            n.relation = .LessThanOrEqual
+        }
+        if fm.relation == .LessThanOrEqual {
+            n.relation = .GreaterThanOrEqual
+        }
+        return position(.Bottom, relatedBy:n.relation, points: n.points)
     }
-    
-    ///
     
     private func position(position:NSLayoutAttribute, relatedBy:NSLayoutRelation = .Equal, points:CGFloat) -> UIView {
         if let spv = superview {
