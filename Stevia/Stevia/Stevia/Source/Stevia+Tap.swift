@@ -23,13 +23,17 @@ public extension UIButton {
     
     internal var testButtonBlock: ActionBlock {
         get {
-            if let cw = objc_getAssociatedObject(self, &kButtonBlockAssociationKey) as? ClosureWrapper {
+            if let cw = objc_getAssociatedObject(self,
+                                                 &kButtonBlockAssociationKey) as? ClosureWrapper {
                 return cw.closure
             }
             return nil
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &kButtonBlockAssociationKey, ClosureWrapper(newValue), objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self,
+                                     &kButtonBlockAssociationKey,
+                                     ClosureWrapper(newValue),
+                                     objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     

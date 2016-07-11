@@ -39,7 +39,9 @@ class CenterTests: XCTestCase {
         v.setNeedsLayout()
         v.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width/2.0 - (v.frame.width/2.0), accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x,
+                                   ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
     }
@@ -54,7 +56,9 @@ class CenterTests: XCTestCase {
         v.centerVertically()
         v.setNeedsLayout()
         v.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, ctrler.view.frame.height/2.0 - (v.frame.height/2.0), accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.y,
+                                   ctrler.view.frame.height/2.0 - (v.frame.height/2.0),
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
@@ -70,8 +74,12 @@ class CenterTests: XCTestCase {
         v.centerInContainer()
         v.setNeedsLayout()
         v.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, ctrler.view.frame.height/2.0 - (v.frame.height/2.0), accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width/2.0 - (v.frame.width/2.0), accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.y,
+                                   ctrler.view.frame.height/2.0 - (v.frame.height/2.0),
+                                   accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x,
+                                   ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
     }

@@ -41,13 +41,19 @@ public func - (left: [UIView], right: SteviaFlexibleMargin) -> PartialFlexibleCo
 public func - (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
     if let views = left.views {
         if let spv = right.superview {
-            let c = constraint(item: right, attribute: .Left, toItem: views.last, attribute: .Right, relatedBy:left.fm.relation, constant: left.fm.points)
+            let c = constraint(item: right, attribute: .Left,
+                               toItem: views.last, attribute: .Right,
+                               relatedBy:left.fm.relation,
+                               constant: left.fm.points)
             spv.addConstraint(c)
         }
         return views + [right]
     } else {
         if let spv = right.superview {
-            let c = constraint(item: right, attribute: .Left, toItem: left.view1!, attribute: .Right, relatedBy:left.fm.relation, constant: left.fm.points)
+            let c = constraint(item: right, attribute: .Left,
+                               toItem: left.view1!, attribute: .Right,
+                               relatedBy:left.fm.relation,
+                               constant: left.fm.points)
             spv.addConstraint(c)
         }
         return [left.view1!, right]
@@ -67,7 +73,10 @@ public prefix func |- (fm: SteviaFlexibleMargin) -> SteviaLeftFlexibleMargin {
 
 public func - (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
     if let spv = right.superview {
-        let c = constraint(item: right, attribute: .Left, toItem: spv, attribute: .Left, relatedBy:left.fm.relation, constant: left.fm.points)
+        let c = constraint(item: right, attribute: .Left,
+                           toItem: spv, attribute: .Left,
+                           relatedBy:left.fm.relation,
+                           constant: left.fm.points)
         spv.addConstraint(c)
     }
     return right
@@ -85,7 +94,10 @@ public postfix func -| (fm: SteviaFlexibleMargin) -> SteviaRightFlexibleMargin {
 
 public func - (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
     if let spv = left.superview {
-        let c = constraint(item: spv, attribute: .Right, toItem: left, attribute: .Right, relatedBy:right.fm.relation, constant: right.fm.points)
+        let c = constraint(item: spv, attribute: .Right,
+                           toItem: left, attribute: .Right,
+                           relatedBy:right.fm.relation,
+                           constant: right.fm.points)
         spv.addConstraint(c)
     }
     return left
@@ -93,7 +105,11 @@ public func - (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
 
 public func - (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
     if let spv = left.last!.superview {
-        let c = constraint(item: spv, attribute: .Right, toItem: left.last!, attribute: .Right, relatedBy:right.fm.relation, constant: right.fm.points)
+        let c = constraint(item: spv, attribute: .Right,
+                           toItem: left.last!,
+                           attribute: .Right,
+                           relatedBy:right.fm.relation,
+                           constant: right.fm.points)
         spv.addConstraint(c)
     }
     return left

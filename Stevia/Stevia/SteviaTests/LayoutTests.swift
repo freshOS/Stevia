@@ -62,7 +62,8 @@ class LayoutTests: XCTestCase {
         v|
         v.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width,
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
     }
@@ -71,7 +72,8 @@ class LayoutTests: XCTestCase {
         v-|
         v.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 8, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 8,
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         
@@ -81,7 +83,8 @@ class LayoutTests: XCTestCase {
         v-14-|
         v.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 14, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 14,
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         
@@ -186,12 +189,16 @@ class LayoutTests: XCTestCase {
         v1-52-v2.width(10)-31-|
         ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.origin.x, ctrler.view.frame.width - 31 - v2.frame.width - 52, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.x,
+                                   ctrler.view.frame.width - 31 - v2.frame.width - 52,
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v1.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         
         XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.origin.x, ctrler.view.frame.width - 31 -  v2.frame.width, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.x,
+                                   ctrler.view.frame.width - 31 - v2.frame.width,
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v2.frame.width, 10, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         
@@ -222,7 +229,8 @@ class LayoutTests: XCTestCase {
         XCTAssertEqualWithAccuracy(v2.frame.width, 20, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v3.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v3.frame.origin.x, v2.frame.origin.x + v2.frame.width + 8, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v3.frame.origin.x, v2.frame.origin.x + v2.frame.width + 8,
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v3.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v3.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         
@@ -250,11 +258,13 @@ class LayoutTests: XCTestCase {
         XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         
         XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.origin.x, v1.frame.origin.x + v1.frame.width + 43, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.x, v1.frame.origin.x + v1.frame.width + 43,
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v2.frame.width, 20, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v3.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v3.frame.origin.x, v2.frame.origin.x + v2.frame.width + 27, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v3.frame.origin.x, v2.frame.origin.x + v2.frame.width + 27,
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v3.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v3.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         
@@ -281,7 +291,8 @@ class LayoutTests: XCTestCase {
         XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         
         XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.origin.x, ctrler.view.frame.width - v2.frame.width, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.x, ctrler.view.frame.width - v2.frame.width,
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v2.frame.width, 20, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
     }
@@ -308,12 +319,14 @@ class LayoutTests: XCTestCase {
         XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         
         XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.origin.x, v1.frame.width + 8, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.x, v1.frame.width + 8,
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v2.frame.width, 30, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         
         XCTAssertEqualWithAccuracy(v3.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v3.frame.origin.x, ctrler.view.frame.width - v3.frame.width, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v3.frame.origin.x, ctrler.view.frame.width - v3.frame.width,
+                                   accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v3.frame.width, 10, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v3.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
     }
