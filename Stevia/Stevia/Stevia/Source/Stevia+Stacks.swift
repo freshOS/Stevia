@@ -10,17 +10,17 @@ import UIKit
 
 public extension UIView {
 
-    public func layout(objects:Any...) -> [UIView] {
+    public func layout(objects: Any...) -> [UIView] {
         return layout(objects)
     }
 
-    public func layout(objects:[Any]) -> [UIView] {
+    public func layout(objects: [Any]) -> [UIView] {
         return stackV(objects)
     }
 
-    private func stackV(objects:[Any]) -> [UIView] {
-        var previousMargin:CGFloat? = nil
-        var previousFlexibleMargin:SteviaFlexibleMargin? = nil
+    private func stackV(objects: [Any]) -> [UIView] {
+        var previousMargin: CGFloat? = nil
+        var previousFlexibleMargin: SteviaFlexibleMargin? = nil
         for (i,o) in objects.enumerate() {
             
             switch o {
@@ -73,7 +73,7 @@ public extension UIView {
             case is Int: fallthrough
             case is Double: fallthrough
             case is CGFloat:
-                var m:CGFloat = 0
+                var m: CGFloat = 0
                 if let i = o as? Int {
                     m = CGFloat(i)
                 } else if let d = o as? Double {
@@ -159,13 +159,13 @@ public extension UIView {
         return objects.map {$0 as? UIView }.flatMap{$0}
     }
     
-    private func tryStackViewVerticallyWithPreviousView(view:UIView, index:Int,objects:[Any]) {
+    private func tryStackViewVerticallyWithPreviousView(view: UIView, index: Int,objects: [Any]) {
         if let pv = previousViewFromIndex(index, objects: objects) {
             pv.stackV(v: view)
         }
     }
     
-    private func previousViewFromIndex(index:Int,objects:[Any]) -> UIView? {
+    private func previousViewFromIndex(index: Int,objects: [Any]) -> UIView? {
         if index != 0 {
             if let previousView = objects[index-1] as? UIView {
                 return previousView
@@ -174,13 +174,13 @@ public extension UIView {
         return nil
     }
     
-    private func stackV(m points:CGFloat = 0, v:UIView) -> UIView {
+    private func stackV(m points: CGFloat = 0, v: UIView) -> UIView {
         return stack(.Vertical, points: points, v: v)
     }
     
-    private func stack(axis:UILayoutConstraintAxis, points:CGFloat = 0, v:UIView) -> UIView {
-        let a:NSLayoutAttribute = axis == .Vertical ? .Top : .Left
-        let b:NSLayoutAttribute = axis == .Vertical ? .Bottom : .Right
+    private func stack(axis: UILayoutConstraintAxis, points: CGFloat = 0, v: UIView) -> UIView {
+        let a: NSLayoutAttribute = axis == .Vertical ? .Top : .Left
+        let b: NSLayoutAttribute = axis == .Vertical ? .Bottom : .Right
         if let spv = superview {
             let c = constraint(item: v, attribute: a, toItem: self, attribute: b, constant:points)
             spv.addConstraint(c)

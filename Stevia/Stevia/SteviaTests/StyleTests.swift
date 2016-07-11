@@ -21,11 +21,11 @@ class StyleTests: XCTestCase {
         super.tearDown()
     }
     
-    func styleView(view : UIView) {
+    func styleView(view: UIView) {
         view.backgroundColor = UIColor.yellowColor()
     }
     
-    func styleLabel(label : UILabel) {
+    func styleLabel(label: UILabel) {
         label.textColor = UIColor.yellowColor()
     }
 
@@ -35,7 +35,7 @@ class StyleTests: XCTestCase {
         label.style(styleLabel).style(styleView)
         label.style(styleView).style(styleLabel)
         
-        let view : UIView = label
+        let view: UIView = label
         view.style(styleView)
         
         XCTAssertEqual(view.backgroundColor, UIColor.yellowColor())

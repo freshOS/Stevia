@@ -9,12 +9,12 @@
 import UIKit
 
 prefix operator | {}
-public prefix func | (p:UIView) -> UIView {
+public prefix func | (p: UIView) -> UIView {
     return p.left(0)
 }
 
 postfix operator | {}
-public postfix func | (p:UIView) -> UIView {
+public postfix func | (p: UIView) -> UIView {
     return p.right(0)
 }
 
@@ -65,14 +65,14 @@ public postfix func -| (v: UIView) -> UIView {
 }
 
 public struct SideConstraint {
-    var constant:CGFloat!
+    var constant: CGFloat!
 }
 
 
 public struct PartialConstraint {
-    var view1:UIView!
-    var constant:CGFloat!
-    var views:[UIView]?
+    var view1: UIView!
+    var constant: CGFloat!
+    var views: [UIView]?
 }
 
 public func - (left: UIView, right: CGFloat) -> PartialConstraint {
@@ -103,7 +103,7 @@ public func - (left: [UIView], right: SideConstraint) -> [UIView] {
 }
 
 
-public func - (left:UIView, right: SideConstraint) -> UIView {
+public func - (left: UIView, right: SideConstraint) -> UIView {
     if let spv = left.superview {
         let c = constraint(item: left, attribute: .Right, toItem: spv, attribute: .Right, constant: -right.constant)
         spv.addConstraint(c)
@@ -158,7 +158,7 @@ public func - (left: [UIView], right: UIView) -> [UIView] {
 
 //// Test space in Horizointal layout ""
 public struct Space {
-    var previousViews:[UIView]!
+    var previousViews: [UIView]!
 }
 
 public func - (left: UIView, right: String) -> Space {

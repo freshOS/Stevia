@@ -9,11 +9,11 @@
 import UIKit
 
 public extension UIView {
-    public func sv(subViews:UIView...) -> UIView {
+    public func sv(subViews: UIView...) -> UIView {
         return sv(subViews)
     }
 
-    public func sv(subViews:[UIView]) -> UIView {
+    public func sv(subViews: [UIView]) -> UIView {
         for sv in subViews {
             addSubview(sv)
             sv.translatesAutoresizingMaskIntoConstraints = false
@@ -23,13 +23,13 @@ public extension UIView {
 }
 
 public extension UITableViewCell {
-    public override func sv(subViews:[UIView]) -> UIView {
+    public override func sv(subViews: [UIView]) -> UIView {
         return contentView.sv(subViews)
     }
 }
 
 public extension UICollectionViewCell {
-    public override func sv(subViews:[UIView]) -> UIView {
+    public override func sv(subViews: [UIView]) -> UIView {
         return contentView.sv(subViews)
     }
 }

@@ -10,9 +10,9 @@ import XCTest
 
 class PositionTests: XCTestCase {
     
-    var win:UIWindow!
-    var ctrler:UIViewController!
-    var v:UIView!
+    var win: UIWindow!
+    var ctrler: UIViewController!
+    var v: UIView!
     
     override func setUp() {
         super.setUp()

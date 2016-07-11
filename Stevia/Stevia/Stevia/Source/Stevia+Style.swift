@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UIAppearance {
-    public func style(styleClosure : (Self)->()) -> Self {
+    public func style(styleClosure: (Self)->()) -> Self {
         styleClosure(self)
         return self
     }

@@ -19,15 +19,15 @@ public prefix func <= (p: CGFloat) -> SteviaFlexibleMargin {
 }
 
 public struct SteviaFlexibleMargin {
-    var points:CGFloat!
-    var relation:NSLayoutRelation!
+    var points: CGFloat!
+    var relation: NSLayoutRelation!
 }
 
 
 public struct PartialFlexibleConstraint {
-    var fm:SteviaFlexibleMargin!
-    var view1:UIView?
-    var views:[UIView]?
+    var fm: SteviaFlexibleMargin!
+    var view1: UIView?
+    var views: [UIView]?
 }
 
 public func - (left: UIView, right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
@@ -38,7 +38,7 @@ public func - (left: [UIView], right: SteviaFlexibleMargin) -> PartialFlexibleCo
     return PartialFlexibleConstraint(fm: right, view1: nil, views: left)
 }
 
-public func - (left: PartialFlexibleConstraint, right:UIView) -> [UIView] {
+public func - (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
     if let views = left.views {
         if let spv = right.superview {
             let c = constraint(item: right, attribute: .Left, toItem: views.last, attribute: .Right, relatedBy:left.fm.relation, constant: left.fm.points)
@@ -58,7 +58,7 @@ public func - (left: PartialFlexibleConstraint, right:UIView) -> [UIView] {
 // Left Flexible margin
 
 public struct SteviaLeftFlexibleMargin {
-    let fm:SteviaFlexibleMargin
+    let fm: SteviaFlexibleMargin
 }
 
 public prefix func |- (fm: SteviaFlexibleMargin) -> SteviaLeftFlexibleMargin {
@@ -76,7 +76,7 @@ public func - (left: SteviaLeftFlexibleMargin,right: UIView) -> UIView {
 // Right Flexible margin
 
 public struct SteviaRightFlexibleMargin {
-    let fm:SteviaFlexibleMargin
+    let fm: SteviaFlexibleMargin
 }
 
 public postfix func -| (fm: SteviaFlexibleMargin) -> SteviaRightFlexibleMargin {

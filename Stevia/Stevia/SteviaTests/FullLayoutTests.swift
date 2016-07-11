@@ -9,14 +9,14 @@
 import XCTest
 import Stevia
 
-class TestView:UIView {
+class TestView: UIView {
     
     let email = UITextField()
     let password = UITextField()
     let login = UIButton()
     
     convenience init() {
-        self.init(frame:CGRectZero)
+        self.init(frame: CGRectZero)
         
         sv(
             email,
@@ -38,9 +38,9 @@ class TestView:UIView {
 
 class FullLayoutTests: XCTestCase {
         
-    var win:UIWindow!
-    var vc:UIViewController!
-    var v:TestView!
+    var win: UIWindow!
+    var vc: UIViewController!
+    var v: TestView!
     
     override func setUp() {
         super.setUp()
