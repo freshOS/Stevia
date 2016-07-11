@@ -19,14 +19,14 @@ public extension UIView {
     
     public func centerHorizontally() -> UIView {
         if let spv = superview {
-            alignVertically([self,spv])
+            alignVertically([self, spv])
         }
         return self
     }
     
     public func centerVertically() -> UIView {
         if let spv = superview {
-            alignHorizontally([self,spv])
+            alignHorizontally([self, spv])
         }
         return self
     }

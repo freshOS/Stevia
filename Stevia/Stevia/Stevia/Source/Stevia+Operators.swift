@@ -136,7 +136,7 @@ public func - (left: UIView, right: UIView) -> [UIView] {
         let c = constraint(item: right, attribute: .Left, toItem: left, attribute: .Right, constant: 8)
         spv.addConstraint(c)
     }
-    return [left,right]
+    return [left, right]
 }
 
 public func - (left: [UIView], right: CGFloat) -> PartialConstraint {

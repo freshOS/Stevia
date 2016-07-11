@@ -29,7 +29,7 @@ public extension UIView {
         if let spv = superview {
             let c1 = constraint(item: self, attribute: a, toItem: spv, constant: points)
             let c2 = constraint(item: self, attribute: b, toItem: spv, constant: -points)
-            spv.addConstraints([c1,c2])
+            spv.addConstraints([c1, c2])
         }
         return self
     }

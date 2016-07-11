@@ -21,7 +21,7 @@ public extension UIView {
     private func stackV(objects: [Any]) -> [UIView] {
         var previousMargin: CGFloat? = nil
         var previousFlexibleMargin: SteviaFlexibleMargin? = nil
-        for (i,o) in objects.enumerate() {
+        for (i, o) in objects.enumerate() {
             
             switch o {
             case let v as UIView:
@@ -43,25 +43,13 @@ public extension UIView {
                         if let vx = objects[i-2] as? UIView {
                             addConstraint(
                                 NSLayoutConstraint(
-                                    item: v,
-                                    attribute: .Top,
-                                    relatedBy: pfm.relation,
-                                    toItem: vx,
-                                    attribute: .Bottom,
-                                    multiplier: 1,
-                                    constant: pfm.points
+                                    item: v, attribute: .Top, relatedBy: pfm.relation, toItem: vx, attribute: .Bottom, multiplier: 1, constant: pfm.points
                                 )
                             )
                         } else if let va = objects[i-2] as? [UIView] {
                             addConstraint(
                                 NSLayoutConstraint(
-                                    item: v,
-                                    attribute: .Top,
-                                    relatedBy: pfm.relation,
-                                    toItem: va.first!,
-                                    attribute: .Bottom,
-                                    multiplier: 1,
-                                    constant: pfm.points
+                                    item: v, attribute: .Top, relatedBy: pfm.relation, toItem: va.first!, attribute: .Bottom, multiplier: 1, constant: pfm.points
                                 )
                             )
                         }
@@ -125,25 +113,13 @@ public extension UIView {
                     if let vx = objects[i-2] as? UIView {
                         addConstraint(
                             NSLayoutConstraint(
-                                item: v,
-                                attribute: .Top,
-                                relatedBy: pfm.relation,
-                                toItem: vx,
-                                attribute: .Bottom,
-                                multiplier: 1,
-                                constant: pfm.points
+                                item: v, attribute: .Top, relatedBy: pfm.relation, toItem: vx, attribute: .Bottom, multiplier: 1, constant: pfm.points
                             )
                         )
                     } else if let va = objects[i-2] as? [UIView] {                        
                         addConstraint(
                             NSLayoutConstraint(
-                                item: v,
-                                attribute: .Top,
-                                relatedBy: pfm.relation,
-                                toItem: va.first!,
-                                attribute: .Bottom,
-                                multiplier: 1,
-                                constant: pfm.points
+                                item: v, attribute: .Top, relatedBy: pfm.relation, toItem: va.first!, attribute: .Bottom, multiplier: 1, constant: pfm.points
                             )
                         )
                     }
@@ -159,13 +135,13 @@ public extension UIView {
         return objects.map {$0 as? UIView }.flatMap{$0}
     }
     
-    private func tryStackViewVerticallyWithPreviousView(view: UIView, index: Int,objects: [Any]) {
+    private func tryStackViewVerticallyWithPreviousView(view: UIView, index: Int, objects: [Any]) {
         if let pv = previousViewFromIndex(index, objects: objects) {
             pv.stackV(v: view)
         }
     }
     
-    private func previousViewFromIndex(index: Int,objects: [Any]) -> UIView? {
+    private func previousViewFromIndex(index: Int, objects: [Any]) -> UIView? {
         if index != 0 {
             if let previousView = objects[index-1] as? UIView {
                 return previousView

@@ -53,12 +53,11 @@ class SizeTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         ctrler.view.sv(
-            v1
-            ,v2
+            v1, v2
         )
         v1.height(height)
         v1.width(width)
-        equalSizes([v1,v2])
+        equalSizes([v1, v2])
         ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v1.frame.width, v2.frame.width, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v1.frame.height, v2.frame.height, accuracy: CGFloat(FLT_EPSILON))
@@ -70,12 +69,11 @@ class SizeTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         ctrler.view.sv(
-            v1
-            ,v2
+            v1, v2
             )
         v1.height(height)
         v1.width(width)
-        equalSizes(v1,v2)
+        equalSizes(v1, v2)
         ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v1.frame.width, v2.frame.width, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v1.frame.height, v2.frame.height, accuracy: CGFloat(FLT_EPSILON))
@@ -85,8 +83,7 @@ class SizeTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         ctrler.view.sv(
-            v1
-            ,v2
+            v1, v2
         )
         
         ctrler.view.layout(

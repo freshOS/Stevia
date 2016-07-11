@@ -69,7 +69,7 @@ public func equalHeights(views: [UIView]) -> [UIView] {
     return views
 }
 
-private func equal(attribute: NSLayoutAttribute,views: [UIView]) {
+private func equal(attribute: NSLayoutAttribute, views: [UIView]) {
     var previousView: UIView?
     for v in views {
         if let pv = previousView {
