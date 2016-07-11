@@ -39,7 +39,7 @@ public func constraint(item view1: AnyObject,
 
 public extension UIView {
 
-    public func followEdges(otherView:UIView) {
+    public func followEdges(otherView: UIView) {
         if let spv = superview {
             let cs = [
                 constraint(item: self, attribute: .Top, toItem: otherView),

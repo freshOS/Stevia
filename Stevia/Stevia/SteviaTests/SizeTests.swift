@@ -11,9 +11,9 @@ import Stevia
 
 class SizeTests: XCTestCase {
     
-    var win:UIWindow!
-    var ctrler:UIViewController!
-    var v:UIView!
+    var win: UIWindow!
+    var ctrler: UIViewController!
+    var v: UIView!
     
     override func setUp() {
         super.setUp()
@@ -48,8 +48,8 @@ class SizeTests: XCTestCase {
     }
     
     func testEqualSizes() {
-        let width:CGFloat = 24
-        let height:CGFloat = 267
+        let width: CGFloat = 24
+        let height: CGFloat = 267
         let v1 = UIView()
         let v2 = UIView()
         ctrler.view.sv(
@@ -65,8 +65,8 @@ class SizeTests: XCTestCase {
     }
 
     func testVariadicEqualSizes() {
-        let width:CGFloat = 24
-        let height:CGFloat = 267
+        let width: CGFloat = 24
+        let height: CGFloat = 267
         let v1 = UIView()
         let v2 = UIView()
         ctrler.view.sv(

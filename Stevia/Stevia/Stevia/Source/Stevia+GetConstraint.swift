@@ -10,33 +10,33 @@ import Foundation
 
 public extension UIView {
     
-    public var leftConstraint:NSLayoutConstraint? {
+    public var leftConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .Left)
     }
     
-    public var rightConstraint:NSLayoutConstraint? {
+    public var rightConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .Right)
     }
     
-    public var topConstraint:NSLayoutConstraint? {
+    public var topConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .Top)
     }
     
-    public var bottomConstraint:NSLayoutConstraint? {
+    public var bottomConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .Bottom)
     }
     
-    public var heightConstraint:NSLayoutConstraint? {
+    public var heightConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .Height)
     }
     
-    public var widthConstraint:NSLayoutConstraint? {
+    public var widthConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .Width)
     }
     
 }
 
-func constraintForView(v:UIView, attribute:NSLayoutAttribute) -> NSLayoutConstraint? {
+func constraintForView(v: UIView, attribute: NSLayoutAttribute) -> NSLayoutConstraint? {
     if let spv = v.superview {
         for c in spv.constraints {
             if let fi = c.firstItem as? NSObject where fi == v && c.firstAttribute == attribute {

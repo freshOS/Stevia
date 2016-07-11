@@ -10,27 +10,27 @@ import UIKit
 
 public extension UIView {
     
-    public func left(points:CGFloat) -> UIView {
+    public func left(points: CGFloat) -> UIView {
         return position(.Left, points: points)
     }
     
-    public func right(points:CGFloat) -> UIView {
+    public func right(points: CGFloat) -> UIView {
         return position(.Right, points: -points)
     }
     
-    public func top(points:CGFloat) -> UIView {
+    public func top(points: CGFloat) -> UIView {
         return position(.Top, points: points)
     }
     
-    public func bottom(points:CGFloat) -> UIView {
+    public func bottom(points: CGFloat) -> UIView {
         return position(.Bottom, points: -points)
     }
 
-    public func left(fm:SteviaFlexibleMargin) -> UIView {
+    public func left(fm: SteviaFlexibleMargin) -> UIView {
         return position(.Left, relatedBy:fm.relation, points: fm.points)
     }
     
-    public func right(fm:SteviaFlexibleMargin) -> UIView {
+    public func right(fm: SteviaFlexibleMargin) -> UIView {
         // For right this should be inverted.
         var n = SteviaFlexibleMargin()
         n.points = -fm.points
@@ -43,11 +43,11 @@ public extension UIView {
         return position(.Right, relatedBy:n.relation, points: n.points)
     }
     
-    public func top(fm:SteviaFlexibleMargin) -> UIView {
+    public func top(fm: SteviaFlexibleMargin) -> UIView {
         return position(.Top, relatedBy:fm.relation, points: fm.points)
     }
     
-    public func bottom(fm:SteviaFlexibleMargin) -> UIView {
+    public func bottom(fm: SteviaFlexibleMargin) -> UIView {
         // For bottom this should be inverted.
         var n = SteviaFlexibleMargin()
         n.points = -fm.points
@@ -60,7 +60,7 @@ public extension UIView {
         return position(.Bottom, relatedBy:n.relation, points: n.points)
     }
     
-    private func position(position:NSLayoutAttribute, relatedBy:NSLayoutRelation = .Equal, points:CGFloat) -> UIView {
+    private func position(position: NSLayoutAttribute, relatedBy: NSLayoutRelation = .Equal, points: CGFloat) -> UIView {
         if let spv = superview {
             let c = constraint(item: self, attribute: position, toItem: spv, relatedBy:relatedBy, constant: points)
             spv.addConstraint(c)

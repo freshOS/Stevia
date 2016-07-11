@@ -11,9 +11,9 @@ import UIKit
 typealias ActionBlock = (() -> Void)?
 
 class ClosureWrapper {
-    var closure:ActionBlock
+    var closure: ActionBlock
     
-    init(_ closure:ActionBlock) {
+    init(_ closure: ActionBlock) {
         self.closure = closure
     }
 }
@@ -21,7 +21,7 @@ class ClosureWrapper {
 private var kButtonBlockAssociationKey: UInt8 = 0
 public extension UIButton {
     
-    internal var testButtonBlock:ActionBlock {
+    internal var testButtonBlock: ActionBlock {
         get {
             if let cw = objc_getAssociatedObject(self, &kButtonBlockAssociationKey) as? ClosureWrapper {
                 return cw.closure

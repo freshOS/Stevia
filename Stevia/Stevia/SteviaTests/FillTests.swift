@@ -11,8 +11,8 @@ import XCTest
 import Stevia
 
 class FillTests: XCTestCase {
-    var win:UIWindow!
-    var ctrler:UIViewController!
+    var win: UIWindow!
+    var ctrler: UIViewController!
 
     override func setUp() {
         super.setUp()
@@ -36,7 +36,7 @@ class FillTests: XCTestCase {
     }
     
     func testFillContainerWithPadding() {
-        let padding:CGFloat = 10.0
+        let padding: CGFloat = 10.0
         let b = UIButton()
         ctrler.view.sv(b)
         b.fillContainer(padding)

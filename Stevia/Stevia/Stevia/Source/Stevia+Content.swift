@@ -10,43 +10,43 @@ import UIKit
 
 public extension UIButton {
     
-    public func text(t:String) -> Self {
+    public func text(t: String) -> Self {
         setTitle(t, forState: .Normal)
         return self
     }
     
-    public func textKey(t:String) -> Self {
+    public func textKey(t: String) -> Self {
         text(NSLocalizedString(t, comment: ""))
         return self
     }
     
-    public func image(s:String) -> Self {
+    public func image(s: String) -> Self {
         setImage(UIImage(named:s), forState: .Normal)
         return self
     }
 }
 
 public extension UITextField {
-    public func placeholder(t:String) -> Self {
+    public func placeholder(t: String) -> Self {
         placeholder = t
         return self
     }
 }
 
 public extension UILabel {
-    public func text(t:String) -> Self {
+    public func text(t: String) -> Self {
         text = t
         return self
     }
     
-    public func textKey(t:String) -> Self {
+    public func textKey(t: String) -> Self {
         text(NSLocalizedString(t, comment: ""))
         return self
     }
 }
 
 extension UIImageView {
-    public func image(t:String) -> Self {
+    public func image(t: String) -> Self {
         image = UIImage(named: t)
         return self
     }
