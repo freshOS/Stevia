@@ -30,6 +30,14 @@ public func alignCenter(v1:UIView, with v2:UIView) {
     alignVertically(v1, with: v2)
 }
 
+public func alignHorizontally(v1:UIView, with v2:UIView, offset:CGFloat) {
+    align(.Horizontal, v1: v1, with: v2, offset: offset)
+}
+
+public func alignVertically(v1:UIView, with v2:UIView, offset:CGFloat) {
+    align(.Vertical, v1: v1, with: v2, offset: offset)
+}
+
 private func align(axis:UILayoutConstraintAxis, views:[UIView]) {
     for (i,v) in views.enumerate() {
         if views.count > i+1 {
@@ -55,6 +63,15 @@ private func align(axis:UILayoutConstraintAxis,v1:UIView, with v2:UIView) {
     if let spv = v1.superview {
         let center:NSLayoutAttribute = axis == .Horizontal ? .CenterY : .CenterX
         let c = constraint(item: v1, attribute: center, toItem: v2)
+        spv.addConstraint(c)
+    }
+}
+
+private func align(axis:UILayoutConstraintAxis,v1:UIView, with v2:UIView, offset:CGFloat) {
+    if let spv = v1.superview {
+        let center:NSLayoutAttribute = axis == .Horizontal ? .CenterY : .CenterX
+        let c = constraint(item: v1, attribute: center, toItem: v2)
+        c.constant = offset
         spv.addConstraint(c)
     }
 }
