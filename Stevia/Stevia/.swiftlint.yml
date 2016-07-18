@@ -1,16 +1,11 @@
 disabled_rules:
-- cyclomatic_complexity
 - trailing_whitespace
+- cyclomatic_complexity
 - variable_name
-# - line_length
 - function_body_length
 - type_body_length
-# - valid_docs
-# - type_name
-# opt_in_rules:
-# - empty_count
+- valid_docs
+opt_in_rules:
+- empty_count
 # - missing_docs
 # - force_unwrapping
-
-
-# - opening_brace

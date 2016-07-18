@@ -17,7 +17,7 @@ public extension UIView {
     public func layout(objects: [Any]) -> [UIView] {
         return stackV(objects)
     }
-
+    
     private func stackV(objects: [Any]) -> [UIView] {
         var previousMargin: CGFloat? = nil
         var previousFlexibleMargin: SteviaFlexibleMargin? = nil
@@ -67,14 +67,7 @@ public extension UIView {
             case is Int: fallthrough
             case is Double: fallthrough
             case is CGFloat:
-                var m: CGFloat = 0
-                if let i = o as? Int {
-                    m = CGFloat(i)
-                } else if let d = o as? Double {
-                    m = CGFloat(d)
-                } else if let cg = o as? CGFloat {
-                    m = cg
-                }
+                let m = cgFloatMarginFromObject(o)
                 previousMargin = m // Store margin for next pass
                 if i != 0 && i == (objects.count - 1) {
                     //Last Margin, Bottom
@@ -84,7 +77,6 @@ public extension UIView {
                         va.first!.bottom(m)
                     }
                 }
-            
             case let fm as SteviaFlexibleMargin:
                 previousFlexibleMargin = fm // Store margin for next pass
                 if i != 0 && i == (objects.count - 1) {
@@ -95,8 +87,6 @@ public extension UIView {
                         va.first!.bottom(fm)
                     }
                 }
-                
-                
             case _ as String:() //Do nothin' !
             case let a as [UIView]:
             alignHorizontally(a)
@@ -144,6 +134,18 @@ public extension UIView {
             }
         }
         return objects.map {$0 as? UIView }.flatMap {$0}
+    }
+    
+    private func cgFloatMarginFromObject(o: Any) -> CGFloat {
+        var m: CGFloat = 0
+        if let i = o as? Int {
+            m = CGFloat(i)
+        } else if let d = o as? Double {
+            m = CGFloat(d)
+        } else if let cg = o as? CGFloat {
+            m = cg
+        }
+        return m
     }
     
     private func tryStackViewVerticallyWithPreviousView(view: UIView, index: Int, objects: [Any]) {

@@ -46,6 +46,14 @@ public func constraint(item view1: AnyObject,
 
 public extension UIView {
 
+    /**
+     Makes a view follow another view's frame.
+     For instance if we want a button to be on top of an image :
+     
+     ```
+     button.followEdges(image)
+     ```
+     */
     public func followEdges(otherView: UIView) {
         if let spv = superview {
             let cs = [
@@ -57,7 +65,18 @@ public extension UIView {
             spv.addConstraints(cs)
         }
     }
-        
+    
+    /**
+     Enforce a view to keep height and width equal at all times, essentially
+     forcing it to be a square.
+     
+     ```
+     image.heightEqualsWidth()
+     ```
+     
+     - Returns: Itself, enabling chaining,
+     
+     */
     public func heightEqualsWidth() -> UIView {
         if let spv = superview {
             let c = constraint(item: self, attribute: .Height, toItem: self, attribute: .Width)

@@ -8,23 +8,80 @@
 
 import UIKit
 
+/** Aligns an array of views Horizontally (on the X Axis)
+ 
+ Example Usage:
+ ```
+ alignHorizontally(label,button,arrow)
+ ```
+ 
+ Ca also be used directly on horizontal layouts since they return the array of views :
+ ```
+ alignHorizontally(|-image1-image2-image3-|)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
 public func alignHorizontally(views: UIView...) -> [UIView] {
     return alignHorizontally(views)
 }
 
+/** Aligns an array of views Horizontally (on the X Axis)
+ 
+ Example Usage:
+ ```
+ alignHorizontally(label,button,arrow)
+ ```
+ 
+ Ca also be used directly on horizontal layouts since they return the array of views :
+ ```
+ alignHorizontally(|-image1-image2-image3-|)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
 public func alignHorizontally(views: [UIView]) -> [UIView] {
     align(.Horizontal, views: views)
     return views
 }
 
+/** Aligns an array of views Vertically (on the Y Axis)
+ 
+ Example Usage:
+ ```
+ alignVertically(label,field,button)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
 public func alignVertically(views: UIView...) {
     alignVertically(views)
 }
 
+/** Aligns an array of views Vertically (on the Y Axis)
+ 
+ Example Usage:
+ ```
+ alignVertically(label,field,button)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
 public func alignVertically(views: [UIView]) {
     align(.Vertical, views: views)
 }
 
+/** Aligns the center of two views
+ 
+ Example Usage:
+ ```
+ alignCenter(button, with:image)
+ ```
+ */
 public func alignCenter(v1: UIView, with v2: UIView) {
     alignHorizontally(v1, with: v2)
     alignVertically(v1, with: v2)
