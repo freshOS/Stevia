@@ -86,6 +86,14 @@ public func alignCenter(v1: UIView, with v2: UIView) {
     alignHorizontally(v1, with: v2)
     alignVertically(v1, with: v2)
 }
+   
+public func alignHorizontally(v1: UIView, with v2: UIView, offset: CGFloat = 0) {
+    align(.Horizontal, v1: v1, with: v2, offset: offset)
+}
+
+public func alignVertically(v1: UIView, with v2: UIView, offset: CGFloat = 0) {
+    align(.Vertical, v1: v1, with: v2, offset: offset)
+}
 
 private func align(axis: UILayoutConstraintAxis, views: [UIView]) {
     for (i, v) in views.enumerate() {
@@ -100,18 +108,10 @@ private func align(axis: UILayoutConstraintAxis, views: [UIView]) {
     }
 }
 
-private func alignHorizontally(v1: UIView, with v2: UIView) {
-    align(.Horizontal, v1: v1, with: v2)
-}
-
-private func alignVertically(v1: UIView, with v2: UIView) {
-    align(.Vertical, v1: v1, with: v2)
-}
-
-private func align(axis: UILayoutConstraintAxis, v1: UIView, with v2: UIView) {
+private func align(axis: UILayoutConstraintAxis, v1: UIView, with v2: UIView, offset: CGFloat) {
     if let spv = v1.superview {
         let center: NSLayoutAttribute = axis == .Horizontal ? .CenterY : .CenterX
-        let c = constraint(item: v1, attribute: center, toItem: v2)
+        let c = constraint(item: v1, attribute: center, toItem: v2, constant:offset)
         spv.addConstraint(c)
     }
 }
