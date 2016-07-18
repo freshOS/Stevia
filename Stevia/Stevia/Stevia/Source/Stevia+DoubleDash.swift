@@ -66,3 +66,15 @@ public func -- (left: [UIView], right: SteviaFlexibleMargin) -> PartialFlexibleC
 public func -- (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
     return left-right
 }
+
+public func -- (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
+    return left-right
+}
+
+public func -- (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
+    return left-right
+}
+
+public func -- (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
+    return left-right
+}
