@@ -10,11 +10,28 @@ import UIKit
 
 public extension UIView {
 
+    /**
+    
+     Lays out the views on both axis.
+     
+     Note that this is not needed for Horizontal only layouts.
+     
+     `layout` is primarily for laying out views vertically but horizontal statements 
+     are supported, making it perfect for describing a layout in one single statement.
+     
+     ```
+     layout(
+         100,
+         |-email-| ~ 80,
+         8,
+         |-password-forgot-| ~ 80,
+         >=20,
+         |login| ~ 80,
+         0
+     )
+     ```
+     */
     public func layout(objects: Any...) -> [UIView] {
-        return layout(objects)
-    }
-
-    public func layout(objects: [Any]) -> [UIView] {
         return stackV(objects)
     }
     

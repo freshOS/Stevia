@@ -86,11 +86,27 @@ public func alignCenter(v1: UIView, with v2: UIView) {
     alignHorizontally(v1, with: v2)
     alignVertically(v1, with: v2)
 }
-   
+
+/** Aligns two views Horizontall (on the X Axis)
+ 
+ Example Usage:
+ ```
+ alignHorizontally(label, with:field)
+ ```
+ 
+ */
 public func alignHorizontally(v1: UIView, with v2: UIView, offset: CGFloat = 0) {
     align(.Horizontal, v1: v1, with: v2, offset: offset)
 }
 
+/** Aligns two views Vertically (on the Y Axis)
+ 
+ Example Usage:
+ ```
+ alignVertically(label, with:field)
+ ```
+ 
+ */
 public func alignVertically(v1: UIView, with v2: UIView, offset: CGFloat = 0) {
     align(.Vertical, v1: v1, with: v2, offset: offset)
 }
