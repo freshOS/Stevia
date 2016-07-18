@@ -60,4 +60,18 @@ public extension UIView {
         }
         return self
     }
+    
+    public func centerHorizontally(offset: CGFloat) -> UIView {
+        if let spv = superview {
+            alignVertically(self, with: spv, offset: offset)
+        }
+        return self
+    }
+    
+    public func centerVertically(offset: CGFloat) -> UIView {
+        if let spv = superview {
+            alignHorizontally(self, with: spv, offset: offset)
+        }
+        return self
+    }
 }
