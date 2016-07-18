@@ -37,6 +37,30 @@ public extension UIButton {
         }
     }
     
+    
+    /** Links UIButton tap (TouchUpInside) event to a block.
+     
+    Example Usage:
+     
+    ```
+    button.tap {
+        // do something
+    }
+    ```
+     
+    Or
+    ```
+    button.tap(doSomething)
+
+    // later
+    func doSomething() {
+        // ...
+    }
+    ```
+     
+     - Returns: Itself for chaining purposes
+     
+     */
     public func tap(block:() -> Void) -> UIButton {
         #if swift(>=2.2)
         addTarget(self, action: #selector(UIButton.tapped), forControlEvents: .TouchUpInside)
@@ -47,6 +71,7 @@ public extension UIButton {
         return self
     }
     
+    /** */
     func tapped() {
         testButtonBlock?()
     }
