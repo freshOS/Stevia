@@ -213,7 +213,7 @@ private func equal(attribute: NSLayoutAttribute, views: [UIView]) {
     for v in views {
         if let pv = previousView {
             if let spv = v.superview {
-                spv.c(item: v, attribute: attribute, toItem: pv)
+                spv.addConstraint(item: v, attribute: attribute, toItem: pv)
             }
         }
         previousView = v
