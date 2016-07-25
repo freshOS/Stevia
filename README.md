@@ -568,6 +568,17 @@ alignHorizontally(|-avatar-15-name-20-followButton-|)
 ```
 🎉🎉🎉
 
+## Priorities
+
+There is no special Stevia api  for priorities.
+In order to set them, you need to use the good'ol standard api :)
+
+```swift
+let c = NSLayoutConstraint(item: v, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1, constant: 0)
+c.priority = 751
+addConstraint(c)
+```
+
 ## Flexible margins
 
 Flexible margins can be used exactly like regular margins:
