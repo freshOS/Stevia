@@ -70,7 +70,7 @@ View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beau
 ## Login View Example
 ![alt text](https://raw.githubusercontent.com/s4cha/Stevia/master/Stevia/LoginExample/login.png "Login view")
 
-#### Before (Native Autolayout)
+### Before (Native Autolayout)
 
 ```swift
 class LoginViewNative:UIView {
@@ -348,6 +348,29 @@ Copy Stevia source files to your Xcode project
 
 ## Documentation
 
+1. [View Hierarchy](#view-hierarchy)
+2. [Layout](#layout)
+  1. [Sizing](#sizing)
+  2. [Centering](#centering)
+  3. [Filling](#filling)
+  4. [Aligning](#aligning)
+  5. [Following another view](#following-another-view)
+  6. [Horizontal layout](#horizontal-layout)
+  7. [Vertical layout](#vertical-layout)
+  8. [Flexible Margins](#flexible-margins)
+  9. [Priorities](#priorities)
+3. [Styling](#styling)
+4. [Content](#content)
+5. [Button taps](#button-taps)
+6. [Changing constraints](#changing-constraints)
+  1. [Simple Changes](#simple-changes)
+  2. [Complex Changes](#complex-changes)
+  3. [Animating Changes](#animating-changes)
+7. [TableView Cells & CollectionView Cells](#tableview-cells-&-collectionviewcells)
+8. [Getting views from the controller](#getting-views-from-the-controller)
+9. [Complex/Nested layouts](#complex/nested-layouts)
+10. [Known issues](#known-issues)
+
 ### View Hierarchy
 ```swift
 sv(
@@ -373,7 +396,114 @@ sv(
 )
 ```
 
-### Horizontal layout
+### Layout
+
+#### Sizing
+
+Width
+```swift
+view.width(100)
+```
+
+Height
+```swift
+view.height(100)
+```
+
+Size
+```swift
+view.size(100)
+```
+
+Constraining multiple views
+```swift
+equalSizes(image1, image2, image2)
+equalWidths(field1, field2, field3, field4)
+equalHeights(button1, button2)
+```
+
+Constraining a view to stay squared
+```swift
+view.heightEqualsWidth()
+```
+
+#### Centering
+
+Horizontally
+```swift
+imageView.centerHorizontally()
+imageView.centerHorizontally(20) //offset
+```
+
+Vertically
+```swift
+imageView.centerVertically()
+imageView.centerVertically(20) //offset
+```
+
+On both axis
+```swift
+imageView.centerInContainer()
+```
+
+#### Filling
+
+Horizontally
+```swift
+view.fillHorizontally()
+view.fillHorizontally(m: 20) // padding
+```
+
+Vertically
+```swift
+view.fillVertically()
+view.fillVertically(m: 20) // padding
+```
+
+All container
+```swift
+view.fillContainer()
+view.fillContainer(20) // Padding
+```
+
+#### Aligning
+
+Horizontally
+```swift
+alignHorizontally(avatar,name,followButton)
+```
+
+Vertically
+```swift
+alignVertically(title,subtitle,text)
+```
+
+Align the center of one view with another one :
+```swift
+alignCenter(view1, with: view2)
+```
+
+
+In the example above of a follow Cell, here is how the layout code would look like :
+```swift
+|-avatar-15-name-20-followButton-|
+alignHorizontally(avatar,name,followButton)
+```
+But `|-avatar-15-name-20-followButton-|` actually **returns the array of views!!!** so we can write it in one **single** statement :
+
+```swift
+alignHorizontally(|-avatar-15-name-20-followButton-|)
+```
+🎉🎉🎉
+
+#### Following Another View
+
+The typical example of this is when we want to have a button on top of an image.
+```swift
+button.followEdges(imageView)
+```
+
+#### Horizontal layout
 This is intended to look like **Apple's visual format**, so you should be very familiar with the syntax.  
 Stevia only removes the `[]` and the String.
 
@@ -419,7 +549,7 @@ Combine all at once.
 |-avatar-15-name-20-followButton-|
 ```
 
-### Vertical layout
+#### Vertical layout
 
 ```swift
 avatar.top(50)
@@ -459,8 +589,7 @@ layout(
 
 In case you wonder `~` operator == `.height(x)`, it's just more readable in a layout statement that way.
 
-## Chainable Api
-
+##### Chainable Api
 
 The avatar example above could've been written that way using the chainable api :
 ```swift
@@ -469,128 +598,12 @@ avatar.top(50).left(15).size(50)
 
 Using `layout` is just clearer in most of the cases but it's yours to choose which way you prefer :)
 
-### Sizing
 
-Width
-```swift
-view.width(100)
-```
-
-Height
-```swift
-view.height(100)
-```
-
-Size
-```swift
-view.size(100)
-```
-
-Constraining multiple views
-```swift
-equalSizes(image1, image2, image2)
-equalWidths(field1, field2, field3, field4)
-equalHeights(button1, button2)
-```
-
-Constraining a view to stay squared
-```swift
-view.heightEqualsWidth()
-```
-
-### Centering
-
-Horizontally
-```swift
-imageView.centerHorizontally()
-imageView.centerHorizontally(20) //offset
-```
-
-Vertically
-```swift
-imageView.centerVertically()
-imageView.centerVertically(20) //offset
-```
-
-On both axis
-```swift
-imageView.centerInContainer()
-```
-
-### Filling
-
-Horizontally
-```swift
-view.fillHorizontally()
-view.fillHorizontally(m: 20) // padding
-```
-
-Vertically
-```swift
-view.fillVertically()
-view.fillVertically(m: 20) // padding
-```
-
-All container
-```swift
-view.fillContainer()
-view.fillContainer(20) // Padding
-```
-
-
-### Aligning
-
-Horizontally
-```swift
-alignHorizontally(avatar,name,followButton)
-```
-
-Vertically
-```swift
-alignVertically(title,subtitle,text)
-```
-
-Align the center of one view with another one :
-```swift
-alignCenter(view1, with: view2)
-```
-
-
-In the example above of a follow Cell, here is how the layout code would look like :
-```swift
-|-avatar-15-name-20-followButton-|
-alignHorizontally(avatar,name,followButton)
-```
-But `|-avatar-15-name-20-followButton-|` actually **returns the array of views!!!** so we can write it in one **single** statement :
-
-```swift
-alignHorizontally(|-avatar-15-name-20-followButton-|)
-```
-🎉🎉🎉
-
-## Following another view
-
-The typical example of this is when we want to have a button on top of an image.
-```swift
-button.followEdges(imageView)
-```
-
-## Priorities
-
-There is no special Stevia api for priorities.
-In order to set them, you need to use the good'ol standard api :)
-
-```swift
-let c = NSLayoutConstraint(item: v, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1, constant: 0)
-c.priority = 751
-addConstraint(c)
-```
-
-## Flexible margins
+#### Flexible margins
 
 Flexible margins can be used exactly like regular margins:
 
-### With chainable Api
+##### With chainable Api
 
 ```swift
 view.top(<=5)
@@ -601,7 +614,7 @@ view.width(>=45)
 view.height(<=100)
 ```
 
-### In layout calls
+##### In layout calls
 
 ```swift
 layout(
@@ -613,21 +626,18 @@ layout(
 )
 ```
 
-### Button taps
+#### Priorities
+
+There is no special Stevia api for priorities.
+In order to set them, you need to use the good'ol standard api :)
 
 ```swift
-button.addTarget(self, action: "follow", forControlEvents: .TouchUpInside)
+let c = NSLayoutConstraint(item: v, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1, constant: 0)
+c.priority = 751
+addConstraint(c)
 ```
 
-Becomes:
-
-```swift
-button.tap(follow)
-```
-
-This is **shorter** and **less error-prone** since `follow` is is not referenced by a string value anymore \o/
-
-### Styles
+### Styling
 
 Well, just call `style` on a UIView subclass :  
 
@@ -686,10 +696,25 @@ Becomes :
 button.image("CommentIcon")
 ```
 
-## Changing constraints
+### Button taps
+
+```swift
+button.addTarget(self, action: "follow", forControlEvents: .TouchUpInside)
+```
+
+Becomes:
+
+```swift
+button.tap(follow)
+```
+
+This is **shorter** and **less error-prone** since `follow` is is not referenced by a string value anymore \o/
+
+
+### Changing constraints
 After laying out a view once, how do I change some constraints ?
 
-### Simple Changes
+#### Simple Changes
 
 ```swift
 // Initial layout
@@ -701,7 +726,7 @@ image.heightConstraint?.constant = 200
 Those getters are available for `left`, `right`, `top`, `bottom`, `height` and `width` constraints
 
 
-### Complex changes
+#### Complex changes
 When we want to change the whole layout at once then the best strategy is to
 flush & relayout.
 
@@ -725,7 +750,7 @@ layout(
      10
  )
 ```
-### Animating Changes
+#### Animating Changes
 Th animate a constraint is to change the constant property on it and then call self.layoutIfNeeded() in an animation block.
 
 Animating with stevia is no different than native Autolayout
@@ -740,11 +765,11 @@ UIView.animateWithDuration(2) {
 ```
 
 
-## TableView Cells & CollectionView Cells
+### TableView Cells & CollectionView Cells
 
 For both tableView cells and UICollectionView cells, `sv` adds the subviews to the `contentView`, as recommended.
 
-### Example
+#### Example
 
 ```swift
 class FriendCell: UITableViewCell {
@@ -780,7 +805,7 @@ tableView.registerClass(FriendCell.self, forCellReuseIdentifier: "FriendCell")
 let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as! FriendCell
 ```
 
-## Getting views from the controller
+### Getting views from the controller
 
 Once again, this is not Stevia-related per se but since we're not generally used to writing views in code, then some explanation might be useful  🤓
 
@@ -808,9 +833,52 @@ class MyViewController: UIViewController {
 }
 ```
 
-## Known issues
+### Complex/Nested layouts
 
-### Expression was to complex to be solved in reasonable time
+We believe complex nested views should be refactored into their own `UIView` subclasses.
+
+For instance, if out App is using a form field multiple times, it is wise to extract it in its own UIView subclass like so:
+
+
+
+```swift
+class CustomField: UIView {
+
+    let icon = UIImageView()
+    let field = UITextField()
+    let image = UIImageView()
+
+    convenience init() {
+        self.init(frame:CGRect.zero)
+
+        sv(
+            icon,
+            field,
+            image
+        )
+
+        alignHorizontally(|-icon.size(40).centerVertically()-field-image.size(40)-|)
+
+        backgroundColor = .whiteColor()
+        layer.cornerRadius = 5
+        layer.shadowOffset = CGSize(width: 2, height:2)
+        layer.shadowOpacity = 0.5
+        icon.backgroundColor = .grayColor()
+        image.backgroundColor = .blackColor()
+    }
+}
+```
+And then we can use it easily like so whenever we need it:
+```swift
+class LoginView: UIView {
+
+    let usernameField = CustomField()
+    let passwordField = CustomField()
+```
+
+### Known issues
+
+#### Expression was to complex to be solved in reasonable time
 
 *"Expression was to complex to be solved in reasonable time"* can happen in Stevia, since the swift compiler has a hard time finding the right `-` operator overload. However it usually only happens with very long horizontal layouts with multiple margins.
 
