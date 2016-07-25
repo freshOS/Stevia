@@ -80,7 +80,7 @@ class LoginViewNative:UIView {
     let login = UIButton()
 
     convenience init() {
-        self.init(frame:CGRectZero)
+        self.init(frame:CGRect.zero)
         backgroundColor = .whiteColor()
 
         addSubview(email)
@@ -220,7 +220,7 @@ class LoginViewStevia:UIView {
     let login = UIButton()
 
     convenience init() {
-        self.init(frame:CGRectZero)
+        self.init(frame:CGRect.zero)
         backgroundColor = .whiteColor()
 
         sv(
@@ -292,14 +292,14 @@ on("INJECTION_BUNDLE_NOTIFICATION") {
 Currently InjectionForXcode doesn't seem to swizzle `init` methods for some reason. So we have to move our view code in another methods
 ```swift
 convenience init() {
-    self.init(frame:CGRectZero)
+    self.init(frame:CGRect.zero)
     //View code
 }
 ```
 Becomes
 ```swift
 convenience init() {
-    self.init(frame:CGRectZero)
+    self.init(frame:CGRect.zero)
     render()
 }
 
@@ -589,6 +589,56 @@ Becomes :
 ```swift
 button.image("CommentIcon")
 ```
+
+## Changing constraints
+After laying out a view once, how do I change some constraints ?
+
+### Simple Changes
+
+```swift
+// Initial layout
+image.height(100)
+
+// And later on
+image.heightConstraint?.constant = 200
+```
+Those getters are available for `left`, `right`, `top`, `bottom`, `height` and `width` constraints
+
+
+### Complex changes
+When we want to change the whole layout at once then the best strategy is to
+flush & relayout.
+
+```swift
+// Initial layout
+layout(
+    100,
+    |-email-|,
+    8,
+    |-password-|,
+)
+
+// Flush all view constraints
+removeConstraints(constraints)
+
+// Re-apply different layout
+layout(
+     |-password-|,
+     8,
+     |-44-email-100-|,
+     10
+ )
+```
+### Animating Changes
+
+In both cases, animating the constraint change is as easy as calling `layoutIfNeeded` in an animation block.
+
+```swift
+UIView.animateWithDuration(2) {
+    self.layoutIfNeeded()
+}
+```
+
 
 
 
