@@ -630,6 +630,10 @@ layout(
  )
 ```
 ### Animating Changes
+Th animate a constraint is to change the constant property on it and then call self.layoutIfNeeded() in an animation block.
+
+Animating with stevia is no different than native Autolayout
+
 
 In both cases, animating the constraint change is as easy as calling `layoutIfNeeded` in an animation block.
 
@@ -637,6 +641,47 @@ In both cases, animating the constraint change is as easy as calling `layoutIfNe
 UIView.animateWithDuration(2) {
     self.layoutIfNeeded()
 }
+```
+
+
+## TableView Cells & CollectionView Cells
+
+For both tableView cells and UICollectionView cells, `sv` adds the subviews to the `contentView`, as recommended.
+
+### Example
+
+```swift
+class FriendCell: UITableViewCell {
+
+    let avatar = UIImageView()
+    let name = UILabel()
+
+    required init?(coder aDecoder: NSCoder) { super.init(coder: aDecoder)}
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        sv(
+            avatar,
+            name.style(nameStyle)
+        )
+
+        avatar.size(50).centerVertically()
+        alignHorizontally(|-20-avatar-name-20-|)
+    }
+
+    func nameStyle(l:UILabel) {
+        l.font = .systemFontOfSize(24)
+        l.textColor = .blueColor()
+    }
+}
+```
+Then in the viewController you do the usual `register` and `dequeue` :)
+```swift
+// In viewDidLoad, register your cell for dequeue
+tableView.registerClass(FriendCell.self, forCellReuseIdentifier: "FriendCell")
+
+// Later, in cellForRowAtIndexPath
+let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as! FriendCell
 ```
 
 
