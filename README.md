@@ -568,9 +568,16 @@ alignHorizontally(|-avatar-15-name-20-followButton-|)
 ```
 🎉🎉🎉
 
+## Following another view
+
+The typical example of this is when we want to have a button on top of an image.
+```swift
+button.followEdges(imageView)
+```
+
 ## Priorities
 
-There is no special Stevia api  for priorities.
+There is no special Stevia api for priorities.
 In order to set them, you need to use the good'ol standard api :)
 
 ```swift
