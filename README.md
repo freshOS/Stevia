@@ -469,6 +469,35 @@ avatar.top(50).left(15).size(50)
 
 Using `layout` is just clearer in most of the cases but it's yours to choose which way you prefer :)
 
+### Sizing
+
+Width
+```swift
+view.width(100)
+```
+
+Height
+```swift
+view.height(100)
+```
+
+Size
+```swift
+view.size(100)
+```
+
+Constraining multiple views
+```swift
+equalSizes(image1, image2, image2)
+equalWidths(field1, field2, field3, field4)
+equalHeights(button1, button2)
+```
+
+Constraining a view to stay squared
+```swift
+view.heightEqualsWidth()
+```
+
 ### Centering
 
 Horizontally
