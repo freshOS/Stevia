@@ -11,21 +11,11 @@ import Stevia
 
 class StyleTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func styleView(view : UIView) {
+    func styleView(view: UIView) {
         view.backgroundColor = UIColor.yellowColor()
     }
     
-    func styleLabel(label : UILabel) {
+    func styleLabel(label: UILabel) {
         label.textColor = UIColor.yellowColor()
     }
 
@@ -35,7 +25,7 @@ class StyleTests: XCTestCase {
         label.style(styleLabel).style(styleView)
         label.style(styleView).style(styleLabel)
         
-        let view : UIView = label
+        let view: UIView = label
         view.style(styleView)
         
         XCTAssertEqual(view.backgroundColor, UIColor.yellowColor())

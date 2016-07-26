@@ -11,9 +11,9 @@ import UIKit
 typealias ActionBlock = (() -> Void)?
 
 class ClosureWrapper {
-    var closure:ActionBlock
+    var closure: ActionBlock
     
-    init(_ closure:ActionBlock) {
+    init(_ closure: ActionBlock) {
         self.closure = closure
     }
 }
@@ -21,18 +21,46 @@ class ClosureWrapper {
 private var kButtonBlockAssociationKey: UInt8 = 0
 public extension UIButton {
     
-    internal var testButtonBlock:ActionBlock {
+    internal var testButtonBlock: ActionBlock {
         get {
-            if let cw = objc_getAssociatedObject(self, &kButtonBlockAssociationKey) as? ClosureWrapper {
+            if let cw = objc_getAssociatedObject(self,
+                                                 &kButtonBlockAssociationKey) as? ClosureWrapper {
                 return cw.closure
             }
             return nil
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &kButtonBlockAssociationKey, ClosureWrapper(newValue), objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self,
+                                     &kButtonBlockAssociationKey,
+                                     ClosureWrapper(newValue),
+                                     objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
+    
+    /** Links UIButton tap (TouchUpInside) event to a block.
+     
+    Example Usage:
+     
+    ```
+    button.tap {
+        // do something
+    }
+    ```
+     
+    Or
+    ```
+    button.tap(doSomething)
+
+    // later
+    func doSomething() {
+        // ...
+    }
+    ```
+     
+     - Returns: Itself for chaining purposes
+     
+     */
     public func tap(block:() -> Void) -> UIButton {
         #if swift(>=2.2)
         addTarget(self, action: #selector(UIButton.tapped), forControlEvents: .TouchUpInside)
@@ -43,6 +71,7 @@ public extension UIButton {
         return self
     }
     
+    /** */
     func tapped() {
         testButtonBlock?()
     }

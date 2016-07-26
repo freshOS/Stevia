@@ -23,7 +23,7 @@ public func -- (left: [UIView], right: SideConstraint) -> [UIView] {
     return left-right
 }
 
-public func -- (left:UIView, right: SideConstraint) -> UIView {
+public func -- (left: UIView, right: SideConstraint) -> UIView {
     return left-right
 }
 
@@ -63,6 +63,18 @@ public func -- (left: [UIView], right: SteviaFlexibleMargin) -> PartialFlexibleC
     return left-right
 }
 
-public func -- (left: PartialFlexibleConstraint, right:UIView) -> [UIView] {
+public func -- (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
+    return left-right
+}
+
+public func -- (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
+    return left-right
+}
+
+public func -- (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
+    return left-right
+}
+
+public func -- (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
     return left-right
 }
