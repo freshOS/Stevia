@@ -29,6 +29,7 @@
 		99C5A4831C7A477C003EDE10 /* CenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C5A4821C7A477C003EDE10 /* CenterTests.swift */; };
 		99C5A4851C7A4971003EDE10 /* FullLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C5A4841C7A4971003EDE10 /* FullLayoutTests.swift */; };
 		99C5A4881C7A5B93003EDE10 /* FlexibleMarginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C5A4871C7A5B93003EDE10 /* FlexibleMarginTests.swift */; };
+		99FBA1441D32C4B0003C4195 /* Stevia+FlexibleMargin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBA1431D32C4B0003C4195 /* Stevia+FlexibleMargin.swift */; };
 		CB8E5C951C6F979C00D8C6B1 /* PositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E5C941C6F979C00D8C6B1 /* PositionTests.swift */; };
 		CBC5334E1C6E12890008F340 /* ContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC5334D1C6E12890008F340 /* ContentTests.swift */; };
 		CBC533501C6E20660008F340 /* HierarchyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC5334F1C6E20660008F340 /* HierarchyTests.swift */; };
@@ -72,6 +73,7 @@
 		99C5A4821C7A477C003EDE10 /* CenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterTests.swift; sourceTree = "<group>"; };
 		99C5A4841C7A4971003EDE10 /* FullLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullLayoutTests.swift; sourceTree = "<group>"; };
 		99C5A4871C7A5B93003EDE10 /* FlexibleMarginTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleMarginTests.swift; sourceTree = "<group>"; };
+		99FBA1431D32C4B0003C4195 /* Stevia+FlexibleMargin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+FlexibleMargin.swift"; sourceTree = "<group>"; };
 		CB8E5C941C6F979C00D8C6B1 /* PositionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionTests.swift; sourceTree = "<group>"; };
 		CBC5334D1C6E12890008F340 /* ContentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTests.swift; sourceTree = "<group>"; };
 		CBC5334F1C6E20660008F340 /* HierarchyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HierarchyTests.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				9991C8651BDB6C9C007D9B75 /* Stevia+Style.swift */,
 				9991C8661BDB6C9C007D9B75 /* Stevia+Tap.swift */,
 				9926C0E81CD8626C0040DA8D /* Stevia+DoubleDash.swift */,
+				99FBA1431D32C4B0003C4195 /* Stevia+FlexibleMargin.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9991C85D1BDB6C8B007D9B75 /* Build configuration list for PBXNativeTarget "Stevia" */;
 			buildPhases = (
+				99013D0B1D33A9E3002327BD /* ShellScript */,
 				9991C8501BDB6C8B007D9B75 /* Sources */,
 				9991C8511BDB6C8B007D9B75 /* Frameworks */,
 				9991C8521BDB6C8B007D9B75 /* Headers */,
@@ -269,6 +273,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		99013D0B1D33A9E3002327BD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9991C8501BDB6C8B007D9B75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -280,6 +300,7 @@
 				9910C2051C6BD36B008C689E /* Stevia+Operators.swift in Sources */,
 				9910C2011C6BD268008C689E /* Stevia+Fill.swift in Sources */,
 				9910C1FF1C6BD17E008C689E /* Stevia+Position.swift in Sources */,
+				99FBA1441D32C4B0003C4195 /* Stevia+FlexibleMargin.swift in Sources */,
 				9910C1FD1C6BD144008C689E /* Stevia+Size.swift in Sources */,
 				9991C86A1BDB6C9C007D9B75 /* Stevia+Hierarchy.swift in Sources */,
 				9991C86C1BDB6C9C007D9B75 /* Stevia+Style.swift in Sources */,

@@ -11,8 +11,8 @@ import XCTest
 import Stevia
 
 class FillTests: XCTestCase {
-    var win:UIWindow!
-    var ctrler:UIViewController!
+    var win: UIWindow!
+    var ctrler: UIViewController!
 
     override func setUp() {
         super.setUp()
@@ -27,7 +27,7 @@ class FillTests: XCTestCase {
 
     func testFillContainer() {
         let b = UIButton()
-        ctrler.view.sv([b])
+        ctrler.view.sv(b)
         b.fillContainer()
         b.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         
@@ -36,13 +36,15 @@ class FillTests: XCTestCase {
     }
     
     func testFillContainerWithPadding() {
-        let padding:CGFloat = 10.0
+        let padding: CGFloat = 10.0
         let b = UIButton()
-        ctrler.view.sv([b])
+        ctrler.view.sv(b)
         b.fillContainer(padding)
         b.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         
-        XCTAssertEqualWithAccuracy(ctrler.view.frame.height, b.frame.height + padding * 2, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(ctrler.view.frame.width, b.frame.width + padding * 2, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(ctrler.view.frame.height, b.frame.height + padding * 2,
+                                   accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(ctrler.view.frame.width, b.frame.width + padding * 2,
+                                   accuracy: CGFloat(FLT_EPSILON))
     }
 }
