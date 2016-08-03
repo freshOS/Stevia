@@ -118,7 +118,7 @@ public func constraint(item view1: AnyObject,
                                   relatedBy: relatedBy,
                                   toItem: view2, attribute: ((attr2 == nil) ? attr1 : attr2! ),
                                   multiplier: multiplier, constant: constant)
-    c.priority = UILayoutPriorityDefaultHigh
+    c.priority = UILayoutPriorityDefaultHigh + 1
     return c
 }
 
