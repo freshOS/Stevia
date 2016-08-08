@@ -35,7 +35,7 @@ public extension UIAppearance {
     - Returns: Itself for chaining purposes
      
      */
-    public func style(styleClosure: (Self)->()) -> Self {
+    @discardableResult public func style(_ styleClosure: (Self)->()) -> Self {
         styleClosure(self)
         return self
     }

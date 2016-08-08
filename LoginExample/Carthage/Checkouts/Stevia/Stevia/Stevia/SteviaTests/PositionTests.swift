@@ -16,7 +16,7 @@ class PositionTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        win = UIWindow(frame: UIScreen.mainScreen().bounds)
+        win = UIWindow(frame: UIScreen.main.bounds)
         ctrler =  UIViewController()
         win.rootViewController = ctrler
         v = UIView()
@@ -30,7 +30,7 @@ class PositionTests: XCTestCase {
     
     func testTop() {
         v.top(23)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 23, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
@@ -39,7 +39,7 @@ class PositionTests: XCTestCase {
     
     func testBottom() {
         v.bottom(45)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, ctrler.view.frame.height - v.frame.height - 45,
                                    accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
@@ -50,7 +50,7 @@ class PositionTests: XCTestCase {
     
     func testLeft() {
         v.left(12)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 12, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
@@ -59,9 +59,9 @@ class PositionTests: XCTestCase {
     
     func testRight() {
         v.right(74)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - 74,
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 74,
                                    accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
