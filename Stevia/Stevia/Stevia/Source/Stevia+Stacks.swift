@@ -31,14 +31,14 @@ public extension UIView {
      )
      ```
      */
-    public func layout(objects: Any...) -> [UIView] {
+    @discardableResult public func layout(_ objects: Any...) -> [UIView] {
         return stackV(objects)
     }
     
-    private func stackV(objects: [Any]) -> [UIView] {
+    private func stackV(_ objects: [Any]) -> [UIView] {
         var previousMargin: CGFloat? = nil
         var previousFlexibleMargin: SteviaFlexibleMargin? = nil
-        for (i, o) in objects.enumerate() {
+        for (i, o) in objects.enumerated() {
             
             switch o {
             case let v as UIView:
@@ -59,16 +59,16 @@ public extension UIView {
                     } else {
                         if let vx = objects[i-2] as? UIView {
                             addConstraint(
-                                item: v, attribute: .Top,
+                                item: v, attribute: .top,
                                 relatedBy: pfm.relation,
-                                toItem: vx, attribute: .Bottom,
+                                toItem: vx, attribute: .bottom,
                                 multiplier: 1, constant: pfm.points
                             )
                         } else if let va = objects[i-2] as? [UIView] {
                             addConstraint(
-                                item: v, attribute: .Top,
+                                item: v, attribute: .top,
                                 relatedBy: pfm.relation,
-                                toItem: va.first!, attribute: .Bottom,
+                                toItem: va.first!, attribute: .bottom,
                                 multiplier: 1, constant: pfm.points
                             )
                         }
@@ -121,16 +121,16 @@ public extension UIView {
                 } else {
                     if let vx = objects[i-2] as? UIView {
                         addConstraint(
-                            item: v, attribute: .Top,
+                            item: v, attribute: .top,
                             relatedBy: pfm.relation,
-                            toItem: vx, attribute: .Bottom,
+                            toItem: vx, attribute: .bottom,
                             multiplier: 1, constant: pfm.points
                         )
                     } else if let va = objects[i-2] as? [UIView] {
                         addConstraint(
-                            item: v, attribute: .Top,
+                            item: v, attribute: .top,
                             relatedBy: pfm.relation,
-                            toItem: va.first!, attribute: .Bottom,
+                            toItem: va.first!, attribute: .bottom,
                             multiplier: 1, constant: pfm.points
                         )
                     }
@@ -145,7 +145,7 @@ public extension UIView {
         return objects.map {$0 as? UIView }.flatMap {$0}
     }
     
-    private func cgFloatMarginFromObject(o: Any) -> CGFloat {
+    private func cgFloatMarginFromObject(_ o: Any) -> CGFloat {
         var m: CGFloat = 0
         if let i = o as? Int {
             m = CGFloat(i)
@@ -157,13 +157,14 @@ public extension UIView {
         return m
     }
     
-    private func tryStackViewVerticallyWithPreviousView(view: UIView, index: Int, objects: [Any]) {
+    private func tryStackViewVerticallyWithPreviousView(_ view: UIView,
+                                                        index: Int, objects: [Any]) {
         if let pv = previousViewFromIndex(index, objects: objects) {
             pv.stackV(v: view)
         }
     }
     
-    private func previousViewFromIndex(index: Int, objects: [Any]) -> UIView? {
+    private func previousViewFromIndex(_ index: Int, objects: [Any]) -> UIView? {
         if index != 0 {
             if let previousView = objects[index-1] as? UIView {
                 return previousView
@@ -172,13 +173,13 @@ public extension UIView {
         return nil
     }
     
-    private func stackV(m points: CGFloat = 0, v: UIView) -> UIView {
-        return stack(.Vertical, points: points, v: v)
+    @discardableResult private func stackV(m points: CGFloat = 0, v: UIView) -> UIView {
+        return stack(.vertical, points: points, v: v)
     }
     
-    private func stack(axis: UILayoutConstraintAxis, points: CGFloat = 0, v: UIView) -> UIView {
-        let a: NSLayoutAttribute = axis == .Vertical ? .Top : .Left
-        let b: NSLayoutAttribute = axis == .Vertical ? .Bottom : .Right
+    private func stack(_ axis: UILayoutConstraintAxis, points: CGFloat = 0, v: UIView) -> UIView {
+        let a: NSLayoutAttribute = axis == .vertical ? .top : .left
+        let b: NSLayoutAttribute = axis == .vertical ? .bottom : .right
         if let spv = superview {
             let c = constraint(item: v, attribute: a, toItem: self, attribute: b, constant:points)
             spv.addConstraint(c)

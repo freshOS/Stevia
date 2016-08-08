@@ -44,7 +44,7 @@ class FullLayoutTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        win = UIWindow(frame: UIScreen.mainScreen().bounds)
+        win = UIWindow(frame: UIScreen.main.bounds)
         vc = UIViewController()///TestVC()
         win.rootViewController = vc
         v = TestView()

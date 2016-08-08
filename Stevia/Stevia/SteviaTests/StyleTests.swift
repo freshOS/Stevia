@@ -12,11 +12,11 @@ import Stevia
 class StyleTests: XCTestCase {
 
     func styleView(view: UIView) {
-        view.backgroundColor = UIColor.yellowColor()
+        view.backgroundColor = .yellow
     }
     
     func styleLabel(label: UILabel) {
-        label.textColor = UIColor.yellowColor()
+        label.textColor = .yellow
     }
 
     func testStyle() {
@@ -28,14 +28,14 @@ class StyleTests: XCTestCase {
         let view: UIView = label
         view.style(styleView)
         
-        XCTAssertEqual(view.backgroundColor, UIColor.yellowColor())
-        XCTAssertEqual(label.textColor, UIColor.yellowColor())
+        XCTAssertEqual(view.backgroundColor, .yellow)
+        XCTAssertEqual(label.textColor, .yellow)
         
         //check type deduction
         label.style { (label) -> () in
-            label.textColor = UIColor.blueColor()
+            label.textColor = .blue
         }
-        XCTAssertEqual(label.textColor, UIColor.blueColor())
+        XCTAssertEqual(label.textColor, .blue)
     }
 
 
