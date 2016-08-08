@@ -17,7 +17,7 @@ class FlexibleMarginTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        win = UIWindow(frame: UIScreen.mainScreen().bounds)
+        win = UIWindow(frame: UIScreen.main.bounds)
         ctrler =  UIViewController()
         win.rootViewController = ctrler
         v = UIView()
@@ -33,7 +33,7 @@ class FlexibleMarginTests: XCTestCase {
     
     func testGreaterTop() {
         v.top(>=23)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 23, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
@@ -42,7 +42,7 @@ class FlexibleMarginTests: XCTestCase {
     
     func testGreaterBottom() {
         v.bottom(>=45)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, ctrler.view.frame.height - v.frame.height - 45,
                                    accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
@@ -52,7 +52,7 @@ class FlexibleMarginTests: XCTestCase {
     
     func testGreaterLeft() {
         v.left(>=23)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 23, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
@@ -61,7 +61,7 @@ class FlexibleMarginTests: XCTestCase {
 
     func testGreaterRight() {
         v.right(>=74)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 74,
                                    accuracy: CGFloat(FLT_EPSILON))
@@ -71,7 +71,7 @@ class FlexibleMarginTests: XCTestCase {
     
     func testLessTop() {
         v.top(<=23)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 23, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
         
@@ -81,7 +81,7 @@ class FlexibleMarginTests: XCTestCase {
     
     func testLessBottom() {
         v.bottom(<=45)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y,
                                    ctrler.view.frame.height - v.frame.height - 45,
                                    accuracy: CGFloat(FLT_EPSILON))
@@ -92,7 +92,7 @@ class FlexibleMarginTests: XCTestCase {
     
     func testLessLeft() {
         v.left(<=23)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 23, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
@@ -101,7 +101,7 @@ class FlexibleMarginTests: XCTestCase {
     
     func testLessLeftOperator() {
         |-(<=23)-v
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 23, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
@@ -110,7 +110,7 @@ class FlexibleMarginTests: XCTestCase {
     
     func testLessRight() {
         v.right(<=74)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 74,
                                    accuracy: CGFloat(FLT_EPSILON))
@@ -121,7 +121,7 @@ class FlexibleMarginTests: XCTestCase {
     
     func testLessRightOperator() {
         v-(<=74)-|
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 74,
                                    accuracy: CGFloat(FLT_EPSILON))

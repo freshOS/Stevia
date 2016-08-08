@@ -24,7 +24,7 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    public func size(points: CGFloat) -> UIView {
+    @discardableResult public func size(_ points: CGFloat) -> UIView {
         width(points)
         height(points)
         return self
@@ -49,8 +49,8 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    public func height(points: CGFloat) -> UIView {
-        return size(.Height, points: points)
+    @discardableResult public func height(_ points: CGFloat) -> UIView {
+        return size(.height, points: points)
     }
     
     /**
@@ -65,8 +65,8 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    public func width(points: CGFloat) -> UIView {
-        return size(.Width, points: points)
+    @discardableResult public func width(_ points: CGFloat) -> UIView {
+        return size(.width, points: points)
     }
     
     /**
@@ -87,8 +87,8 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    public func height(fm: SteviaFlexibleMargin) -> UIView {
-        return size(.Height, relatedBy: fm.relation, points: fm.points)
+    @discardableResult public func height(_ fm: SteviaFlexibleMargin) -> UIView {
+        return size(.height, relatedBy: fm.relation, points: fm.points)
     }
     
     /**
@@ -103,12 +103,12 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    public func width(fm: SteviaFlexibleMargin) -> UIView {
-        return size(.Width, relatedBy: fm.relation, points: fm.points)
+    @discardableResult public func width(_ fm: SteviaFlexibleMargin) -> UIView {
+        return size(.width, relatedBy: fm.relation, points: fm.points)
     }
     
-    private func size(attribute: NSLayoutAttribute,
-                      relatedBy: NSLayoutRelation = .Equal,
+    private func size(_ attribute: NSLayoutAttribute,
+                      relatedBy: NSLayoutRelation = .equal,
                       points: CGFloat) -> UIView {
         if let spv = superview {
             let c = constraint(item: self, attribute:attribute,
@@ -130,7 +130,7 @@ public extension UIView {
  - Returns: The views enabling chaining.
  
  */
-public func equalSizes(views: UIView...) -> [UIView] {
+@discardableResult public func equalSizes(_ views: UIView...) -> [UIView] {
     return equalSizes(views)
 }
 
@@ -144,7 +144,7 @@ public func equalSizes(views: UIView...) -> [UIView] {
  - Returns: The views enabling chaining.
  
  */
-public func equalSizes(views: [UIView]) -> [UIView] {
+@discardableResult public func equalSizes(_ views: [UIView]) -> [UIView] {
     equalHeights(views)
     equalWidths(views)
     return views
@@ -160,7 +160,7 @@ public func equalSizes(views: [UIView]) -> [UIView] {
  - Returns: The views enabling chaining.
  
  */
-public func equalWidths(views: UIView...) -> [UIView] {
+@discardableResult public func equalWidths(_ views: UIView...) -> [UIView] {
     return equalWidths(views)
 }
 
@@ -174,8 +174,8 @@ public func equalWidths(views: UIView...) -> [UIView] {
  - Returns: The views enabling chaining.
  
  */
-public func equalWidths(views: [UIView]) -> [UIView] {
-    equal(.Width, views: views)
+@discardableResult public func equalWidths(_ views: [UIView]) -> [UIView] {
+    equal(.width, views: views)
     return views
 }
 
@@ -189,7 +189,7 @@ public func equalWidths(views: [UIView]) -> [UIView] {
  - Returns: The views enabling chaining.
  
  */
-public func equalHeights(views: UIView...) -> [UIView] {
+@discardableResult public func equalHeights(_ views: UIView...) -> [UIView] {
     return equalHeights(views)
 }
 
@@ -203,12 +203,12 @@ public func equalHeights(views: UIView...) -> [UIView] {
  - Returns: The views enabling chaining.
  
  */
-public func equalHeights(views: [UIView]) -> [UIView] {
-    equal(.Height, views: views)
+@discardableResult public func equalHeights(_ views: [UIView]) -> [UIView] {
+    equal(.height, views: views)
     return views
 }
 
-private func equal(attribute: NSLayoutAttribute, views: [UIView]) {
+private func equal(_ attribute: NSLayoutAttribute, views: [UIView]) {
     var previousView: UIView?
     for v in views {
         if let pv = previousView {

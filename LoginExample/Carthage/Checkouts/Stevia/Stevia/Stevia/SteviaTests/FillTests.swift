@@ -16,7 +16,7 @@ class FillTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        win = UIWindow(frame: UIScreen.mainScreen().bounds)
+        win = UIWindow(frame: UIScreen.main.bounds)
         ctrler =  UIViewController()
         win.rootViewController = ctrler
     }
@@ -29,8 +29,7 @@ class FillTests: XCTestCase {
         let b = UIButton()
         ctrler.view.sv(b)
         b.fillContainer()
-        b.layoutIfNeeded() // This is needed to force auto-layout to kick-in
-        
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(ctrler.view.frame, b.frame)
 
     }
