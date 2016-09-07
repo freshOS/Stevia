@@ -61,7 +61,7 @@ public extension UIButton {
      - Returns: Itself for chaining purposes
      
      */
-    public func tap(_ block:() -> Void) -> UIButton {
+    public func tap(_ block: @escaping () -> Void) -> UIButton {
         #if swift(>=2.2)
         addTarget(self, action: #selector(UIButton.tapped), for: .touchUpInside)
         #else
