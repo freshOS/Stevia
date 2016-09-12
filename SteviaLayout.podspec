@@ -13,4 +13,5 @@ Pod::Spec.new do |s|
   s.requires_arc     = true
   s.ios.deployment_target = "8.0"
   s.description  = "Elegant view layout for iOS :leaves: - Auto layout code finally readable by a human being"
+  s.module_name = 'Stevia'
 end
