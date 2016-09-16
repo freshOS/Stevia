@@ -12,7 +12,7 @@ import UIKit
 
 public extension UIView {
     
-    @available(*, deprecated=2.2.1, message="Use 'addConstraint' instead")
+    @available(*, deprecated: 2.2.1, message: "Use 'addConstraint' instead")
     /**
      Helper for creating and adding NSLayoutConstraint but with default values provided.
      
@@ -35,9 +35,9 @@ public extension UIView {
      
      - Returns: The NSLayoutConstraint created.
      */
-    public func c(item view1: AnyObject,
+    @discardableResult public func c(item view1: AnyObject,
         attribute attr1: NSLayoutAttribute,
-        relatedBy: NSLayoutRelation = .Equal,
+        relatedBy: NSLayoutRelation = .equal,
         toItem view2: AnyObject? = nil,
         attribute attr2: NSLayoutAttribute? = nil,
         multiplier: CGFloat = 1,
@@ -73,9 +73,9 @@ public extension UIView {
      
      - Returns: The NSLayoutConstraint created.
      */
-    public func addConstraint(item view1: AnyObject,
+    @discardableResult public func addConstraint(item view1: AnyObject,
                        attribute attr1: NSLayoutAttribute,
-                                 relatedBy: NSLayoutRelation = .Equal,
+                                 relatedBy: NSLayoutRelation = .equal,
                                  toItem view2: AnyObject? = nil,
                                         attribute attr2: NSLayoutAttribute? = nil,
                                                   multiplier: CGFloat = 1,
@@ -109,7 +109,7 @@ public extension UIView {
  */
 public func constraint(item view1: AnyObject,
     attribute attr1: NSLayoutAttribute,
-    relatedBy: NSLayoutRelation = .Equal,
+    relatedBy: NSLayoutRelation = .equal,
     toItem view2: AnyObject? = nil,
     attribute attr2: NSLayoutAttribute? = nil, // Not an attribute??
     multiplier: CGFloat = 1,
@@ -134,13 +134,13 @@ public extension UIView {
      button.followEdges(image)
      ```
      */
-    public func followEdges(otherView: UIView) {
+    public func followEdges(_ otherView: UIView) {
         if let spv = superview {
             let cs = [
-                constraint(item: self, attribute: .Top, toItem: otherView),
-                constraint(item: self, attribute: .Right, toItem: otherView),
-                constraint(item: self, attribute: .Bottom, toItem: otherView),
-                constraint(item: self, attribute: .Left, toItem: otherView)
+                constraint(item: self, attribute: .top, toItem: otherView),
+                constraint(item: self, attribute: .right, toItem: otherView),
+                constraint(item: self, attribute: .bottom, toItem: otherView),
+                constraint(item: self, attribute: .left, toItem: otherView)
             ]
             spv.addConstraints(cs)
         }
@@ -157,9 +157,9 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    public func heightEqualsWidth() -> UIView {
+    @discardableResult public func heightEqualsWidth() -> UIView {
         if let spv = superview {
-            let c = constraint(item: self, attribute: .Height, toItem: self, attribute: .Width)
+            let c = constraint(item: self, attribute: .height, toItem: self, attribute: .width)
             spv.addConstraint(c)
         }
         return self

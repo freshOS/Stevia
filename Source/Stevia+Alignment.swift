@@ -23,7 +23,7 @@ import UIKit
  - Returns: The array of views, enabling chaining,
  
  */
-public func alignHorizontally(views: UIView...) -> [UIView] {
+@discardableResult public func alignHorizontally(_ views: UIView...) -> [UIView] {
     return alignHorizontally(views)
 }
 
@@ -42,8 +42,8 @@ public func alignHorizontally(views: UIView...) -> [UIView] {
  - Returns: The array of views, enabling chaining,
  
  */
-public func alignHorizontally(views: [UIView]) -> [UIView] {
-    align(.Horizontal, views: views)
+@discardableResult public func alignHorizontally(_ views: [UIView]) -> [UIView] {
+    align(.horizontal, views: views)
     return views
 }
 
@@ -57,7 +57,7 @@ public func alignHorizontally(views: [UIView]) -> [UIView] {
  - Returns: The array of views, enabling chaining,
  
  */
-public func alignVertically(views: UIView...) {
+public func alignVertically(_ views: UIView...) {
     alignVertically(views)
 }
 
@@ -71,8 +71,8 @@ public func alignVertically(views: UIView...) {
  - Returns: The array of views, enabling chaining,
  
  */
-public func alignVertically(views: [UIView]) {
-    align(.Vertical, views: views)
+public func alignVertically(_ views: [UIView]) {
+    align(.vertical, views: views)
 }
 
 /** Aligns the center of two views
@@ -82,7 +82,7 @@ public func alignVertically(views: [UIView]) {
  alignCenter(button, with:image)
  ```
  */
-public func alignCenter(v1: UIView, with v2: UIView) {
+public func alignCenter(_ v1: UIView, with v2: UIView) {
     alignHorizontally(v1, with: v2)
     alignVertically(v1, with: v2)
 }
@@ -95,8 +95,8 @@ public func alignCenter(v1: UIView, with v2: UIView) {
  ```
  
  */
-public func alignHorizontally(v1: UIView, with v2: UIView, offset: CGFloat = 0) {
-    align(.Horizontal, v1: v1, with: v2, offset: offset)
+public func alignHorizontally(_ v1: UIView, with v2: UIView, offset: CGFloat = 0) {
+    align(.horizontal, v1: v1, with: v2, offset: offset)
 }
 
 /** Aligns two views Vertically (on the Y Axis)
@@ -107,15 +107,15 @@ public func alignHorizontally(v1: UIView, with v2: UIView, offset: CGFloat = 0) 
  ```
  
  */
-public func alignVertically(v1: UIView, with v2: UIView, offset: CGFloat = 0) {
-    align(.Vertical, v1: v1, with: v2, offset: offset)
+public func alignVertically(_ v1: UIView, with v2: UIView, offset: CGFloat = 0) {
+    align(.vertical, v1: v1, with: v2, offset: offset)
 }
 
-private func align(axis: UILayoutConstraintAxis, views: [UIView]) {
-    for (i, v) in views.enumerate() {
+private func align(_ axis: UILayoutConstraintAxis, views: [UIView]) {
+    for (i, v) in views.enumerated() {
         if views.count > i+1 {
             let v2 = views[i+1]
-            if axis == .Horizontal {
+            if axis == .horizontal {
                 alignHorizontally(v, with: v2)
             } else {
                 alignVertically(v, with: v2)
@@ -124,9 +124,9 @@ private func align(axis: UILayoutConstraintAxis, views: [UIView]) {
     }
 }
 
-private func align(axis: UILayoutConstraintAxis, v1: UIView, with v2: UIView, offset: CGFloat) {
+private func align(_ axis: UILayoutConstraintAxis, v1: UIView, with v2: UIView, offset: CGFloat) {
     if let spv = v1.superview {
-        let center: NSLayoutAttribute = axis == .Horizontal ? .CenterY : .CenterX
+        let center: NSLayoutAttribute = axis == .horizontal ? .centerY : .centerX
         let c = constraint(item: v1, attribute: center, toItem: v2, constant:offset)
         spv.addConstraint(c)
     }
