@@ -16,7 +16,7 @@ class CenterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        win = UIWindow(frame: UIScreen.mainScreen().bounds)
+        win = UIWindow(frame: UIScreen.main.bounds)
         ctrler =  UIViewController()
         win.rootViewController = ctrler
         v = UIView()
@@ -30,14 +30,14 @@ class CenterTests: XCTestCase {
     
     func testCenterHorizontally() {
         v.size(100)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
         v.centerHorizontally()
-        v.setNeedsLayout()
-        v.layoutIfNeeded()
+        ctrler.view.setNeedsLayout()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x,
                                    ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
@@ -48,14 +48,14 @@ class CenterTests: XCTestCase {
     
     func testCenterHorizontallyWithOffset() {
         v.size(100)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
         v.centerHorizontally(50)
-        v.setNeedsLayout()
-        v.layoutIfNeeded()
+        ctrler.view.setNeedsLayout()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x - 50,
                                    ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
@@ -67,14 +67,14 @@ class CenterTests: XCTestCase {
     
     func testCenterVertically() {
         v.size(100)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
         v.centerVertically()
-        v.setNeedsLayout()
-        v.layoutIfNeeded()
+        ctrler.view.setNeedsLayout()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y,
                                    ctrler.view.frame.height/2.0 - (v.frame.height/2.0),
                                    accuracy: CGFloat(FLT_EPSILON))
@@ -85,14 +85,14 @@ class CenterTests: XCTestCase {
     
     func testCenterVerticallyWithOffset() {
         v.size(100)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
         v.centerVertically(50)
-        v.setNeedsLayout()
-        v.layoutIfNeeded()
+        ctrler.view.setNeedsLayout()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y - 50,
                                    ctrler.view.frame.height/2.0 - (v.frame.height/2.0),
                                    accuracy: CGFloat(FLT_EPSILON))
@@ -103,14 +103,14 @@ class CenterTests: XCTestCase {
     
     func testCenterInContainer() {
         v.size(100)
-        v.layoutIfNeeded()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.width, 100, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v.frame.height, 100, accuracy: CGFloat(FLT_EPSILON))
         v.centerInContainer()
-        v.setNeedsLayout()
-        v.layoutIfNeeded()
+        ctrler.view.setNeedsLayout()
+        ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v.frame.origin.y,
                                    ctrler.view.frame.height/2.0 - (v.frame.height/2.0),
                                    accuracy: CGFloat(FLT_EPSILON))

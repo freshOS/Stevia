@@ -17,8 +17,8 @@ public extension UIButton {
      
      - Returns: Itself for chaining purposes
     */
-    public func text(t: String) -> Self {
-        setTitle(t, forState: .Normal)
+    @discardableResult public func text(_ t: String) -> Self {
+        setTitle(t, for: UIControlState())
         return self
     }
     
@@ -30,7 +30,7 @@ public extension UIButton {
      
      - Returns: Itself for chaining purposes
      */
-    public func textKey(t: String) -> Self {
+    @discardableResult public func textKey(_ t: String) -> Self {
         text(NSLocalizedString(t, comment: ""))
         return self
     }
@@ -42,8 +42,8 @@ public extension UIButton {
      
      - Returns: Itself for chaining purposes
      */
-    public func image(s: String) -> Self {
-        setImage(UIImage(named:s), forState: .Normal)
+    @discardableResult public func image(_ s: String) -> Self {
+        setImage(UIImage(named:s), for: UIControlState())
         return self
     }
 }
@@ -54,7 +54,7 @@ public extension UITextField {
      Sets the textfield placeholder but in a chainable fashion
      - Returns: Itself for chaining purposes
      */
-    public func placeholder(t: String) -> Self {
+    @discardableResult public func placeholder(_ t: String) -> Self {
         placeholder = t
         return self
     }
@@ -65,7 +65,7 @@ public extension UILabel {
      Sets the label text but in a chainable fashion
      - Returns: Itself for chaining purposes
      */
-    public func text(t: String) -> Self {
+    @discardableResult public func text(_ t: String) -> Self {
         text = t
         return self
     }
@@ -75,7 +75,7 @@ public extension UILabel {
      Essentially a shortcut for `text = NSLocalizedString("X", comment: "")`
      - Returns: Itself for chaining purposes
      */
-    public func textKey(t: String) -> Self {
+    @discardableResult public func textKey(_ t: String) -> Self {
         text(NSLocalizedString(t, comment: ""))
         return self
     }
@@ -89,7 +89,7 @@ extension UIImageView {
      
      - Returns: Itself for chaining purposes
      */
-    public func image(t: String) -> Self {
+    @discardableResult public func image(_ t: String) -> Self {
         image = UIImage(named: t)
         return self
     }
