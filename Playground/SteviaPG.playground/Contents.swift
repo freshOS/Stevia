@@ -1,6 +1,6 @@
 //: Playground - noun: a place where people can play
 import UIKit
-import XCPlayground
+import PlaygroundSupport
 import Stevia
 
 // Open the Workspace and
@@ -14,7 +14,7 @@ class SteviaView:UIView {
     let forgot = UILabel()
     
     convenience init() {
-        self.init(frame:CGRectZero)
+        self.init(frame:CGRect.zero)
     
         sv(
             email.placeholder("Email").style(fieldStyle),
@@ -28,29 +28,29 @@ class SteviaView:UIView {
             |-email-| ~ 80,
             8,
             |-password-forgot-| ~ 80,
-            "",
+            >=20,
             |login| ~ 80,
             0
         )
         
-        backgroundColor = .whiteColor()
-        password.setContentHuggingPriority(0, forAxis: .Horizontal)
-        forgot.backgroundColor = .redColor()
+        backgroundColor = .white
+        password.setContentHuggingPriority(0, for: .horizontal)
+        forgot.backgroundColor = .red
     }
     
     func fieldStyle(f:UITextField) {
-        f.borderStyle = .RoundedRect
+        f.borderStyle = .roundedRect
         f.font = UIFont(name: "HelveticaNeue-Light", size: 26)
-        f.returnKeyType = .Next
+        f.returnKeyType = .next
     }
     
     func passwordFieldStyle(f:UITextField) {
-        f.secureTextEntry = true
-        f.returnKeyType = .Done
+        f.isSecureTextEntry = true
+        f.returnKeyType = .done
     }
     
     func buttonSytle(b:UIButton) {
-        b.backgroundColor = .lightGrayColor()
+        b.backgroundColor = .lightGray
     }
     
     func loginTapped() {
@@ -62,24 +62,6 @@ class SteviaView:UIView {
 
 
 // Contingency code to live reload the Playground.
-
 let v = SteviaView()
 v.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
-XCPlaygroundPage.currentPage.liveView = v
-
-class TimerHack {
-
-    func startTimer() {
-        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: #selector(TimerHack.onTimer(_:)), userInfo: nil, repeats: true)
-    }
-
-    @objc func onTimer(timer:NSTimer!) {
-        let v = SteviaView()
-        v.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
-        XCPlaygroundPage.currentPage.liveView = v
-    }
-}
-var timerHack = TimerHack()
-timerHack.startTimer()
-CFRunLoopRun()
-
+PlaygroundPage.current.liveView = v
