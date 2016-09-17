@@ -217,8 +217,8 @@ class LayoutTests: XCTestCase {
             XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
         }
         
-        
-//        |v1.width(20)-v2.width(20)-v3
+
+        |v1.width(20)--v2.width(20)--v3
         ctrler.view.layoutIfNeeded()
         XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
         XCTAssertEqualWithAccuracy(v1.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
