@@ -16,14 +16,14 @@ class LoginViewStevia:UIView {
     let login = UIButton()
     
     convenience init() {
-        self.init(frame:CGRectZero)
+        self.init(frame:CGRect.zero)
         // This is only needed for live reload as injectionForXcode
         // doesn't swizzle init methods.
         render()
     }
     
     func render() {
-        backgroundColor = .grayColor()
+        backgroundColor = .gray
 
         sv(
             email.placeholder("Email").style(fieldStyle), //.style(emailFieldStyle),
@@ -42,19 +42,19 @@ class LoginViewStevia:UIView {
         )
     }
 
-    func fieldStyle(f:UITextField) {
-        f.borderStyle = .RoundedRect
+    func fieldStyle(_ f:UITextField) {
+        f.borderStyle = .roundedRect
         f.font = UIFont(name: "HelveticaNeue-Light", size: 26)
-        f.returnKeyType = .Next
+        f.returnKeyType = .next
     }
     
-    func passwordFieldStyle(f:UITextField) {
-        f.secureTextEntry = true
-        f.returnKeyType = .Done
+    func passwordFieldStyle(_ f:UITextField) {
+        f.isSecureTextEntry = true
+        f.returnKeyType = .done
     }
     
-    func buttonSytle(b:UIButton) {
-        b.backgroundColor = .lightGrayColor()
+    func buttonSytle(_ b:UIButton) {
+        b.backgroundColor = .lightGray
     }
     
     func loginTapped() {
