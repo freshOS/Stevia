@@ -27,7 +27,7 @@ layout(
 
 ## Swift Version
 Swift 2 -> version **2.3.0**  
-Swift 3 -> version **3.0.0**
+Swift 3 -> version **3.0.1**
 
 ## Reason
 ### Why
