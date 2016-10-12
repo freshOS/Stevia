@@ -1,4 +1,6 @@
-# Stevia 🍃 -  *Human readable Auto Layout*
+![Stevia](https://raw.githubusercontent.com/s4cha/Stevia/master/banner.png)
+
+# Stevia
 
 [![Language: Swift2 and 3](https://img.shields.io/badge/language-swift2|swift3-f48041.svg?style=flat)](https://developer.apple.com/swift)
 ![Platform: iOS 8+](https://img.shields.io/badge/platform-iOS%208%2B-blue.svg?style=flat)
