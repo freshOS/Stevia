@@ -40,8 +40,7 @@ public extension UIView {
     public var rightConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .right)
     }
-    
-    
+        
     /** Gets the top constraint if found.
      
     Example Usage for changing top margin of a label :

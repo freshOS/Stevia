@@ -10,72 +10,89 @@ import Foundation
 
 infix operator -- :AdditionPrecedence
 
-@discardableResult public func -- (left: UIView, right: CGFloat) -> PartialConstraint {
+@discardableResult
+public func -- (left: UIView, right: CGFloat) -> PartialConstraint {
     return left-right
 }
 
-@discardableResult public func -- (left: SideConstraint, right: UIView) -> UIView {
+@discardableResult
+public func -- (left: SideConstraint, right: UIView) -> UIView {
     return left-right
 }
 
-@discardableResult public func -- (left: [UIView], right: SideConstraint) -> [UIView] {
+@discardableResult
+public func -- (left: [UIView], right: SideConstraint) -> [UIView] {
     return left-right
 }
 
-@discardableResult public func -- (left: UIView, right: SideConstraint) -> UIView {
+@discardableResult
+public func -- (left: UIView, right: SideConstraint) -> UIView {
     return left-right
 }
 
-@discardableResult public func -- (left: PartialConstraint, right: UIView) -> [UIView] {
+@discardableResult
+public func -- (left: PartialConstraint, right: UIView) -> [UIView] {
     return left-right
 }
 
-@discardableResult public func -- (left: UIView, right: UIView) -> [UIView] {
+@discardableResult
+public func -- (left: UIView, right: UIView) -> [UIView] {
     return left-right
 }
 
-@discardableResult public func -- (left: [UIView], right: CGFloat) -> PartialConstraint {
+@discardableResult
+public func -- (left: [UIView], right: CGFloat) -> PartialConstraint {
     return left-right
 }
 
-@discardableResult public func -- (left: [UIView], right: UIView) -> [UIView] {
+@discardableResult
+public func -- (left: [UIView], right: UIView) -> [UIView] {
     return left-right
 }
 
-@discardableResult public func -- (left: UIView, right: String) -> Space {
+@discardableResult
+public func -- (left: UIView, right: String) -> Space {
     return left-right
 }
 
-@discardableResult public func -- (left: [UIView], right: String) -> Space {
+@discardableResult
+public func -- (left: [UIView], right: String) -> Space {
     return left-right
 }
 
-@discardableResult public func -- (left: Space, right: UIView) -> [UIView] {
+@discardableResult
+public func -- (left: Space, right: UIView) -> [UIView] {
     return left-right
 }
 
-@discardableResult public func -- (left: UIView,
+@discardableResult
+public func -- (left: UIView,
                                    right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
     return left-right
 }
 
-@discardableResult public func -- (left: [UIView],
+@discardableResult
+public func -- (left: [UIView],
                                    right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
     return left-right
 }
 
-@discardableResult public func -- (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
+@discardableResult
+public func -- (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
     return left-right
 }
 
-@discardableResult public func -- (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
+@discardableResult
+public func -- (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
     return left-right
 }
 
-@discardableResult public func -- (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
+@discardableResult
+public func -- (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
     return left-right
 }
 
-@discardableResult public func -- (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
+@discardableResult
+public func -- (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
     return left-right
 }

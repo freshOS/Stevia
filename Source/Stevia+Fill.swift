@@ -32,11 +32,11 @@ public extension UIView {
      Adds the constraints needed for the view to fill its `superview` Vertically.
      A padding can be used to apply equal spaces between the view and its superview
      */
-    @discardableResult public func fillVertically(m points: CGFloat = 0) -> UIView {
+    @discardableResult
+    public func fillVertically(m points: CGFloat = 0) -> UIView {
         return fill(.vertical, points: points)
     }
     
-
     @available(*, deprecated: 2.2.1, message: "Use 'fillHorizontally' instead")
     /**
      Adds the constraints needed for the view to fill its `superview` Horizontally.
@@ -50,7 +50,8 @@ public extension UIView {
      Adds the constraints needed for the view to fill its `superview` Horizontally.
      A padding can be used to apply equal spaces between the view and its superview
      */
-    @discardableResult public func fillHorizontally(m points: CGFloat = 0) -> UIView {
+    @discardableResult
+    public func fillHorizontally(m points: CGFloat = 0) -> UIView {
         return fill(.horizontal, points: points)
     }
     

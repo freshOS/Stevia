@@ -20,7 +20,8 @@ public extension UIView {
      
     - Returns: Itself for chaining purposes
     */
-    @discardableResult public func left(_ points: CGFloat) -> UIView {
+    @discardableResult
+    public func left(_ points: CGFloat) -> UIView {
         return position(.left, points: points)
     }
     
@@ -34,7 +35,8 @@ public extension UIView {
      
     - Returns: Itself for chaining purposes
     */
-    @discardableResult public func right(_ points: CGFloat) -> UIView {
+    @discardableResult
+    public func right(_ points: CGFloat) -> UIView {
         return position(.right, points: -points)
     }
     
@@ -48,7 +50,8 @@ public extension UIView {
      
     - Returns: Itself for chaining purposes
     */
-    @discardableResult public func top(_ points: CGFloat) -> UIView {
+    @discardableResult
+    public func top(_ points: CGFloat) -> UIView {
         return position(.top, points: points)
     }
     
@@ -62,7 +65,8 @@ public extension UIView {
      
     - Returns: Itself for chaining purposes
     */
-    @discardableResult public func bottom(_ points: CGFloat) -> UIView {
+    @discardableResult
+    public func bottom(_ points: CGFloat) -> UIView {
         return position(.bottom, points: -points)
     }
 
@@ -76,7 +80,8 @@ public extension UIView {
      
     - Returns: Itself for chaining purposes
     */
-    @discardableResult public func left(_ fm: SteviaFlexibleMargin) -> UIView {
+    @discardableResult
+    public func left(_ fm: SteviaFlexibleMargin) -> UIView {
         return position(.left, relatedBy:fm.relation, points: fm.points)
     }
     
@@ -90,7 +95,8 @@ public extension UIView {
      
     - Returns: Itself for chaining purposes
     */
-    @discardableResult public func right(_ fm: SteviaFlexibleMargin) -> UIView {
+    @discardableResult
+    public func right(_ fm: SteviaFlexibleMargin) -> UIView {
         // For right this should be inverted.
         var n = SteviaFlexibleMargin()
         n.points = -fm.points
@@ -113,7 +119,8 @@ public extension UIView {
      
     - Returns: Itself for chaining purposes
     */
-    @discardableResult public func top(_ fm: SteviaFlexibleMargin) -> UIView {
+    @discardableResult
+    public func top(_ fm: SteviaFlexibleMargin) -> UIView {
         return position(.top, relatedBy:fm.relation, points: fm.points)
     }
     
@@ -127,7 +134,8 @@ public extension UIView {
      
     - Returns: Itself for chaining purposes
     */
-    @discardableResult public func bottom(_ fm: SteviaFlexibleMargin) -> UIView {
+    @discardableResult
+    public func bottom(_ fm: SteviaFlexibleMargin) -> UIView {
         // For bottom this should be inverted.
         var n = SteviaFlexibleMargin()
         n.points = -fm.points

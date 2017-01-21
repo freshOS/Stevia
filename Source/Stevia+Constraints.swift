@@ -35,7 +35,8 @@ public extension UIView {
      
      - Returns: The NSLayoutConstraint created.
      */
-    @discardableResult public func c(item view1: AnyObject,
+    @discardableResult
+    public func c(item view1: AnyObject,
         attribute attr1: NSLayoutAttribute,
         relatedBy: NSLayoutRelation = .equal,
         toItem view2: AnyObject? = nil,
@@ -73,7 +74,8 @@ public extension UIView {
      
      - Returns: The NSLayoutConstraint created.
      */
-    @discardableResult public func addConstraint(item view1: AnyObject,
+    @discardableResult
+    public func addConstraint(item view1: AnyObject,
                        attribute attr1: NSLayoutAttribute,
                                  relatedBy: NSLayoutRelation = .equal,
                                  toItem view2: AnyObject? = nil,
@@ -89,7 +91,6 @@ public extension UIView {
         return c
     }
 }
-
 
 /**
     Helper for creating a NSLayoutConstraint but with default values provided.
@@ -122,7 +123,7 @@ public func constraint(item view1: AnyObject,
     return c
 }
 
-//MARK: - Other
+// MARK: - Other
 
 public extension UIView {
 
@@ -157,7 +158,8 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    @discardableResult public func heightEqualsWidth() -> UIView {
+    @discardableResult
+    public func heightEqualsWidth() -> UIView {
         if let spv = superview {
             let c = constraint(item: self, attribute: .height, toItem: self, attribute: .width)
             spv.addConstraint(c)
