@@ -17,9 +17,10 @@ public extension UIView {
      label.left(20)
      label.left(<=20)
      label.left(>=20)
+     label.left(20%)
      
-    - Returns: Itself for chaining purposes
-    */
+     - Returns: Itself for chaining purposes
+     */
     @discardableResult
     public func left(_ points: CGFloat) -> UIView {
         return position(.left, points: points)
@@ -32,9 +33,10 @@ public extension UIView {
      label.right(20)
      label.right(<=20)
      label.right(>=20)
+     label.right(20%)
      
-    - Returns: Itself for chaining purposes
-    */
+     - Returns: Itself for chaining purposes
+     */
     @discardableResult
     public func right(_ points: CGFloat) -> UIView {
         return position(.right, points: -points)
@@ -47,6 +49,7 @@ public extension UIView {
      label.top(20)
      label.top(<=20)
      label.top(>=20)
+     label.top(20%)
      
     - Returns: Itself for chaining purposes
     */
@@ -62,6 +65,7 @@ public extension UIView {
      label.bottom(20)
      label.bottom(<=20)
      label.bottom(>=20)
+     label.bottom(20%)
      
     - Returns: Itself for chaining purposes
     */
@@ -77,6 +81,7 @@ public extension UIView {
      label.left(20)
      label.left(<=20)
      label.left(>=20)
+     label.left(20%)
      
     - Returns: Itself for chaining purposes
     */
@@ -92,6 +97,7 @@ public extension UIView {
      label.right(20)
      label.right(<=20)
      label.right(>=20)
+     label.right(20%)
      
     - Returns: Itself for chaining purposes
     */
@@ -116,9 +122,10 @@ public extension UIView {
      label.top(20)
      label.top(<=20)
      label.top(>=20)
+     label.top(20%)
      
     - Returns: Itself for chaining purposes
-    */
+     */
     @discardableResult
     public func top(_ fm: SteviaFlexibleMargin) -> UIView {
         return position(.top, relatedBy:fm.relation, points: fm.points)
@@ -131,6 +138,7 @@ public extension UIView {
      label.bottom(20)
      label.bottom(<=20)
      label.bottom(>=20)
+     label.bottom(20%)
      
     - Returns: Itself for chaining purposes
     */

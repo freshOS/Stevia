@@ -218,7 +218,6 @@ public func alignBottoms(_ views: [UIView]) -> [UIView] {
     return views
 }
 
-
 /** Aligns left sides of an array of views
  
  Example Usage:
@@ -294,4 +293,3 @@ public func align(_ attribute: NSLayoutAttribute, views: [UIView]) -> [UIView] {
     }
     return views
 }
-
