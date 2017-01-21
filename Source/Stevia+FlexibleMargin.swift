@@ -23,7 +23,6 @@ public struct SteviaFlexibleMargin {
     var relation: NSLayoutRelation!
 }
 
-
 public struct PartialFlexibleConstraint {
     var fm: SteviaFlexibleMargin!
     var view1: UIView?
@@ -61,7 +60,6 @@ public struct PartialFlexibleConstraint {
         return [left.view1!, right]
     }
 }
-
 
 // Left Flexible margin
 
