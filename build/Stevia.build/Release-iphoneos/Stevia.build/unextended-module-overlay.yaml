@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/sacha/Projects/Stevia/build/Release-iphoneos/Stevia.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/sacha/Projects/Stevia/build/Stevia.build/Release-iphoneos/Stevia.build/unextended-module.modulemap',
+    }]
+  }]
+}
