@@ -15,6 +15,7 @@ public extension UIView {
      
      ```
      image.size(100)
+     image.size(100%)
      
      // is equivalent to
      
@@ -44,6 +45,7 @@ public extension UIView {
      // Flexible margins
      image.height(<=100)
      image.height(>=100)
+     image.height(100%)
      ```
      
      - Returns: Itself, enabling chaining,
@@ -61,6 +63,7 @@ public extension UIView {
      image.width(100)
      image.width(<=100)
      image.width(>=100)
+     image.width(100%)
      ```
      
      - Returns: Itself, enabling chaining,
@@ -84,6 +87,7 @@ public extension UIView {
      // Flexible margins
      image.height(<=100)
      image.height(>=100)
+     image.height(100%)
      ```
      
      - Returns: Itself, enabling chaining,
@@ -101,6 +105,7 @@ public extension UIView {
      image.width(100)
      image.width(<=100)
      image.width(>=100)
+     image.width(100%)
      ```
      
      - Returns: Itself, enabling chaining,
