@@ -23,7 +23,8 @@ import UIKit
  - Returns: The array of views, enabling chaining,
  
  */
-@discardableResult public func alignHorizontally(_ views: UIView...) -> [UIView] {
+@discardableResult
+public func alignHorizontally(_ views: UIView...) -> [UIView] {
     return alignHorizontally(views)
 }
 
@@ -42,7 +43,8 @@ import UIKit
  - Returns: The array of views, enabling chaining,
  
  */
-@discardableResult public func alignHorizontally(_ views: [UIView]) -> [UIView] {
+@discardableResult
+public func alignHorizontally(_ views: [UIView]) -> [UIView] {
     align(.horizontal, views: views)
     return views
 }

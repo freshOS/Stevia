@@ -37,7 +37,6 @@ public extension UIButton {
         }
     }
     
-    
     /** Links UIButton tap (TouchUpInside) event to a block.
      
     Example Usage:
@@ -61,7 +60,8 @@ public extension UIButton {
      - Returns: Itself for chaining purposes
      
      */
-    @discardableResult public func tap(_ block:@escaping () -> Void) -> UIButton {
+    @discardableResult
+    public func tap(_ block:@escaping () -> Void) -> UIButton {
         #if swift(>=2.2)
         addTarget(self, action: #selector(UIButton.tapped), for: .touchUpInside)
         #else

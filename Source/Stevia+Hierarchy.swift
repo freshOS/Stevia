@@ -42,7 +42,8 @@ public extension UIView {
      
      - Returns: Itself to enable nested layouts.
      */
-    @discardableResult public func sv(_ subViews: UIView...) -> UIView {
+    @discardableResult
+    public func sv(_ subViews: UIView...) -> UIView {
         return sv(subViews)
     }
 
@@ -77,7 +78,8 @@ public extension UIView {
      
      - Returns: Itself to enable nested layouts.
      */
-    @discardableResult public func sv(_ subViews: [UIView]) -> UIView {
+    @discardableResult
+    public func sv(_ subViews: [UIView]) -> UIView {
         for sv in subViews {
             addSubview(sv)
             sv.translatesAutoresizingMaskIntoConstraints = false
@@ -118,11 +120,11 @@ public extension UITableViewCell {
      
      - Returns: Itself to enable nested layouts.
      */
-    @discardableResult public override func sv(_ subViews: [UIView]) -> UIView {
+    @discardableResult
+    public override func sv(_ subViews: [UIView]) -> UIView {
         return contentView.sv(subViews)
     }
 }
-
 
 public extension UICollectionViewCell {
     /**
@@ -156,7 +158,8 @@ public extension UICollectionViewCell {
      
      - Returns: Itself to enable nested layouts.
      */
-    @discardableResult public override func sv(_ subViews: [UIView]) -> UIView {
+    @discardableResult
+    public override func sv(_ subViews: [UIView]) -> UIView {
         return contentView.sv(subViews)
     }
 }

@@ -24,13 +24,13 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    @discardableResult public func size(_ points: CGFloat) -> UIView {
+    @discardableResult
+    public func size(_ points: CGFloat) -> UIView {
         width(points)
         height(points)
         return self
     }
     
-
     /**
      Adds an Autolayout constraint for setting the view's height.
      
@@ -49,7 +49,8 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    @discardableResult public func height(_ points: CGFloat) -> UIView {
+    @discardableResult
+    public func height(_ points: CGFloat) -> UIView {
         return size(.height, points: points)
     }
     
@@ -65,7 +66,8 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    @discardableResult public func width(_ points: CGFloat) -> UIView {
+    @discardableResult
+    public func width(_ points: CGFloat) -> UIView {
         return size(.width, points: points)
     }
     
@@ -87,7 +89,8 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    @discardableResult public func height(_ fm: SteviaFlexibleMargin) -> UIView {
+    @discardableResult
+    public func height(_ fm: SteviaFlexibleMargin) -> UIView {
         return size(.height, relatedBy: fm.relation, points: fm.points)
     }
     
@@ -103,7 +106,8 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    @discardableResult public func width(_ fm: SteviaFlexibleMargin) -> UIView {
+    @discardableResult
+    public func width(_ fm: SteviaFlexibleMargin) -> UIView {
         return size(.width, relatedBy: fm.relation, points: fm.points)
     }
     
@@ -130,7 +134,8 @@ public extension UIView {
  - Returns: The views enabling chaining.
  
  */
-@discardableResult public func equalSizes(_ views: UIView...) -> [UIView] {
+@discardableResult
+public func equalSizes(_ views: UIView...) -> [UIView] {
     return equalSizes(views)
 }
 
@@ -144,7 +149,8 @@ public extension UIView {
  - Returns: The views enabling chaining.
  
  */
-@discardableResult public func equalSizes(_ views: [UIView]) -> [UIView] {
+@discardableResult
+public func equalSizes(_ views: [UIView]) -> [UIView] {
     equalHeights(views)
     equalWidths(views)
     return views
@@ -160,7 +166,8 @@ public extension UIView {
  - Returns: The views enabling chaining.
  
  */
-@discardableResult public func equalWidths(_ views: UIView...) -> [UIView] {
+@discardableResult
+public func equalWidths(_ views: UIView...) -> [UIView] {
     return equalWidths(views)
 }
 
@@ -174,7 +181,8 @@ public extension UIView {
  - Returns: The views enabling chaining.
  
  */
-@discardableResult public func equalWidths(_ views: [UIView]) -> [UIView] {
+@discardableResult
+public func equalWidths(_ views: [UIView]) -> [UIView] {
     equal(.width, views: views)
     return views
 }
@@ -189,7 +197,8 @@ public extension UIView {
  - Returns: The views enabling chaining.
  
  */
-@discardableResult public func equalHeights(_ views: UIView...) -> [UIView] {
+@discardableResult
+public func equalHeights(_ views: UIView...) -> [UIView] {
     return equalHeights(views)
 }
 
@@ -203,7 +212,8 @@ public extension UIView {
  - Returns: The views enabling chaining.
  
  */
-@discardableResult public func equalHeights(_ views: [UIView]) -> [UIView] {
+@discardableResult
+public func equalHeights(_ views: [UIView]) -> [UIView] {
     equal(.height, views: views)
     return views
 }

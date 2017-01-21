@@ -9,12 +9,14 @@
 import Foundation
 
 prefix operator >=
-@discardableResult public prefix func >= (p: CGFloat) -> SteviaFlexibleMargin {
+@discardableResult
+public prefix func >= (p: CGFloat) -> SteviaFlexibleMargin {
     return SteviaFlexibleMargin(points: p, relation: .greaterThanOrEqual)
 }
 
 prefix operator <=
-@discardableResult public prefix func <= (p: CGFloat) -> SteviaFlexibleMargin {
+@discardableResult
+public prefix func <= (p: CGFloat) -> SteviaFlexibleMargin {
     return SteviaFlexibleMargin(points: p, relation: .lessThanOrEqual)
 }
 
@@ -29,17 +31,20 @@ public struct PartialFlexibleConstraint {
     var views: [UIView]?
 }
 
-@discardableResult public func - (left: UIView,
+@discardableResult
+public func - (left: UIView,
                                   right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
     return PartialFlexibleConstraint(fm: right, view1: left, views: nil)
 }
 
-@discardableResult public func - (left: [UIView],
+@discardableResult
+public func - (left: [UIView],
                                   right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
     return PartialFlexibleConstraint(fm: right, view1: nil, views: left)
 }
 
-@discardableResult public func - (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
+@discardableResult
+public func - (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
     if let views = left.views {
         if let spv = right.superview {
             let c = constraint(item: right, attribute: .left,
@@ -67,11 +72,13 @@ public struct SteviaLeftFlexibleMargin {
     let fm: SteviaFlexibleMargin
 }
 
-@discardableResult public prefix func |- (fm: SteviaFlexibleMargin) -> SteviaLeftFlexibleMargin {
+@discardableResult
+public prefix func |- (fm: SteviaFlexibleMargin) -> SteviaLeftFlexibleMargin {
     return SteviaLeftFlexibleMargin(fm: fm)
 }
 
-@discardableResult public func - (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
+@discardableResult
+public func - (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
     if let spv = right.superview {
         let c = constraint(item: right, attribute: .left,
                            relatedBy:left.fm.relation, toItem: spv,
@@ -88,11 +95,13 @@ public struct SteviaRightFlexibleMargin {
     let fm: SteviaFlexibleMargin
 }
 
-@discardableResult public postfix func -| (fm: SteviaFlexibleMargin) -> SteviaRightFlexibleMargin {
+@discardableResult
+public postfix func -| (fm: SteviaFlexibleMargin) -> SteviaRightFlexibleMargin {
     return SteviaRightFlexibleMargin(fm: fm)
 }
 
-@discardableResult public func - (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
+@discardableResult
+public func - (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
     if let spv = left.superview {
         let c = constraint(item: spv, attribute: .right,
                            relatedBy:right.fm.relation, toItem: left,
@@ -103,7 +112,8 @@ public struct SteviaRightFlexibleMargin {
     return left
 }
 
-@discardableResult public func - (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
+@discardableResult
+public func - (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
     if let spv = left.last!.superview {
         let c = constraint(item: spv, attribute: .right,
                            relatedBy:right.fm.relation,

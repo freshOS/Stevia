@@ -31,7 +31,8 @@ public extension UIView {
      )
      ```
      */
-    @discardableResult public func layout(_ objects: Any...) -> [UIView] {
+    @discardableResult
+    public func layout(_ objects: Any...) -> [UIView] {
         return stackV(objects)
     }
     
@@ -173,7 +174,8 @@ public extension UIView {
         return nil
     }
     
-    @discardableResult fileprivate func stackV(m points: CGFloat = 0, v: UIView) -> UIView {
+    @discardableResult
+    fileprivate func stackV(m points: CGFloat = 0, v: UIView) -> UIView {
         return stack(.vertical, points: points, v: v)
     }
     

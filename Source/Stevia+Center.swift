@@ -20,7 +20,8 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    @discardableResult public func centerInContainer() -> UIView {
+    @discardableResult
+    public func centerInContainer() -> UIView {
         if let spv = superview {
             alignCenter(self, with: spv)
         }
@@ -37,7 +38,8 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    @discardableResult public func centerHorizontally() -> UIView {
+    @discardableResult
+    public func centerHorizontally() -> UIView {
         if let spv = superview {
             alignVertically([self, spv])
         }
@@ -54,7 +56,8 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    @discardableResult public func centerVertically() -> UIView {
+    @discardableResult
+    public func centerVertically() -> UIView {
         if let spv = superview {
             alignHorizontally([self, spv])
         }
@@ -71,7 +74,8 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    @discardableResult public func centerHorizontally(_ offset: CGFloat) -> UIView {
+    @discardableResult
+    public func centerHorizontally(_ offset: CGFloat) -> UIView {
         if let spv = superview {
             alignVertically(self, with: spv, offset: offset)
         }
@@ -88,7 +92,8 @@ public extension UIView {
      - Returns: Itself, enabling chaining,
      
      */
-    @discardableResult public func centerVertically(_ offset: CGFloat) -> UIView {
+    @discardableResult
+    public func centerVertically(_ offset: CGFloat) -> UIView {
         if let spv = superview {
             alignHorizontally(self, with: spv, offset: offset)
         }
