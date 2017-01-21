@@ -133,3 +133,63 @@ private func align(_ axis: UILayoutConstraintAxis, v1: UIView, with v2: UIView, 
         spv.addConstraint(c)
     }
 }
+
+// MARK: Align sides
+@discardableResult
+public func alignTops(_ views: UIView...) -> [UIView] {
+    return alignTops(views)
+}
+
+@discardableResult
+public func alignTops(_ views: [UIView]) -> [UIView] {
+    align(.top, views: views)
+    return views
+}
+
+@discardableResult
+public func alignBottoms(_ views: UIView...) -> [UIView] {
+    return alignBottoms(views)
+}
+
+@discardableResult
+public func alignBottoms(_ views: [UIView]) -> [UIView] {
+    align(.bottom, views: views)
+    return views
+}
+
+@discardableResult
+public func alignLefts(_ views: UIView...) -> [UIView] {
+    return alignLefts(views)
+}
+
+@discardableResult
+public func alignLefts(_ views: [UIView]) -> [UIView] {
+    align(.left, views: views)
+    return views
+}
+
+@discardableResult
+public func alignRights(_ views: UIView...) -> [UIView] {
+    return alignRights(views)
+}
+
+@discardableResult
+public func alignRights(_ views: [UIView]) -> [UIView] {
+    align(.right, views: views)
+    return views
+}
+
+@discardableResult
+public func align(_ attribute: NSLayoutAttribute, views: [UIView]) -> [UIView] {
+    for (i, v) in views.enumerated() {
+        if views.count > i+1 {
+            let v2 = views[i+1]
+            if let spv = v.superview {
+                let c = constraint(item: v, attribute: attribute, toItem: v2)
+                spv.addConstraint(c)
+            }
+        }
+    }
+    return views
+}
+
