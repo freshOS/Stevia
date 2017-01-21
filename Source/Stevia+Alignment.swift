@@ -135,44 +135,146 @@ private func align(_ axis: UILayoutConstraintAxis, v1: UIView, with v2: UIView, 
 }
 
 // MARK: Align sides
+
+/** Aligns tops of an array of views
+ 
+ Example Usage:
+ ```
+ alignTops(label,button,arrow)
+ ```
+ 
+ Ca also be used directly on horizontal layouts since they return the array of views :
+ ```
+ alignTops(|-image1-image2-image3-|)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
 @discardableResult
 public func alignTops(_ views: UIView...) -> [UIView] {
     return alignTops(views)
 }
 
+/** Aligns tops of an array of views
+ 
+ Example Usage:
+ ```
+ alignTops(label,button,arrow)
+ ```
+ 
+ Ca also be used directly on horizontal layouts since they return the array of views :
+ ```
+ alignTops(|-image1-image2-image3-|)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
 @discardableResult
 public func alignTops(_ views: [UIView]) -> [UIView] {
     align(.top, views: views)
     return views
 }
 
+/** Aligns bottoms of an array of views
+ 
+ Example Usage:
+ ```
+ alignBottoms(label,button,arrow)
+ ```
+ 
+ Ca also be used directly on horizontal layouts since they return the array of views :
+ ```
+ alignBottoms(|-image1-image2-image3-|)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
 @discardableResult
 public func alignBottoms(_ views: UIView...) -> [UIView] {
     return alignBottoms(views)
 }
 
+/** Aligns bottoms of an array of views
+ 
+ Example Usage:
+ ```
+ alignBottoms(label,button,arrow)
+ ```
+ 
+ Ca also be used directly on horizontal layouts since they return the array of views :
+ ```
+ alignBottoms(|-image1-image2-image3-|)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
 @discardableResult
 public func alignBottoms(_ views: [UIView]) -> [UIView] {
     align(.bottom, views: views)
     return views
 }
 
+
+/** Aligns left sides of an array of views
+ 
+ Example Usage:
+ ```
+ alignLefts(label,field,button)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
 @discardableResult
 public func alignLefts(_ views: UIView...) -> [UIView] {
     return alignLefts(views)
 }
 
+/** Aligns left sides of an array of views
+ 
+ Example Usage:
+ ```
+ alignLefts(label,field,button)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
 @discardableResult
 public func alignLefts(_ views: [UIView]) -> [UIView] {
     align(.left, views: views)
     return views
 }
 
+/** Aligns right sides of an array of views
+ 
+ Example Usage:
+ ```
+ alignRights(label,field,button)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
 @discardableResult
 public func alignRights(_ views: UIView...) -> [UIView] {
     return alignRights(views)
 }
 
+/** Aligns right sides of an array of views
+ 
+ Example Usage:
+ ```
+ alignRights(label,field,button)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
 @discardableResult
 public func alignRights(_ views: [UIView]) -> [UIView] {
     align(.right, views: views)
