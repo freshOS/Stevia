@@ -64,6 +64,8 @@ public extension UIView {
     }
 }
 
+// MARK: - Equations of type v.P == v'.P' + X
+
 @discardableResult
 public func == (left: SteviaAttribute, right: SteviaAttribute) -> NSLayoutConstraint {
     let constant = right.constant ?? 0
@@ -71,6 +73,38 @@ public func == (left: SteviaAttribute, right: SteviaAttribute) -> NSLayoutConstr
     if let spv = left.view.superview {
         return spv.addConstraint(item: left.view,
                                  attribute: left.attribute,
+                                 toItem: right.view,
+                                 attribute: right.attribute,
+                                 multiplier : multiplier,
+                                 constant:constant)
+    }
+    return NSLayoutConstraint()
+}
+
+@discardableResult
+public func >= (left: SteviaAttribute, right: SteviaAttribute) -> NSLayoutConstraint {
+    let constant = right.constant ?? 0
+    let multiplier = right.multiplier ?? 1
+    if let spv = left.view.superview {
+        return spv.addConstraint(item: left.view,
+                                 attribute: left.attribute,
+                                 relatedBy: .greaterThanOrEqual,
+                                 toItem: right.view,
+                                 attribute: right.attribute,
+                                 multiplier : multiplier,
+                                 constant:constant)
+    }
+    return NSLayoutConstraint()
+}
+
+@discardableResult
+public func <= (left: SteviaAttribute, right: SteviaAttribute) -> NSLayoutConstraint {
+    let constant = right.constant ?? 0
+    let multiplier = right.multiplier ?? 1
+    if let spv = left.view.superview {
+        return spv.addConstraint(item: left.view,
+                                 attribute: left.attribute,
+                                 relatedBy: .lessThanOrEqual,
                                  toItem: right.view,
                                  attribute: right.attribute,
                                  multiplier : multiplier,
@@ -103,3 +137,44 @@ public func / (left: SteviaAttribute, right: CGFloat) -> SteviaAttribute {
 public func % (left: CGFloat, right: SteviaAttribute) -> SteviaAttribute {
     return right * (left/100)
 }
+
+
+
+// MARK: - Equations of type v.P == X
+
+@discardableResult
+public func == (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
+    if let spv = left.view.superview {
+        return spv.addConstraint(item: left.view,
+                                 attribute: left.attribute,
+                                 toItem: spv,
+                                 constant:right)
+    }
+    return NSLayoutConstraint()
+}
+
+@discardableResult
+public func >= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
+    if let spv = left.view.superview {
+        return spv.addConstraint(item: left.view,
+                                 attribute: left.attribute,
+                                 relatedBy: .greaterThanOrEqual,
+                                 toItem: spv,
+                                 constant:right)
+    }
+    return NSLayoutConstraint()
+}
+
+@discardableResult
+public func <= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
+    if let spv = left.view.superview {
+        return spv.addConstraint(item: left.view,
+                                 attribute: left.attribute,
+                                 relatedBy: .lessThanOrEqual,
+                                 toItem: spv,
+                                 constant:right)
+    }
+    return NSLayoutConstraint()
+}
+
+
