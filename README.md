@@ -16,15 +16,32 @@
 
 
 ```swift
+// Visual Layout Api
 layout(
     100,
     |-email-| ~ 80,
     8,
-    |-password-| ~ 80,
-    "",
+    |-password-forgot-| ~ 80,
+    >=20,
     |login| ~ 80,
     0
 )
+
+// Chainable Api
+email.top(100).left(8).right(8).width(200).height(44)
+alignHorizontally(password, forgot)
+image.fillContainer()
+button.centerInContainer().size(50%)
+equalWidths(email, password)
+image.width(>=80)
+
+// Equation-Based Api
+email.Top == 100
+password.CenterY == forgot.CenterY
+login.Top >= password.Bottom + 20
+login.Width == 75 % Width
+
+// All Generate NATIVE NSLayoutConstraints 🎉
 ```
 
 ## Swift Version
