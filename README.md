@@ -14,9 +14,8 @@
 [Reason](#reason) - [Example](#login-view-example) - [Live Reload](#live-reload) - [Installation](#installation) - [Documentation](#documentation)
 
 
-
+### Visual Layout Api
 ```swift
-// Visual Layout Api
 layout(
     100,
     |-email-| ~ 80,
@@ -26,23 +25,27 @@ layout(
     |login| ~ 80,
     0
 )
-
-// Chainable Api
+```
+### Chainable Api
+```swift
 email.top(100).left(8).right(8).width(200).height(44)
 alignHorizontally(password, forgot)
 image.fillContainer()
 button.centerInContainer().size(50%)
 equalWidths(email, password)
 image.width(>=80)
+```
 
-// Equation-Based Api
+### Equation-Based Api
+```swift
 email.Top == 100
 password.CenterY == forgot.CenterY
 login.Top >= password.Bottom + 20
 login.Width == 75 % Width
-
-// All Generate NATIVE NSLayoutConstraints 🎉
 ```
+
+All Generate **native** NSLayoutConstraints 🎉
+
 
 ## Swift Version
 Swift 2 -> version **2.3.0**  
