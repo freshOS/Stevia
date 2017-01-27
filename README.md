@@ -49,7 +49,7 @@ All Generate **native** NSLayoutConstraints 🎉
 
 ## Swift Version
 Swift 2 -> version **2.3.0**  
-Swift 3 -> version **3.1.1**
+Swift 3 -> version **3.1.2**
 
 ## Reason
 ### Why
