@@ -28,6 +28,7 @@
 		99585BF51D86ABFF004CE776 /* Stevia+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99585BE31D86ABFF004CE776 /* Stevia+Tap.swift */; };
 		99585BF61D86ABFF004CE776 /* Stevia.h in Headers */ = {isa = PBXBuildFile; fileRef = 99585BE41D86ABFF004CE776 /* Stevia.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99B6217D1BF75D0E00A54B05 /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9991C8551BDB6C8B007D9B75 /* Stevia.framework */; };
+		99BD931A1E3B746F0097A625 /* EquationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD93191E3B746F0097A625 /* EquationTests.swift */; };
 		99C5A4811C7A3524003EDE10 /* LayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C5A4801C7A3524003EDE10 /* LayoutTests.swift */; };
 		99C5A4831C7A477C003EDE10 /* CenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C5A4821C7A477C003EDE10 /* CenterTests.swift */; };
 		99C5A4851C7A4971003EDE10 /* FullLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C5A4841C7A4971003EDE10 /* FullLayoutTests.swift */; };
@@ -74,6 +75,7 @@
 		9991C8551BDB6C8B007D9B75 /* Stevia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stevia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B621781BF75D0E00A54B05 /* SteviaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SteviaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B6217C1BF75D0E00A54B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99BD93191E3B746F0097A625 /* EquationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquationTests.swift; sourceTree = "<group>"; };
 		99C5A4801C7A3524003EDE10 /* LayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTests.swift; sourceTree = "<group>"; };
 		99C5A4821C7A477C003EDE10 /* CenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterTests.swift; sourceTree = "<group>"; };
 		99C5A4841C7A4971003EDE10 /* FullLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullLayoutTests.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				99C5A4841C7A4971003EDE10 /* FullLayoutTests.swift */,
 				99C5A4871C7A5B93003EDE10 /* FlexibleMarginTests.swift */,
 				1F00D53C1C9AD18A00B90965 /* StyleTests.swift */,
+				99BD93191E3B746F0097A625 /* EquationTests.swift */,
 			);
 			path = SteviaTests;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBC533541C6E2CCF0008F340 /* SizeTests.swift in Sources */,
+				99BD931A1E3B746F0097A625 /* EquationTests.swift in Sources */,
 				CBC533521C6E24970008F340 /* FillTests.swift in Sources */,
 				99C5A4881C7A5B93003EDE10 /* FlexibleMarginTests.swift in Sources */,
 				CBC5334E1C6E12890008F340 /* ContentTests.swift in Sources */,

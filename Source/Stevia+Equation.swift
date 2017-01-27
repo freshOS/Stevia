@@ -139,16 +139,23 @@ public func % (left: CGFloat, right: SteviaAttribute) -> SteviaAttribute {
 }
 
 
-
 // MARK: - Equations of type v.P == X
 
 @discardableResult
 public func == (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
     if let spv = left.view.superview {
+        var toItem: UIView? = spv
+        var constant: CGFloat = right
+        if left.attribute == .width || left.attribute == .height {
+            toItem = nil
+        }
+        if left.attribute == .bottom || left.attribute == .right {
+            constant = -constant
+        }
         return spv.addConstraint(item: left.view,
                                  attribute: left.attribute,
-                                 toItem: spv,
-                                 constant:right)
+                                 toItem: toItem,
+                                 constant:constant)
     }
     return NSLayoutConstraint()
 }
@@ -176,5 +183,3 @@ public func <= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
     }
     return NSLayoutConstraint()
 }
-
-
