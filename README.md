@@ -46,10 +46,9 @@ login.Width == 75 % Width
 
 All Generate **native** NSLayoutConstraints 🎉
 
+## Try it!
 
-## Swift Version
-Swift 2 -> version **2.3.0**  
-Swift 3 -> version **3.1.2**
+Stevia is part of [freshOS](http://freshos.org) iOS toolset. Try it in an example App ! <a class="github-button" href="https://github.com/freshOS/StarterProject/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download freshOS/StarterProject on GitHub">Download Starter Project</a>
 
 ## Reason
 ### Why
@@ -86,15 +85,8 @@ View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beau
 - [x] Styles are well separated, concise, reusable and can be composed
 - [x] Content like text, placeholders are easier to visualize
 
-###
-
-
-
-
-
-
 ## Login View Example
-![alt text](https://raw.githubusercontent.com/s4cha/Stevia/master/Stevia/LoginExample/login.png "Login view")
+![alt text](https://raw.githubusercontent.com/s4cha/Stevia/master/LoginExample/login.png "Login view")
 
 ### Before (Native Autolayout)
 
@@ -413,9 +405,6 @@ That's why we created Stevia.
 [YannickDot](https://github.com/YannickDot),  [S4cha](https://github.com/S4cha),  [Damien](https://github.com/damien-nd),
 [Snowcraft](https://github.com/Snowcraft), [Mathieu-o](https://github.com/Mathieu-o)
 
-
-## Other repos ❤️
-Stevia 🍃 is part of a series of lightweight libraries aiming to make developing iOS Apps a *breeze* :
-- Async code : [then](https://github.com/s4cha/then)
-- JSON WebServices : [ws](https://github.com/s4cha/ws)
-- JSON Parsing : [Arrow](https://github.com/s4cha/Arrow)
+## Swift Version
+Swift 2 -> version **2.3.0**  
+Swift 3 -> version **3.1.2**
