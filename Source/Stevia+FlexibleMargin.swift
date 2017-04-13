@@ -33,13 +33,13 @@ public struct PartialFlexibleConstraint {
 
 @discardableResult
 public func - (left: UIView,
-                                  right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
+               right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
     return PartialFlexibleConstraint(fm: right, view1: left, views: nil)
 }
 
 @discardableResult
 public func - (left: [UIView],
-                                  right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
+               right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
     return PartialFlexibleConstraint(fm: right, view1: nil, views: left)
 }
 
