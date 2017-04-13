@@ -32,71 +32,71 @@ class LayoutTests: XCTestCase {
     func testEmptyLeftMargin() {
         |v
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x,  0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
     }
     
     func testDefaultMargin() {
         |-v
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, 8, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, 8, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
     }
     
     func testLeftMargin() {
         |-75-v
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, 75, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, 75, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
     }
     
     func testEmptyRightMargin() {
         v|
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width,
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
     }
     
     func testDefaultRightMargin() {
         v-|
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 8,
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
     }
     
     func testRightMargin() {
         v-14-|
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 14,
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
     }
 
     func testHeight() {
         v ~ 180
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.height, 180, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.height, 180, accuracy: CGFloat(Float.ulpOfOne))
     }
     
     func testMultipleHeightsAtOnce() {
@@ -106,18 +106,18 @@ class LayoutTests: XCTestCase {
         v.removeFromSuperview()
         ctrler.view.sv(v1, v2, v3)
         for view in ctrler.view.subviews {
-            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         }
         [v1, v2, v3] ~ 63
         ctrler.view.layoutIfNeeded()
         for view in ctrler.view.subviews {
-            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.height, 63, accuracy: CGFloat(FLT_EPSILON))
+            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.height, 63, accuracy: CGFloat(Float.ulpOfOne))
         }
     }
     
@@ -128,23 +128,23 @@ class LayoutTests: XCTestCase {
         v.removeFromSuperview()
         ctrler.view.sv(v1, v2)
         for view in ctrler.view.subviews {
-            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         }
         
         |v1.width(10)-v2
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.width, 10, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.width, 10, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
-        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.origin.x, 18, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.x, 18, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
     }
     
@@ -154,23 +154,23 @@ class LayoutTests: XCTestCase {
         v.removeFromSuperview()
         ctrler.view.sv(v1, v2)
         for view in ctrler.view.subviews {
-            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         }
         
         |v1.width(10)-52-v2
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.width, 10, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.width, 10, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
-        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.origin.x, 62, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.x, 62, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
     }
     
@@ -180,27 +180,27 @@ class LayoutTests: XCTestCase {
         v.removeFromSuperview()
         ctrler.view.sv(v1, v2)
         for view in ctrler.view.subviews {
-            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         }
         
         v1-52-v2.width(10)-31-|
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v1.frame.origin.x,
                                    ctrler.view.frame.width - 31 - v2.frame.width - 52,
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
-        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v2.frame.origin.x,
                                    ctrler.view.frame.width - 31 - v2.frame.width,
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.width, 10, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.width, 10, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
     }
     
@@ -211,29 +211,29 @@ class LayoutTests: XCTestCase {
         v.removeFromSuperview()
         ctrler.view.sv(v1, v2, v3)
         for view in ctrler.view.subviews {
-            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         }
         
 
         |v1.width(20)--v2.width(20)--v3
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.width, 20, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.width, 20, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
-        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.origin.x, 28, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.width, 20, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v3.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.x, 28, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.width, 20, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v3.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v3.frame.origin.x, v2.frame.origin.x + v2.frame.width + 8,
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v3.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v3.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v3.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v3.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
     }
     
@@ -245,29 +245,29 @@ class LayoutTests: XCTestCase {
         v.removeFromSuperview()
         ctrler.view.sv(v1, v2, v3)
         for view in ctrler.view.subviews {
-            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         }
         
         |v1.width(20)-43-v2.width(20)-27-v3
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.width, 20, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.width, 20, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
-        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v2.frame.origin.x, v1.frame.origin.x + v1.frame.width + 43,
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.width, 20, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v3.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.width, 20, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v3.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v3.frame.origin.x, v2.frame.origin.x + v2.frame.width + 27,
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v3.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v3.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v3.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v3.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
     }
     
@@ -277,25 +277,25 @@ class LayoutTests: XCTestCase {
         v.removeFromSuperview()
         ctrler.view.sv(v1, v2)
         for view in ctrler.view.subviews {
-            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         }
         
         |v1.width(20)-""-v2.width(20)|
         ctrler.view.layoutIfNeeded()
         
-        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.width, 20, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.width, 20, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
-        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v2.frame.origin.x, ctrler.view.frame.width - v2.frame.width,
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.width, 20, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.width, 20, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
     }
     
     func testSpaceWithArrayOfViews() {
@@ -305,37 +305,37 @@ class LayoutTests: XCTestCase {
         v.removeFromSuperview()
         ctrler.view.sv(v1, v2, v3)
         for view in ctrler.view.subviews {
-            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+            XCTAssertEqualWithAccuracy(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqualWithAccuracy(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         }
         
         |v1.width(20)-v2.width(30)-""-v3.width(10)|
         ctrler.view.layoutIfNeeded()
         
-        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.width, 20, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.width, 20, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v1.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
-        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v2.frame.origin.x, v1.frame.width + 8,
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.width, 30, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.width, 30, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
-        XCTAssertEqualWithAccuracy(v3.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v3.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v3.frame.origin.x, ctrler.view.frame.width - v3.frame.width,
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v3.frame.width, 10, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v3.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v3.frame.width, 10, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v3.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
     }
     
     func verifyViewHasDefaultValues() {
-        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
     }
 }
