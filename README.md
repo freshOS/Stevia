@@ -407,4 +407,4 @@ That's why we created Stevia.
 
 ## Swift Version
 Swift 2 -> version **2.3.0**  
-Swift 3 -> version **3.1.2**
+Swift 3 -> version **3.1.3**

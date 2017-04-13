@@ -57,37 +57,37 @@ class FullLayoutTests: XCTestCase {
     }
     
     func testFullLayout() {
-        XCTAssertEqualWithAccuracy(vc.view.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(vc.view.frame.origin.y, 0, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(vc.view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(vc.view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(vc.view.frame.width, win.frame.width,
-                                   accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(vc.view.frame.height, win.frame.height,
-                                   accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
         
         v.layoutIfNeeded()
 
         // Email
-        XCTAssertEqualWithAccuracy(v.email.frame.origin.y, 100, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.email.frame.origin.x, 8, accuracy: CGFloat(FLT_EPSILON))
+        XCTAssertEqualWithAccuracy(v.email.frame.origin.y, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.email.frame.origin.x, 8, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v.email.frame.width, win.frame.width - 8 - 22,
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.email.frame.height, 80, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.email.frame.height, 80, accuracy: CGFloat(Float.ulpOfOne))
         
         // Password
         XCTAssertEqualWithAccuracy(v.password.frame.origin.y,
                                    v.email.frame.origin.y+v.email.frame.height + 20,
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.password.frame.origin.x, 0, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.password.frame.width, 54, accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.password.frame.height, 47, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.password.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.password.frame.width, 54, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.password.frame.height, 47, accuracy: CGFloat(Float.ulpOfOne))
         
         // Password
         XCTAssertEqualWithAccuracy(v.login.frame.origin.y,
                                    win.frame.height - v.login.frame.height - 7,
-                                   accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v.login.frame.origin.x,
                                    win.frame.width/2.0 - (v.login.frame.width/2.0),
-                                   accuracy: CGFloat(FLT_EPSILON))
-        XCTAssertEqualWithAccuracy(v.login.frame.height, 99, accuracy: CGFloat(FLT_EPSILON))
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqualWithAccuracy(v.login.frame.height, 99, accuracy: CGFloat(Float.ulpOfOne))
     }
 }
