@@ -138,7 +138,6 @@ public func % (left: CGFloat, right: SteviaAttribute) -> SteviaAttribute {
     return right * (left/100)
 }
 
-
 // MARK: - Equations of type v.P == X
 
 @discardableResult

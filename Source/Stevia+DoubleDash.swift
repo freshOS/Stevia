@@ -67,13 +67,13 @@ public func -- (left: Space, right: UIView) -> [UIView] {
 
 @discardableResult
 public func -- (left: UIView,
-                                   right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
+                right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
     return left-right
 }
 
 @discardableResult
 public func -- (left: [UIView],
-                                   right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
+                right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
     return left-right
 }
 
