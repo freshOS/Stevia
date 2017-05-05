@@ -136,4 +136,13 @@ class SizeTests: XCTestCase {
         XCTAssertEqualWithAccuracy(v.frame.height, 192, accuracy: CGFloat(Float.ulpOfOne))
         
     }
+    
+    func testSizeOnOrphanView() {
+        v.removeFromSuperview()
+        v.height(80)
+        ctrler.view.sv(v)
+        ctrler.view.layout(0, |v|)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqualWithAccuracy(v.frame.height, 80, accuracy: CGFloat(Float.ulpOfOne))
+    }
 }
