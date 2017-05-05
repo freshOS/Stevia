@@ -140,9 +140,11 @@ class SizeTests: XCTestCase {
     func testSizeOnOrphanView() {
         v.removeFromSuperview()
         v.height(80)
+        v.width(80)
         ctrler.view.sv(v)
-        ctrler.view.layout(0, |v|)
+        ctrler.view.layout(0, |v)
         ctrler.view.layoutIfNeeded()
+        XCTAssertEqualWithAccuracy(v.frame.width, 80, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqualWithAccuracy(v.frame.height, 80, accuracy: CGFloat(Float.ulpOfOne))
     }
 }
