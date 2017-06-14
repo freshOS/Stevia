@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9934B7881EF126D10065EA50"
-               BuildableName = "SteviaTV.framework"
+               BuildableName = "Stevia.framework"
                BlueprintName = "SteviaTV"
                ReferencedContainer = "container:Stevia.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9934B7881EF126D10065EA50"
-            BuildableName = "SteviaTV.framework"
+            BuildableName = "Stevia.framework"
             BlueprintName = "SteviaTV"
             ReferencedContainer = "container:Stevia.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9934B7881EF126D10065EA50"
-            BuildableName = "SteviaTV.framework"
+            BuildableName = "Stevia.framework"
             BlueprintName = "SteviaTV"
             ReferencedContainer = "container:Stevia.xcodeproj">
          </BuildableReference>
