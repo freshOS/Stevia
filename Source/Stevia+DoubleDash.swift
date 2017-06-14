@@ -6,7 +6,7 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 infix operator -- :AdditionPrecedence
 
