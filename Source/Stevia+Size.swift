@@ -119,11 +119,14 @@ public extension UIView {
     fileprivate func size(_ attribute: NSLayoutAttribute,
                           relatedBy: NSLayoutRelation = .equal,
                           points: CGFloat) -> UIView {
+        let c = constraint(item: self,
+                           attribute: attribute,
+                           relatedBy: relatedBy,
+                           constant: points)
         if let spv = superview {
-            let c = constraint(item: self, attribute:attribute,
-                               relatedBy:relatedBy,
-                               constant: points)
             spv.addConstraint(c)
+        } else {
+            addConstraint(c)
         }
         return self
     }
