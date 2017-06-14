@@ -22,7 +22,7 @@ public extension UIView {
     - Returns: The left NSLayoutConstraint if found.
      */
     public var leftConstraint: NSLayoutConstraint? {
-        return constraintForView(self, attribute: .left)
+        return constraintForView(self, attribute: .left, existsOnView: self.superview)
     }
 
     /** Gets the right constraint if found.
@@ -38,7 +38,7 @@ public extension UIView {
     - Returns: The right NSLayoutConstraint if found.
      */
     public var rightConstraint: NSLayoutConstraint? {
-        return constraintForView(self, attribute: .right)
+        return constraintForView(self, attribute: .right, existsOnView: self.superview)
     }
         
     /** Gets the top constraint if found.
@@ -54,7 +54,7 @@ public extension UIView {
     - Returns: The top NSLayoutConstraint if found.
      */
     public var topConstraint: NSLayoutConstraint? {
-        return constraintForView(self, attribute: .top)
+        return constraintForView(self, attribute: .top, existsOnView: self.superview)
     }
     
     /** Gets the bottom constraint if found.
@@ -70,7 +70,7 @@ public extension UIView {
      - Returns: The bottom NSLayoutConstraint if found.
      */
     public var bottomConstraint: NSLayoutConstraint? {
-        return constraintForView(self, attribute: .bottom)
+        return constraintForView(self, attribute: .bottom, existsOnView: self.superview)
     }
     
     /** Gets the height constraint if found.
@@ -86,7 +86,7 @@ public extension UIView {
     - Returns: The height NSLayoutConstraint if found.
     */
     public var heightConstraint: NSLayoutConstraint? {
-        return constraintForView(self, attribute: .height)
+        return constraintForView(self, attribute: .height, existsOnView: self)
     }
     
     /** Gets the width constraint if found.
@@ -102,20 +102,51 @@ public extension UIView {
      - Returns: The width NSLayoutConstraint if found.
      */
     public var widthConstraint: NSLayoutConstraint? {
-        return constraintForView(self, attribute: .width)
+        return constraintForView(self, attribute: .width, existsOnView: self)
+    }
+    
+    /** Gets the trailing constraint if found.
+     
+     Example Usage for changing width property of a label :
+     
+     ```
+     label.trailingConstraint?.constant = 10
+     
+     // Animate if needed
+     UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
+     ```
+     - Returns: The trailing NSLayoutConstraint if found.
+     */
+    public var trailingConstraint: NSLayoutConstraint? {
+        return constraintForView(self, attribute: .trailing, existsOnView: self.superview)
+    }
+    
+    /** Gets the leading constraint if found.
+     
+     Example Usage for changing width property of a label :
+     
+     ```
+     label.leadingConstraint?.constant = 10
+     
+     // Animate if needed
+     UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
+     ```
+     - Returns: The leading NSLayoutConstraint if found.
+     */
+    public var leadingConstraint: NSLayoutConstraint? {
+        return constraintForView(self, attribute: .leading, existsOnView: self.superview)
     }
     
 }
 
-func constraintForView(_ v: UIView, attribute: NSLayoutAttribute) -> NSLayoutConstraint? {
-    if let spv = v.superview {
-        for c in spv.constraints {
-            if let fi = c.firstItem as? NSObject, fi == v && c.firstAttribute == attribute {
-                return c
-            }
-            if let si = c.secondItem as? NSObject, si == v && c.secondAttribute == attribute {
-                return c
-            }
+func constraintForView(_ v: UIView, attribute: NSLayoutAttribute, existsOnView: UIView?) -> NSLayoutConstraint? {
+    let target = existsOnView ?? v
+    for c in target.constraints {
+        if let fi = c.firstItem as? NSObject, fi == v && c.firstAttribute == attribute {
+            return c
+        }
+        if let si = c.secondItem as? NSObject, si == v && c.secondAttribute == attribute {
+            return c
         }
     }
     return nil
