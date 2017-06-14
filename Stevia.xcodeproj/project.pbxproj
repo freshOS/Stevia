@@ -675,6 +675,7 @@
 				9934B78F1EF126D10065EA50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9991C84F1BDB6C8B007D9B75 /* Build configuration list for PBXProject "Stevia" */ = {
 			isa = XCConfigurationList;
