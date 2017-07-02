@@ -8,25 +8,9 @@
 
 import UIKit
 
-private var kButtonBlockAssociationKey: UInt8 = 0
+extension UIButton: AssociatedBlock {}
 public extension UIButton {
-    
-    internal var testButtonBlock: ActionBlock {
-        get {
-            if let cw = objc_getAssociatedObject(self,
-                                                 &kButtonBlockAssociationKey) as? ClosureWrapper {
-                return cw.closure
-            }
-            return nil
-        }
-        set {
-            objc_setAssociatedObject(self,
-                                     &kButtonBlockAssociationKey,
-                                     ClosureWrapper(newValue),
-                                     objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-    
+
     /** Links UIButton tap (TouchUpInside) event to a block.
      
     Example Usage:
@@ -57,12 +41,12 @@ public extension UIButton {
         #else
         addTarget(self, action: "tapped", forControlEvents: .TouchUpInside)
         #endif
-        testButtonBlock = block
+        associatedBlock = block
         return self
     }
     
     /** */
     func tapped() {
-        testButtonBlock?()
+        associatedBlock?()
     }
 }

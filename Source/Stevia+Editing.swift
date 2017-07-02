@@ -8,7 +8,7 @@
 
 import UIKit
 
-private var kTextFieldBlockAssociationKey: UInt8 = 0
+extension UITextField: AssociatedBlock {}
 public extension UITextField {
 
     public enum Editing {
@@ -23,22 +23,6 @@ public extension UITextField {
             case .didEndOnExit: return .editingDidEndOnExit
             case .allEditingEvents: return .allEditingEvents
             }
-        }
-    }
-
-    internal var textFieldBlock: ActionBlock {
-        get {
-            if let cw = objc_getAssociatedObject(self,
-                                                 &kTextFieldBlockAssociationKey) as? ClosureWrapper {
-                return cw.closure
-            }
-            return nil
-        }
-        set {
-            objc_setAssociatedObject(self,
-                                     &kTextFieldBlockAssociationKey,
-                                     ClosureWrapper(newValue),
-                                     objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 
@@ -72,12 +56,12 @@ public extension UITextField {
         #else
             addTarget(self, action: "edited", forControlEvents: editing.controlEvent)
         #endif
-        textFieldBlock = block
+        associatedBlock = block
         return self
     }
 
     /** */
     func edited() {
-        textFieldBlock?()
+        associatedBlock?()
     }
 }
