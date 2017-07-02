@@ -230,21 +230,31 @@ class LoginViewNative:UIView {
 ### With Stevia 🍃
 
 ```swift
-
-class LoginViewStevia:UIView {
+class LoginViewStevia: UIView {
 
     let email = UITextField()
     let password = UITextField()
     let login = UIButton()
 
     convenience init() {
-        self.init(frame:CGRect.zero)
-        backgroundColor = .whiteColor()
+        self.init(frame: .zero)
+        backgroundColor = .white
 
         sv(
-            email.placeholder("Email").style(fieldStyle), //.style(emailFieldStyle),
-            password.placeholder("Password").style(fieldStyle).style(passwordFieldStyle),
-            login.text("Login").style(buttonStyle).tap(loginTapped)
+            email.style(fieldStyle).style {
+                $0.placeholder = "Email"
+            },
+            password.style(fieldStyle).style {
+                $0.placeholder = "Password"
+                $0.isSecureTextEntry = true
+                $0.returnKeyType = .done
+            },
+            login.style({
+                $0.backgroundColor = .lightGray
+                $0.text("Login")
+            }).tap {
+                // do something
+            }
         )
 
         layout(
@@ -258,31 +268,18 @@ class LoginViewStevia:UIView {
         )
     }
 
-    func fieldStyle(f:UITextField) {
-        f.borderStyle = .RoundedRect
+    func fieldStyle(f: UITextField) {
+        f.borderStyle = .roundedRect
         f.font = UIFont(name: "HelveticaNeue-Light", size: 26)
-        f.returnKeyType = .Next
-    }
-
-    func passwordFieldStyle(f:UITextField) {
-        f.secureTextEntry = true
-        f.returnKeyType = .Done
-    }
-
-    func buttonStyle(b:UIButton) {
-        b.backgroundColor = .lightGrayColor()
-    }
-
-    func loginTapped() {
-        //Do something
+        f.returnKeyType = .next
     }
 }
 ```
 
-**Number of lines** From 144 -> 57 **( ~ divided by 2.5)**
-**Number of characters** From 4231 -> 1338 **( ~ divided by 3)**
+**Number of lines** From 144 -> 44 **( ~ divided by 3.2)**
+**Number of characters** From 4231 -> 1060 **( ~ divided by 4)**
 
-Write **3 times less code** that is actually **10X more expressive and maintainable** <3
+Write **4 times less code** that is actually **10X more expressive and maintainable** <3
 
 ## Live Reload
 
@@ -343,12 +340,12 @@ use_frameworks!
 
 ### Carthage
 ```swift
-github "s4cha/Stevia"
+github "freshOS/Stevia"
 ```
 
 - Create a `Cartfile` file at the root of your project folder
 
-- Add `github "s4cha/Stevia"` to your Cartfile
+- Add `github "freshOS/Stevia"` to your Cartfile
 
 - Run `carthage update`
 
