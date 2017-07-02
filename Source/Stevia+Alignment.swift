@@ -114,14 +114,12 @@ public func alignVertically(_ v1: UIView, with v2: UIView, offset: CGFloat = 0) 
 }
 
 private func align(_ axis: UILayoutConstraintAxis, views: [UIView]) {
-    for (i, v) in views.enumerated() {
-        if views.count > i+1 {
-            let v2 = views[i+1]
-            if axis == .horizontal {
-                alignHorizontally(v, with: v2)
-            } else {
-                alignVertically(v, with: v2)
-            }
+    for (i, v) in views.enumerated() where views.count > i+1 {
+        let v2 = views[i+1]
+        if axis == .horizontal {
+            alignHorizontally(v, with: v2)
+        } else {
+            alignVertically(v, with: v2)
         }
     }
 }
@@ -282,13 +280,11 @@ public func alignRights(_ views: [UIView]) -> [UIView] {
 
 @discardableResult
 public func align(_ attribute: NSLayoutAttribute, views: [UIView]) -> [UIView] {
-    for (i, v) in views.enumerated() {
-        if views.count > i+1 {
-            let v2 = views[i+1]
-            if let spv = v.superview {
-                let c = constraint(item: v, attribute: attribute, toItem: v2)
-                spv.addConstraint(c)
-            }
+    for (i, v) in views.enumerated() where views.count > i+1 {
+        let v2 = views[i+1]
+        if let spv = v.superview {
+            let c = constraint(item: v, attribute: attribute, toItem: v2)
+            spv.addConstraint(c)
         }
     }
     return views
