@@ -61,6 +61,7 @@ public extension UITextField {
     }
 
     /** */
+    @objc
     func edited() {
         associatedBlock?()
     }

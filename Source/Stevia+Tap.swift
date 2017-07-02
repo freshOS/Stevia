@@ -46,6 +46,7 @@ public extension UIButton {
     }
     
     /** */
+    @objc
     func tapped() {
         associatedBlock?()
     }
