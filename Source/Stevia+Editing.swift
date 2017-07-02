@@ -16,13 +16,24 @@ public extension UITextField {
         case allEditingEvents
 
         fileprivate var controlEvent: UIControlEvents {
-            switch self {
-            case .didBegin: return .editingDidBegin
-            case .changed: return .editingChanged
-            case .didEnd: return .editingDidEnd
-            case .didEndOnExit: return .editingDidEndOnExit
-            case .allEditingEvents: return .allEditingEvents
-            }
+            #if swift(>=2.2)
+                switch self {
+                case .didBegin: return .editingDidBegin
+                case .changed: return .editingChanged
+                case .didEnd: return .editingDidEnd
+                case .didEndOnExit: return .editingDidEndOnExit
+                case .allEditingEvents: return .allEditingEvents
+                }
+
+            #else
+                switch self {
+                case .didBegin: return .EditingDidBegin
+                case .changed: return .EditingChanged
+                case .didEnd: return .EditingDidEnd
+                case .didEndOnExit: return .EditingDidEndOnExit
+                case .allEditingEvents: return .AllEditingEvents
+                }
+            #endif
         }
     }
 
