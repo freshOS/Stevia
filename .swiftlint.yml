@@ -1,11 +1,14 @@
 disabled_rules:
-- trailing_whitespace
-- cyclomatic_complexity
-- identifier_name
-- function_body_length
-- type_body_length
+  - trailing_whitespace
+  - cyclomatic_complexity
+  - identifier_name
+  - function_body_length
+  - type_body_length
 opt_in_rules:
-- empty_count
+  - empty_count
+  - overridden_super_call
+  - redundant_nil_coalesing
+  - explicit_init
 # - missing_docs
 # - force_unwrapping
 
