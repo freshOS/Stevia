@@ -8,16 +8,6 @@
 
 import UIKit
 
-typealias ActionBlock = (() -> Void)?
-
-class ClosureWrapper {
-    var closure: ActionBlock
-    
-    init(_ closure: ActionBlock) {
-        self.closure = closure
-    }
-}
-
 private var kButtonBlockAssociationKey: UInt8 = 0
 public extension UIButton {
     
@@ -29,7 +19,7 @@ public extension UIButton {
             }
             return nil
         }
-        set(newValue) {
+        set {
             objc_setAssociatedObject(self,
                                      &kButtonBlockAssociationKey,
                                      ClosureWrapper(newValue),
@@ -63,7 +53,7 @@ public extension UIButton {
     @discardableResult
     public func tap(_ block:@escaping () -> Void) -> UIButton {
         #if swift(>=2.2)
-        addTarget(self, action: #selector(UIButton.tapped), for: .touchUpInside)
+        addTarget(self, action: #selector(tapped), for: .touchUpInside)
         #else
         addTarget(self, action: "tapped", forControlEvents: .TouchUpInside)
         #endif
