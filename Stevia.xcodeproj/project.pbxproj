@@ -58,6 +58,11 @@
 		CBC533501C6E20660008F340 /* HierarchyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC5334F1C6E20660008F340 /* HierarchyTests.swift */; };
 		CBC533521C6E24970008F340 /* FillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC533511C6E24970008F340 /* FillTests.swift */; };
 		CBC533541C6E2CCF0008F340 /* SizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC533531C6E2CCF0008F340 /* SizeTests.swift */; };
+		EC5606FC1F07F19400BAD706 /* AssociatedBlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5606FB1F07F19400BAD706 /* AssociatedBlockTests.swift */; };
+		EC8ED46F1F03A62600613985 /* Stevia+Editing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8ED46E1F03A62600613985 /* Stevia+Editing.swift */; };
+		EC8ED4711F03AE8A00613985 /* AssociatedBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8ED4701F03AE8A00613985 /* AssociatedBlock.swift */; };
+		EC8ED4721F03AE8A00613985 /* AssociatedBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8ED4701F03AE8A00613985 /* AssociatedBlock.swift */; };
+		EC8ED4731F03B1EA00613985 /* Stevia+Editing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8ED46E1F03A62600613985 /* Stevia+Editing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +114,9 @@
 		CBC5334F1C6E20660008F340 /* HierarchyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HierarchyTests.swift; sourceTree = "<group>"; };
 		CBC533511C6E24970008F340 /* FillTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillTests.swift; sourceTree = "<group>"; };
 		CBC533531C6E2CCF0008F340 /* SizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTests.swift; sourceTree = "<group>"; };
+		EC5606FB1F07F19400BAD706 /* AssociatedBlockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedBlockTests.swift; sourceTree = "<group>"; };
+		EC8ED46E1F03A62600613985 /* Stevia+Editing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Editing.swift"; sourceTree = "<group>"; };
+		EC8ED4701F03AE8A00613985 /* AssociatedBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedBlock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +176,9 @@
 				99585BE01D86ABFF004CE776 /* Stevia+Size.swift */,
 				99585BE11D86ABFF004CE776 /* Stevia+Stacks.swift */,
 				99585BE21D86ABFF004CE776 /* Stevia+Style.swift */,
+				EC8ED4701F03AE8A00613985 /* AssociatedBlock.swift */,
 				99585BE31D86ABFF004CE776 /* Stevia+Tap.swift */,
+				EC8ED46E1F03A62600613985 /* Stevia+Editing.swift */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;
@@ -181,7 +191,9 @@
 				9934B78A1EF126D10065EA50 /* SteviaTV */,
 				9991C8561BDB6C8B007D9B75 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		9991C8561BDB6C8B007D9B75 /* Products */ = {
 			isa = PBXGroup;
@@ -217,6 +229,7 @@
 				1F00D53C1C9AD18A00B90965 /* StyleTests.swift */,
 				99BD93191E3B746F0097A625 /* EquationTests.swift */,
 				992F54FA1EF160420076BDB9 /* GetConstraintsTests.swift */,
+				EC5606FB1F07F19400BAD706 /* AssociatedBlockTests.swift */,
 			);
 			path = SteviaTests;
 			sourceTree = "<group>";
@@ -396,7 +409,9 @@
 				9934B7951EF127920065EA50 /* Stevia+DoubleDash.swift in Sources */,
 				9934B79B1EF127920065EA50 /* Stevia+Hierarchy.swift in Sources */,
 				9934B7971EF127920065EA50 /* Stevia+FlexibleMargin.swift in Sources */,
+				EC8ED4731F03B1EA00613985 /* Stevia+Editing.swift in Sources */,
 				9934B7941EF127920065EA50 /* Stevia+Content.swift in Sources */,
+				EC8ED4721F03AE8A00613985 /* AssociatedBlock.swift in Sources */,
 				9934B7981EF127920065EA50 /* Stevia+Equation.swift in Sources */,
 				9934B79A1EF127920065EA50 /* Stevia+GetConstraint.swift in Sources */,
 				9934B7911EF127920065EA50 /* Stevia+Alignment.swift in Sources */,
@@ -416,9 +431,11 @@
 				99585BE71D86ABFF004CE776 /* Stevia+Center.swift in Sources */,
 				99585BEA1D86ABFF004CE776 /* Stevia+DoubleDash.swift in Sources */,
 				99585BEC1D86ABFF004CE776 /* Stevia+FlexibleMargin.swift in Sources */,
+				EC8ED46F1F03A62600613985 /* Stevia+Editing.swift in Sources */,
 				99585BE91D86ABFF004CE776 /* Stevia+Content.swift in Sources */,
 				99585BF01D86ABFF004CE776 /* Stevia+Operators.swift in Sources */,
 				99585BF51D86ABFF004CE776 /* Stevia+Tap.swift in Sources */,
+				EC8ED4711F03AE8A00613985 /* AssociatedBlock.swift in Sources */,
 				99585BEE1D86ABFF004CE776 /* Stevia+Hierarchy.swift in Sources */,
 				9914DDC11E33618A00761C87 /* Stevia+Percentage.swift in Sources */,
 				99585BF11D86ABFF004CE776 /* Stevia+Position.swift in Sources */,
@@ -437,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBC533541C6E2CCF0008F340 /* SizeTests.swift in Sources */,
+				EC5606FC1F07F19400BAD706 /* AssociatedBlockTests.swift in Sources */,
 				99BD931A1E3B746F0097A625 /* EquationTests.swift in Sources */,
 				CBC533521C6E24970008F340 /* FillTests.swift in Sources */,
 				99C5A4881C7A5B93003EDE10 /* FlexibleMarginTests.swift in Sources */,

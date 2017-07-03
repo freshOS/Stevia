@@ -8,7 +8,7 @@
 [![CocoaPods compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org)
 [![Build Status](https://www.bitrise.io/app/4478e29045c5f12e.svg?token=pti6g-HVKBUPv9mIR3baIw&branch=master)](https://www.bitrise.io/app/4478e29045c5f12e)
 [![Join the chat at https://gitter.im/s4cha/Stevia](https://badges.gitter.im/s4cha/Stevia.svg)](https://gitter.im/s4cha/Stevia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/s4cha/Stevia/blob/master/LICENSE) [![Release version](https://img.shields.io/badge/release-3.2-blue.svg)]()
+[![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/s4cha/Stevia/blob/master/LICENSE) [![Release version](https://img.shields.io/badge/release-3.3-blue.svg)]()
 
 
 [Reason](#reason) - [Example](#login-view-example) - [Live Reload](#live-reload) - [Installation](#installation) - [Documentation](#documentation)
@@ -52,14 +52,14 @@ Stevia is part of [freshOS](http://freshos.org) iOS toolset. Try it in an exampl
 
 ## Reason
 ### Why
-Because **nothing holds more truth than pure code** 🤓  
-Xibs and storyboards are **heavy, hard to maintain, hard to merge.**  
-They split the view concept into 2 separate files making debugging a **nightmare**    
+Because **nothing holds more truth than pure code** 🤓
+Xibs and storyboards are **heavy, hard to maintain, hard to merge.**
+They split the view concept into 2 separate files making debugging a **nightmare**
 *There must be a better way*
 
 ### How
-By creating a tool that makes Auto layout code finally **readable by a human being**.  
-By coupling it with live code injection such as *injectionForXcode* we can **design views in real time**  
+By creating a tool that makes Auto layout code finally **readable by a human being**.
+By coupling it with live code injection such as *injectionForXcode* we can **design views in real time**
 View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beautiful* ❤️
 
 ### What
@@ -230,21 +230,31 @@ class LoginViewNative:UIView {
 ### With Stevia 🍃
 
 ```swift
-
-class LoginViewStevia:UIView {
+class LoginViewStevia: UIView {
 
     let email = UITextField()
     let password = UITextField()
     let login = UIButton()
 
     convenience init() {
-        self.init(frame:CGRect.zero)
-        backgroundColor = .whiteColor()
+        self.init(frame: .zero)
+        backgroundColor = .white
 
         sv(
-            email.placeholder("Email").style(fieldStyle), //.style(emailFieldStyle),
-            password.placeholder("Password").style(fieldStyle).style(passwordFieldStyle),
-            login.text("Login").style(buttonStyle).tap(loginTapped)
+            email.style(fieldStyle).style {
+                $0.placeholder = "Email"
+            },
+            password.style(fieldStyle).style {
+                $0.placeholder = "Password"
+                $0.isSecureTextEntry = true
+                $0.returnKeyType = .done
+            },
+            login.style({
+                $0.backgroundColor = .lightGray
+                $0.text("Login")
+            }).tap {
+                // do something
+            }
         )
 
         layout(
@@ -258,35 +268,22 @@ class LoginViewStevia:UIView {
         )
     }
 
-    func fieldStyle(f:UITextField) {
-        f.borderStyle = .RoundedRect
+    func fieldStyle(f: UITextField) {
+        f.borderStyle = .roundedRect
         f.font = UIFont(name: "HelveticaNeue-Light", size: 26)
-        f.returnKeyType = .Next
-    }
-
-    func passwordFieldStyle(f:UITextField) {
-        f.secureTextEntry = true
-        f.returnKeyType = .Done
-    }
-
-    func buttonStyle(b:UIButton) {
-        b.backgroundColor = .lightGrayColor()
-    }
-
-    func loginTapped() {
-        //Do something
+        f.returnKeyType = .next
     }
 }
 ```
 
-**Number of lines** From 144 -> 57 **( ~ divided by 2.5)**  
-**Number of characters** From 4231 -> 1338 **( ~ divided by 3)**
+**Number of lines** From 144 -> 44 **( ~ divided by 3.2)**
+**Number of characters** From 4231 -> 1060 **( ~ divided by 4)**
 
-Write **3 times less code** that is actually **10X more expressive and maintainable** <3
+Write **4 times less code** that is actually **10X more expressive and maintainable** <3
 
 ## Live Reload
 
-You can even enable LiveReload during your development phase! 🎉🎉🎉  
+You can even enable LiveReload during your development phase! 🎉🎉🎉
 
 Stevia + [InjectionForXcode](http://injectionforxcode.com/) = <3 (WhoNeedsReactNative??) 🚀
 
@@ -343,12 +340,12 @@ use_frameworks!
 
 ### Carthage
 ```swift
-github "s4cha/Stevia"
+github "freshOS/Stevia"
 ```
 
 - Create a `Cartfile` file at the root of your project folder
 
-- Add `github "s4cha/Stevia"` to your Cartfile
+- Add `github "freshOS/Stevia"` to your Cartfile
 
 - Run `carthage update`
 
@@ -393,8 +390,8 @@ Copy Stevia source files to your Xcode project
 
 ## Rationale behind the project
 
-On the [Yummypets](http://yummypets.com) app, we needed to deal with looooooots of views.  
-After trying different methods for building views (Xibs, Storyboards, Splitting Storyboards, React Native even(!).  
+On the [Yummypets](http://yummypets.com) app, we needed to deal with looooooots of views.
+After trying different methods for building views (Xibs, Storyboards, Splitting Storyboards, React Native even(!).
 We found that coding views programmatically was the best solution for us.
 But coding views programmatically had its issues too: UIKit exposes an imperative, verbose API, and it's really easy to create a mess with it.
 That's why we created Stevia.
@@ -406,5 +403,5 @@ That's why we created Stevia.
 [Snowcraft](https://github.com/Snowcraft), [Mathieu-o](https://github.com/Mathieu-o)
 
 ## Swift Version
-Swift 2 -> version **2.3.0**  
-Swift 3 -> version **3.2.0**
+Swift 2 -> version **2.3.0**
+Swift 3 -> version **3.3.0**

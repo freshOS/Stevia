@@ -8,35 +8,9 @@
 
 import UIKit
 
-typealias ActionBlock = (() -> Void)?
-
-class ClosureWrapper {
-    var closure: ActionBlock
-    
-    init(_ closure: ActionBlock) {
-        self.closure = closure
-    }
-}
-
-private var kButtonBlockAssociationKey: UInt8 = 0
+extension UIButton: AssociatedBlock {}
 public extension UIButton {
-    
-    internal var testButtonBlock: ActionBlock {
-        get {
-            if let cw = objc_getAssociatedObject(self,
-                                                 &kButtonBlockAssociationKey) as? ClosureWrapper {
-                return cw.closure
-            }
-            return nil
-        }
-        set(newValue) {
-            objc_setAssociatedObject(self,
-                                     &kButtonBlockAssociationKey,
-                                     ClosureWrapper(newValue),
-                                     objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-    
+
     /** Links UIButton tap (TouchUpInside) event to a block.
      
     Example Usage:
@@ -63,16 +37,17 @@ public extension UIButton {
     @discardableResult
     public func tap(_ block:@escaping () -> Void) -> UIButton {
         #if swift(>=2.2)
-        addTarget(self, action: #selector(UIButton.tapped), for: .touchUpInside)
+        addTarget(self, action: #selector(tapped), for: .touchUpInside)
         #else
         addTarget(self, action: "tapped", forControlEvents: .TouchUpInside)
         #endif
-        testButtonBlock = block
+        associatedBlock = block
         return self
     }
     
     /** */
+    @objc
     func tapped() {
-        testButtonBlock?()
+        associatedBlock?()
     }
 }
