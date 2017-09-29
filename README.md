@@ -2,13 +2,13 @@
 
 # Stevia
 
-[![Language: Swift2 and 3](https://img.shields.io/badge/language-swift2|swift3-f48041.svg?style=flat)](https://developer.apple.com/swift)
+[![Language: Swift 2, 3 and 4](https://img.shields.io/badge/language-swift2|swift3|swift4-f48041.svg?style=flat)](https://developer.apple.com/swift)
 ![Platform: iOS 8+](https://img.shields.io/badge/platform-iOS%20|%20tvOS-blue.svg?style=flat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org)
 [![Build Status](https://www.bitrise.io/app/4478e29045c5f12e.svg?token=pti6g-HVKBUPv9mIR3baIw&branch=master)](https://www.bitrise.io/app/4478e29045c5f12e)
 [![Join the chat at https://gitter.im/s4cha/Stevia](https://badges.gitter.im/s4cha/Stevia.svg)](https://gitter.im/s4cha/Stevia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/s4cha/Stevia/blob/master/LICENSE) [![Release version](https://img.shields.io/badge/release-3.2-blue.svg)]()
+[![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/s4cha/Stevia/blob/master/LICENSE) [![Release version](https://img.shields.io/badge/release-4.0-blue.svg)]()
 
 
 [Reason](#reason) - [Example](#login-view-example) - [Live Reload](#live-reload) - [Installation](#installation) - [Documentation](#documentation)
@@ -407,4 +407,5 @@ That's why we created Stevia.
 
 ## Swift Version
 Swift 2 -> version **2.3.0**  
-Swift 3 -> version **3.2.0**
+Swift 3 -> version **3.2.0**  
+Swift 4 -> version **4.0.0**
