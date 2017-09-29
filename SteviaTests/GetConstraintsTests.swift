@@ -32,7 +32,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.secondAttribute, .left)
         XCTAssertEqual(c?.multiplier, 1)
         XCTAssertEqual(c?.relation, .equal)
-        XCTAssertEqual(c?.priority, 751)
+        XCTAssertEqual(c?.priority.rawValue, 751)
         XCTAssertEqual(c?.isActive, true)
     }
     
@@ -48,7 +48,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.secondAttribute, .right)
         XCTAssertEqual(c?.multiplier, 1)
         XCTAssertEqual(c?.relation, .equal)
-        XCTAssertEqual(c?.priority, 751)
+        XCTAssertEqual(c?.priority.rawValue, 751)
         XCTAssertEqual(c?.isActive, true)
     }
     
@@ -64,7 +64,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.secondAttribute, .top)
         XCTAssertEqual(c?.multiplier, 1)
         XCTAssertEqual(c?.relation, .equal)
-        XCTAssertEqual(c?.priority, 751)
+        XCTAssertEqual(c?.priority.rawValue, 751)
         XCTAssertEqual(c?.isActive, true)
     }
     
@@ -80,7 +80,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.secondAttribute, .bottom)
         XCTAssertEqual(c?.multiplier, 1)
         XCTAssertEqual(c?.relation, .equal)
-        XCTAssertEqual(c?.priority, 751)
+        XCTAssertEqual(c?.priority.rawValue, 751)
         XCTAssertEqual(c?.isActive, true)
     }
     
@@ -96,7 +96,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.secondAttribute, .notAnAttribute)
         XCTAssertEqual(c?.multiplier, 1)
         XCTAssertEqual(c?.relation, .equal)
-        XCTAssertEqual(c?.priority, 751)
+        XCTAssertEqual(c?.priority.rawValue, 751)
         XCTAssertEqual(c?.isActive, true)
     }
     
@@ -112,7 +112,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.secondAttribute, .notAnAttribute)
         XCTAssertEqual(c?.multiplier, 1)
         XCTAssertEqual(c?.relation, .equal)
-        XCTAssertEqual(c?.priority, 751)
+        XCTAssertEqual(c?.priority.rawValue, 751)
         XCTAssertEqual(c?.isActive, true)
     }
     
@@ -128,7 +128,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.secondAttribute, .trailing)
         XCTAssertEqual(c?.multiplier, 1)
         XCTAssertEqual(c?.relation, .equal)
-        XCTAssertEqual(c?.priority, 1000)
+        XCTAssertEqual(c?.priority.rawValue, 1000)
         XCTAssertEqual(c?.isActive, true)
     }
     
@@ -144,7 +144,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.secondAttribute, .leading)
         XCTAssertEqual(c?.multiplier, 1)
         XCTAssertEqual(c?.relation, .equal)
-        XCTAssertEqual(c?.priority, 1000)
+        XCTAssertEqual(c?.priority.rawValue, 1000)
         XCTAssertEqual(c?.isActive, true)
     }
     

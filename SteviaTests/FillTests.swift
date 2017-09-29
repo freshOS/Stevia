@@ -39,9 +39,9 @@ class FillTests: XCTestCase {
         ctrler.view.sv(b)
         b.fillContainer(padding)
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
-        XCTAssertEqualWithAccuracy(ctrler.view.frame.height, b.frame.height + padding * 2,
+        XCTAssertEqual(ctrler.view.frame.height, b.frame.height + padding * 2,
                                    accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqualWithAccuracy(ctrler.view.frame.width, b.frame.width + padding * 2,
+        XCTAssertEqual(ctrler.view.frame.width, b.frame.width + padding * 2,
                                    accuracy: CGFloat(Float.ulpOfOne))
     }
 }

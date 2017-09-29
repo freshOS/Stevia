@@ -72,7 +72,7 @@ public extension UIButton {
     }
     
     /** */
-    func tapped() {
+    @objc func tapped() {
         testButtonBlock?()
     }
 }

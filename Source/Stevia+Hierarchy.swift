@@ -78,7 +78,7 @@ public extension UIView {
      
      - Returns: Itself to enable nested layouts.
      */
-    @discardableResult
+    @objc @discardableResult
     public func sv(_ subViews: [UIView]) -> UIView {
         for sv in subViews {
             addSubview(sv)
