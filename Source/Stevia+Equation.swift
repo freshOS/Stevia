@@ -55,6 +55,14 @@ public extension UIView {
         return SteviaAttribute(view: self, attribute: .right)
     }
     
+    public var Leading: SteviaAttribute {
+        return SteviaAttribute(view: self, attribute: .leading)
+    }
+    
+    public var Trailing: SteviaAttribute {
+        return SteviaAttribute(view: self, attribute: .trailing)
+    }
+    
     public var CenterX: SteviaAttribute {
         return SteviaAttribute(view: self, attribute: .centerX)
     }
