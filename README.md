@@ -63,27 +63,18 @@ By coupling it with live code injection such as *[injectionForXcode](http://john
 View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beautiful* ❤️
 
 ### What
-- [x] Auto Layout DSL
-- [x] Pure Swift
-- [x] Simple, this is just NSLayoutConstraint shortcuts, pure UIKit code, no voodoo magic
-- [x] Chainable api
+- [x] Pure Swift Auto Layout DSL.
+- [x] Simple: the apis are just NSLayoutConstraint shortcuts, pure UIKit code, no voodoo magic.
 
 ## Advantages of Stevia
-- [x] No more constraints hell in Interface builder.
-- [x] No more debugging in Interface builder toggling checkboxes.
-- [x] The view code is not split between 2 files anymore
-- [x] What you see is what you get, your view code is in one place, there is no hidden logic elsewere (in the xib)
-- [x] No more referencing Storyboards or Xibs by their names "ProfileStoryboard". We all know strings are bad identifiers.
-- [x] Clear view Hierarchy
-- [x] Live reload, WHAT YOU SEE IS WHAT YOU GET
-- [x] Events are a breeze
-- [x] Code views Faster
-- [x] No more XML (Thank God!)
-- [x] Better readability 1000lines XML file vs. 30lines code
-- [x] Readable constraints (they actually look like the layout itself \o/)
-- [x] Horizontal & vertical layout can be described at the same time
-- [x] Styles are well separated, concise, reusable and can be composed
-- [x] Content like text, placeholders are easier to visualize
+
+- [x] Improves the readability of Auto Layout in code.
+- [x] Concise yet flexible apis.
+- [x] Type-Safe Visual Format language.
+- [x] Decribe Horizontal & vertical layout at the same time.
+- [x] Supports Live reload, for faster iteration cycles.
+- [x] Styling is more concise, reusable and can be composed.
+
 
 ## Login View Example
 In the project folder, you can find an example of a typical login view laid out in both native and Stevia for you to understand and compare the two approaches.
@@ -173,17 +164,6 @@ Copy Stevia source files to your Xcode project
 
 ## Documentation
 You can find the full documentation in the wiki [here](https://github.com/freshOS/Stevia/wiki/0.-Documentation).
-
-
-
-## Rationale behind the project
-
-On the [Yummypets](http://yummypets.com) app, we needed to deal with looooooots of views.  
-After trying different methods for building views (Xibs, Storyboards, Splitting Storyboards, React Native even(!).  
-We found that coding views programmatically was the best solution for us.
-But coding views programmatically had its issues too: UIKit exposes an imperative, verbose API, and it's really easy to create a mess with it.
-That's why we created Stevia.
-
 
 ## Contributors
 
