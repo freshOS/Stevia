@@ -19,7 +19,7 @@ public extension UIButton {
     */
     @discardableResult
     public func text(_ t: String) -> Self {
-        setTitle(t, for: UIControlState())
+        setTitle(t, for: .normal)
         return self
     }
     
@@ -46,7 +46,7 @@ public extension UIButton {
      */
     @discardableResult
     public func image(_ s: String) -> Self {
-        setImage(UIImage(named:s), for: UIControlState())
+        setImage(UIImage(named:s), for: .normal)
         return self
     }
 }
