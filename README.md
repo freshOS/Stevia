@@ -59,7 +59,7 @@ They split the view concept into 2 separate files making debugging a **nightmare
 
 ### How
 By creating a tool that makes Auto layout code finally **readable by a human being**.  
-By coupling it with live code injection such as *injectionForXcode* we can **design views in real time**  
+By coupling it with live code injection such as *[injectionForXcode](http://johnholdsworth.com/injection.html)* we can **design views in real time**  
 View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beautiful* ❤️
 
 ### What
@@ -86,217 +86,27 @@ View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beau
 - [x] Content like text, placeholders are easier to visualize
 
 ## Login View Example
-![alt text](https://raw.githubusercontent.com/s4cha/Stevia/master/LoginExample/login.png "Login view")
+In the project folder, you can find an example of a typical login view laid out in both native and Stevia for you to understand and compare the two approaches.
 
-### Before (Native Autolayout)
+As a spoiler alert, the **number of characters** goes from 2380 to 1239 **( ~ divided by 2)**
 
-```swift
-class LoginViewNative:UIView {
-
-    let email = UITextField()
-    let password = UITextField()
-    let login = UIButton()
-
-    convenience init() {
-        self.init(frame:CGRect.zero)
-        backgroundColor = .whiteColor()
-
-        addSubview(email)
-        addSubview(password)
-        addSubview(login)
-
-        email.translatesAutoresizingMaskIntoConstraints = false
-        password.translatesAutoresizingMaskIntoConstraints = false
-        login.translatesAutoresizingMaskIntoConstraints = false
-
-        addConstraint(NSLayoutConstraint(
-                item: email,
-                attribute: .Left,
-                relatedBy: .Equal,
-                toItem: self,
-                attribute: .Left,
-                multiplier: 1,
-                constant: 8)
-        )
-        addConstraint(NSLayoutConstraint(
-                item: email,
-                attribute: .Right,
-                relatedBy: .Equal,
-                toItem: self,
-                attribute: .Right,
-                multiplier: 1,
-                constant: -8)
-        )
-        addConstraint(NSLayoutConstraint(
-            item: password,
-            attribute: .Left,
-                relatedBy: .Equal,
-                toItem: self,
-                attribute: .Left,
-                multiplier: 1,
-                constant: 8)
-        )
-        addConstraint(NSLayoutConstraint(
-            item: password,
-            attribute: .Right,
-            relatedBy: .Equal,
-            toItem: self,
-            attribute: .Right,
-            multiplier: 1,
-            constant: -8)
-        )
-        addConstraint(NSLayoutConstraint(
-            item: login,
-            attribute: .Left,
-            relatedBy: .Equal,
-            toItem: self,
-            attribute: .Left,
-            multiplier: 1,
-            constant: 0)
-        )
-        addConstraint(NSLayoutConstraint(
-            item: login,
-            attribute: .Right,
-            relatedBy: .Equal,
-            toItem: self,
-            attribute: .Right,
-            multiplier: 1,
-            constant: 0)
-        )
-        for b in [email, password, login] {
-            addConstraint(NSLayoutConstraint(
-                item: b,
-                attribute: .Height,
-                relatedBy: .Equal,
-                toItem: nil,
-                attribute: .NotAnAttribute,
-                multiplier: 1,
-                constant: 80)
-            )
-        }
-        addConstraint(NSLayoutConstraint(
-            item: email,
-            attribute: .Top,
-            relatedBy: .Equal,
-            toItem: self,
-            attribute: .Top,
-            multiplier: 1,
-            constant: 100)
-        )
-        addConstraint(NSLayoutConstraint(
-            item:email,
-            attribute: .Bottom,
-            relatedBy: .Equal,
-            toItem: password,
-            attribute: .Top,
-            multiplier: 1,
-            constant: -8)
-        )
-        addConstraint(NSLayoutConstraint(
-            item: login,
-            attribute: .Bottom,
-            relatedBy: .Equal,
-            toItem: self,
-            attribute: .Bottom,
-            multiplier: 1,
-            constant: 0)
-        )
-
-        email.placeholder = "Email"
-        email.borderStyle = .RoundedRect
-        email.autocorrectionType = .No
-        email.keyboardType = .EmailAddress
-        email.font = UIFont(name: "HelveticaNeue-Light", size: 26)
-        email.returnKeyType = .Next
-
-        password.placeholder = "Password"
-        password.borderStyle = .RoundedRect
-        password.font = UIFont(name: "HelveticaNeue-Light", size: 26)
-        password.secureTextEntry = true
-        password.returnKeyType = .Done
-
-        login.setTitle("Login", forState: .Normal)
-        login.backgroundColor = .lightGrayColor()
-        login.addTarget(self, action: "loginTapped", forControlEvents: .TouchUpInside)
-        login.setTitle(NSLocalizedString("Login", comment: ""), forState: .Normal)
-    }
-
-    func loginTapped() {
-        //Do something
-    }
-}
-```
-
-### With Stevia 🍃
-
-```swift
-
-class LoginViewStevia:UIView {
-
-    let email = UITextField()
-    let password = UITextField()
-    let login = UIButton()
-
-    convenience init() {
-        self.init(frame:CGRect.zero)
-        backgroundColor = .whiteColor()
-
-        sv(
-            email.placeholder("Email").style(fieldStyle), //.style(emailFieldStyle),
-            password.placeholder("Password").style(fieldStyle).style(passwordFieldStyle),
-            login.text("Login").style(buttonStyle).tap(loginTapped)
-        )
-
-        layout(
-            100,
-            |-email-| ~ 80,
-            8,
-            |-password-| ~ 80,
-            "",
-            |login| ~ 80,
-            0
-        )
-    }
-
-    func fieldStyle(f:UITextField) {
-        f.borderStyle = .RoundedRect
-        f.font = UIFont(name: "HelveticaNeue-Light", size: 26)
-        f.returnKeyType = .Next
-    }
-
-    func passwordFieldStyle(f:UITextField) {
-        f.secureTextEntry = true
-        f.returnKeyType = .Done
-    }
-
-    func buttonStyle(b:UIButton) {
-        b.backgroundColor = .lightGrayColor()
-    }
-
-    func loginTapped() {
-        //Do something
-    }
-}
-```
-
-**Number of lines** From 144 -> 57 **( ~ divided by 2.5)**  
-**Number of characters** From 4231 -> 1338 **( ~ divided by 3)**
-
-Write **3 times less code** that is actually **10X more expressive and maintainable** <3
+Write **Half the code** that is actually **10X more expressive and maintainable** !
 
 ## Live Reload
 
-You can even enable LiveReload during your development phase! 🎉🎉🎉  
+You can even enable **live reload** during your development phase! 🎉🎉🎉  
 
-Stevia + [InjectionForXcode](http://injectionforxcode.com/) = <3 (WhoNeedsReactNative??) 🚀
+Stevia + [InjectionForXcode](http://johnholdsworth.com/injection.html) = <3 (WhoNeedsReactNative??) 🚀
 
 ![Output sample](http://g.recordit.co/i6kQfTMEpg.gif)
 
-- Download [InjectionForXcode](http://injectionforxcode.johnholdsworth.com/InjectionPluginV6.4.pkg)
+*Just Cmd+S and you can dev live in the simulator !*
 
-- Install it, Launch it and Go to `File>Install Plugins` (cmd+i)
-
-- Restart Xcode and make sure to click `Load bundles` on the popup
+- Download [InjectionForXcode](http://johnholdsworth.com/injection.html).
+- Install it & Launch it.
+- Restart Xcode.
+- Click on  `Inject Source` once.
+- Enable the `File Watcher` so that Cmd+S triggers an injection.
 
 In order to support **live reload** with InjectionForXcode, we simply need to tell our ViewController to rebuild a view after an injection occured.
 
@@ -329,8 +139,6 @@ func render() {
 
 And Voila :)
 
-Now you can launch the app and modify whatever you want in the `render()` method. simply hit ^= or `Product>Inject source` and you'll see your changes Live ! 🎉🎉🎉
-
 
 ## Installation
 
@@ -343,12 +151,12 @@ use_frameworks!
 
 ### Carthage
 ```swift
-github "s4cha/Stevia"
+github "freshOS/Stevia"
 ```
 
 - Create a `Cartfile` file at the root of your project folder
 
-- Add `github "s4cha/Stevia"` to your Cartfile
+- Add `github "freshOS/Stevia"` to your Cartfile
 
 - Run `carthage update`
 
@@ -364,31 +172,8 @@ There you go!
 Copy Stevia source files to your Xcode project
 
 ## Documentation
+You can find the full documentation in the wiki [here](https://github.com/freshOS/Stevia/wiki/0.-Documentation).
 
-1. [View Hierarchy](https://github.com/freshOS/Stevia/wiki/1.-View-Hierarchy)
-2. [Layout](https://github.com/freshOS/Stevia/wiki/2.-Layout)
-  1. [Sizing](https://github.com/freshOS/Stevia/wiki/2.-Layout#sizing)
-  2. [Centering](https://github.com/freshOS/Stevia/wiki/2.-Layout#centering)
-  3. [Filling](https://github.com/freshOS/Stevia/wiki/2.-Layout#filling)
-  4. [Aligning](https://github.com/freshOS/Stevia/wiki/2.-Layout#aligning)
-  5. [Following another view](https://github.com/freshOS/Stevia/wiki/2.-Layout#following-another-view)
-  6. [Horizontal layout](https://github.com/freshOS/Stevia/wiki/2.-Layout#horizontal-layout)
-  7. [Vertical layout](https://github.com/freshOS/Stevia/wiki/2.-Layout#vertical-layout)
-  8. [Flexible Margins](https://github.com/freshOS/Stevia/wiki/2.-Layout#flexible-margins)
-  9. [Percentage-Based Layout](https://github.com/freshOS/Stevia/wiki/2.-Layout#Percentage-Based-Layout)
-  10. [Equations](https://github.com/freshOS/Stevia/wiki/2.-Layout#Equations)
-  11. [Priorities](https://github.com/freshOS/Stevia/wiki/2.-Layout#priorities)
-3. [Styling](https://github.com/freshOS/Stevia/wiki/Styling)
-4. [Content](https://github.com/freshOS/Stevia/wiki/4.-Content)
-5. [Button taps](https://github.com/freshOS/Stevia/wiki/5.-Button-taps)
-6. [Changing constraints](https://github.com/freshOS/Stevia/wiki/6.-Changing-Constraints)
-  1. [Simple Changes](https://github.com/freshOS/Stevia/wiki/6.-Changing-Constraints#simple-changes)
-  2. [Complex Changes](https://github.com/freshOS/Stevia/wiki/6.-Changing-Constraints#complex-changes)
-  3. [Animating Changes](https://github.com/freshOS/Stevia/wiki/6.-Changing-Constraints#animating-changes)
-7. [TableView Cells & CollectionView Cells](https://github.com/freshOS/Stevia/wiki/7.-TableView-Cells-&-CollectionView-Cells)
-8. [Getting views from the controller](https://github.com/freshOS/Stevia/wiki/8.-Getting-views-from-the-controller)
-9. [Complex/Nested layouts](https://github.com/freshOS/Stevia/wiki/9.-Complex-Nested-layouts)
-10. [Known issues](https://github.com/freshOS/Stevia/wiki/z10.-Known-issues)
 
 
 ## Rationale behind the project
@@ -412,7 +197,7 @@ Swift 4 -> version **4.0.0**
 
 
 ### Backers
-Like the project? Offer coffee or support us with a monthly donation and help us continue our activities :) 
+Like the project? Offer coffee or support us with a monthly donation and help us continue our activities :)
 
 <a href="https://opencollective.com/freshos/backer/0/website" target="_blank"><img src="https://opencollective.com/freshos/backer/0/avatar.svg"></a>
 <a href="https://opencollective.com/freshos/backer/1/website" target="_blank"><img src="https://opencollective.com/freshos/backer/1/avatar.svg"></a>
@@ -446,7 +231,7 @@ Like the project? Offer coffee or support us with a monthly donation and help us
 <a href="https://opencollective.com/freshos/backer/29/website" target="_blank"><img src="https://opencollective.com/freshos/backer/29/avatar.svg"></a>
 
 ### Sponsors
-Become a sponsor and get your logo on our README on Github with a link to your site :) 
+Become a sponsor and get your logo on our README on Github with a link to your site :)
 
 <a href="https://opencollective.com/freshos/sponsor/0/website" target="_blank"><img src="https://opencollective.com/freshos/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/freshos/sponsor/1/website" target="_blank"><img src="https://opencollective.com/freshos/sponsor/1/avatar.svg"></a>
