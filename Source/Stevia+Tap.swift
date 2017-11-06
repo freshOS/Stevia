@@ -60,6 +60,7 @@ public extension UIButton {
      - Returns: Itself for chaining purposes
      
      */
+    @available(*, deprecated: 4.0.0, message: "Use classic .addTarget(self, action: #selector(mySelector), for: .touchUpInside)")
     @discardableResult
     public func tap(_ block:@escaping () -> Void) -> UIButton {
         #if swift(>=2.2)
