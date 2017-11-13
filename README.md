@@ -163,7 +163,7 @@ There you go!
 Copy Stevia source files to your Xcode project
 
 ## Documentation
-You can find the full documentation in the wiki [here](https://github.com/freshOS/Stevia/wiki/0.-Documentation).
+You can find the full documentation in the wiki [here](http://freshos.org/SteviaDocs/).
 
 ## Contributors
 
