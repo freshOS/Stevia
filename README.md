@@ -45,27 +45,27 @@ login.Width == 75 % Width
 
 All Generate **native** NSLayoutConstraints 🎉
 
-## 👨‍🔬Try it!
+### 👨‍🔬Try it!
 
 Stevia is part of [freshOS](http://freshos.org) iOS toolset. Try it in an example App ! <a class="github-button" href="https://github.com/freshOS/StarterProject/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download freshOS/StarterProject on GitHub">Download Starter Project</a>
 
-## 💡 Reason
-### Why
+### 💡 Reason
+#### Why
 Because **nothing holds more truth than pure code** 🤓  
 Xibs and storyboards are **heavy, hard to maintain, hard to merge.**  
 They split the view concept into 2 separate files making debugging a **nightmare**    
 *There must be a better way*
 
-### How
+#### How
 By creating a tool that makes Auto layout code finally **readable by a human being**.  
 By coupling it with live code injection such as *[injectionForXcode](http://johnholdsworth.com/injection.html)* we can **design views in real time**  
 View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beautiful* ❤️
 
-### What
+#### What
 - [x] Pure Swift Auto Layout DSL.
 - [x] Simple: the apis are just NSLayoutConstraint shortcuts, pure UIKit code, no voodoo magic.
 
-## 💪 Advantages of Stevia
+### 💪 Advantages of Stevia
 
 - [x] Improves the readability of Auto Layout in code.
 - [x] Concise yet flexible apis.
@@ -75,14 +75,14 @@ View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beau
 - [x] Styling is more concise, reusable and can be composed.
 
 
-## Login View Example
+### Login View Example
 In the project folder, you can find an example of a typical login view laid out in both native and Stevia for you to understand and compare the two approaches.
 
 As a spoiler alert, the **number of characters** goes from 2380 to 1239 **( ~ divided by 2)**
 
 Write **Half the code** that is actually **10X more expressive and maintainable** !
 
-## Live Reload
+### Live Reload
 
 You can even enable **live reload** during your development phase! 🎉🎉🎉  
 
@@ -130,13 +130,13 @@ func render() {
 And Voila :)
 
 
-## ⚙️ Installation
+### ⚙️ Installation
 Get started [here](http://freshos.org/SteviaDocs/installation/).
 
-## 📖 Documentation
+### 📖 Documentation
 You can find the full documentation [here](http://freshos.org/SteviaDocs/).
 
-## 👨‍💻 Contributors
+### 👨‍💻 Contributors
 
 [YannickDot](https://github.com/YannickDot),  [S4cha](https://github.com/S4cha),  [Damien](https://github.com/damien-nd),
 [Snowcraft](https://github.com/Snowcraft), [Mathieu-o](https://github.com/Mathieu-o)
@@ -209,7 +209,7 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 <a href="https://opencollective.com/freshos/sponsor/28/website" target="_blank"><img src="https://opencollective.com/freshos/sponsor/28/avatar.svg"></a>
 <a href="https://opencollective.com/freshos/sponsor/29/website" target="_blank"><img src="https://opencollective.com/freshos/sponsor/29/avatar.svg"></a>
 
-## Swift Version
+### Swift Version
 Swift 2 -> version **2.3.0**  
 Swift 3 -> version **3.2.0**  
 Swift 4 -> version **4.0.0**
