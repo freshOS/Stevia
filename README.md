@@ -1,7 +1,6 @@
 ![Stevia](https://raw.githubusercontent.com/s4cha/Stevia/master/banner.png)
 
-# Stevia
-
+[![Documentation](https://img.shields.io/badge/Read_the-Docs-67ad5c.svg)](http://freshos.org/SteviaDocs/)
 [![Language: Swift 2, 3 and 4](https://img.shields.io/badge/language-swift2|swift3|swift4-f48041.svg?style=flat)](https://developer.apple.com/swift)
 ![Platform: iOS 8+](https://img.shields.io/badge/platform-iOS%20|%20tvOS-blue.svg?style=flat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
