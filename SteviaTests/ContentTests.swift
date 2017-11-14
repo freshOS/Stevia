@@ -27,7 +27,7 @@ class UIButtonContentTests: XCTestCase {
     func testText() {
         button.text(title)
         XCTAssertEqual(button.currentTitle, title)
-        XCTAssertEqual(button.state, .normal))
+        XCTAssertEqual(button.state, .normal)
     }
     
     func testTextKey() {
