@@ -13,7 +13,7 @@
 [Reason](#reason) - [Example](#login-view-example) - [Live Reload](#live-reload) - [Installation](#installation) - [Documentation](#documentation)
 
 
-### Visual Layout Api
+### 🖼 Visual Layout Api
 ```swift
 layout(
     100,
@@ -25,7 +25,7 @@ layout(
     0
 )
 ```
-### Chainable Api
+### ⛓ Chainable Api
 ```swift
 email.top(100).left(8).right(8).width(200).height(44)
 alignHorizontally(password, forgot)
@@ -35,7 +35,7 @@ equalWidths(email, password)
 image.width(>=80)
 ```
 
-### Equation-Based Api
+### 📐 Equation-Based Api
 ```swift
 email.Top == 100
 password.CenterY == forgot.CenterY
@@ -45,11 +45,11 @@ login.Width == 75 % Width
 
 All Generate **native** NSLayoutConstraints 🎉
 
-## Try it!
+## 👨‍🔬Try it!
 
 Stevia is part of [freshOS](http://freshos.org) iOS toolset. Try it in an example App ! <a class="github-button" href="https://github.com/freshOS/StarterProject/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download freshOS/StarterProject on GitHub">Download Starter Project</a>
 
-## Reason
+## 💡 Reason
 ### Why
 Because **nothing holds more truth than pure code** 🤓  
 Xibs and storyboards are **heavy, hard to maintain, hard to merge.**  
@@ -65,7 +65,7 @@ View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beau
 - [x] Pure Swift Auto Layout DSL.
 - [x] Simple: the apis are just NSLayoutConstraint shortcuts, pure UIKit code, no voodoo magic.
 
-## Advantages of Stevia
+## 💪 Advantages of Stevia
 
 - [x] Improves the readability of Auto Layout in code.
 - [x] Concise yet flexible apis.
@@ -130,52 +130,18 @@ func render() {
 And Voila :)
 
 
-## Installation
+## ⚙️ Installation
+Get started [here](http://freshos.org/SteviaDocs/installation/).
 
+## 📖 Documentation
+You can find the full documentation [here](http://freshos.org/SteviaDocs/).
 
-### CocoaPods
-```swift
-pod 'SteviaLayout'
-use_frameworks!
-```
-
-### Carthage
-```swift
-github "freshOS/Stevia"
-```
-
-- Create a `Cartfile` file at the root of your project folder
-
-- Add `github "freshOS/Stevia"` to your Cartfile
-
-- Run `carthage update`
-
-- Drag and drop `Stevia.framework` from `/Carthage/Build/iOS/` to Linked frameworks and libraries in Xcode (Project>Target>General>Linked frameworks and libraries)
-
-- Add new run script (Project>Target>Build Phases>+> New run script phase) `/usr/local/bin/carthage copy-frameworks`
-
-- Add Input files `$(SRCROOT)/Carthage/Build/iOS/Stevia.framework`
-
-There you go!
-
-### Manual
-Copy Stevia source files to your Xcode project
-
-## Documentation
-You can find the full documentation in the wiki [here](http://freshos.org/SteviaDocs/).
-
-## Contributors
+## 👨‍💻 Contributors
 
 [YannickDot](https://github.com/YannickDot),  [S4cha](https://github.com/S4cha),  [Damien](https://github.com/damien-nd),
 [Snowcraft](https://github.com/Snowcraft), [Mathieu-o](https://github.com/Mathieu-o)
 
-## Swift Version
-Swift 2 -> version **2.3.0**  
-Swift 3 -> version **3.2.0**  
-Swift 4 -> version **4.0.0**
-
-
-### Backers
+### 👥 Backers
 Like the project? Offer coffee or support us with a monthly donation and help us continue our activities :)
 
 <a href="https://opencollective.com/freshos/backer/0/website" target="_blank"><img src="https://opencollective.com/freshos/backer/0/avatar.svg"></a>
@@ -209,7 +175,7 @@ Like the project? Offer coffee or support us with a monthly donation and help us
 <a href="https://opencollective.com/freshos/backer/28/website" target="_blank"><img src="https://opencollective.com/freshos/backer/28/avatar.svg"></a>
 <a href="https://opencollective.com/freshos/backer/29/website" target="_blank"><img src="https://opencollective.com/freshos/backer/29/avatar.svg"></a>
 
-### Sponsors
+### 🏅 Sponsors
 Become a sponsor and get your logo on our README on Github with a link to your site :)
 
 <a href="https://opencollective.com/freshos/sponsor/0/website" target="_blank"><img src="https://opencollective.com/freshos/sponsor/0/avatar.svg"></a>
@@ -242,3 +208,8 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 <a href="https://opencollective.com/freshos/sponsor/27/website" target="_blank"><img src="https://opencollective.com/freshos/sponsor/27/avatar.svg"></a>
 <a href="https://opencollective.com/freshos/sponsor/28/website" target="_blank"><img src="https://opencollective.com/freshos/sponsor/28/avatar.svg"></a>
 <a href="https://opencollective.com/freshos/sponsor/29/website" target="_blank"><img src="https://opencollective.com/freshos/sponsor/29/avatar.svg"></a>
+
+## Swift Version
+Swift 2 -> version **2.3.0**  
+Swift 3 -> version **3.2.0**  
+Swift 4 -> version **4.0.0**
