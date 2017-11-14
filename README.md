@@ -104,7 +104,16 @@ You can find the full documentation [here](http://freshos.org/SteviaDocs/).
 ### 👨‍💻 Contributors
 
 [YannickDot](https://github.com/YannickDot),  [S4cha](https://github.com/S4cha),  [Damien](https://github.com/damien-nd),
-[Snowcraft](https://github.com/Snowcraft), [Mathieu-o](https://github.com/Mathieu-o)
+[Snowcraft](https://github.com/Snowcraft), [Mathieu-o](https://github.com/Mathieu-o),
+[Blaz Merela](https://github.com/b1az),
+[Theophane Rupin](https://github.com/trupin),
+[Jason Liang](https://github.com/jyliang),
+[liberty4me](https://github.com/liberty4me),
+[Scott Bates](https://github.com/cowgp),
+[Sai](https://github.com/sai-prasanna),
+[Mike Gallagher](https://github.com/mgallagher),
+[WaterNotWords](https://github.com/waternotwords),
+[Mick MacCallum](https://github.com/0x7fffffff)
 
 ### 👥 Backers
 Like the project? Offer coffee or support us with a monthly donation and help us continue our activities :)
