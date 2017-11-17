@@ -1,14 +1,17 @@
 ![Stevia](https://raw.githubusercontent.com/s4cha/Stevia/master/banner.png)
 
 [![Documentation](https://img.shields.io/badge/Read_the-Docs-67ad5c.svg)](http://freshos.org/SteviaDocs/)
-[![Language: Swift 2, 3 and 4](https://img.shields.io/badge/language-swift2|swift3|swift4-f48041.svg?style=flat)](https://developer.apple.com/swift)
+[![Language: Swift 2, 3 and 4](https://img.shields.io/badge/language-swift%204-f48041.svg?style=flat)](https://developer.apple.com/swift)
 ![Platform: iOS 8+](https://img.shields.io/badge/platform-iOS%20|%20tvOS-blue.svg?style=flat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org/pods/SteviaLayout)
 [![Build Status](https://www.bitrise.io/app/4478e29045c5f12e.svg?token=pti6g-HVKBUPv9mIR3baIw&branch=master)](https://www.bitrise.io/app/4478e29045c5f12e)
 [![Join the chat at https://gitter.im/freshoss/Stevia](https://badges.gitter.im/s4cha/Stevia.svg)](https://gitter.im/freshoss/Stevia)
-[![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/s4cha/Stevia/blob/master/LICENSE) [![Release version](https://img.shields.io/badge/release-4.0-blue.svg)]()
-
+[![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/s4cha/Stevia/blob/master/LICENSE)
+[![CocoaPods](https://img.shields.io/cocoapods/dt/SteviaLayout.svg)]()
+[![CocoaPods](https://img.shields.io/cocoapods/at/SteviaLayout.svg)]()
+[![GitHub contributors](https://img.shields.io/github/contributors/freshos/Stevia.svg)]()
+[![GitHub tag](https://img.shields.io/github/release/freshos/Stevia.svg)]()
 
 [Reason](#reason) - [Example](#login-view-example) - [Live Reload](#live-reload) - [Installation](#installation) - [Documentation](#documentation)
 
