@@ -135,3 +135,17 @@ public func + (left: SteviaLayoutXAxisAnchor, right: CGFloat) -> SteviaLayoutXAx
 public func - (left: SteviaLayoutXAxisAnchor, right: CGFloat) -> SteviaLayoutXAxisAnchor {
     return SteviaLayoutXAxisAnchor(anchor: left.anchor, constant: -right)
 }
+
+// UILayoutSupport
+
+@available(iOS 9.0, *)
+public extension UILayoutSupport {
+    
+    public var Top: SteviaLayoutYAxisAnchor {
+        return SteviaLayoutYAxisAnchor(anchor: topAnchor)
+    }
+    
+    public var Bottom: SteviaLayoutYAxisAnchor {
+        return SteviaLayoutYAxisAnchor(anchor: bottomAnchor)
+    }
+}
