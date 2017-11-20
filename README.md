@@ -13,6 +13,16 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/freshos/Stevia.svg)]()
 [![GitHub tag](https://img.shields.io/github/release/freshos/Stevia.svg)]()
 
+
+<div style="text-align:center">
+    <a href="https://www.hackingwithswift.com/articles/9/best-alternatives-to-auto-layout">
+        <img src="https://www.hackingwithswift.com/uploads/recommended@2x.png" alt="Drawing" width="300px;" />
+    </a>
+</div>
+
+*Winner of Hacking with Swift Recommended award : [The 5 best alternatives to Auto Layout](https://www.hackingwithswift.com/articles/9/best-alternatives-to-auto-layout)*
+
+
 [Reason](#reason) - [Example](#login-view-example) - [Live Reload](#live-reload) - [Installation](#installation) - [Documentation](#documentation)
 
 
