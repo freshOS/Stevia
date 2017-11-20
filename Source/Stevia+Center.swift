@@ -41,7 +41,7 @@ public extension UIView {
     @discardableResult
     public func centerHorizontally() -> UIView {
         if let spv = superview {
-            alignVertically([self, spv])
+            align(vertically: self, spv)
         }
         return self
     }
@@ -59,7 +59,7 @@ public extension UIView {
     @discardableResult
     public func centerVertically() -> UIView {
         if let spv = superview {
-            alignHorizontally([self, spv])
+            align(horizontally: self, spv)
         }
         return self
     }
