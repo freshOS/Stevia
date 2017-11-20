@@ -195,4 +195,4 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 ### Swift Version
 Swift 2 -> v**2.3.0**  
 Swift 3 -> v**3.2.0**  
-Swift 4 -> v**4.0.0**
+Swift 4 -> v**4.1.0**
