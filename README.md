@@ -14,13 +14,23 @@
 [![GitHub tag](https://img.shields.io/github/release/freshos/Stevia.svg)]()
 
 
-<div style="text-align:center">
+<p align="center">
     <a href="https://www.hackingwithswift.com/articles/9/best-alternatives-to-auto-layout">
         <img src="https://www.hackingwithswift.com/uploads/recommended@2x.png" alt="Drawing" width="300px;" />
     </a>
-</div>
+</p>
 
-*Winner of Hacking with Swift Recommended award : [The 5 best alternatives to Auto Layout](https://www.hackingwithswift.com/articles/9/best-alternatives-to-auto-layout)*
+<p align="center">
+    <a href="https://www.hackingwithswift.com/articles/9/best-alternatives-to-auto-layout">
+        Winner of Hacking with Swift Recommended award
+    </a>
+</p>
+
+## You + Stevia = 🦄
+- [x] 💡 Write **concise**, **readable** layouts
+- [x] 🏖 **Reduce** your **maintenance** time
+- [x] 🎨 **Compose** your styles, **CSS-like**
+- [x] 🔴 Plug **Live reload** and **boost** your iteration cycles
 
 
 [Reason](#reason) - [Example](#login-view-example) - [Live Reload](#live-reload) - [Installation](#installation) - [Documentation](#documentation)
@@ -63,7 +73,6 @@ All Generate **native** NSLayoutConstraints 🎉
 Stevia is part of [freshOS](http://freshos.org) iOS toolset. Try it in an example App ! <a class="github-button" href="https://github.com/freshOS/StarterProject/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download freshOS/StarterProject on GitHub">Download Starter Project</a>
 
 ### 💡 Reason
-#### Why
 Because **nothing holds more truth than pure code** 🤓  
 Xibs and storyboards are **heavy, hard to maintain, hard to merge.**  
 They split the view concept into 2 separate files making debugging a **nightmare**    
@@ -73,20 +82,6 @@ They split the view concept into 2 separate files making debugging a **nightmare
 By creating a tool that makes Auto layout code finally **readable by a human being**.  
 By coupling it with live code injection such as *[injectionForXcode](http://johnholdsworth.com/injection.html)* we can **design views in real time**  
 View layout becomes **fun**, **concise**, **maintainable** and dare I say, *beautiful* ❤️
-
-#### What
-- [x] Pure Swift Auto Layout DSL.
-- [x] Simple: the apis are just NSLayoutConstraint shortcuts, pure UIKit code, no voodoo magic.
-
-### 💪 Advantages of Stevia
-
-- [x] Improves the readability of Auto Layout in code.
-- [x] Concise yet flexible apis.
-- [x] Type-Safe Visual Format language.
-- [x] Decribe Horizontal & vertical layout at the same time.
-- [x] Supports Live reload, for faster iteration cycles.
-- [x] Styling is more concise, reusable and can be composed.
-
 
 ### Login View Example
 In the project folder, you can find an example of a typical login view laid out in both native and Stevia for you to understand and compare the two approaches.
@@ -197,6 +192,6 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 <a href="https://opencollective.com/freshos/sponsor/29/website" target="_blank"><img src="https://opencollective.com/freshos/sponsor/29/avatar.svg"></a>
 
 ### Swift Version
-Swift 2 -> version **2.3.0**  
-Swift 3 -> version **3.2.0**  
-Swift 4 -> version **4.0.0**
+Swift 2 -> v**2.3.0**  
+Swift 3 -> v**3.2.0**  
+Swift 4 -> v**4.0.0**
