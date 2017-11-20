@@ -64,6 +64,7 @@ email.Top == 100
 password.CenterY == forgot.CenterY
 login.Top >= password.Bottom + 20
 login.Width == 75 % Width
+(image.Height == 100).priority = UILayoutPriority(rawValue: 999)
 ```
 
 All Generate **native** NSLayoutConstraints 🎉
