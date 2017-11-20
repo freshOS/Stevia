@@ -30,6 +30,7 @@
 		9934B7A01EF127920065EA50 /* Stevia+Stacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99585BE11D86ABFF004CE776 /* Stevia+Stacks.swift */; };
 		9934B7A11EF127920065EA50 /* Stevia+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99585BE21D86ABFF004CE776 /* Stevia+Style.swift */; };
 		9934B7A21EF127920065EA50 /* Stevia+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99585BE31D86ABFF004CE776 /* Stevia+Tap.swift */; };
+		9938F7651FC352290013D309 /* Stevia+LayoutAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE86A01F8BD0EB00EC6ECC /* Stevia+LayoutAnchors.swift */; };
 		99585BE61D86ABFF004CE776 /* Stevia+Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99585BD41D86ABFF004CE776 /* Stevia+Alignment.swift */; };
 		99585BE71D86ABFF004CE776 /* Stevia+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99585BD51D86ABFF004CE776 /* Stevia+Center.swift */; };
 		99585BE81D86ABFF004CE776 /* Stevia+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99585BD61D86ABFF004CE776 /* Stevia+Constraints.swift */; };
@@ -396,6 +397,7 @@
 				9934B7961EF127920065EA50 /* Stevia+Fill.swift in Sources */,
 				9934B7921EF127920065EA50 /* Stevia+Center.swift in Sources */,
 				9934B79F1EF127920065EA50 /* Stevia+Size.swift in Sources */,
+				9938F7651FC352290013D309 /* Stevia+LayoutAnchors.swift in Sources */,
 				9934B7951EF127920065EA50 /* Stevia+DoubleDash.swift in Sources */,
 				9934B79B1EF127920065EA50 /* Stevia+Hierarchy.swift in Sources */,
 				9934B7971EF127920065EA50 /* Stevia+FlexibleMargin.swift in Sources */,
