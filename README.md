@@ -10,7 +10,7 @@
 [![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/s4cha/Stevia/blob/master/LICENSE)
 [![CocoaPods](https://img.shields.io/cocoapods/dt/SteviaLayout.svg)]()
 [![CocoaPods](https://img.shields.io/cocoapods/at/SteviaLayout.svg)]()
-[![GitHub contributors](https://img.shields.io/github/contributors/freshos/Stevia.svg)]()
+[![GitHub contributors](https://img.shields.io/github/contributors/freshos/Stevia.svg)](https://github.com/freshos/Stevia/graphs/contributors)
 [![GitHub tag](https://img.shields.io/github/release/freshos/Stevia.svg)]()
 
 
