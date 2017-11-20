@@ -103,7 +103,7 @@ public extension UIView {
                 }
             case _ as String:() //Do nothin' !
             case let a as [UIView]:
-            alignHorizontally(a)
+                align(horizontally: a)
             let v = a.first!
             if let pm = previousMargin {
                 if i == 1 {

@@ -136,31 +136,45 @@ public extension UIView {
  Enforces an array of views to keep the same size.
  
  ```
- equalSizes(image1, image2, image3)
+ equal(sizes: image1, image2, image3)
  ```
  
  - Returns: The views enabling chaining.
  
  */
 @discardableResult
+public func equal(sizes views: UIView...) -> [UIView] {
+    return equal(sizes: views)
+}
+
+@available(*, deprecated: 4.1.0, renamed:"equal(sizes:)")
+@discardableResult
 public func equalSizes(_ views: UIView...) -> [UIView] {
-    return equalSizes(views)
+    return equal(sizes :views)
 }
 
 /**
  Enforces an array of views to keep the same size.
  
  ```
- equalSizes(image1, image2, image3)
+ equal(sizes: image1, image2, image3)
  ```
  
  - Returns: The views enabling chaining.
  
  */
 @discardableResult
+public func equal(sizes views: [UIView]) -> [UIView] {
+    equal(heights: views)
+    equal(widths: views)
+    return views
+}
+
+@available(*, deprecated: 4.1.0, renamed:"equal(sizes:)")
+@discardableResult
 public func equalSizes(_ views: [UIView]) -> [UIView] {
-    equalHeights(views)
-    equalWidths(views)
+    equal(heights: views)
+    equal(widths: views)
     return views
 }
 
@@ -168,27 +182,40 @@ public func equalSizes(_ views: [UIView]) -> [UIView] {
  Enforces an array of views to keep the same widths.
  
  ```
- equalWidths(image1, image2, image3)
+ equal(widths: image1, image2, image3)
  ```
  
  - Returns: The views enabling chaining.
  
  */
 @discardableResult
+public func equal(widths views: UIView...) -> [UIView] {
+    return equal(widths: views)
+}
+
+@available(*, deprecated: 4.1.0, renamed:"equal(widths:)")
+@discardableResult
 public func equalWidths(_ views: UIView...) -> [UIView] {
-    return equalWidths(views)
+    return equal(widths: views)
 }
 
 /**
  Enforces an array of views to keep the same widths.
  
  ```
- equalWidths(image1, image2, image3)
+ equal(widths: image1, image2, image3)
  ```
  
  - Returns: The views enabling chaining.
  
  */
+@discardableResult
+public func equal(widths views: [UIView]) -> [UIView] {
+    equal(.width, views: views)
+    return views
+}
+
+@available(*, deprecated: 4.1.0, renamed:"equal(widths:)")
 @discardableResult
 public func equalWidths(_ views: [UIView]) -> [UIView] {
     equal(.width, views: views)
@@ -199,27 +226,40 @@ public func equalWidths(_ views: [UIView]) -> [UIView] {
  Enforces an array of views to keep the same heights.
  
  ```
- equalHeights(image1, image2, image3)
+ equal(heights: image1, image2, image3)
  ```
  
  - Returns: The views enabling chaining.
  
  */
 @discardableResult
+public func equal(heights views: UIView...) -> [UIView] {
+    return equal(heights: views)
+}
+
+@available(*, deprecated: 4.1.0, renamed:"equal(heights:)")
+@discardableResult
 public func equalHeights(_ views: UIView...) -> [UIView] {
-    return equalHeights(views)
+    return equal(heights: views)
 }
 
 /**
  Enforces an array of views to keep the same heights.
  
  ```
- equalHeights(image1, image2, image3)
+ equal(heights: image1, image2, image3)
  ```
  
  - Returns: The views enabling chaining.
  
  */
+@discardableResult
+public func equal(heights views: [UIView]) -> [UIView] {
+    equal(.height, views: views)
+    return views
+}
+
+@available(*, deprecated: 4.1.0, renamed:"equal(heights:)")
 @discardableResult
 public func equalHeights(_ views: [UIView]) -> [UIView] {
     equal(.height, views: views)
