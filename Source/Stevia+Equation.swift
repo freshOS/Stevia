@@ -76,16 +76,51 @@ public extension UIView {
 
 @discardableResult
 public func == (left: SteviaAttribute, right: SteviaAttribute) -> NSLayoutConstraint {
-    let constant = right.constant ?? 0
-    let multiplier = right.multiplier ?? 1
-    if let spv = left.view.superview {
-        return spv.addConstraint(item: left.view,
-                                 attribute: left.attribute,
-                                 toItem: right.view,
-                                 attribute: right.attribute,
-                                 multiplier: multiplier,
-                                 constant: constant)
+    let constant = right.constant ?? left.constant ?? 0
+    let multiplier = right.multiplier ?? left.multiplier ?? 1
+
+    if left.view.superview == right.view.superview { // A and B are at the same level
+        // Old code
+        if let spv = left.view.superview {
+            return spv.addConstraint(item: left.view,
+                                     attribute: left.attribute,
+                                     toItem: right.view,
+                                     attribute: right.attribute,
+                                     multiplier: multiplier,
+                                     constant: constant)
+        }
+    } else if left.view.superview == right.view { // A is in B (first level)
+        return right.view.addConstraint(item: left.view,
+                                        attribute: left.attribute,
+                                        toItem: right.view,
+                                        attribute: right.attribute,
+                                        multiplier: multiplier,
+                                        constant: constant)
+    } else if right.view.superview == left.view { // B is in A (first level)
+        return left.view.addConstraint(item: right.view,
+                                       attribute: right.attribute,
+                                       toItem: left.view,
+                                       attribute: left.attribute,
+                                       multiplier: multiplier,
+                                       constant: constant)
+    } else if left.view.isDescendant(of: right.view) { // A is in B (LOW level)
+        return right.view.addConstraint(item: left.view,
+                                        attribute: left.attribute,
+                                        toItem: right.view,
+                                        attribute: right.attribute,
+                                        multiplier: multiplier,
+                                        constant: constant)
+    } else if right.view.isDescendant(of: left.view) { // B is in A (LOW level)
+        return left.view.addConstraint(item: left.view,
+                                       attribute: left.attribute,
+                                       toItem: right.view,
+                                       attribute: right.attribute,
+                                       multiplier: multiplier,
+                                       constant: constant)
+    } else { // TODO find common ancestor to instal constraint on it?
+        print("3")
     }
+    
     return NSLayoutConstraint()
 }
 
