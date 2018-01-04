@@ -33,10 +33,26 @@ class EquationTests: XCTestCase {
         XCTAssertEqual(v.frame.origin.y, 10)
     }
     
+    func testTopReflexive() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        ctrler.view.Top + 10 == v.Top
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, 10)
+    }
+    
     func testBottom() {
         let v = UIView()
         ctrler.view.sv(v)
         v.Bottom == ctrler.view.Bottom - 23
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height - 23)
+    }
+    
+    func testBottomReflexive() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        ctrler.view.Bottom - 23 == v.Bottom
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height - 23)
     }
@@ -49,10 +65,26 @@ class EquationTests: XCTestCase {
         XCTAssertEqual(v.frame.origin.x, 72)
     }
     
+    func testLeftReflexive() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        ctrler.view.Left + 72 == v.Left
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.x, 72)
+    }
+    
     func testRight() {
         let v = UIView()
         ctrler.view.sv(v)
         v.Right == ctrler.view.Right - 13
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - 13)
+    }
+    
+    func testRightReflexive() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        ctrler.view.Right - 13 == v.Right
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - 13)
     }
@@ -65,10 +97,26 @@ class EquationTests: XCTestCase {
         XCTAssertEqual(v.frame.width, ctrler.view.frame.width - 52)
     }
     
+    func testWidthReflexive() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        ctrler.view.Width - 52 == v.Width
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.width, ctrler.view.frame.width - 52)
+    }
+    
     func testHeight() {
         let v = UIView()
         ctrler.view.sv(v)
         v.Height == ctrler.view.Height + 34
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.height, ctrler.view.frame.height + 34)
+    }
+    
+    func testHeightReflexive() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        ctrler.view.Height + 34 == v.Height
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(v.frame.height, ctrler.view.frame.height + 34)
     }
@@ -121,5 +169,34 @@ class EquationTests: XCTestCase {
         v.Height == 94
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(v.frame.height, 94)
+    }
+    
+    
+    func testScrollView() {
+        let scrollView = UIScrollView()
+        let contentView = UIView()
+        ctrler.view.sv(
+            scrollView.sv(
+                contentView
+            )
+        )
+        scrollView.fillContainer()
+        contentView.Width == ctrler.view.Width
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(contentView.frame.width, ctrler.view.frame.width)
+    }
+    
+    func testScrollViewReflexive() {
+        let scrollView = UIScrollView()
+        let contentView = UIView()
+        ctrler.view.sv(
+            scrollView.sv(
+                contentView
+            )
+        )
+        scrollView.fillContainer()
+        ctrler.view.Width == contentView.Width
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(contentView.frame.width, ctrler.view.frame.width)
     }
 }
