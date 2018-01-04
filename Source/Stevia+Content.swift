@@ -46,7 +46,7 @@ public extension UIButton {
      */
     @discardableResult
     public func image(_ s: String) -> Self {
-        setImage(UIImage(named:s), for: .normal)
+        setImage(UIImage(named: s), for: .normal)
         return self
     }
 }

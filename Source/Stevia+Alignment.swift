@@ -150,7 +150,7 @@ private func align(_ axis: UILayoutConstraintAxis, views: [UIView]) {
 private func align(_ axis: UILayoutConstraintAxis, v1: UIView, with v2: UIView, offset: CGFloat) {
     if let spv = v1.superview {
         let center: NSLayoutAttribute = axis == .horizontal ? .centerY : .centerX
-        let c = constraint(item: v1, attribute: center, toItem: v2, constant:offset)
+        let c = constraint(item: v1, attribute: center, toItem: v2, constant: offset)
         spv.addConstraint(c)
     }
 }

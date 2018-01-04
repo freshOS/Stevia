@@ -87,7 +87,7 @@ public extension UIView {
     */
     @discardableResult
     public func left(_ fm: SteviaFlexibleMargin) -> UIView {
-        return position(.left, relatedBy:fm.relation, points: fm.points)
+        return position(.left, relatedBy: fm.relation, points: fm.points)
     }
     
     /** Sets the right margin for a view.
@@ -112,7 +112,7 @@ public extension UIView {
         if fm.relation == .lessThanOrEqual {
             n.relation = .greaterThanOrEqual
         }
-        return position(.right, relatedBy:n.relation, points: n.points)
+        return position(.right, relatedBy: n.relation, points: n.points)
     }
     
     /** Sets the top margin for a view.
@@ -128,7 +128,7 @@ public extension UIView {
      */
     @discardableResult
     public func top(_ fm: SteviaFlexibleMargin) -> UIView {
-        return position(.top, relatedBy:fm.relation, points: fm.points)
+        return position(.top, relatedBy: fm.relation, points: fm.points)
     }
     
     /** Sets the bottom margin for a view.
@@ -153,7 +153,7 @@ public extension UIView {
         if fm.relation == .lessThanOrEqual {
             n.relation = .greaterThanOrEqual
         }
-        return position(.bottom, relatedBy:n.relation, points: n.points)
+        return position(.bottom, relatedBy: n.relation, points: n.points)
     }
     
     fileprivate func position(_ position: NSLayoutAttribute,
@@ -161,7 +161,7 @@ public extension UIView {
                               points: CGFloat) -> UIView {
         if let spv = superview {
             let c = constraint(item: self, attribute: position,
-                               relatedBy:relatedBy,
+                               relatedBy: relatedBy,
                                toItem: spv,
                                constant: points)
             spv.addConstraint(c)
