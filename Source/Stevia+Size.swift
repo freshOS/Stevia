@@ -150,7 +150,7 @@ public func equal(sizes views: UIView...) -> [UIView] {
 @available(*, deprecated: 4.1.0, renamed:"equal(sizes:)")
 @discardableResult
 public func equalSizes(_ views: UIView...) -> [UIView] {
-    return equal(sizes :views)
+    return equal(sizes: views)
 }
 
 /**

@@ -83,8 +83,8 @@ public func == (left: SteviaAttribute, right: SteviaAttribute) -> NSLayoutConstr
                                  attribute: left.attribute,
                                  toItem: right.view,
                                  attribute: right.attribute,
-                                 multiplier : multiplier,
-                                 constant:constant)
+                                 multiplier: multiplier,
+                                 constant: constant)
     }
     return NSLayoutConstraint()
 }
@@ -99,8 +99,8 @@ public func >= (left: SteviaAttribute, right: SteviaAttribute) -> NSLayoutConstr
                                  relatedBy: .greaterThanOrEqual,
                                  toItem: right.view,
                                  attribute: right.attribute,
-                                 multiplier : multiplier,
-                                 constant:constant)
+                                 multiplier: multiplier,
+                                 constant: constant)
     }
     return NSLayoutConstraint()
 }
@@ -115,8 +115,8 @@ public func <= (left: SteviaAttribute, right: SteviaAttribute) -> NSLayoutConstr
                                  relatedBy: .lessThanOrEqual,
                                  toItem: right.view,
                                  attribute: right.attribute,
-                                 multiplier : multiplier,
-                                 constant:constant)
+                                 multiplier: multiplier,
+                                 constant: constant)
     }
     return NSLayoutConstraint()
 }
@@ -133,7 +133,7 @@ public func - (left: SteviaAttribute, right: CGFloat) -> SteviaAttribute {
 
 @discardableResult
 public func * (left: SteviaAttribute, right: CGFloat) -> SteviaAttribute {
-    return SteviaAttribute(view: left.view, attribute: left.attribute, constant:left.constant, multiplier: right)
+    return SteviaAttribute(view: left.view, attribute: left.attribute, constant: left.constant, multiplier: right)
 }
 
 @discardableResult
@@ -162,7 +162,7 @@ public func == (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
         return spv.addConstraint(item: left.view,
                                  attribute: left.attribute,
                                  toItem: toItem,
-                                 constant:constant)
+                                 constant: constant)
     }
     return NSLayoutConstraint()
 }
@@ -174,7 +174,7 @@ public func >= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
                                  attribute: left.attribute,
                                  relatedBy: .greaterThanOrEqual,
                                  toItem: spv,
-                                 constant:right)
+                                 constant: right)
     }
     return NSLayoutConstraint()
 }
@@ -186,7 +186,7 @@ public func <= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
                                  attribute: left.attribute,
                                  relatedBy: .lessThanOrEqual,
                                  toItem: spv,
-                                 constant:right)
+                                 constant: right)
     }
     return NSLayoutConstraint()
 }
