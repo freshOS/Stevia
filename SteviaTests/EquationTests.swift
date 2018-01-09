@@ -171,7 +171,6 @@ class EquationTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 94)
     }
     
-    
     func testScrollView() {
         let scrollView = UIScrollView()
         let contentView = UIView()
@@ -198,5 +197,60 @@ class EquationTests: XCTestCase {
         ctrler.view.Width == contentView.Width
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(contentView.frame.width, ctrler.view.frame.width)
+    }
+    
+    func testDifferentViewHierarchies() {
+        // Classic example of a field with a dropdown.
+        let box = UIView()
+        let field = UIView()
+        let dropdown = UIView()
+        
+        ctrler.view.sv(
+            box.sv(
+                field
+            ),
+            dropdown
+        )
+        
+        box.fillContainer(60)
+        |-field-|.top(1).height(50)//centerVertically()
+        
+        |dropdown|
+        dropdown.Bottom == ctrler.view.Bottom
+       
+
+        dropdown.Top == field.Bottom // This line is being tested test out reflexivity
+
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        
+        let absoluteFieldBottom = field.frame.origin.y + field.frame.height + box.frame.origin.y
+        XCTAssertEqual(absoluteFieldBottom, dropdown.frame.origin.y)
+    }
+    
+    func testDifferentViewHierarchiesReflexivity() {
+        // Classic example of a field with a dropdown.
+        let box = UIView()
+        let field = UIView()
+        let dropdown = UIView()
+        
+        ctrler.view.sv(
+            box.sv(
+                field
+            ),
+            dropdown
+        )
+        
+        box.fillContainer(60)
+        |-field-|.top(1).height(50)//centerVertically()
+        
+        |dropdown|
+        dropdown.Bottom == ctrler.view.Bottom
+        
+        field.Bottom == dropdown.Top // This line is being tested test out reflexivity
+        
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        
+        let absoluteFieldBottom = field.frame.origin.y + field.frame.height + box.frame.origin.y
+        XCTAssertEqual(absoluteFieldBottom, dropdown.frame.origin.y)
     }
 }
