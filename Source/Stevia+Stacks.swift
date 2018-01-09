@@ -33,10 +33,11 @@ public extension UIView {
      */
     @discardableResult
     public func layout(_ objects: Any...) -> [UIView] {
-        return stackV(objects)
+        return layout(objects)
     }
     
-    fileprivate func stackV(_ objects: [Any]) -> [UIView] {
+    @discardableResult
+    public func layout(_ objects: [Any]) -> [UIView] {
         var previousMargin: CGFloat? = nil
         var previousFlexibleMargin: SteviaFlexibleMargin? = nil
         for (i, o) in objects.enumerated() {
