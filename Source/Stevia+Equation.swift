@@ -117,11 +117,35 @@ public func == (left: SteviaAttribute, right: SteviaAttribute) -> NSLayoutConstr
                                        attribute: right.attribute,
                                        multiplier: multiplier,
                                        constant: constant)
-    } else { // TODO find common ancestor to instal constraint on it?
-        print("3")
+    } else if let commonParent = commonParent(with: left.view, and: right.view) { // Look for common ancestor
+        return commonParent.addConstraint(item: left.view,
+                                          attribute: left.attribute,
+                                          toItem: right.view,
+                                          attribute: right.attribute,
+                                          multiplier: multiplier,
+                                          constant: constant)
     }
     
     return NSLayoutConstraint()
+}
+
+func commonParent(with viewA: UIView, and viewB: UIView) -> UIView? {
+    
+    // Both views should have a superview
+    guard viewA.superview != nil && viewB.superview != nil else {
+        return nil
+    }
+    
+    // Find the common parent
+    var spv = viewA.superview
+    while spv != nil {
+        if viewA.isDescendant(of: spv!) && viewB.isDescendant(of: spv!) {
+            return spv
+        } else {
+            spv = spv?.superview
+        }
+    }
+    return nil
 }
 
 @discardableResult
