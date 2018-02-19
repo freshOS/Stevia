@@ -193,6 +193,6 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 <a href="https://opencollective.com/freshos/sponsor/29/website" target="_blank"><img src="https://opencollective.com/freshos/sponsor/29/avatar.svg"></a>
 
 ### Swift Version
-Swift 2 -> v**2.3.0**  
-Swift 3 -> v**3.2.0**  
-Swift 4 -> v**4.1.0**
+Swift 2 -> [v**2.3.0**](https://github.com/freshOS/Stevia/tree/2.3.0)
+Swift 3 -> [v**3.2.0**](https://github.com/freshOS/Stevia/tree/3.2.0)
+Swift 4 -> [v**4.1.0**](https://github.com/freshOS/Stevia/tree/4.1.0)
