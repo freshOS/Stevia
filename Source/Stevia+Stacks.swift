@@ -142,7 +142,7 @@ public extension UIView {
             default: ()
             }
         }
-        return objects.map {$0 as? UIView }.flatMap {$0}
+        return objects.map {$0 as? UIView }.compactMap {$0}
     }
     
     fileprivate func cgFloatMarginFromObject(_ o: Any) -> CGFloat {
