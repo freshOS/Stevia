@@ -33,7 +33,7 @@
 - [x] 🔴 Plug **Live reload** and **boost** your iteration cycles
 
 
-[Reason](#reason) - [Example](#login-view-example) - [Live Reload](#live-reload) - [Installation](#installation) - [Documentation](#documentation)
+[Reason](#-reason) - [Example](#login-view-example) - [Live Reload](#-live-reload) - [Installation](#️-installation) - [Documentation](#-documentation)
 
 
 ### 🖼 Visual Layout Api
