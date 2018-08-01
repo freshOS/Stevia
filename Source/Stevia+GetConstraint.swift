@@ -170,8 +170,8 @@ public extension UIView {
     }
 }
 
-func constraintForView(_ v: UIView, attribute: NSLayoutAttribute) -> NSLayoutConstraint? {
-
+func constraintForView(_ v: UIView, attribute: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
+    
     func lookForConstraint(in view: UIView?) -> NSLayoutConstraint? {
         guard let constraints = view?.constraints else {
             return nil

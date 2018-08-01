@@ -37,10 +37,10 @@ public extension UIView {
      */
     @discardableResult
     public func c(item view1: AnyObject,
-                  attribute attr1: NSLayoutAttribute,
-                  relatedBy: NSLayoutRelation = .equal,
+                  attribute attr1: NSLayoutConstraint.Attribute,
+                  relatedBy: NSLayoutConstraint.Relation = .equal,
                   toItem view2: AnyObject? = nil,
-                  attribute attr2: NSLayoutAttribute? = nil,
+                  attribute attr2: NSLayoutConstraint.Attribute? = nil,
                   multiplier: CGFloat = 1,
                   constant: CGFloat = 0) -> NSLayoutConstraint {
             let c = constraint(
@@ -76,10 +76,10 @@ public extension UIView {
      */
     @discardableResult
     public func addConstraint(item view1: AnyObject,
-                              attribute attr1: NSLayoutAttribute,
-                              relatedBy: NSLayoutRelation = .equal,
+                              attribute attr1: NSLayoutConstraint.Attribute,
+                              relatedBy: NSLayoutConstraint.Relation = .equal,
                               toItem view2: AnyObject? = nil,
-                              attribute attr2: NSLayoutAttribute? = nil,
+                              attribute attr2: NSLayoutConstraint.Attribute? = nil,
                               multiplier: CGFloat = 1,
                               constant: CGFloat = 0) -> NSLayoutConstraint {
         let c = constraint(
@@ -109,10 +109,10 @@ public extension UIView {
     - Returns: The NSLayoutConstraint created.
  */
 public func constraint(item view1: AnyObject,
-                       attribute attr1: NSLayoutAttribute,
-                       relatedBy: NSLayoutRelation = .equal,
+                       attribute attr1: NSLayoutConstraint.Attribute,
+                       relatedBy: NSLayoutConstraint.Relation = .equal,
                        toItem view2: AnyObject? = nil,
-                       attribute attr2: NSLayoutAttribute? = nil, // Not an attribute??
+                       attribute attr2: NSLayoutConstraint.Attribute? = nil, // Not an attribute??
                        multiplier: CGFloat = 1,
                        constant: CGFloat = 0) -> NSLayoutConstraint {
         let c =  NSLayoutConstraint(item: view1, attribute: attr1,

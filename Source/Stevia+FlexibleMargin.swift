@@ -22,7 +22,7 @@ public prefix func <= (p: CGFloat) -> SteviaFlexibleMargin {
 
 public struct SteviaFlexibleMargin {
     var points: CGFloat!
-    var relation: NSLayoutRelation!
+    var relation: NSLayoutConstraint.Relation!
 }
 
 public struct PartialFlexibleConstraint {
