@@ -10,18 +10,18 @@ import UIKit
 
 public struct SteviaAttribute {
     let view: UIView
-    let attribute: NSLayoutAttribute
+    let attribute: NSLayoutConstraint.Attribute
     let constant: CGFloat?
     let multiplier: CGFloat?
     
-    init(view: UIView, attribute: NSLayoutAttribute) {
+    init(view: UIView, attribute: NSLayoutConstraint.Attribute) {
         self.view = view
         self.attribute = attribute
         self.constant = nil
         self.multiplier = nil
     }
     
-    init(view: UIView, attribute: NSLayoutAttribute, constant: CGFloat?, multiplier: CGFloat?) {
+    init(view: UIView, attribute: NSLayoutConstraint.Attribute, constant: CGFloat?, multiplier: CGFloat?) {
         self.view = view
         self.attribute = attribute
         self.constant = constant

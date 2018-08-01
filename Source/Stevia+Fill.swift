@@ -55,9 +55,9 @@ public extension UIView {
         return fill(.horizontal, points: points)
     }
     
-    fileprivate func fill(_ axis: UILayoutConstraintAxis, points: CGFloat = 0) -> UIView {
-        let a: NSLayoutAttribute = axis == .vertical ? .top : .left
-        let b: NSLayoutAttribute = axis == .vertical ? .bottom : .right
+    fileprivate func fill(_ axis: NSLayoutConstraint.Axis, points: CGFloat = 0) -> UIView {
+        let a: NSLayoutConstraint.Attribute = axis == .vertical ? .top : .left
+        let b: NSLayoutConstraint.Attribute = axis == .vertical ? .bottom : .right
         if let spv = superview {
             let c1 = constraint(item: self, attribute: a, toItem: spv, constant: points)
             let c2 = constraint(item: self, attribute: b, toItem: spv, constant: -points)

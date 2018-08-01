@@ -116,8 +116,8 @@ public extension UIView {
         return size(.width, relatedBy: fm.relation, points: fm.points)
     }
     
-    fileprivate func size(_ attribute: NSLayoutAttribute,
-                          relatedBy: NSLayoutRelation = .equal,
+    fileprivate func size(_ attribute: NSLayoutConstraint.Attribute,
+                          relatedBy: NSLayoutConstraint.Relation = .equal,
                           points: CGFloat) -> UIView {
         let c = constraint(item: self,
                            attribute: attribute,
@@ -266,7 +266,7 @@ public func equalHeights(_ views: [UIView]) -> [UIView] {
     return views
 }
 
-private func equal(_ attribute: NSLayoutAttribute, views: [UIView]) {
+private func equal(_ attribute: NSLayoutConstraint.Attribute, views: [UIView]) {
     var previousView: UIView?
     for v in views {
         if let pv = previousView {
