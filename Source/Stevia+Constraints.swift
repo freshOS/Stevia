@@ -123,6 +123,26 @@ public func constraint(item view1: AnyObject,
     return c
 }
 
+public extension UIView {
+
+/**
+     Get User added constraints. For making complex changes on layout, we need to remove user added constraints.
+     
+     If we remove all constraints, it may return broken layout.
+     
+     Use this method as:
+     
+        removeConstraints(userAddedConstraints)
+     
+*/
+    var userAddedConstraints: [NSLayoutConstraint] {
+        return constraints.filter { c in
+            guard let cId = c.identifier else { return true }
+            return !cId.contains("UIView-Encapsulated-Layout")
+        }
+    }
+}
+
 // MARK: - Other
 
 public extension UIView {
