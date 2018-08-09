@@ -135,7 +135,7 @@ public extension UIView {
         removeConstraints(userAddedConstraints)
      
 */
-    var userAddedConstraints: [NSLayoutConstraint] {
+    public var userAddedConstraints: [NSLayoutConstraint] {
         return constraints.filter { c in
             guard let cId = c.identifier else { return true }
             return !cId.contains("UIView-Encapsulated-Layout")
