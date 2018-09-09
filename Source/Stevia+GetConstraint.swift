@@ -137,6 +137,37 @@ public extension UIView {
         return constraintForView(self, attribute: .leading)
     }
     
+    /** Gets the centerX constraint if found.
+     
+     Example Usage for changing width property of a label :
+     
+     ```
+     label.centerXConstraint?.constant = 10
+     
+     // Animate if needed
+     UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
+     ```
+     - Returns: The width NSLayoutConstraint if found.
+     */
+    public var centerXConstraint: NSLayoutConstraint? {
+        return constraintForView(self, attribute: .centerX)
+    }
+    
+    /** Gets the centerY constraint if found.
+     
+     Example Usage for changing width property of a label :
+     
+     ```
+     label.centerYConstraint?.constant = 10
+     
+     // Animate if needed
+     UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
+     ```
+     - Returns: The width NSLayoutConstraint if found.
+     */
+    public var centerYConstraint: NSLayoutConstraint? {
+        return constraintForView(self, attribute: .centerY)
+    }
 }
 
 func constraintForView(_ v: UIView, attribute: NSLayoutAttribute) -> NSLayoutConstraint? {
