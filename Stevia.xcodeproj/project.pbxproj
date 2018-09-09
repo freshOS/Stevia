@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1F00D53D1C9AD18A00B90965 /* StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D53C1C9AD18A00B90965 /* StyleTests.swift */; };
+		9900F790214550EA00B95E08 /* BaselineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9900F78F214550EA00B95E08 /* BaselineTests.swift */; };
+		9900F792214553B400B95E08 /* Stevia+Baselines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9900F791214553B400B95E08 /* Stevia+Baselines.swift */; };
+		9900F793214553B400B95E08 /* Stevia+Baselines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9900F791214553B400B95E08 /* Stevia+Baselines.swift */; };
 		9914DDBF1E33614300761C87 /* Stevia+Equation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914DDBE1E33614300761C87 /* Stevia+Equation.swift */; };
 		9914DDC11E33618A00761C87 /* Stevia+Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914DDC01E33618A00761C87 /* Stevia+Percentage.swift */; };
 		992F54FB1EF160420076BDB9 /* GetConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F54FA1EF160420076BDB9 /* GetConstraintsTests.swift */; };
@@ -74,6 +77,8 @@
 
 /* Begin PBXFileReference section */
 		1F00D53C1C9AD18A00B90965 /* StyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleTests.swift; sourceTree = "<group>"; };
+		9900F78F214550EA00B95E08 /* BaselineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaselineTests.swift; sourceTree = "<group>"; };
+		9900F791214553B400B95E08 /* Stevia+Baselines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stevia+Baselines.swift"; sourceTree = "<group>"; };
 		9914DDBE1E33614300761C87 /* Stevia+Equation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Equation.swift"; sourceTree = "<group>"; };
 		9914DDC01E33618A00761C87 /* Stevia+Percentage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stevia+Percentage.swift"; sourceTree = "<group>"; };
 		992F54FA1EF160420076BDB9 /* GetConstraintsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetConstraintsTests.swift; sourceTree = "<group>"; };
@@ -155,6 +160,7 @@
 				99585BD31D86ABFF004CE776 /* Info.plist */,
 				99585BE41D86ABFF004CE776 /* Stevia.h */,
 				99585BD41D86ABFF004CE776 /* Stevia+Alignment.swift */,
+				9900F791214553B400B95E08 /* Stevia+Baselines.swift */,
 				99585BD51D86ABFF004CE776 /* Stevia+Center.swift */,
 				99585BD61D86ABFF004CE776 /* Stevia+Constraints.swift */,
 				99585BD71D86ABFF004CE776 /* Stevia+Content.swift */,
@@ -221,6 +227,7 @@
 				1F00D53C1C9AD18A00B90965 /* StyleTests.swift */,
 				99BD93191E3B746F0097A625 /* EquationTests.swift */,
 				992F54FA1EF160420076BDB9 /* GetConstraintsTests.swift */,
+				9900F78F214550EA00B95E08 /* BaselineTests.swift */,
 			);
 			path = SteviaTests;
 			sourceTree = "<group>";
@@ -404,6 +411,7 @@
 				9934B7941EF127920065EA50 /* Stevia+Content.swift in Sources */,
 				9934B7981EF127920065EA50 /* Stevia+Equation.swift in Sources */,
 				9934B79A1EF127920065EA50 /* Stevia+GetConstraint.swift in Sources */,
+				9900F793214553B400B95E08 /* Stevia+Baselines.swift in Sources */,
 				9934B7911EF127920065EA50 /* Stevia+Alignment.swift in Sources */,
 				9934B79C1EF127920065EA50 /* Stevia+Notifications.swift in Sources */,
 				9934B7A01EF127920065EA50 /* Stevia+Stacks.swift in Sources */,
@@ -430,6 +438,7 @@
 				99585BF11D86ABFF004CE776 /* Stevia+Position.swift in Sources */,
 				9914DDBF1E33614300761C87 /* Stevia+Equation.swift in Sources */,
 				99585BE61D86ABFF004CE776 /* Stevia+Alignment.swift in Sources */,
+				9900F792214553B400B95E08 /* Stevia+Baselines.swift in Sources */,
 				99585BF21D86ABFF004CE776 /* Stevia+Size.swift in Sources */,
 				99585BEF1D86ABFF004CE776 /* Stevia+Notifications.swift in Sources */,
 				99585BF41D86ABFF004CE776 /* Stevia+Style.swift in Sources */,
@@ -443,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBC533541C6E2CCF0008F340 /* SizeTests.swift in Sources */,
+				9900F790214550EA00B95E08 /* BaselineTests.swift in Sources */,
 				99BD931A1E3B746F0097A625 /* EquationTests.swift in Sources */,
 				CBC533521C6E24970008F340 /* FillTests.swift in Sources */,
 				99C5A4881C7A5B93003EDE10 /* FlexibleMarginTests.swift in Sources */,

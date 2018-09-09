@@ -70,6 +70,14 @@ public extension UIView {
     public var CenterY: SteviaAttribute {
         return SteviaAttribute(view: self, attribute: .centerY)
     }
+    
+    public var FirstBaseline: SteviaAttribute {
+        return SteviaAttribute(view: self, attribute: .firstBaseline)
+    }
+    
+    public var LastBaseline: SteviaAttribute {
+        return SteviaAttribute(view: self, attribute: .lastBaseline)
+    }
 }
 
 // MARK: - Equations of type v.P == v'.P' + X
