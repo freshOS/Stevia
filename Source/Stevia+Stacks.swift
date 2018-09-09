@@ -38,8 +38,8 @@ public extension UIView {
     
     @discardableResult
     public func layout(_ objects: [Any]) -> [UIView] {
-        var previousMargin: CGFloat? = nil
-        var previousFlexibleMargin: SteviaFlexibleMargin? = nil
+        var previousMargin: CGFloat?
+        var previousFlexibleMargin: SteviaFlexibleMargin?
         for (i, o) in objects.enumerated() {
             
             switch o {
