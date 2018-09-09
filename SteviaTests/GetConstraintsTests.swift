@@ -148,4 +148,36 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.isActive, true)
     }
     
+    func testCanGetCenterXConstraint() {
+        XCTAssertNil(v.centerXConstraint)
+        v.CenterX == spv.CenterX + 27
+        let c = v.centerXConstraint
+        XCTAssertNotNil(c)
+        XCTAssertEqual(c?.constant, 27)
+        XCTAssertEqual(c?.firstItem as? UIView, v)
+        XCTAssertEqual(c?.secondItem as? UIView, spv)
+        XCTAssertEqual(c?.firstAttribute, .centerX)
+        XCTAssertEqual(c?.secondAttribute, .centerX)
+        XCTAssertEqual(c?.multiplier, 1)
+        XCTAssertEqual(c?.relation, .equal)
+        XCTAssertEqual(c?.priority.rawValue, 751)
+        XCTAssertEqual(c?.isActive, true)
+    }
+    
+    func testCanGetCenterYConstraint() {
+        XCTAssertNil(v.centerYConstraint)
+        v.CenterY == spv.CenterY - 32
+        let c = v.centerYConstraint
+        XCTAssertNotNil(c)
+        XCTAssertEqual(c?.constant, -32)
+        XCTAssertEqual(c?.firstItem as? UIView, v)
+        XCTAssertEqual(c?.secondItem as? UIView, spv)
+        XCTAssertEqual(c?.firstAttribute, .centerY)
+        XCTAssertEqual(c?.secondAttribute, .centerY)
+        XCTAssertEqual(c?.multiplier, 1)
+        XCTAssertEqual(c?.relation, .equal)
+        XCTAssertEqual(c?.priority.rawValue, 751)
+        XCTAssertEqual(c?.isActive, true)
+    }
+    
 }
