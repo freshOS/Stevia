@@ -197,4 +197,5 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 - Swift 2 -> [v**2.3.0**](https://github.com/freshOS/Stevia/releases/tag/2.3.0)
 - Swift 3 -> [v**3.2.0**](https://github.com/freshOS/Stevia/releases/tag/3.2.0)
 - Swift 4 -> [v**4.2.0**](https://github.com/freshOS/Stevia/releases/tag/4.2.0)
-- Swift 4.1 -> [v**4.3.0**](https://github.com/freshOS/Stevia/releases/tag/4.3.0)
+- Swift 4.1 -> [v**4.3.2**](https://github.com/freshOS/Stevia/releases/tag/4.3.2)
+- Swift 4.2 -> [v**4.4.0**](https://github.com/freshOS/Stevia/releases/tag/4.4.0)
