@@ -5,7 +5,7 @@
 ![Platform: iOS 8+](https://img.shields.io/badge/platform-iOS%20|%20tvOS-blue.svg?style=flat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org/pods/SteviaLayout)
-[![Build Status](https://www.bitrise.io/app/4478e29045c5f12e.svg?token=pti6g-HVKBUPv9mIR3baIw&branch=master)](https://www.bitrise.io/app/4478e29045c5f12e)
+[![Build Status](https://app.bitrise.io/app/4478e29045c5f12e/status.svg?token=pti6g-HVKBUPv9mIR3baIw&branch=master)](https://app.bitrise.io/app/4478e29045c5f12e)
 [![Join the chat at https://gitter.im/freshoss/Stevia](https://badges.gitter.im/s4cha/Stevia.svg)](https://gitter.im/freshoss/Stevia)
 [![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/s4cha/Stevia/blob/master/LICENSE)
 [![CocoaPods](https://img.shields.io/cocoapods/dt/SteviaLayout.svg)]()
