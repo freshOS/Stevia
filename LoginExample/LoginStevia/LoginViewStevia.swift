@@ -17,13 +17,7 @@ class LoginViewStevia: UIView {
     
     convenience init() {
         self.init(frame:CGRect.zero)
-        // This is only needed for live reload as injectionForXcode
-        // doesn't swizzle init methods.
         // Get injectionForXcode here : http://johnholdsworth.com/injection.html
-        render()
-    }
-    
-    func render() {
 
         // View Hierarchy
         // This essentially does `translatesAutoresizingMaskIntoConstraints = false`

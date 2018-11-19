@@ -10,8 +10,11 @@ import UIKit
 
 class LoginVC: UIViewController {
 
-    var v = LoginViewStevia()
-    override func loadView() { view = v }
+    var v: LoginViewStevia!
+    override func loadView() {
+        v = LoginViewStevia()
+        view = v
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +25,7 @@ class LoginVC: UIViewController {
         // Here we want to reload the view after injection
         // this is only needed for live reload
         on("INJECTION_BUNDLE_NOTIFICATION") {
-            self.v = LoginViewStevia()
-            self.view = self.v
+            self.loadView()
         }
     }
     
