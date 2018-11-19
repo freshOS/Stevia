@@ -8,6 +8,8 @@
 
 import XCTest
 
+let magicalIphoneXShift = 0.17
+
 class CenterTests: XCTestCase {
     
     var win: UIWindow!
@@ -41,7 +43,7 @@ class CenterTests: XCTestCase {
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x,
                                    ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
-                                   accuracy: CGFloat(Float.ulpOfOne))
+                                   accuracy: CGFloat(magicalIphoneXShift))
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
@@ -59,7 +61,7 @@ class CenterTests: XCTestCase {
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x - 50,
                                    ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
-                                   accuracy: CGFloat(Float.ulpOfOne))
+                                   accuracy: CGFloat(magicalIphoneXShift))
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
@@ -116,7 +118,7 @@ class CenterTests: XCTestCase {
                                    accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x,
                                    ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
-                                   accuracy: CGFloat(Float.ulpOfOne))
+                                   accuracy: CGFloat(magicalIphoneXShift))
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }

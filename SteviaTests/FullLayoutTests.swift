@@ -87,7 +87,7 @@ class FullLayoutTests: XCTestCase {
                                    accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.login.frame.origin.x,
                                    win.frame.width/2.0 - (v.login.frame.width/2.0),
-                                   accuracy: CGFloat(Float.ulpOfOne))
+                                   accuracy: CGFloat(magicalIphoneXShift))
         XCTAssertEqual(v.login.frame.height, 99, accuracy: CGFloat(Float.ulpOfOne))
     }
 }
