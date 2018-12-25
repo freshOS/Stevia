@@ -138,7 +138,7 @@ public extension UIView {
     public var userAddedConstraints: [NSLayoutConstraint] {
         return constraints.filter { c in
             guard let cId = c.identifier else { return true }
-            return !cId.contains("UIView-Encapsulated-Layout")
+            return !cId.contains("UIView-Encapsulated-Layout") && !cId.contains("Margin-guide-constraint")
         }
     }
 }
