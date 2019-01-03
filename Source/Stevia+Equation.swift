@@ -172,7 +172,7 @@ private func applyRelation(left: SteviaAttribute, right: SteviaAttribute, relate
     if let spv = left.view.superview {
         return spv.addConstraint(item: left.view,
                                  attribute: left.attribute,
-                                 relatedBy: .lessThanOrEqual,
+                                 relatedBy: relateBy,
                                  toItem: right.view,
                                  attribute: right.attribute,
                                  multiplier: multiplier,
