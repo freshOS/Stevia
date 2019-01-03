@@ -186,6 +186,12 @@ func constraintForView(_ v: UIView, attribute: NSLayoutConstraint.Attribute) -> 
         return nil
     }
     
-    // First look for constraint on superview.
-    return lookForConstraint(in: v.superview) ?? lookForConstraint(in: v)
+    // Width and height constraints added via widthAnchor/heightAnchors are
+    // added on the view itself.
+    if (attribute == .width || attribute == .height) {
+        return lookForConstraint(in: v.superview) ?? lookForConstraint(in: v)
+    }
+    
+    // Look for constraint on superview.
+    return lookForConstraint(in: v.superview)
 }
