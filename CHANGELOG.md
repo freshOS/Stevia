@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 Put unreleased changes here
 
+## [4.4.4] - 2019-01-03
+### Changed
+`fillContainer` now returns self to make it chainable
+
+## [4.4.3] - 2019-01-03
+### Changed
+Fixes Equation api >= broken operator
+
+## [4.4.2] - 2019-01-03
+### Changed
+Fixes view.bottom/top/right/leftConstraint possibly returning wrong constraint if the one you want is not there yet. (looking for constraint in the view itself after looking for it in the superview)
+The fix makes sure it only looks for the constraint in the view itself for width and height constraints, that corresponds to constraints added via width/heightAnchors api.
+
+## [4.4.1] - 2018-12-28
+### Changed
+- Make sure userAddedConstraints doesn't return layout margins. Fixes #104 Kudos @mpsnp 👏
+- Code clean
+- Removing deprecated tap helper (discussion here #42) alternatives : https://github.com/XCEssentials/ViewEvents
+
 ## [4.4.0] - 2018-09-18
 ### Changed
 - Add support for Xcode10 & Swift 4.2
