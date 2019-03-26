@@ -18,7 +18,7 @@ public extension UIButton {
      - Returns: Itself for chaining purposes
     */
     @discardableResult
-    public func text(_ t: String) -> Self {
+    func text(_ t: String) -> Self {
         setTitle(t, for: .normal)
         return self
     }
@@ -32,7 +32,7 @@ public extension UIButton {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    public func textKey(_ t: String) -> Self {
+    func textKey(_ t: String) -> Self {
         text(NSLocalizedString(t, comment: ""))
         return self
     }
@@ -45,7 +45,7 @@ public extension UIButton {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    public func image(_ s: String) -> Self {
+    func image(_ s: String) -> Self {
         setImage(UIImage(named: s), for: .normal)
         return self
     }
@@ -57,7 +57,7 @@ public extension UITextField {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    public func placeholder(_ t: String) -> Self {
+    func placeholder(_ t: String) -> Self {
         placeholder = t
         return self
     }
@@ -69,7 +69,7 @@ public extension UILabel {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    public func text(_ t: String) -> Self {
+    func text(_ t: String) -> Self {
         text = t
         return self
     }
@@ -80,7 +80,7 @@ public extension UILabel {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    public func textKey(_ t: String) -> Self {
+    func textKey(_ t: String) -> Self {
         text(NSLocalizedString(t, comment: ""))
         return self
     }
