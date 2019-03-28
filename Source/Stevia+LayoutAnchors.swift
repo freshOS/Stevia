@@ -80,6 +80,10 @@ public func == (left: SteviaAttribute, right: SteviaLayoutYAxisAnchor) -> NSLayo
         constraint = left.view.bottomAnchor.constraint(equalTo: right.anchor, constant: right.constant)
     }
     
+    if left.attribute == .centerY {
+        constraint = left.view.centerYAnchor.constraint(equalTo: right.anchor, constant: right.constant)
+    }
+    
     constraint.isActive = true
     return constraint
 }
@@ -104,6 +108,10 @@ public func == (left: SteviaAttribute, right: SteviaLayoutXAxisAnchor) -> NSLayo
     
     if left.attribute == .trailing {
         constraint = left.view.trailingAnchor.constraint(equalTo: right.anchor, constant: right.constant)
+    }
+    
+    if left.attribute == .centerX {
+        constraint = left.view.centerXAnchor.constraint(equalTo: right.anchor, constant: right.constant)
     }
     
     constraint.isActive = true
