@@ -32,12 +32,12 @@ public extension UIView {
      ```
      */
     @discardableResult
-    public func layout(_ objects: Any...) -> [UIView] {
+    func layout(_ objects: Any...) -> [UIView] {
         return layout(objects)
     }
     
     @discardableResult
-    public func layout(_ objects: [Any]) -> [UIView] {
+    func layout(_ objects: [Any]) -> [UIView] {
         var previousMargin: CGFloat?
         var previousFlexibleMargin: SteviaFlexibleMargin?
         
