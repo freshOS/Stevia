@@ -36,7 +36,7 @@ public extension UIAppearance {
      
      */
     @discardableResult
-    public func style(_ styleClosure: (Self) -> Void) -> Self {
+    func style(_ styleClosure: (Self) -> Void) -> Self {
         styleClosure(self)
         return self
     }
