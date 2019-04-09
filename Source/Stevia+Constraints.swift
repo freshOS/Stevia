@@ -68,7 +68,7 @@ public extension UIView {
  
     - Returns: The NSLayoutConstraint created.
  */
-public func constraint(item view1: AnyObject,
+func constraint(item view1: AnyObject,
                        attribute attr1: NSLayoutConstraint.Attribute,
                        relatedBy: NSLayoutConstraint.Relation = .equal,
                        toItem view2: AnyObject? = nil,
