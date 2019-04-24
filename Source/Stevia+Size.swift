@@ -123,11 +123,7 @@ public extension UIView {
                            attribute: attribute,
                            relatedBy: relatedBy,
                            constant: points)
-        if let spv = superview {
-            spv.addConstraint(c)
-        } else {
-            addConstraint(c)
-        }
+        addConstraint(c)
         return self
     }
 }
