@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 Put unreleased changes here
 
+## [4.6.0] - 2019-09-30
+### Changed
+- Adds support for Xcode11 & Swift 5.1
+
 ## [4.4.4] - 2019-01-03
 ### Changed
 `fillContainer` now returns self to make it chainable
