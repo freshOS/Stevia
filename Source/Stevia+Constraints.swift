@@ -139,7 +139,7 @@ public extension UIView {
      
      */
     @discardableResult
-    func heightEqualsWidth() -> UIView {
+    func heightEqualsWidth() -> Self {
         if let spv = superview {
             let c = constraint(item: self, attribute: .height, toItem: self, attribute: .width)
             spv.addConstraint(c)

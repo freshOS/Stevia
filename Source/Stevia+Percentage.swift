@@ -35,7 +35,7 @@ public extension UIView {
      
      */
     @discardableResult
-    func size(_ p: SteviaPercentage) -> UIView {
+    func size(_ p: SteviaPercentage) -> Self {
         width(p)
         height(p)
         return self
@@ -55,7 +55,7 @@ public extension UIView {
      
      */
     @discardableResult
-    func width(_ p: SteviaPercentage) -> UIView {
+    func width(_ p: SteviaPercentage) -> Self {
         if let spv = superview {
             Width == p.value % spv.Width
         }
@@ -82,7 +82,7 @@ public extension UIView {
      
      */
     @discardableResult
-    func height(_ p: SteviaPercentage) -> UIView {
+    func height(_ p: SteviaPercentage) -> Self {
         if let spv = superview {
             Height == p.value % spv.Height
         }
@@ -101,7 +101,7 @@ public extension UIView {
     - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func top(_ p: SteviaPercentage) -> UIView {
+    func top(_ p: SteviaPercentage) -> Self {
         if let spv = superview {
             Top == p.value % spv.Bottom
         }
@@ -120,7 +120,7 @@ public extension UIView {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func left(_ p: SteviaPercentage) -> UIView {
+    func left(_ p: SteviaPercentage) -> Self {
         if let spv = superview {
             Left == p.value % spv.Right
         }
@@ -139,7 +139,7 @@ public extension UIView {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func right(_ p: SteviaPercentage) -> UIView {
+    func right(_ p: SteviaPercentage) -> Self {
         if let spv = superview {
             if p.value == 100 {
                 Right == spv.Left
@@ -162,7 +162,7 @@ public extension UIView {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func bottom(_ p: SteviaPercentage) -> UIView {
+    func bottom(_ p: SteviaPercentage) -> Self {
         if let spv = superview {
             if p.value == 100 {
                 Bottom == spv.Top
