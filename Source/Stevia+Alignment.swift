@@ -15,7 +15,7 @@ import UIKit
  align(horizontally: label,button,arrow)
  ```
  
- Ca also be used directly on horizontal layouts since they return the array of views :
+ Can also be used directly on horizontal layouts since they return the array of views :
  ```
  align(horizontally: |-image1-image2-image3-|)
  ```
@@ -350,6 +350,70 @@ public func align(rights views: [UIView]) -> [UIView] {
 @discardableResult
 public func alignRights(_ views: [UIView]) -> [UIView] {
     align(.right, views: views)
+    return views
+}
+
+/** Aligns leading sides of an array of views
+
+Example Usage:
+```
+align(leadings: [label,field,button])
+```
+
+- Returns: The array of views, enabling chaining,
+
+*/
+@discardableResult
+public func align(leadings views: [UIView]) -> [UIView] {
+    align(.leading, views: views)
+    return views
+}
+
+/** Aligns leading sides of an array of views
+
+Example Usage:
+```
+align(leadings: label,field,button)
+```
+
+- Returns: The array of views, enabling chaining,
+
+*/
+@discardableResult
+public func align(leadings views: UIView...) -> [UIView] {
+    align(.leading, views: views)
+    return views
+}
+
+/** Aligns trailing sides of an array of views
+
+Example Usage:
+```
+align(trailing: [label,field,button])
+```
+
+- Returns: The array of views, enabling chaining,
+
+*/
+@discardableResult
+public func align(trailings views: [UIView]) -> [UIView] {
+    align(.trailing, views: views)
+    return views
+}
+
+/** Aligns trailing sides of an array of views
+
+Example Usage:
+```
+align(trailing: label,field,button)
+```
+
+- Returns: The array of views, enabling chaining,
+
+*/
+@discardableResult
+public func align(trailings views: UIView...) -> [UIView] {
+    align(.trailing, views: views)
     return views
 }
 
