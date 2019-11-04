@@ -156,6 +156,71 @@ public extension UIView {
         return position(.bottom, relatedBy: n.relation, points: n.points)
     }
     
+    /** Sets the leading margin for a view.
+     
+    Example Usage :
+     
+     label.leading(20)
+     label.leading(<=20)
+     label.leading(>=20)
+     label.leading(20%)
+     
+    - Returns: itself for chaining purposes
+    */
+    
+    @discardableResult
+    func leading(_ points: CGFloat) -> UIView {
+        return position(.leading, points: points)
+    }
+    
+    @discardableResult
+    func leading(_ fm: SteviaFlexibleMargin) -> UIView {
+        return position(.leading, relatedBy: fm.relation, points: fm.points)
+    }
+
+    @discardableResult
+    func leading(_ p: SteviaPercentage) -> UIView {
+        if let spv = superview {
+            Leading == p.value % spv.Trailing
+        }
+        return self
+    }
+    
+    /** Sets the trailing margin for a view.
+     
+    Example Usage :
+     
+     label.trailing(20)
+     label.trailing(<=20)
+     label.trailing(>=20)
+     label.trailing(20%)
+     
+    - Returns: itself for chaining purposes
+    */
+    @discardableResult
+    func trailing(_ points: CGFloat) -> UIView {
+        return position(.trailing, points: -points)
+    }
+
+    @discardableResult
+    func trailing(_ fm: SteviaFlexibleMargin) -> UIView {
+        var invertedRelation = fm.relation
+        if invertedRelation == .lessThanOrEqual {
+            invertedRelation = .greaterThanOrEqual
+        } else if invertedRelation == .greaterThanOrEqual {
+            invertedRelation = .lessThanOrEqual
+        }
+        return position(.trailing, relatedBy: invertedRelation!, points: -fm.points)
+    }
+
+    @discardableResult
+    func trailing(_ p: SteviaPercentage) -> UIView {
+        if let spv = superview {
+            Trailing == (100-p.value) % spv.Trailing
+        }
+        return self
+    }
+    
     fileprivate func position(_ position: NSLayoutConstraint.Attribute,
                               relatedBy: NSLayoutConstraint.Relation = .equal,
                               points: CGFloat) -> Self {
