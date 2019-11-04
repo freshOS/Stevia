@@ -119,9 +119,9 @@ public extension UIView {
         if let spv = superview {
             let cs = [
                 constraint(item: self, attribute: .top, toItem: otherView),
-                constraint(item: self, attribute: .right, toItem: otherView),
+                constraint(item: self, attribute: .trailing, toItem: otherView),
                 constraint(item: self, attribute: .bottom, toItem: otherView),
-                constraint(item: self, attribute: .left, toItem: otherView)
+                constraint(item: self, attribute: .leading, toItem: otherView)
             ]
             spv.addConstraints(cs)
         }
