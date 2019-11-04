@@ -58,6 +58,25 @@ class FlexibleMarginTests: XCTestCase {
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
+    
+    func testGreaterLeading() {
+        v.leading(>=23)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 23, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testGreaterLeadingRTL() {
+        ctrler.view.semanticContentAttribute = .forceRightToLeft
+        v.leading(>=23)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 23, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
 
     func testGreaterRight() {
         v.right(>=74)
@@ -69,12 +88,31 @@ class FlexibleMarginTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
     
+    func testGreaterTrailing() {
+        v.trailing(>=74)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 74,
+                       accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testGreaterTrailingRTL() {
+        ctrler.view.semanticContentAttribute = .forceRightToLeft
+        v.trailing(>=74)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 74, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
     func testLessTop() {
         v.top(<=23)
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 23, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
@@ -99,11 +137,41 @@ class FlexibleMarginTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
     
+    func testLessLeading() {
+        v.leading(<=23)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 23, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testLessLeadingRTL() {
+        ctrler.view.semanticContentAttribute = .forceRightToLeft
+        v.leading(<=23)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 23,
+                       accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
     func testLessLeftOperator() {
         |-(<=23)-v
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x, 23, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testLessLeftOperatorRTL() {
+        ctrler.view.semanticContentAttribute = .forceRightToLeft
+        |-(<=23)-v
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 23, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
@@ -118,6 +186,25 @@ class FlexibleMarginTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
     
+    func testLessTrailing() {
+        v.trailing(<=74)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 74,
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+
+    func testLessTrailingRTL() {
+        ctrler.view.semanticContentAttribute = .forceRightToLeft
+        v.trailing(<=74)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 74, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
     
     func testLessRightOperator() {
         v-(<=74)-|
@@ -125,6 +212,16 @@ class FlexibleMarginTests: XCTestCase {
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 74,
                                    accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testLessRightOperatorRTL() {
+        ctrler.view.semanticContentAttribute = .forceRightToLeft
+        v-(<=74)-|
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 74, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
@@ -150,6 +247,32 @@ class FlexibleMarginTests: XCTestCase {
         
         XCTAssertEqual(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v2.frame.origin.x, 35, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testMarginGreaterBetweenTwoViewsRTL() {
+        ctrler.view.semanticContentAttribute = .forceRightToLeft
+        let v1 = UIView()
+        let v2 = UIView()
+        v.removeFromSuperview()
+        ctrler.view.sv(v1, v2)
+        for view in ctrler.view.subviews {
+            XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        }
+        
+        |v1.width(10)-(>=25)-v2
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.origin.x, ctrler.view.frame.width - 10, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.width, 10, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        
+        XCTAssertEqual(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.origin.x, ctrler.view.frame.width - v1.frame.width - 25, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v2.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         
@@ -178,7 +301,33 @@ class FlexibleMarginTests: XCTestCase {
         XCTAssertEqual(v2.frame.origin.x, 35, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v2.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testMarginLesserBetweenTwoViewsRTL() {
+        ctrler.view.semanticContentAttribute = .forceRightToLeft
+        let v1 = UIView()
+        let v2 = UIView()
+        v.removeFromSuperview()
+        ctrler.view.sv(v1, v2)
+        for view in ctrler.view.subviews {
+            XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        }
         
+        |v1.width(10)-(<=25)-v2
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.origin.x, ctrler.view.frame.width - 10, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.width, 10, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        
+        XCTAssertEqual(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.origin.x, ctrler.view.frame.width - v1.frame.width - 25,
+                       accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
     }
     
 }
