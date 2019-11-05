@@ -6,6 +6,7 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public extension UIView {
@@ -195,3 +196,4 @@ func constraintForView(_ v: UIView, attribute: NSLayoutConstraint.Attribute) -> 
     // Look for constraint on superview.
     return lookForConstraint(in: v.superview)
 }
+#endif

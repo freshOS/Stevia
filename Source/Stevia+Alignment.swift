@@ -6,6 +6,7 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 /** Aligns an array of views Horizontally (on the X Axis)
@@ -428,3 +429,4 @@ public func align(_ attribute: NSLayoutConstraint.Attribute, views: [UIView]) ->
     }
     return views
 }
+#endif
