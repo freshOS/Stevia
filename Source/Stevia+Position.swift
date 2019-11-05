@@ -6,6 +6,7 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public extension UIView {
@@ -218,3 +219,4 @@ public extension UIView {
         return self
     }
 }
+#endif

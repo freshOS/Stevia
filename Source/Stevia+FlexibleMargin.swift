@@ -6,6 +6,7 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 prefix operator >=
@@ -124,3 +125,4 @@ public func - (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
     }
     return left
 }
+#endif

@@ -6,6 +6,7 @@
 //  Copyright © 2015 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public extension UIButton {
@@ -100,3 +101,4 @@ extension UIImageView {
         return self
     }
 }
+#endif

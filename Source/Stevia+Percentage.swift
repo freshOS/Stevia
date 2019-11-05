@@ -6,6 +6,7 @@
 //  Copyright © 2017 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public struct SteviaPercentage {
@@ -234,3 +235,4 @@ public extension UIView {
         return self
     }
 }
+#endif
