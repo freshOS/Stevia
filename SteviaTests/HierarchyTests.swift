@@ -7,7 +7,6 @@
 //
 
 import XCTest
-
 import Stevia
 
 class HierarchyTests: XCTestCase {
