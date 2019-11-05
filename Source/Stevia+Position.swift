@@ -177,14 +177,6 @@ public extension UIView {
     func leading(_ fm: SteviaFlexibleMargin) -> UIView {
         return position(.leading, relatedBy: fm.relation, points: fm.points)
     }
-
-    @discardableResult
-    func leading(_ p: SteviaPercentage) -> UIView {
-        if let spv = superview {
-            Leading == p.value % spv.Trailing
-        }
-        return self
-    }
     
     /** Sets the trailing margin for a view.
      
@@ -211,14 +203,6 @@ public extension UIView {
             invertedRelation = .lessThanOrEqual
         }
         return position(.trailing, relatedBy: invertedRelation!, points: -fm.points)
-    }
-
-    @discardableResult
-    func trailing(_ p: SteviaPercentage) -> UIView {
-        if let spv = superview {
-            Trailing == (100-p.value) % spv.Trailing
-        }
-        return self
     }
     
     fileprivate func position(_ position: NSLayoutConstraint.Attribute,
