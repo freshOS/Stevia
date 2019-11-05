@@ -172,4 +172,65 @@ public extension UIView {
         }
         return self
     }
+    
+    /** Sets the leading margin for a view.
+     
+    Example Usage :
+     
+     label.leading(20)
+     label.leading(<=20)
+     label.leading(>=20)
+     label.leading(20%)
+     
+    - Returns: itself for chaining purposes
+    */
+    @discardableResult
+    func leading(_ p: SteviaPercentage) -> UIView {
+        // Percent based (multipliers) with leading or trailing attributes
+        // are not available so we introduce an intermediary layout guide.
+        // |-[layoutGuide(== x % width)-[view]
+        // RTL version: [view]-[layoutGuide(== x % width)-|
+        if let spv = superview {
+            let lg = UILayoutGuide()
+            spv.addLayoutGuide(lg)
+            let constraints = [
+                lg.widthAnchor.constraint(equalTo: spv.widthAnchor, multiplier: p.value / 100),
+                lg.leadingAnchor.constraint(equalTo: spv.leadingAnchor),
+                leadingAnchor.constraint(equalTo: lg.trailingAnchor)
+            ]
+            constraints.forEach { $0.isActive = true }
+        }
+        return self
+    }
+    
+    /** Sets the trailing margin for a view.
+     
+    Example Usage :
+     
+     label.trailing(20)
+     label.trailing(<=20)
+     label.trailing(>=20)
+     label.trailing(20%)
+     
+    - Returns: itself for chaining purposes
+    */
+    @discardableResult
+    func trailing(_ p: SteviaPercentage) -> UIView {
+        
+        // Percent based (multipliers) with leading or trailing attributes
+        // are not available so we introduce an intermediary layout guide.
+        // |-[layoutGuide(== x % width)-[view]
+        // RTL version: [view]-[layoutGuide(== x % width)-|
+        if let spv = superview {
+            let lg = UILayoutGuide()
+            spv.addLayoutGuide(lg)
+            let constraints = [
+                lg.widthAnchor.constraint(equalTo: spv.widthAnchor, multiplier: p.value / 100),
+                lg.trailingAnchor.constraint(equalTo: spv.trailingAnchor),
+                trailingAnchor.constraint(equalTo: lg.leadingAnchor)
+            ]
+            constraints.forEach { $0.isActive = true }
+        }
+        return self
+    }
 }
