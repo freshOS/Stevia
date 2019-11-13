@@ -6,6 +6,7 @@
 //  Copyright © 2015 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public extension UIView {
@@ -163,3 +164,4 @@ public extension UICollectionViewCell {
         return contentView.sv(subViews)
     }
 }
+#endif

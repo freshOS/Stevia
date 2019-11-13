@@ -6,6 +6,7 @@
 //  Copyright © 2018 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 /** Aligns an array of views by their lastBaselines (on the Y Axis)
@@ -75,3 +76,4 @@ public func align(firstBaselines views: [UIView]) -> [UIView] {
     }
     return views
 }
+#endif

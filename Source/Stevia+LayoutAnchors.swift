@@ -6,6 +6,7 @@
 //  Copyright © 2017 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 @available(iOS 9.0, *)
@@ -157,3 +158,4 @@ public extension UILayoutSupport {
         return SteviaLayoutYAxisAnchor(anchor: bottomAnchor)
     }
 }
+#endif

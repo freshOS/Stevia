@@ -6,6 +6,7 @@
 //  Copyright © 2017 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public struct SteviaAttribute {
@@ -250,3 +251,4 @@ public func <= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
     }
     return NSLayoutConstraint()
 }
+#endif

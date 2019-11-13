@@ -6,6 +6,7 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 prefix operator |
@@ -206,3 +207,4 @@ public func - (left: Space, right: UIView) -> [UIView] {
     va?.append(right)
     return va!
 }
+#endif
