@@ -89,7 +89,7 @@ class PositionTests: XCTestCase {
     func testPercentTop() {
         v.top(10%)
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height * (10/100) , accuracy: CGFloat(0.1))
+        XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height * (10/100) , accuracy: CGFloat(0.3))
         XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
@@ -98,7 +98,7 @@ class PositionTests: XCTestCase {
     func testPercentBottom() {
         v.bottom(10%)
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height * (90/100) - v.frame.height, accuracy: CGFloat(0.1))
+        XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height * (90/100) - v.frame.height, accuracy: CGFloat(0.3))
         XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
