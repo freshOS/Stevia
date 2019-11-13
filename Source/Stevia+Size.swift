@@ -6,6 +6,7 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public extension UIView {
@@ -277,3 +278,4 @@ private func equal(_ attribute: NSLayoutConstraint.Attribute, views: [UIView]) {
         previousView = v
     }
 }
+#endif

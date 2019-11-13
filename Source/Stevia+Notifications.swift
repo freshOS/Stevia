@@ -6,6 +6,7 @@
 //  Copyright © 2015 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public extension NSObject {
@@ -18,3 +19,4 @@ public extension NSObject {
         }
     }
 }
+#endif
