@@ -41,6 +41,22 @@ class EquationTests: XCTestCase {
         XCTAssertEqual(v.frame.origin.y, 10)
     }
     
+    func testTopGreaterOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Top >= ctrler.view.Top + 10
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, 10)
+    }
+    
+    func testTopLessThanOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Top <= ctrler.view.Top + 10
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, 10)
+    }
+    
     func testBottom() {
         let v = UIView()
         ctrler.view.sv(v)
@@ -53,6 +69,22 @@ class EquationTests: XCTestCase {
         let v = UIView()
         ctrler.view.sv(v)
         ctrler.view.Bottom - 23 == v.Bottom
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height - 23)
+    }
+    
+    func testBottomGreaterOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Bottom >= ctrler.view.Bottom - 23
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height - 23)
+    }
+    
+    func testBottomLessOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Bottom <= ctrler.view.Bottom - 23
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height - 23)
     }
@@ -73,6 +105,22 @@ class EquationTests: XCTestCase {
         XCTAssertEqual(v.frame.origin.x, 72)
     }
     
+    func testLeftGreaterOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Left >= ctrler.view.Left + 72
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.x, 72)
+    }
+    
+    func testLeftLessOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Left <= ctrler.view.Left + 72
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.x, 72)
+    }
+    
     func testRight() {
         let v = UIView()
         ctrler.view.sv(v)
@@ -85,6 +133,22 @@ class EquationTests: XCTestCase {
         let v = UIView()
         ctrler.view.sv(v)
         ctrler.view.Right - 13 == v.Right
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - 13)
+    }
+    
+    func testRightGreaterOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Right >= ctrler.view.Right - 13
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - 13)
+    }
+    
+    func testRightLessOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Right >= ctrler.view.Right - 13
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - 13)
     }
@@ -105,6 +169,22 @@ class EquationTests: XCTestCase {
         XCTAssertEqual(v.frame.width, ctrler.view.frame.width - 52)
     }
     
+    func testWidthGreaterOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Width >= ctrler.view.Width - 52
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.width, ctrler.view.frame.width - 52)
+    }
+    
+    func testWidthLessOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Width <= ctrler.view.Width - 52
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.width, 0)
+    }
+    
     func testHeight() {
         let v = UIView()
         ctrler.view.sv(v)
@@ -120,6 +200,22 @@ class EquationTests: XCTestCase {
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(v.frame.height, ctrler.view.frame.height + 34)
     }
+    
+    func testHeightGreaterOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Height >= ctrler.view.Height - 34
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.height, ctrler.view.frame.height - 34)
+    }
+    
+    func testHeightLessOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Height <= ctrler.view.Height - 34
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.height, 0)
+    }
 
     // Single Value
     
@@ -127,6 +223,22 @@ class EquationTests: XCTestCase {
         let v = UIView()
         ctrler.view.sv(v)
         v.Top == 10
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, 10)
+    }
+    
+    func testSingleValueTopGreaterOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Top >= 10
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, 10)
+    }
+    
+    func testSingleValueLessOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Top <= 10
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(v.frame.origin.y, 10)
     }
@@ -139,10 +251,42 @@ class EquationTests: XCTestCase {
         XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height - 23)
     }
     
+    func testSingleValueBottomGreaterOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Bottom >= 23
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height - 23)
+    }
+    
+    func testSingleValueBottomLessOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Bottom <= 23
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height - 23)
+    }
+    
     func testSingleValueLeft() {
         let v = UIView()
         ctrler.view.sv(v)
         v.Left == 72
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.x, 72)
+    }
+    
+    func testSingleValueLeftGreaterOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Left >= 72
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.x, 72)
+    }
+    
+    func testSingleValueLeftLessOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Left <= 72
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(v.frame.origin.x, 72)
     }
@@ -155,6 +299,22 @@ class EquationTests: XCTestCase {
         XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - 13)
     }
     
+    func testSingleValueRightGreaterOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Right >= 13
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - 13)
+    }
+    
+    func testSingleValueRightLessOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Right <= 13
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - 13)
+    }
+    
     func testSingleValueWidth() {
         let v = UIView()
         ctrler.view.sv(v)
@@ -163,12 +323,46 @@ class EquationTests: XCTestCase {
         XCTAssertEqual(v.frame.width, 23)
     }
     
+    func testSingleValueWidthGreaterOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Width >= 23
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.width, 23)
+    }
+    
+    func testSingleValueWidthLessOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.centerInContainer() // There is a bug where we need to have a x/y placement for size to be accurate.
+        v.Width <= 23
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.width, 0)
+    }
+    
     func testSingleValueHeight() {
         let v = UIView()
         ctrler.view.sv(v)
         v.Height == 94
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(v.frame.height, 94)
+    }
+    
+    func testSingleValueHeightGreaterOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.Height >= 94
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.height, 94)
+    }
+    
+    func testSingleValueHeightLessOrEqual() {
+        let v = UIView()
+        ctrler.view.sv(v)
+        v.centerInContainer() // There is a bug where we need to have a x/y placement for size to be accurate.
+        v.Height <= 94
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.height, 0)
     }
     
     func testScrollView() {

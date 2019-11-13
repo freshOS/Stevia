@@ -231,11 +231,19 @@ public func == (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
 @discardableResult
 public func >= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
     if let spv = left.view.superview {
+        var toItem: UIView? = spv
+        var constant: CGFloat = right
+        if left.attribute == .width || left.attribute == .height {
+            toItem = nil
+        }
+        if left.attribute == .bottom || left.attribute == .right {
+            constant = -constant
+        }
         return spv.addConstraint(item: left.view,
                                  attribute: left.attribute,
                                  relatedBy: .greaterThanOrEqual,
-                                 toItem: spv,
-                                 constant: right)
+                                 toItem: toItem,
+                                 constant: constant)
     }
     return NSLayoutConstraint()
 }
@@ -243,11 +251,19 @@ public func >= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
 @discardableResult
 public func <= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
     if let spv = left.view.superview {
+        var toItem: UIView? = spv
+        var constant: CGFloat = right
+        if left.attribute == .width || left.attribute == .height {
+            toItem = nil
+        }
+        if left.attribute == .bottom || left.attribute == .right {
+            constant = -constant
+        }
         return spv.addConstraint(item: left.view,
                                  attribute: left.attribute,
                                  relatedBy: .lessThanOrEqual,
-                                 toItem: spv,
-                                 constant: right)
+                                 toItem: toItem,
+                                 constant: constant)
     }
     return NSLayoutConstraint()
 }
