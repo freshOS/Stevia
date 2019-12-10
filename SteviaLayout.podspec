@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SteviaLayout'
-  s.version          = "4.7.2"
+  s.version          = "4.7.3"
   s.summary          = "Elegant view layout for iOS"
   s.homepage         = "https://github.com/s4cha/Stevia"
   s.license          = { :type => "MIT", :file => "LICENSE" }
