@@ -120,7 +120,8 @@ You can find the full documentation [here](http://freshos.org/SteviaDocs/).
 [Sai](https://github.com/sai-prasanna),
 [Mike Gallagher](https://github.com/mgallagher),
 [WaterNotWords](https://github.com/waternotwords),
-[Mick MacCallum](https://github.com/0x7fffffff)
+[Mick MacCallum](https://github.com/0x7fffffff),
+[Onur Genes](https://github.com/onurgenes)
 
 ### 👥 Backers
 Like the project? Offer coffee or support us with a monthly donation and help us continue our activities :)
