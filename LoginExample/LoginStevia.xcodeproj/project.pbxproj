@@ -3,57 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99E2AA8D23BF7C4E00CBD63C /* Stevia in Frameworks */ = {isa = PBXBuildFile; productRef = 99E2AA8C23BF7C4E00CBD63C /* Stevia */; };
 		99FC80DF1BBD147B0068503C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80DE1BBD147B0068503C /* AppDelegate.swift */; };
 		99FC80E11BBD147B0068503C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80E01BBD147B0068503C /* LoginVC.swift */; };
 		99FC80E61BBD147B0068503C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99FC80E51BBD147B0068503C /* Assets.xcassets */; };
 		99FC80E91BBD147B0068503C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FC80E71BBD147B0068503C /* LaunchScreen.storyboard */; };
 		99FC80F31BBD14BB0068503C /* LoginViewNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80F21BBD14BB0068503C /* LoginViewNative.swift */; };
 		99FC80FA1BBD16840068503C /* LoginViewStevia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC80F91BBD16840068503C /* LoginViewStevia.swift */; };
-		E27AF8AE2247476800BD88F8 /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F90BC61FB0DE4E00C2AD9C /* Stevia.framework */; };
-		E27AF8AF2247476800BD88F8 /* Stevia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99F90BC61FB0DE4E00C2AD9C /* Stevia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		99F90BC51FB0DE4E00C2AD9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99F90BBF1FB0DE4E00C2AD9C /* Stevia.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9991C8551BDB6C8B007D9B75;
-			remoteInfo = Stevia;
-		};
-		99F90BC71FB0DE4E00C2AD9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99F90BBF1FB0DE4E00C2AD9C /* Stevia.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9934B7891EF126D10065EA50;
-			remoteInfo = SteviaTV;
-		};
-		99F90BC91FB0DE4E00C2AD9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99F90BBF1FB0DE4E00C2AD9C /* Stevia.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 99B621781BF75D0E00A54B05;
-			remoteInfo = SteviaTests;
-		};
-		99F90BCB1FB0DE7500C2AD9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99F90BBF1FB0DE4E00C2AD9C /* Stevia.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9991C8541BDB6C8B007D9B75;
-			remoteInfo = Stevia;
-		};
-		E27AF8B02247476800BD88F8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99F90BBF1FB0DE4E00C2AD9C /* Stevia.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9991C8541BDB6C8B007D9B75;
-			remoteInfo = Stevia;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E27AF8B22247476800BD88F8 /* Embed Frameworks */ = {
@@ -62,7 +23,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E27AF8AF2247476800BD88F8 /* Stevia.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,7 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		99F90BBF1FB0DE4E00C2AD9C /* Stevia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Stevia.xcodeproj; path = ../Stevia.xcodeproj; sourceTree = "<group>"; };
+		99E2AA8A23BF7C3E00CBD63C /* Stevia */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stevia; path = ..; sourceTree = "<group>"; };
 		99FC80DB1BBD147B0068503C /* LoginStevia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginStevia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FC80DE1BBD147B0068503C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99FC80E01BBD147B0068503C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -86,29 +46,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E27AF8AE2247476800BD88F8 /* Stevia.framework in Frameworks */,
+				99E2AA8D23BF7C4E00CBD63C /* Stevia in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		99F90BC01FB0DE4E00C2AD9C /* Products */ = {
+		99E2AA8B23BF7C4E00CBD63C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				99F90BC61FB0DE4E00C2AD9C /* Stevia.framework */,
-				99F90BC81FB0DE4E00C2AD9C /* Stevia.framework */,
-				99F90BCA1FB0DE4E00C2AD9C /* SteviaTests.xctest */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		99FC80D21BBD147B0068503C = {
 			isa = PBXGroup;
 			children = (
-				99F90BBF1FB0DE4E00C2AD9C /* Stevia.xcodeproj */,
+				99E2AA8A23BF7C3E00CBD63C /* Stevia */,
 				99FC80DD1BBD147B0068503C /* LoginStevia */,
 				99FC80DC1BBD147B0068503C /* Products */,
+				99E2AA8B23BF7C4E00CBD63C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,10 +107,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				99F90BCC1FB0DE7500C2AD9C /* PBXTargetDependency */,
-				E27AF8B12247476800BD88F8 /* PBXTargetDependency */,
 			);
 			name = LoginStevia;
+			packageProductDependencies = (
+				99E2AA8C23BF7C4E00CBD63C /* Stevia */,
+			);
 			productName = LoginNadir;
 			productReference = 99FC80DB1BBD147B0068503C /* LoginStevia.app */;
 			productType = "com.apple.product-type.application";
@@ -183,42 +142,12 @@
 			mainGroup = 99FC80D21BBD147B0068503C;
 			productRefGroup = 99FC80DC1BBD147B0068503C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 99F90BC01FB0DE4E00C2AD9C /* Products */;
-					ProjectRef = 99F90BBF1FB0DE4E00C2AD9C /* Stevia.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				99FC80DA1BBD147B0068503C /* LoginStevia */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		99F90BC61FB0DE4E00C2AD9C /* Stevia.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Stevia.framework;
-			remoteRef = 99F90BC51FB0DE4E00C2AD9C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		99F90BC81FB0DE4E00C2AD9C /* Stevia.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Stevia.framework;
-			remoteRef = 99F90BC71FB0DE4E00C2AD9C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		99F90BCA1FB0DE4E00C2AD9C /* SteviaTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SteviaTests.xctest;
-			remoteRef = 99F90BC91FB0DE4E00C2AD9C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		99FC80D91BBD147B0068503C /* Resources */ = {
@@ -245,19 +174,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		99F90BCC1FB0DE7500C2AD9C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Stevia;
-			targetProxy = 99F90BCB1FB0DE7500C2AD9C /* PBXContainerItemProxy */;
-		};
-		E27AF8B12247476800BD88F8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Stevia;
-			targetProxy = E27AF8B02247476800BD88F8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		99FC80E71BBD147B0068503C /* LaunchScreen.storyboard */ = {
@@ -370,7 +286,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -382,7 +299,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = LoginStevia/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.octopepper.LoginNadir;
 				PRODUCT_NAME = LoginStevia;
 				SWIFT_VERSION = 5.0;
@@ -396,7 +316,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = LoginStevia/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.octopepper.LoginNadir;
 				PRODUCT_NAME = LoginStevia;
 				SWIFT_VERSION = 5.0;
@@ -425,6 +348,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99E2AA8C23BF7C4E00CBD63C /* Stevia */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Stevia;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 99FC80D31BBD147B0068503C /* Project object */;
 }

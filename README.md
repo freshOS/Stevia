@@ -103,6 +103,9 @@ Learn more about how to set up live reload [here](http://freshos.org/SteviaDocs/
 
 
 ### ⚙️ Installation
+
+The Swift Package Manager (SPM) is now the official way to install `stevia`. The other package managers are now deprecated as of `4.8.0` and won't be supported in future versions.
+
 Get started [here](http://freshos.org/SteviaDocs/installation/).
 
 ### 📖 Documentation
