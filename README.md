@@ -109,7 +109,7 @@ The Swift Package Manager (SPM) is now the official way to install `stevia`. The
 Get started [here](http://freshos.org/SteviaDocs/installation/).
 
 ### 📖 Documentation
-You can find the full documentation [here](http://freshos.org/SteviaDocs/).
+You can find the full documentation [here](https://freshos.github.io/SteviaDocs/).
 
 ### 👨‍💻 Contributors
 
