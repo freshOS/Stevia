@@ -33,6 +33,11 @@ public func ~ (left: UIView, right: CGFloat) -> UIView {
 }
 
 @discardableResult
+public func ~ (left: UIView, right: SteviaPercentage) -> UIView {
+    return left.height(right)
+}
+
+@discardableResult
 public func ~ (left: UIView, right: SteviaFlexibleMargin) -> UIView {
     return left.height(right)
 }

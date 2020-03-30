@@ -47,6 +47,26 @@ class SizeTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 23, accuracy: CGFloat(Float.ulpOfOne))
     }
     
+    func testHeightPercentage() {
+        v.width(100)
+        v.height(40%)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, ctrler.view.frame.height*0.4, accuracy:0.5)
+    }
+    
+    func testWidthPercentage() {
+        v.height(100)
+        v.width(87%)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, ctrler.view.frame.width*0.87, accuracy: 0.5)
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
     func testEqualSizes() {
         let width: CGFloat = 24
         let height: CGFloat = 267
