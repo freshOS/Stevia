@@ -158,6 +158,15 @@ class LayoutTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 180, accuracy: CGFloat(Float.ulpOfOne))
     }
     
+    func testHeightPercentage() {
+        v ~ 25%
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, ctrler.view.frame.height*0.25, accuracy: 0.5)
+    }
+    
     func testMultipleHeightsAtOnce() {
         let v1 = UIView()
         let v2 = UIView()

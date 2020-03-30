@@ -41,6 +41,7 @@ public extension UIView {
     func layout(_ objects: [Any]) -> [UIView] {
         var previousMargin: CGFloat?
         var previousFlexibleMargin: SteviaFlexibleMargin?
+        var previousPercentMargin: SteviaPercentage?
         
         for (i, o) in objects.enumerated() {
             
@@ -77,6 +78,23 @@ public extension UIView {
                         }
                     }
                     previousFlexibleMargin = nil
+                } else if let ppm = previousPercentMargin {
+                    if i == 1 {
+                        v.top(ppm) // only if first view
+                    } else {
+                        if let vx = objects[i-2] as? UIView {
+                            // Add layout guide to suport %-based spaces.
+                            let percent = ppm.value / 100
+                            let lg = UILayoutGuide()
+                            addLayoutGuide(lg)
+                            NSLayoutConstraint.activate([
+                                lg.topAnchor.constraint(equalTo: vx.bottomAnchor),
+                                lg.heightAnchor.constraint(equalTo: heightAnchor, multiplier: percent),
+                                v.topAnchor.constraint(equalTo: lg.bottomAnchor)
+                            ])
+                        }
+                    }
+                    previousPercentMargin = nil
                 } else {
                     tryStackViewVerticallyWithPreviousView(v, index: i, objects: objects)
                 }
@@ -106,6 +124,16 @@ public extension UIView {
                         va.first!.bottom(fm)
                     }
                 }
+                case let pm as SteviaPercentage:
+                    previousPercentMargin = pm // Store margin for next pass
+                    if i != 0 && i == (objects.count - 1) {
+                        //Last Margin, Bottom
+                        if let previousView = objects[i-1] as? UIView {
+                            previousView.bottom(pm)
+                        } else if let va = objects[i-1] as? [UIView] {
+                            va.first!.bottom(pm)
+                        }
+                    }
             case _ as String:() //Do nothin' !
             case let a as [UIView]:
                 align(horizontally: a)
