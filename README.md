@@ -106,7 +106,7 @@ Learn more about how to set up live reload [here](https://freshos.github.io/Stev
 
 `Stevia` is installed via the official [Swift Package Manager](https://swift.org/package-manager/).  
 
-Select `Xcode`>`File`> `Swift Packages`>`File`>`Add Package Dependency...`  
+Select `Xcode`>`File`> `Swift Packages`>`Add Package Dependency...`  
 and add `https://github.com/freshOS/Stevia`.
 
 *The Swift Package Manager (SPM) is now the official way to install `stevia`. The other package managers are now deprecated as of `4.8.0` and won't be supported in future versions.  
