@@ -1,6 +1,6 @@
 ![Stevia](https://raw.githubusercontent.com/s4cha/Stevia/master/banner.png)
 
-[![Documentation](https://img.shields.io/badge/Read_the-Docs-67ad5c.svg)](http://freshos.org/SteviaDocs/)
+[![Documentation](https://img.shields.io/badge/Read_the-Docs-67ad5c.svg)](https://freshos.github.io/SteviaDocs/)
 [![Language: Swift 2, 3, 4 and 5](https://img.shields.io/badge/language-swift%205-f48041.svg?style=flat)](https://developer.apple.com/swift)
 ![Platform: iOS 8+](https://img.shields.io/badge/platform-iOS%20|%20tvOS-blue.svg?style=flat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -69,7 +69,7 @@ All Generate **native** NSLayoutConstraints 🎉
 
 ### 👨‍🔬Try it!
 
-Stevia is part of [freshOS](http://freshos.org) iOS toolset. Try it in an example App ! <a class="github-button" href="https://github.com/freshOS/StarterProject/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download freshOS/StarterProject on GitHub">Download Starter Project</a>
+Stevia is part of [freshOS](https://github.com/freshOS) iOS toolset. Try it in an example App ! <a class="github-button" href="https://github.com/freshOS/StarterProject/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download freshOS/StarterProject on GitHub">Download Starter Project</a>
 
 ### 💡 Reason
 Because **nothing holds more truth than pure code** 🤓  
@@ -99,14 +99,14 @@ Stevia + [InjectionForXcode](http://johnholdsworth.com/injection.html) = #WhoNee
 
 *Just `Cmd+S` and you can dev live in the simulator !*
 
-Learn more about how to set up live reload [here](http://freshos.org/SteviaDocs/liveReload/).
+Learn more about how to set up live reload [here](https://freshos.github.io/SteviaDocs/liveReload/).
 
 
 ### ⚙️ Installation
 
 The Swift Package Manager (SPM) is now the official way to install `stevia`. The other package managers are now deprecated as of `4.8.0` and won't be supported in future versions.
 
-Get started [here](http://freshos.org/SteviaDocs/installation/).
+Get started [here](https://freshos.github.io/SteviaDocs/installation/).
 
 ### 📖 Documentation
 You can find the full documentation [here](https://freshos.github.io/SteviaDocs/).
