@@ -13,8 +13,10 @@ class BaselineTests: XCTestCase {
     
     var win: UIWindow!
     var ctrler: UIViewController!
-    var label1: UILabel!
-    var label2: UILabel!
+    var label1 = UILabel()
+    var label2 = UILabel()
+    
+
     
     override func setUp() {
         win = UIWindow(frame: UIScreen.main.bounds)
@@ -22,10 +24,11 @@ class BaselineTests: XCTestCase {
         win.rootViewController = ctrler
         label1 = UILabel()
         label2 = UILabel()
-        ctrler.view.sv(
-            label1,
+            
+        ctrler.view.Subviews {
+            label1
             label2
-        )
+        }
     }
     
     func testAlignLastBaselines() {

@@ -23,7 +23,7 @@ public extension UIView {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func left(_ points: CGFloat) -> Self {
+    func left(_ points: Double) -> Self {
         return position(.left, points: points)
     }
     
@@ -39,7 +39,7 @@ public extension UIView {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func right(_ points: CGFloat) -> Self {
+    func right(_ points: Double) -> Self {
         return position(.right, points: -points)
     }
     
@@ -55,7 +55,7 @@ public extension UIView {
     - Returns: Itself for chaining purposes
     */
     @discardableResult
-    func top(_ points: CGFloat) -> Self {
+    func top(_ points: Double) -> Self {
         return position(.top, points: points)
     }
     
@@ -71,7 +71,7 @@ public extension UIView {
     - Returns: Itself for chaining purposes
     */
     @discardableResult
-    func bottom(_ points: CGFloat) -> Self {
+    func bottom(_ points: Double) -> Self {
         return position(.bottom, points: -points)
     }
 
@@ -170,7 +170,7 @@ public extension UIView {
     */
     
     @discardableResult
-    func leading(_ points: CGFloat) -> UIView {
+    func leading(_ points: Double) -> UIView {
         return position(.leading, points: points)
     }
     
@@ -191,7 +191,7 @@ public extension UIView {
     - Returns: itself for chaining purposes
     */
     @discardableResult
-    func trailing(_ points: CGFloat) -> UIView {
+    func trailing(_ points: Double) -> UIView {
         return position(.trailing, points: -points)
     }
 
@@ -208,7 +208,7 @@ public extension UIView {
     
     fileprivate func position(_ position: NSLayoutConstraint.Attribute,
                               relatedBy: NSLayoutConstraint.Relation = .equal,
-                              points: CGFloat) -> Self {
+                              points: Double) -> Self {
         if let spv = superview {
             let c = constraint(item: self, attribute: position,
                                relatedBy: relatedBy,

@@ -12,9 +12,9 @@ import UIKit
 @available(iOS 9.0, *)
 public struct SteviaLayoutYAxisAnchor {
     let anchor: NSLayoutYAxisAnchor
-    let constant: CGFloat
+    let constant: Double
     
-    init(anchor: NSLayoutYAxisAnchor, constant: CGFloat = 0) {
+    init(anchor: NSLayoutYAxisAnchor, constant: Double = 0) {
         self.anchor = anchor
         self.constant = constant
     }
@@ -23,9 +23,9 @@ public struct SteviaLayoutYAxisAnchor {
 @available(iOS 9.0, *)
 public struct SteviaLayoutXAxisAnchor {
     let anchor: NSLayoutXAxisAnchor
-    let constant: CGFloat
+    let constant: Double
     
-    init(anchor: NSLayoutXAxisAnchor, constant: CGFloat = 0) {
+    init(anchor: NSLayoutXAxisAnchor, constant: Double = 0) {
         self.anchor = anchor
         self.constant = constant
     }
@@ -74,15 +74,15 @@ public func == (left: SteviaAttribute, right: SteviaLayoutYAxisAnchor) -> NSLayo
     var constraint = NSLayoutConstraint()
     
     if left.attribute == .top {
-        constraint = left.view.topAnchor.constraint(equalTo: right.anchor, constant: right.constant)
+        constraint = left.view.topAnchor.constraint(equalTo: right.anchor, constant: CGFloat(right.constant))
     }
     
     if left.attribute == .bottom {
-        constraint = left.view.bottomAnchor.constraint(equalTo: right.anchor, constant: right.constant)
+        constraint = left.view.bottomAnchor.constraint(equalTo: right.anchor, constant: CGFloat(right.constant))
     }
     
     if left.attribute == .centerY {
-        constraint = left.view.centerYAnchor.constraint(equalTo: right.anchor, constant: right.constant)
+        constraint = left.view.centerYAnchor.constraint(equalTo: right.anchor, constant: CGFloat(right.constant))
     }
     
     constraint.isActive = true
@@ -96,23 +96,23 @@ public func == (left: SteviaAttribute, right: SteviaLayoutXAxisAnchor) -> NSLayo
     var constraint = NSLayoutConstraint()
     
     if left.attribute == .left {
-        constraint = left.view.leftAnchor.constraint(equalTo: right.anchor, constant: right.constant)
+        constraint = left.view.leftAnchor.constraint(equalTo: right.anchor, constant: CGFloat(right.constant))
     }
     
     if left.attribute == .right {
-        constraint = left.view.rightAnchor.constraint(equalTo: right.anchor, constant: right.constant)
+        constraint = left.view.rightAnchor.constraint(equalTo: right.anchor, constant: CGFloat(right.constant))
     }
     
     if left.attribute == .leading {
-        constraint = left.view.leadingAnchor.constraint(equalTo: right.anchor, constant: right.constant)
+        constraint = left.view.leadingAnchor.constraint(equalTo: right.anchor, constant: CGFloat(right.constant))
     }
     
     if left.attribute == .trailing {
-        constraint = left.view.trailingAnchor.constraint(equalTo: right.anchor, constant: right.constant)
+        constraint = left.view.trailingAnchor.constraint(equalTo: right.anchor, constant: CGFloat(right.constant))
     }
     
     if left.attribute == .centerX {
-        constraint = left.view.centerXAnchor.constraint(equalTo: right.anchor, constant: right.constant)
+        constraint = left.view.centerXAnchor.constraint(equalTo: right.anchor, constant: CGFloat(right.constant))
     }
     
     constraint.isActive = true
@@ -123,25 +123,25 @@ public func == (left: SteviaAttribute, right: SteviaLayoutXAxisAnchor) -> NSLayo
 
 @available(iOS 9.0, *)
 @discardableResult
-public func + (left: SteviaLayoutYAxisAnchor, right: CGFloat) -> SteviaLayoutYAxisAnchor {
+public func + (left: SteviaLayoutYAxisAnchor, right: Double) -> SteviaLayoutYAxisAnchor {
     return SteviaLayoutYAxisAnchor(anchor: left.anchor, constant: right)
 }
 
 @available(iOS 9.0, *)
 @discardableResult
-public func - (left: SteviaLayoutYAxisAnchor, right: CGFloat) -> SteviaLayoutYAxisAnchor {
+public func - (left: SteviaLayoutYAxisAnchor, right: Double) -> SteviaLayoutYAxisAnchor {
     return SteviaLayoutYAxisAnchor(anchor: left.anchor, constant: -right)
 }
 
 @available(iOS 9.0, *)
 @discardableResult
-public func + (left: SteviaLayoutXAxisAnchor, right: CGFloat) -> SteviaLayoutXAxisAnchor {
+public func + (left: SteviaLayoutXAxisAnchor, right: Double) -> SteviaLayoutXAxisAnchor {
     return SteviaLayoutXAxisAnchor(anchor: left.anchor, constant: right)
 }
 
 @available(iOS 9.0, *)
 @discardableResult
-public func - (left: SteviaLayoutXAxisAnchor, right: CGFloat) -> SteviaLayoutXAxisAnchor {
+public func - (left: SteviaLayoutXAxisAnchor, right: Double) -> SteviaLayoutXAxisAnchor {
     return SteviaLayoutXAxisAnchor(anchor: left.anchor, constant: -right)
 }
 

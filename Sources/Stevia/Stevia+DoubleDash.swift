@@ -12,7 +12,7 @@ import UIKit
 infix operator -- :AdditionPrecedence
 
 @discardableResult
-public func -- (left: UIView, right: CGFloat) -> PartialConstraint {
+public func -- (left: UIView, right: Double) -> PartialConstraint {
     return left-right
 }
 
@@ -42,7 +42,7 @@ public func -- (left: UIView, right: UIView) -> [UIView] {
 }
 
 @discardableResult
-public func -- (left: [UIView], right: CGFloat) -> PartialConstraint {
+public func -- (left: [UIView], right: Double) -> PartialConstraint {
     return left-right
 }
 

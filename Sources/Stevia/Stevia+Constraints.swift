@@ -41,8 +41,8 @@ public extension UIView {
                               relatedBy: NSLayoutConstraint.Relation = .equal,
                               toItem view2: AnyObject? = nil,
                               attribute attr2: NSLayoutConstraint.Attribute? = nil,
-                              multiplier: CGFloat = 1,
-                              constant: CGFloat = 0) -> NSLayoutConstraint {
+                              multiplier: Double = 1,
+                              constant: Double = 0) -> NSLayoutConstraint {
         let c = constraint(
             item: view1, attribute: attr1,
             relatedBy: relatedBy,
@@ -74,12 +74,12 @@ func constraint(item view1: AnyObject,
                        relatedBy: NSLayoutConstraint.Relation = .equal,
                        toItem view2: AnyObject? = nil,
                        attribute attr2: NSLayoutConstraint.Attribute? = nil, // Not an attribute??
-                       multiplier: CGFloat = 1,
-                       constant: CGFloat = 0) -> NSLayoutConstraint {
+                       multiplier: Double = 1,
+                       constant: Double = 0) -> NSLayoutConstraint {
         let c =  NSLayoutConstraint(item: view1, attribute: attr1,
                                   relatedBy: relatedBy,
                                   toItem: view2, attribute: ((attr2 == nil) ? attr1 : attr2! ),
-                                  multiplier: multiplier, constant: constant)
+                                  multiplier: CGFloat(multiplier), constant: CGFloat(constant))
     c.priority = UILayoutPriority(rawValue: UILayoutPriority.defaultHigh.rawValue + 1)
     return c
 }
