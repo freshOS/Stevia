@@ -9,6 +9,12 @@
 #if canImport(UIKit)
 import UIKit
 
+@_functionBuilder public struct SubviewsBuilder {
+    public static func buildBlock(_ content: UIView...) -> [UIView] {
+        return content
+    }
+}
+
 public extension UIView {
     
     /**
@@ -46,6 +52,84 @@ public extension UIView {
     @discardableResult
     func sv(_ subViews: UIView...) -> UIView {
         return sv(subViews)
+    }
+    
+    /**
+     Defines the view hierachy for the view.
+     
+     Esentially, this is just a shortcut to `addSubview`
+     and 'translatesAutoresizingMaskIntoConstraints = false'
+     
+     
+     
+     ```
+     class MyView: UIView {
+     
+     let email = UITextField()
+     let password = UITextField()
+     let login = UIButton()
+     
+        convenience init() {
+        self.init(frame: CGRect.zero)
+     
+         Subviews {
+            email
+            password
+            login
+        }
+        ...
+     
+        }
+     }
+     
+     ```
+     
+     - Returns: Itself to enable nested layouts.
+     */
+    @discardableResult
+    func Subviews(@SubviewsBuilder content: () -> [UIView]) -> UIView {
+        let subviews = content()
+        sv(subviews)
+        return self
+    }
+
+    /**
+     Defines the view hierachy for the view.
+     
+     Esentially, this is just a shortcut to `addSubview`
+     and 'translatesAutoresizingMaskIntoConstraints = false'
+     
+     
+     
+     ```
+     class MyView: UIView {
+     
+     let email = UITextField()
+     let password = UITextField()
+     let login = UIButton()
+     
+        convenience init() {
+        self.init(frame: CGRect.zero)
+     
+         Subviews {
+            email
+            password
+            login
+        }
+        ...
+     
+        }
+     }
+     
+     ```
+     
+     - Returns: Itself to enable nested layouts.
+     */
+    @discardableResult
+    func Subviews(@SubviewsBuilder content: () -> UIView) -> UIView {
+        let subview = content()
+        sv(subview)
+        return self
     }
 
     /**
