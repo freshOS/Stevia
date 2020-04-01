@@ -21,7 +21,9 @@ class SizeTests: XCTestCase {
         ctrler =  UIViewController()
         win.rootViewController = ctrler
         v = UIView()
-        ctrler.view.sv(v)
+        ctrler.view.Subviews {
+            v
+        }
     }
     
     override func tearDown() {
@@ -68,13 +70,14 @@ class SizeTests: XCTestCase {
     }
     
     func testEqualSizes() {
-        let width: CGFloat = 24
-        let height: CGFloat = 267
+        let width = 24.0
+        let height = 267.0
         let v1 = UIView()
         let v2 = UIView()
-        ctrler.view.sv(
-            v1, v2
-        )
+        ctrler.view.Subviews {
+            v1
+            v2
+        }
         v1.height(height)
         v1.width(width)
         equal(sizes: [v1, v2])
@@ -84,13 +87,14 @@ class SizeTests: XCTestCase {
     }
 
     func testVariadicEqualSizes() {
-        let width: CGFloat = 24
-        let height: CGFloat = 267
+        let width = 24.0
+        let height = 267.0
         let v1 = UIView()
         let v2 = UIView()
-        ctrler.view.sv(
-            v1, v2
-            )
+        ctrler.view.Subviews {
+            v1
+            v2
+        }
         v1.height(height)
         v1.width(width)
         equal(sizes: v1, v2)
@@ -102,14 +106,18 @@ class SizeTests: XCTestCase {
     func testFollwEdges() {
         let v1 = UIView()
         let v2 = UIView()
-        ctrler.view.sv(
-            v1, v2
-        )
+        ctrler.view.Subviews {
+            v1
+            v2
+        }
         
-        ctrler.view.layout(
-            10,
+        let test = ctrler.view
+        
+        test!.Layout {
+            10
             |-20-v1| ~ 32
-        )
+        }
+        
 
         ctrler.view.layoutIfNeeded()
         
@@ -161,8 +169,13 @@ class SizeTests: XCTestCase {
         v.removeFromSuperview()
         v.height(80)
         v.width(80)
-        ctrler.view.sv(v)
-        ctrler.view.layout(0, |v)
+        ctrler.view?.Subviews { v }
+        
+        let view = ctrler.view
+        view?.Layout {
+            0
+            |v
+        }
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.width, 80, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 80, accuracy: CGFloat(Float.ulpOfOne))

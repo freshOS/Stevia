@@ -27,21 +27,22 @@ class FillTests: XCTestCase {
 
     func testFillContainer() {
         let b = UIButton()
-        ctrler.view.sv(b)
+        ctrler.view.Subviews { b }
         b.fillContainer()
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(ctrler.view.frame, b.frame)
     }
     
+    
     func testFillContainerWithPadding() {
-        let padding: CGFloat = 10.0
+        let padding = 10.0
         let b = UIButton()
-        ctrler.view.sv(b)
+        ctrler.view.Subviews { b }
         b.fillContainer(padding)
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
-        XCTAssertEqual(ctrler.view.frame.height, b.frame.height + padding * 2,
+        XCTAssertEqual(ctrler.view.frame.height, b.frame.height + CGFloat(padding) * 2,
                                    accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(ctrler.view.frame.width, b.frame.width + padding * 2,
+        XCTAssertEqual(ctrler.view.frame.width, b.frame.width + CGFloat(padding) * 2,
                                    accuracy: CGFloat(Float.ulpOfOne))
     }
 }

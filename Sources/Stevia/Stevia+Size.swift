@@ -27,10 +27,30 @@ public extension UIView {
      
      */
     @discardableResult
-    func size(_ points: CGFloat) -> Self {
+    func size(_ points: Double) -> Self {
         width(points)
         height(points)
         return self
+    }
+    
+    /**
+     Adds an Autolayout constraint for sizing the view.
+     
+     ```
+     image.size(100)
+     image.size(100%)
+     
+     // is equivalent to
+     
+     image.width(100).height(100)
+     ```
+     
+     - Returns: Itself, enabling chaining,
+     
+     */
+    @discardableResult
+    func size(_ points: Int) -> Self {
+        size(Double(points))
     }
     
     /**
@@ -53,8 +73,32 @@ public extension UIView {
      
      */
     @discardableResult
-    func height(_ points: CGFloat) -> Self {
-        return size(.height, points: points)
+    func height(_ points: Double) -> Self {
+        size(.height, points: points)
+    }
+    
+    /**
+     Adds an Autolayout constraint for setting the view's height.
+     
+     ```
+     image.height(100)
+     
+     // is equivalent to
+     
+     image ~ 100
+     
+     // Flexible margins
+     image.height(<=100)
+     image.height(>=100)
+     image.height(100%)
+     ```
+     
+     - Returns: Itself, enabling chaining,
+     
+     */
+    @discardableResult
+    func height(_ points: Int) -> Self {
+        size(.height, points: Double(points))
     }
     
     /**
@@ -71,8 +115,26 @@ public extension UIView {
      
      */
     @discardableResult
-    func width(_ points: CGFloat) -> Self {
-        return size(.width, points: points)
+    func width(_ points: Double) -> Self {
+        size(.width, points: points)
+    }
+    
+    /**
+     Adds an Autolayout constraint for setting the view's width.
+     
+     ```
+     image.width(100)
+     image.width(<=100)
+     image.width(>=100)
+     image.width(100%)
+     ```
+     
+     - Returns: Itself, enabling chaining,
+     
+     */
+    @discardableResult
+    func width(_ points: Int) -> Self {
+        size(.width, points: Double(points))
     }
     
     /**
@@ -119,7 +181,7 @@ public extension UIView {
     
     fileprivate func size(_ attribute: NSLayoutConstraint.Attribute,
                           relatedBy: NSLayoutConstraint.Relation = .equal,
-                          points: CGFloat) -> Self {
+                          points: Double) -> Self {
         let c = constraint(item: self,
                            attribute: attribute,
                            relatedBy: relatedBy,

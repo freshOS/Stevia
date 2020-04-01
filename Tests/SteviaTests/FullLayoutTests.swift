@@ -21,34 +21,35 @@ class TestView: UIView {
     convenience init() {
         self.init(frame: CGRect.zero)
         
-        sv(
-            email,
-            password,
+        Subviews {
+            email
+            password
             login
-        )
-        
-        layout(
-            100,
-            |-email-22-| ~ 10%,
-            20,
-            |password.width(54) ~ 47,
-            "",
-            login.centerHorizontally() ~ 99,
+        }
+  
+        Layout {
+            100
+            |-email-22-| ~ 10%
+            20
+            |password.width(54) ~ 47
+            >=0
+            login.centerHorizontally() ~ 99
             7
-        )
+        }
         
-        sv(
-            view1,
+        Subviews {
+            view1
             view2
-        )
+        }
         
-        layout(
-            10%,
-            |view1| ~ 20,
-            33%,
-            |view2|,
+        Layout {
+            10%
+            |view1| ~ 20
+            33%
+            |view2|
             20%
-        )
+        }
+        
     }
 }
 

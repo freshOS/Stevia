@@ -22,24 +22,24 @@ class LoginViewStevia: UIView {
         // View Hierarchy
         // This essentially does `translatesAutoresizingMaskIntoConstraints = false`
         // and `addSubsview()`. The neat benefit is that
-        // (`sv` calls can be nested which will visually show hierarchy ! )
-        sv(
-            email,
-            password,
+        // (`Subviews` calls can be nested which will visually show hierarchy ! )
+        Subviews {
+            email
+            password
             login
-        )
+        }
         
         // Vertical + Horizontal Layout in one pass
         // With type-safe visual format
-        layout(
-            100,
-            |-email-| ~ 80,
-            8,
-            |-password-| ~ 80,
-            "",
-            |login| ~ 80,
+        Layout {
+            100
+            |-email-| ~ 80
+            8
+            |-password-| ~ 80
+            >=20
+            |login| ~ 80
             0
-        )
+        }
         
         // ⛓ Chainable api
 //        email.top(100).fillHorizontally(m: 8).height(80)
