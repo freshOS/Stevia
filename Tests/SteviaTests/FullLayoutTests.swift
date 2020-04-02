@@ -28,10 +28,10 @@ class TestView: UIView {
         }
   
         Layout {
-            100
+            100.5
             |-email-22-| ~ 10%
             20
-            |password.width(54) ~ 47
+            |password.width(54) ~ 47.0
             >=0
             login.centerHorizontally() ~ 99
             7
@@ -84,7 +84,7 @@ class FullLayoutTests: XCTestCase {
         v.layoutIfNeeded()
 
         // Email
-        XCTAssertEqual(v.email.frame.origin.y, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.email.frame.origin.y, 100.5, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.email.frame.origin.x, 8, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.email.frame.width, win.frame.width - 8 - 22,
                                    accuracy: CGFloat(Float.ulpOfOne))
@@ -120,7 +120,7 @@ class FullLayoutTests: XCTestCase {
         v.layoutIfNeeded()
 
         // Email
-        XCTAssertEqual(v.email.frame.origin.y, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.email.frame.origin.y, 100.5, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.email.frame.origin.x, 22, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.email.frame.width, win.frame.width - 8 - 22,
                                    accuracy: CGFloat(Float.ulpOfOne))

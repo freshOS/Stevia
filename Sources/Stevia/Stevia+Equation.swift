@@ -213,11 +213,6 @@ public func * <T: BinaryInteger>(left: SteviaAttribute, right: T) -> SteviaAttri
 }
 
 @discardableResult
-public func * (left: SteviaAttribute, right: Int) -> SteviaAttribute {
-    left * Double(right)
-}
-
-@discardableResult
 public func / <T: BinaryFloatingPoint>(left: SteviaAttribute, right: T) -> SteviaAttribute {
     left * (1/Double(right))
 }

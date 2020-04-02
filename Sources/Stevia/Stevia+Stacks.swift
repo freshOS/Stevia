@@ -19,8 +19,20 @@ extension SteviaLayoutItem {
 }
 extension UIView: SteviaLayoutItem {}
 extension Int: SteviaLayoutItem {}
+extension Int8: SteviaLayoutItem {}
+extension Int16: SteviaLayoutItem {}
+extension Int32: SteviaLayoutItem {}
+extension Int64: SteviaLayoutItem {}
+extension UInt: SteviaLayoutItem {}
+extension UInt8: SteviaLayoutItem {}
+extension UInt16: SteviaLayoutItem {}
+extension UInt32: SteviaLayoutItem {}
+extension UInt64: SteviaLayoutItem {}
 extension Double: SteviaLayoutItem {}
+extension Float: SteviaLayoutItem {}
+extension CGFloat: SteviaLayoutItem {}
 extension String: SteviaLayoutItem {}
+
 extension FlexibleSpace: SteviaLayoutItem {}
 extension SteviaFlexibleMargin: SteviaLayoutItem {}
 extension SteviaPercentage: SteviaLayoutItem {}
@@ -29,7 +41,6 @@ extension Array: SteviaLayoutItem where Element: UIView {}
 public struct FlexibleSpace {
     public init() {}
 }
-
 
 @_functionBuilder public struct SteviaLayoutBuilder {
     public static func buildBlock(_ content: SteviaLayoutItem...) -> [SteviaLayoutItem] {

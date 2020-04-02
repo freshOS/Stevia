@@ -34,7 +34,7 @@ public extension UIView {
      A padding can be used to apply equal spaces between the view and its superview
     */
     @discardableResult
-    func fillContainer(padding: Int) -> Self {
+    func fillContainer<T: BinaryInteger>(padding: T) -> Self {
         fillContainer(padding: Double(padding))
     }
 

@@ -14,12 +14,12 @@ public struct SteviaPercentage {
 }
 
 postfix operator %
-public postfix func % (v: Double) -> SteviaPercentage {
-    return SteviaPercentage(value: v)
+public postfix func % <T: BinaryFloatingPoint>(v: T) -> SteviaPercentage {
+    SteviaPercentage(value: Double(v))
 }
 
-public postfix func % (v: Int) -> SteviaPercentage {
-    return SteviaPercentage(value: Double(v))
+public postfix func % <T: BinaryInteger>(v: T) -> SteviaPercentage {
+    Double(v)%
 }
 
 public extension UIView {
