@@ -24,7 +24,12 @@ public extension UIView {
      */
     @discardableResult
     func left(_ points: Double) -> Self {
-        return position(.left, points: points)
+        position(.left, points: points)
+    }
+    
+    @discardableResult
+    func left(_ points: Int) -> Self {
+        left(Double(points))
     }
     
     /** Sets the right margin for a view.
@@ -43,6 +48,11 @@ public extension UIView {
         return position(.right, points: -points)
     }
     
+    @discardableResult
+    func right(_ points: Int) -> Self {
+        right(Double(points))
+    }
+    
     /** Sets the top margin for a view.
      
     Example Usage :
@@ -59,6 +69,11 @@ public extension UIView {
         return position(.top, points: points)
     }
     
+    @discardableResult
+    func top(_ points: Int) -> Self {
+        top(Double(points))
+    }
+    
     /** Sets the bottom margin for a view.
      
     Example Usage :
@@ -73,6 +88,11 @@ public extension UIView {
     @discardableResult
     func bottom(_ points: Double) -> Self {
         return position(.bottom, points: -points)
+    }
+    
+    @discardableResult
+    func bottom(_ points: Int) -> Self {
+        bottom(Double(points))
     }
 
     /** Sets the left margin for a view.

@@ -23,7 +23,19 @@ class CenterTests: XCTestCase {
         win.rootViewController = ctrler
         v = UIView()
         ctrler.view.Subviews { v }
-        verifyViewHasDefaultValues()
+        
+        // verify view h as default values
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        
+        v.size(100)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
     
     override func tearDown() {
@@ -31,12 +43,6 @@ class CenterTests: XCTestCase {
     }
     
     func testCenterHorizontally() {
-        v.size(100)
-        ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
         v.centerHorizontally()
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
@@ -48,14 +54,32 @@ class CenterTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
     
-    func testCenterHorizontallyWithOffset() {
-        v.size(100)
+    func testCenterHorizontallyWithOffsetDouble() {
+        v.centerHorizontally(offset: Double(50))
+        ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x - 50,
+                                   ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
+                                   accuracy: CGFloat(magicalIphoneXShift))
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
-        v.centerHorizontally(50)
+    }
+    
+    func testCenterHorizontallyWithOffsetCGFloat() {
+        v.centerHorizontally(offset: CGFloat(50))
+        ctrler.view.setNeedsLayout()
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x - 50,
+                                   ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
+                                   accuracy: CGFloat(magicalIphoneXShift))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testCenterHorizontallyWithOffsetInt() {
+        v.centerHorizontally(offset: Int(50))
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -66,14 +90,7 @@ class CenterTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
 
-    
     func testCenterVertically() {
-        v.size(100)
-        ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
         v.centerVertically()
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
@@ -85,14 +102,32 @@ class CenterTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
     
-    func testCenterVerticallyWithOffset() {
-        v.size(100)
+    func testCenterVerticallyWithOffsetDouble() {
+        v.centerVertically(offset: Double(50))
+        ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.y - 50,
+                                   ctrler.view.frame.height/2.0 - (v.frame.height/2.0),
+                                   accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
-        v.centerVertically(50)
+    }
+    
+    func testCenterVerticallyWithOffsetCGFloat() {
+        v.centerVertically(offset: CGFloat(50))
+        ctrler.view.setNeedsLayout()
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y - 50,
+                                   ctrler.view.frame.height/2.0 - (v.frame.height/2.0),
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testCenterVerticallyWithOffsetInt() {
+        v.centerVertically(offset: Int(50))
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y - 50,
@@ -104,12 +139,6 @@ class CenterTests: XCTestCase {
     }
     
     func testCenterInContainer() {
-        v.size(100)
-        ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
         v.centerInContainer()
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
@@ -121,12 +150,5 @@ class CenterTests: XCTestCase {
                                    accuracy: CGFloat(magicalIphoneXShift))
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
-    }
-
-    func verifyViewHasDefaultValues() {
-        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
     }
 }

@@ -148,7 +148,7 @@ private func align(_ axis: NSLayoutConstraint.Axis, views: [UIView]) {
     }
 }
 
-private func align(_ axis: NSLayoutConstraint.Axis, v1: UIView, with v2: UIView, offset: Double) {
+func align(_ axis: NSLayoutConstraint.Axis, v1: UIView, with v2: UIView, offset: Double) {
     if let spv = v1.superview {
         let center: NSLayoutConstraint.Attribute = axis == .horizontal ? .centerY : .centerX
         let c = constraint(item: v1, attribute: center, toItem: v2, constant: offset)

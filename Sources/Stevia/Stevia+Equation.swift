@@ -184,27 +184,52 @@ private func applyRelation(left: SteviaAttribute, right: SteviaAttribute, relate
 
 @discardableResult
 public func + (left: SteviaAttribute, right: Double) -> SteviaAttribute {
-    return SteviaAttribute(view: left.view, attribute: left.attribute, constant: right, multiplier: left.multiplier)
+    SteviaAttribute(view: left.view, attribute: left.attribute, constant: right, multiplier: left.multiplier)
+}
+
+@discardableResult
+public func + (left: SteviaAttribute, right: Int) -> SteviaAttribute {
+    left + Double(right)
 }
 
 @discardableResult
 public func - (left: SteviaAttribute, right: Double) -> SteviaAttribute {
-    return SteviaAttribute(view: left.view, attribute: left.attribute, constant: -right, multiplier: left.multiplier)
+    SteviaAttribute(view: left.view, attribute: left.attribute, constant: -right, multiplier: left.multiplier)
+}
+
+@discardableResult
+public func - (left: SteviaAttribute, right: Int) -> SteviaAttribute {
+    left - Double(right)
 }
 
 @discardableResult
 public func * (left: SteviaAttribute, right: Double) -> SteviaAttribute {
-    return SteviaAttribute(view: left.view, attribute: left.attribute, constant: left.constant, multiplier: right)
+    SteviaAttribute(view: left.view, attribute: left.attribute, constant: left.constant, multiplier: right)
+}
+
+@discardableResult
+public func * (left: SteviaAttribute, right: Int) -> SteviaAttribute {
+    left * Double(right)
 }
 
 @discardableResult
 public func / (left: SteviaAttribute, right: Double) -> SteviaAttribute {
-    return left * (1/right)
+    left * (1/right)
+}
+
+@discardableResult
+public func / (left: SteviaAttribute, right: Int) -> SteviaAttribute {
+    left / Double(right)
 }
 
 @discardableResult
 public func % (left: Double, right: SteviaAttribute) -> SteviaAttribute {
-    return right * (left/100)
+    right * (left/100)
+}
+
+@discardableResult
+public func % (left: Int, right: SteviaAttribute) -> SteviaAttribute {
+    Double(left) % right
 }
 
 // MARK: - Equations of type v.P == X
