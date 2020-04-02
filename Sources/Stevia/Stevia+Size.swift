@@ -115,8 +115,8 @@ public extension UIView {
      
      */
     @discardableResult
-    func width(_ points: Double) -> Self {
-        size(.width, points: points)
+    func width<T: BinaryFloatingPoint>(_ points: T) -> Self {
+        size(.width, points: Double(points))
     }
     
     /**
@@ -133,10 +133,10 @@ public extension UIView {
      
      */
     @discardableResult
-    func width(_ points: Int) -> Self {
-        size(.width, points: Double(points))
+    func width<T: BinaryInteger>(_ points: T) -> Self {
+        width(Double(points))
     }
-    
+
     /**
      Adds an Autolayout constraint for setting the view's height.
      

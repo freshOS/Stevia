@@ -32,6 +32,15 @@ class SizeTests: XCTestCase {
     
     func testSize() {
         v.size(57)
+        
+//        v.width(1)
+//        v.width(1.0)
+//        v.width(CGFloat(1))
+//        v.width(Float(1))
+//        v.width(Double(1))
+//        v.width(Int(1))
+//        v.width(UInt(1))
+        
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))

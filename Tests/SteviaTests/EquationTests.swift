@@ -406,7 +406,7 @@ class EquationTests: XCTestCase {
             dropdown
         }
         
-        box.fillContainer(60)
+        box.fillContainer(padding: 60)
         |-field-|.top(1).height(50)//centerVertically()
         
         |dropdown|
