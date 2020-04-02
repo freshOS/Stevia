@@ -11,25 +11,24 @@ import UIKit
 
 prefix operator >=
 @discardableResult
-public prefix func >= (p: Double) -> SteviaFlexibleMargin {
-    SteviaFlexibleMargin(points: p, relation: .greaterThanOrEqual)
-}
-
-@discardableResult
-public prefix func >= (p: Int) -> SteviaFlexibleMargin {
+public prefix func >= <T: BinaryFloatingPoint>(p: T) -> SteviaFlexibleMargin {
     SteviaFlexibleMargin(points: Double(p), relation: .greaterThanOrEqual)
 }
 
+@discardableResult
+public prefix func >= <T: BinaryInteger>(p: T) -> SteviaFlexibleMargin {
+    >=Double(p)
+}
 
 prefix operator <=
 @discardableResult
-public prefix func <= (p: Double) -> SteviaFlexibleMargin {
-    SteviaFlexibleMargin(points: p, relation: .lessThanOrEqual)
+public prefix func <= <T: BinaryFloatingPoint>(p: T) -> SteviaFlexibleMargin {
+    SteviaFlexibleMargin(points: Double(p), relation: .lessThanOrEqual)
 }
 
 @discardableResult
-public prefix func <= (p: Int) -> SteviaFlexibleMargin {
-    SteviaFlexibleMargin(points: Double(p), relation: .lessThanOrEqual)
+public prefix func <= <T: BinaryInteger>(p: T) -> SteviaFlexibleMargin {
+    <=Double(p)
 }
 
 public struct SteviaFlexibleMargin {
