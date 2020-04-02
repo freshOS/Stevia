@@ -12,8 +12,12 @@ import UIKit
 infix operator -- :AdditionPrecedence
 
 @discardableResult
-public func -- (left: UIView, right: Double) -> PartialConstraint {
-    return left-right
+public func -- <T: BinaryFloatingPoint>(left: UIView, right: T) -> PartialConstraint {
+    return left-Double(right)
+}
+
+public func -- <T: BinaryInteger>(left: UIView, right: T) -> PartialConstraint {
+    return left--Double(right)
 }
 
 @discardableResult
@@ -42,8 +46,13 @@ public func -- (left: UIView, right: UIView) -> [UIView] {
 }
 
 @discardableResult
-public func -- (left: [UIView], right: Double) -> PartialConstraint {
-    return left-right
+public func -- <T: BinaryFloatingPoint>(left: [UIView], right: T) -> PartialConstraint {
+    return left-Double(right)
+}
+
+@discardableResult
+public func -- <T: BinaryInteger>(left: [UIView], right: T) -> PartialConstraint {
+    return left--Double(right)
 }
 
 @discardableResult
