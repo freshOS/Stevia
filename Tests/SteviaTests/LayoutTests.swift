@@ -29,6 +29,17 @@ class LayoutTests: XCTestCase {
         super.tearDown()
     }
     
+    func testComplexLayout() {
+        let featureA = UIView()
+        let featureB = UIView()
+        
+        let m1:Int = 6
+        let m2:Int = 2
+//        |-6-featureA-2-featureB-6-|
+        |-m1-featureA-m2-featureB-m1-|
+        //align(horizontally: |-6-feature1-2-feature2-6-|)
+    }
+    
     func testEmptyLeftMargin() {
         |v
         ctrler.view.layoutIfNeeded()
