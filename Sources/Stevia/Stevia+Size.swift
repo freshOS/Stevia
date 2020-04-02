@@ -27,7 +27,7 @@ public extension UIView {
      
      */
     @discardableResult
-    func size(_ points: Double) -> Self {
+    func size<T: BinaryFloatingPoint>(_ points: T) -> Self {
         width(points)
         height(points)
         return self
@@ -49,7 +49,7 @@ public extension UIView {
      
      */
     @discardableResult
-    func size(_ points: Int) -> Self {
+    func size<T: BinaryInteger>(_ points: T) -> Self {
         size(Double(points))
     }
     
@@ -73,8 +73,8 @@ public extension UIView {
      
      */
     @discardableResult
-    func height(_ points: Double) -> Self {
-        size(.height, points: points)
+    func height<T: BinaryFloatingPoint>(_ points: T) -> Self {
+        size(.height, points: Double(points))
     }
     
     /**
@@ -97,8 +97,8 @@ public extension UIView {
      
      */
     @discardableResult
-    func height(_ points: Int) -> Self {
-        size(.height, points: Double(points))
+    func height<T: BinaryInteger>(_ points: T) -> Self {
+        height(Double(points))
     }
     
     /**

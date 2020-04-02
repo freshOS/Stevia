@@ -23,12 +23,23 @@ public extension UIView {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func left(_ points: Double) -> Self {
-        position(.left, points: points)
+    func left<T: BinaryFloatingPoint>(_ points: T) -> Self {
+        position(.left, points: Double(points))
     }
     
+    /** Sets the left margin for a view.
+     
+    Example Usage :
+     
+     label.left(20)
+     label.left(<=20)
+     label.left(>=20)
+     label.left(20%)
+     
+     - Returns: Itself for chaining purposes
+     */
     @discardableResult
-    func left(_ points: Int) -> Self {
+    func left<T: BinaryInteger>(_ points: T) -> Self {
         left(Double(points))
     }
     
@@ -44,12 +55,23 @@ public extension UIView {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func right(_ points: Double) -> Self {
-        return position(.right, points: -points)
+    func right<T: BinaryFloatingPoint>(_ points: T) -> Self {
+        position(.right, points: -Double(points))
     }
     
+    /** Sets the right margin for a view.
+     
+    Example Usage :
+     
+     label.right(20)
+     label.right(<=20)
+     label.right(>=20)
+     label.right(20%)
+     
+     - Returns: Itself for chaining purposes
+     */
     @discardableResult
-    func right(_ points: Int) -> Self {
+    func right<T: BinaryInteger>(_ points: T) -> Self {
         right(Double(points))
     }
     
@@ -65,12 +87,23 @@ public extension UIView {
     - Returns: Itself for chaining purposes
     */
     @discardableResult
-    func top(_ points: Double) -> Self {
-        return position(.top, points: points)
+    func top<T: BinaryFloatingPoint>(_ points: T) -> Self {
+        position(.top, points: Double(points))
     }
     
+    /** Sets the top margin for a view.
+     
+    Example Usage :
+     
+     label.top(20)
+     label.top(<=20)
+     label.top(>=20)
+     label.top(20%)
+     
+    - Returns: Itself for chaining purposes
+    */
     @discardableResult
-    func top(_ points: Int) -> Self {
+    func top<T: BinaryInteger>(_ points: T) -> Self {
         top(Double(points))
     }
     
@@ -86,12 +119,23 @@ public extension UIView {
     - Returns: Itself for chaining purposes
     */
     @discardableResult
-    func bottom(_ points: Double) -> Self {
-        return position(.bottom, points: -points)
+    func bottom<T: BinaryFloatingPoint>(_ points: T) -> Self {
+        position(.bottom, points: -Double(points))
     }
     
+    /** Sets the bottom margin for a view.
+     
+    Example Usage :
+     
+     label.bottom(20)
+     label.bottom(<=20)
+     label.bottom(>=20)
+     label.bottom(20%)
+     
+    - Returns: Itself for chaining purposes
+    */
     @discardableResult
-    func bottom(_ points: Int) -> Self {
+    func bottom<T: BinaryInteger>(_ points: T) -> Self {
         bottom(Double(points))
     }
 
@@ -108,7 +152,7 @@ public extension UIView {
     */
     @discardableResult
     func left(_ fm: SteviaFlexibleMargin) -> Self {
-        return position(.left, relatedBy: fm.relation, points: fm.points)
+        position(.left, relatedBy: fm.relation, points: fm.points)
     }
     
     /** Sets the right margin for a view.
@@ -149,7 +193,7 @@ public extension UIView {
      */
     @discardableResult
     func top(_ fm: SteviaFlexibleMargin) -> Self {
-        return position(.top, relatedBy: fm.relation, points: fm.points)
+        position(.top, relatedBy: fm.relation, points: fm.points)
     }
     
     /** Sets the bottom margin for a view.
@@ -190,13 +234,29 @@ public extension UIView {
     */
     
     @discardableResult
-    func leading(_ points: Double) -> UIView {
-        return position(.leading, points: points)
+    func leading<T: BinaryFloatingPoint>(_ points: T) -> UIView {
+        position(.leading, points: Double(points))
+    }
+    
+    /** Sets the leading margin for a view.
+     
+    Example Usage :
+     
+     label.leading(20)
+     label.leading(<=20)
+     label.leading(>=20)
+     label.leading(20%)
+     
+    - Returns: itself for chaining purposes
+    */
+    @discardableResult
+    func leading<T: BinaryInteger>(_ points: T) -> UIView {
+        leading(Double(points))
     }
     
     @discardableResult
     func leading(_ fm: SteviaFlexibleMargin) -> UIView {
-        return position(.leading, relatedBy: fm.relation, points: fm.points)
+        position(.leading, relatedBy: fm.relation, points: fm.points)
     }
     
     /** Sets the trailing margin for a view.
@@ -211,8 +271,24 @@ public extension UIView {
     - Returns: itself for chaining purposes
     */
     @discardableResult
-    func trailing(_ points: Double) -> UIView {
-        return position(.trailing, points: -points)
+    func trailing<T: BinaryFloatingPoint>(_ points: T) -> UIView {
+        position(.trailing, points: -Double(points))
+    }
+    
+    /** Sets the trailing margin for a view.
+     
+    Example Usage :
+     
+     label.trailing(20)
+     label.trailing(<=20)
+     label.trailing(>=20)
+     label.trailing(20%)
+     
+    - Returns: itself for chaining purposes
+    */
+    @discardableResult
+    func trailing<T: BinaryInteger>(_ points: T) -> UIView {
+        trailing(Double(points))
     }
 
     @discardableResult

@@ -30,17 +30,8 @@ class SizeTests: XCTestCase {
         super.tearDown()
     }
     
-    func testSize() {
-        v.size(57)
-        
-//        v.width(1)
-//        v.width(1.0)
-//        v.width(CGFloat(1))
-//        v.width(Float(1))
-//        v.width(Double(1))
-//        v.width(Int(1))
-//        v.width(UInt(1))
-        
+    func testSizeDouble() {
+        v.size(Double(57))
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))
@@ -48,9 +39,47 @@ class SizeTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 57, accuracy: CGFloat(Float.ulpOfOne))
     }
     
-    func testWidthAndHeight() {
-        v.width(36)
-        v.height(23)
+    func testSizeCGFloat() {
+        v.size(CGFloat(57))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 57, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 57, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testSizeInt() {
+        v.size(Int(57))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 57, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 57, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testWidthAndHeightDouble() {
+        v.width(Double(36))
+        v.height(Double(23))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 36, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 23, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testWidthAndHeightCGFloat() {
+        v.width(CGFloat(36))
+        v.height(CGFloat(23))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 36, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 23, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testWidthAndHeightInt() {
+        v.width(Int(36))
+        v.height(Int(23))
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))

@@ -28,14 +28,16 @@ precedencegroup HeightPrecedence {
 }
 
 @discardableResult
-public func ~ (left: UIView, right: Double) -> UIView {
+public func ~ <T: BinaryFloatingPoint>(left: UIView, right: T) -> UIView {
     left.height(right)
 }
 
 @discardableResult
-public func ~ (left: UIView, right: Int) -> UIView {
-    left.height(right)
+public func ~ <T: BinaryInteger>(left: UIView, right: T) -> UIView {
+    left ~ Double(right)
 }
+
+
 
 @discardableResult
 public func ~ (left: UIView, right: SteviaPercentage) -> UIView {
@@ -48,15 +50,14 @@ public func ~ (left: UIView, right: SteviaFlexibleMargin) -> UIView {
 }
 
 @discardableResult
-public func ~ (left: [UIView], right: Double) -> [UIView] {
+public func ~ <T: BinaryFloatingPoint>(left: [UIView], right: T) -> [UIView] {
     for l in left { l.height(right) }
     return left
 }
 
 @discardableResult
-public func ~ (left: [UIView], right: Int) -> [UIView] {
-    for l in left { l.height(right) }
-    return left
+public func ~ <T: BinaryInteger>(left: [UIView], right: T) -> [UIView] {
+    left ~ Double(right)
 }
 
 @discardableResult
@@ -67,17 +68,15 @@ public func ~ (left: [UIView], right: SteviaFlexibleMargin) -> [UIView] {
 
 prefix operator |-
 @discardableResult
-public prefix func |- (p: Double) -> SideConstraint {
+public prefix func |- <T: BinaryFloatingPoint>(p: T) -> SideConstraint {
     var s = SideConstraint()
-    s.constant = p
+    s.constant = Double(p)
     return s
 }
 
 @discardableResult
-public prefix func |- (p: Int) -> SideConstraint {
-    var s = SideConstraint()
-    s.constant = Double(p)
-    return s
+public prefix func |- <T: BinaryInteger>(p: T) -> SideConstraint {
+    |-Double(p)
 }
 
 @discardableResult
@@ -87,17 +86,15 @@ public prefix func |- (v: UIView) -> UIView {
 
 postfix operator -|
 @discardableResult
-public postfix func -| (p: Double) -> SideConstraint {
+public postfix func -| <T: BinaryFloatingPoint>(p: T) -> SideConstraint {
     var s = SideConstraint()
-    s.constant = p
+    s.constant = Double(p)
     return s
 }
 
 @discardableResult
-public postfix func -| (p: Int) -> SideConstraint {
-    var s = SideConstraint()
-    s.constant = Double(p)
-    return s
+public postfix func -| <T: BinaryInteger>(p: T) -> SideConstraint {
+    Double(p)-|
 }
 
 @discardableResult
@@ -116,19 +113,16 @@ public struct PartialConstraint {
 }
 
 @discardableResult
-public func - (left: UIView, right: Double) -> PartialConstraint {
-    var p = PartialConstraint()
-    p.view1 = left
-    p.constant = right
-    return p
-}
-
-@discardableResult
-public func - (left: UIView, right: Int) -> PartialConstraint {
+public func - <T: BinaryFloatingPoint>(left: UIView, right: T) -> PartialConstraint {
     var p = PartialConstraint()
     p.view1 = left
     p.constant = Double(right)
     return p
+}
+
+@discardableResult
+public func - <T: BinaryInteger>(left: UIView, right: T) -> PartialConstraint {
+    left-Double(right)
 }
 
 // Side Constraints
@@ -203,19 +197,16 @@ public func - (left: UIView, right: UIView) -> [UIView] {
 }
 
 @discardableResult
-public func - (left: [UIView], right: Double) -> PartialConstraint {
+public func - <T: BinaryFloatingPoint>(left: [UIView], right: T) -> PartialConstraint {
     var p = PartialConstraint()
-    p.constant = right
+    p.constant = Double(right)
     p.views = left
     return p
 }
 
 @discardableResult
-public func - (left: [UIView], right: Int) -> PartialConstraint {
-    var p = PartialConstraint()
-    p.constant = Double(right)
-    p.views = left
-    return p
+public func - <T: BinaryInteger>(left: [UIView], right: T) -> PartialConstraint {
+    left-Double(right)
 }
 
 @discardableResult
