@@ -27,7 +27,7 @@ public extension UIView {
      
      */
     @discardableResult
-    func size<T: BinaryFloatingPoint>(_ points: T) -> Self {
+    func size(_ points: Double) -> Self {
         width(points)
         height(points)
         return self
@@ -49,7 +49,27 @@ public extension UIView {
      
      */
     @discardableResult
-    func size<T: BinaryInteger>(_ points: T) -> Self {
+    func size(_ points: CGFloat) -> Self {
+        size(Double(points))
+    }
+    
+    /**
+     Adds an Autolayout constraint for sizing the view.
+     
+     ```
+     image.size(100)
+     image.size(100%)
+     
+     // is equivalent to
+     
+     image.width(100).height(100)
+     ```
+     
+     - Returns: Itself, enabling chaining,
+     
+     */
+    @discardableResult
+    func size(_ points: Int) -> Self {
         size(Double(points))
     }
     
@@ -73,8 +93,8 @@ public extension UIView {
      
      */
     @discardableResult
-    func height<T: BinaryFloatingPoint>(_ points: T) -> Self {
-        size(.height, points: Double(points))
+    func height(_ points: Double) -> Self {
+        size(.height, points: points)
     }
     
     /**
@@ -97,7 +117,31 @@ public extension UIView {
      
      */
     @discardableResult
-    func height<T: BinaryInteger>(_ points: T) -> Self {
+    func height(_ points: CGFloat) -> Self {
+        height(Double(points))
+    }
+    
+    /**
+     Adds an Autolayout constraint for setting the view's height.
+     
+     ```
+     image.height(100)
+     
+     // is equivalent to
+     
+     image ~ 100
+     
+     // Flexible margins
+     image.height(<=100)
+     image.height(>=100)
+     image.height(100%)
+     ```
+     
+     - Returns: Itself, enabling chaining,
+     
+     */
+    @discardableResult
+    func height(_ points: Int) -> Self {
         height(Double(points))
     }
     
@@ -115,8 +159,8 @@ public extension UIView {
      
      */
     @discardableResult
-    func width<T: BinaryFloatingPoint>(_ points: T) -> Self {
-        size(.width, points: Double(points))
+    func width(_ points: Double) -> Self {
+        size(.width, points: points)
     }
     
     /**
@@ -133,7 +177,25 @@ public extension UIView {
      
      */
     @discardableResult
-    func width<T: BinaryInteger>(_ points: T) -> Self {
+    func width(_ points: CGFloat) -> Self {
+        width(Double(points))
+    }
+    
+    /**
+     Adds an Autolayout constraint for setting the view's width.
+     
+     ```
+     image.width(100)
+     image.width(<=100)
+     image.width(>=100)
+     image.width(100%)
+     ```
+     
+     - Returns: Itself, enabling chaining,
+     
+     */
+    @discardableResult
+    func width(_ points: Int) -> Self {
         width(Double(points))
     }
 

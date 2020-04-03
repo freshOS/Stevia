@@ -14,11 +14,15 @@ public struct SteviaPercentage {
 }
 
 postfix operator %
-public postfix func % <T: BinaryFloatingPoint>(v: T) -> SteviaPercentage {
+public postfix func % (v: Double) -> SteviaPercentage {
     SteviaPercentage(value: Double(v))
 }
 
-public postfix func % <T: BinaryInteger>(v: T) -> SteviaPercentage {
+public postfix func % (v: CGFloat) -> SteviaPercentage {
+    Double(v)%
+}
+
+public postfix func % (v: Int) -> SteviaPercentage {
     Double(v)%
 }
 

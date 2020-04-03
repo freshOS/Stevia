@@ -10,20 +10,13 @@
 import UIKit
 
 public extension UIView {
-    
-    @discardableResult
-    func fillContainer() -> Self {
-        fillHorizontally()
-        fillVertically()
-        return self
-    }
-    
+        
     /**
      Adds the constraints needed for the view to fill its `superview`.
      A padding can be used to apply equal spaces between the view and its superview
     */
     @discardableResult
-    func fillContainer<T: BinaryFloatingPoint>(padding: T) -> Self {
+    func fillContainer(padding: Double = 0) -> Self {
         fillHorizontally(padding: padding)
         fillVertically(padding: padding)
         return self
@@ -34,17 +27,17 @@ public extension UIView {
      A padding can be used to apply equal spaces between the view and its superview
     */
     @discardableResult
-    func fillContainer<T: BinaryInteger>(padding: T) -> Self {
+    func fillContainer(padding: CGFloat) -> Self {
         fillContainer(padding: Double(padding))
     }
-
+    
     /**
-     Adds the constraints needed for the view to fill its `superview` Vertically.
+     Adds the constraints needed for the view to fill its `superview`.
      A padding can be used to apply equal spaces between the view and its superview
-     */
+    */
     @discardableResult
-    func fillVertically() -> Self {
-        fill(.vertical)
+    func fillContainer(padding: Int) -> Self {
+        fillContainer(padding: Double(padding))
     }
     
     /**
@@ -52,8 +45,8 @@ public extension UIView {
      A padding can be used to apply equal spaces between the view and its superview
      */
     @discardableResult
-    func fillVertically<T: BinaryFloatingPoint>(padding: T) -> Self {
-        fill(.vertical, points: Double(padding))
+    func fillVertically(padding: Double = 0) -> Self {
+        fill(.vertical, points: padding)
     }
     
     /**
@@ -61,26 +54,26 @@ public extension UIView {
      A padding can be used to apply equal spaces between the view and its superview
      */
     @discardableResult
-    func fillVertically<T: BinaryInteger>(padding: T) -> Self {
+    func fillVertically(padding: CGFloat) -> Self {
         fillVertically(padding: Double(padding))
     }
     
     /**
-     Adds the constraints needed for the view to fill its `superview` Horizontally.
+     Adds the constraints needed for the view to fill its `superview` Vertically.
      A padding can be used to apply equal spaces between the view and its superview
      */
     @discardableResult
-    func fillHorizontally() -> Self {
-        fill(.horizontal)
+    func fillVertically(padding: Int) -> Self {
+        fillVertically(padding: Double(padding))
     }
-        
+            
     /**
      Adds the constraints needed for the view to fill its `superview` Horizontally.
      A padding can be used to apply equal spaces between the view and its superview
      */
     @discardableResult
-    func fillHorizontally<T: BinaryFloatingPoint>(padding: T) -> Self {
-        fill(.horizontal, points: Double(padding))
+    func fillHorizontally(padding: Double = 0) -> Self {
+        fill(.horizontal, points: padding)
     }
     
     /**
@@ -88,7 +81,16 @@ public extension UIView {
      A padding can be used to apply equal spaces between the view and its superview
      */
     @discardableResult
-    func fillHorizontally<T: BinaryInteger>(padding: T) -> Self {
+    func fillHorizontally(padding: CGFloat) -> Self {
+        fillHorizontally(padding: Double(padding))
+    }
+    
+    /**
+     Adds the constraints needed for the view to fill its `superview` Horizontally.
+     A padding can be used to apply equal spaces between the view and its superview
+     */
+    @discardableResult
+    func fillHorizontally(padding: Int) -> Self {
         fillHorizontally(padding: Double(padding))
     }
     

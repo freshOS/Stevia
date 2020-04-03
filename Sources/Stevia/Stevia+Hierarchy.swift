@@ -49,7 +49,7 @@ public extension UIView {
      
      - Returns: Itself to enable nested layouts.
      */
-    @available(*, deprecated, message: "Use Subviews { } function builder instead.")
+//    @available(*, deprecated, message: "Use Subviews { } function builder instead.")
     @discardableResult
     func sv(_ subViews: UIView...) -> UIView {
         return sv(subViews)
