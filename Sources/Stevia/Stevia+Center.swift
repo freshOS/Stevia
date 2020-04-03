@@ -28,7 +28,7 @@ public extension UIView {
         }
         return self
     }
-    
+        
     /**
      Centers the view horizontally (X axis) in its container.
      
@@ -41,25 +41,9 @@ public extension UIView {
      
      */
     @discardableResult
-    func centerHorizontally() -> Self {
-        centerHorizontally(offset: 0)
-    }
-    
-    /**
-     Centers the view horizontally (X axis) in its container.
-     
-     ```
-     button.centerHorizontally()
-     button.centerHorizontally(offset: 40)
-     ```
-     
-     - Returns: Itself, enabling chaining,
-     
-     */
-    @discardableResult
-    func centerHorizontally<T: BinaryFloatingPoint>(offset: T) -> Self {
+    func centerHorizontally(offset: Double = 0) -> Self {
         if let spv = superview {
-            align(.vertical, v1: self, with: spv, offset: Double(offset))
+            align(.vertical, v1: self, with: spv, offset: offset)
         }
         return self
     }
@@ -76,26 +60,26 @@ public extension UIView {
      
      */
     @discardableResult
-    func centerHorizontally<T: BinaryInteger>(offset: T) -> Self {
+    func centerHorizontally(offset: CGFloat) -> Self {
         centerHorizontally(offset: Double(offset))
     }
     
     /**
-     Centers the view vertically (Y axis) in its container.
+     Centers the view horizontally (X axis) in its container.
      
      ```
-     button.centerVertically()
-     button.centerVertically(offset: 40)
+     button.centerHorizontally()
+     button.centerHorizontally(offset: 40)
      ```
      
      - Returns: Itself, enabling chaining,
      
      */
     @discardableResult
-    func centerVertically() -> Self {
-        centerVertically(offset: 0)
+    func centerHorizontally(offset: Int) -> Self {
+        centerHorizontally(offset: Double(offset))
     }
-    
+        
     /**
      Centers the view vertically (Y axis) in its container.
      
@@ -108,9 +92,9 @@ public extension UIView {
      
      */
     @discardableResult
-    func centerVertically<T: BinaryFloatingPoint>(offset: T) -> Self {
+    func centerVertically(offset: Double = 0) -> Self {
         if let spv = superview {
-            align(.horizontal, v1: self, with: spv, offset: Double(offset))
+            align(.horizontal, v1: self, with: spv, offset: offset)
         }
         return self
     }
@@ -127,7 +111,23 @@ public extension UIView {
      
      */
     @discardableResult
-    func centerVertically<T: BinaryInteger>(offset: T) -> Self {
+    func centerVertically(offset: CGFloat) -> Self {
+        centerVertically(offset: Double(offset))
+    }
+    
+    /**
+     Centers the view vertically (Y axis) in its container.
+     
+     ```
+     button.centerVertically()
+     button.centerVertically(offset: 40)
+     ```
+     
+     - Returns: Itself, enabling chaining,
+     
+     */
+    @discardableResult
+    func centerVertically(offset: Int) -> Self {
         centerVertically(offset: Double(offset))
     }
 }

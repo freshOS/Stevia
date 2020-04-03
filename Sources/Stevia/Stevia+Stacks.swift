@@ -19,19 +19,9 @@ extension SteviaLayoutItem {
 }
 extension UIView: SteviaLayoutItem {}
 extension Int: SteviaLayoutItem {}
-//extension Int8: SteviaLayoutItem {}
-//extension Int16: SteviaLayoutItem {}
-//extension Int32: SteviaLayoutItem {}
-//extension Int64: SteviaLayoutItem {}
-//extension UInt: SteviaLayoutItem {}
-//extension UInt8: SteviaLayoutItem {}
-//extension UInt16: SteviaLayoutItem {}
-//extension UInt32: SteviaLayoutItem {}
-//extension UInt64: SteviaLayoutItem {}
 extension Double: SteviaLayoutItem {}
-//extension Float: SteviaLayoutItem {}
-//extension CGFloat: SteviaLayoutItem {}
-//extension String: SteviaLayoutItem {}
+extension CGFloat: SteviaLayoutItem {}
+extension String: SteviaLayoutItem {}
 
 extension FlexibleSpace: SteviaLayoutItem {}
 extension SteviaFlexibleMargin: SteviaLayoutItem {}
@@ -86,7 +76,7 @@ public extension UIView {
      )
      ```
      */
-    @available(*, deprecated, message: "Use Layout { } function builder instead.")
+//    @available(*, deprecated, message: "Use Layout { } function builder instead.")
     @discardableResult
     func layout(_ objects: Any...) -> [UIView] {
         return layout(objects)

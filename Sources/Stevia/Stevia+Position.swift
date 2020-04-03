@@ -23,8 +23,8 @@ public extension UIView {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func left<T: BinaryFloatingPoint>(_ points: T) -> Self {
-        position(.left, points: Double(points))
+    func left(_ points: Double) -> Self {
+        position(.left, points: points)
     }
     
     /** Sets the left margin for a view.
@@ -39,7 +39,23 @@ public extension UIView {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func left<T: BinaryInteger>(_ points: T) -> Self {
+    func left(_ points: CGFloat) -> Self {
+        left(Double(points))
+    }
+    
+    /** Sets the left margin for a view.
+     
+    Example Usage :
+     
+     label.left(20)
+     label.left(<=20)
+     label.left(>=20)
+     label.left(20%)
+     
+     - Returns: Itself for chaining purposes
+     */
+    @discardableResult
+    func left(_ points: Int) -> Self {
         left(Double(points))
     }
     
@@ -55,8 +71,8 @@ public extension UIView {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func right<T: BinaryFloatingPoint>(_ points: T) -> Self {
-        position(.right, points: -Double(points))
+    func right(_ points: Double) -> Self {
+        position(.right, points: -points)
     }
     
     /** Sets the right margin for a view.
@@ -71,7 +87,23 @@ public extension UIView {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func right<T: BinaryInteger>(_ points: T) -> Self {
+    func right(_ points: CGFloat) -> Self {
+        right(Double(points))
+    }
+    
+    /** Sets the right margin for a view.
+     
+    Example Usage :
+     
+     label.right(20)
+     label.right(<=20)
+     label.right(>=20)
+     label.right(20%)
+     
+     - Returns: Itself for chaining purposes
+     */
+    @discardableResult
+    func right(_ points: Int) -> Self {
         right(Double(points))
     }
     
@@ -87,8 +119,8 @@ public extension UIView {
     - Returns: Itself for chaining purposes
     */
     @discardableResult
-    func top<T: BinaryFloatingPoint>(_ points: T) -> Self {
-        position(.top, points: Double(points))
+    func top(_ points: Double) -> Self {
+        position(.top, points: points)
     }
     
     /** Sets the top margin for a view.
@@ -103,7 +135,23 @@ public extension UIView {
     - Returns: Itself for chaining purposes
     */
     @discardableResult
-    func top<T: BinaryInteger>(_ points: T) -> Self {
+    func top(_ points: CGFloat) -> Self {
+        top(Double(points))
+    }
+    
+    /** Sets the top margin for a view.
+     
+    Example Usage :
+     
+     label.top(20)
+     label.top(<=20)
+     label.top(>=20)
+     label.top(20%)
+     
+    - Returns: Itself for chaining purposes
+    */
+    @discardableResult
+    func top(_ points: Int) -> Self {
         top(Double(points))
     }
     
@@ -119,8 +167,8 @@ public extension UIView {
     - Returns: Itself for chaining purposes
     */
     @discardableResult
-    func bottom<T: BinaryFloatingPoint>(_ points: T) -> Self {
-        position(.bottom, points: -Double(points))
+    func bottom(_ points: Double) -> Self {
+        position(.bottom, points: -points)
     }
     
     /** Sets the bottom margin for a view.
@@ -135,7 +183,23 @@ public extension UIView {
     - Returns: Itself for chaining purposes
     */
     @discardableResult
-    func bottom<T: BinaryInteger>(_ points: T) -> Self {
+    func bottom(_ points: CGFloat) -> Self {
+        bottom(Double(points))
+    }
+    
+    /** Sets the bottom margin for a view.
+     
+    Example Usage :
+     
+     label.bottom(20)
+     label.bottom(<=20)
+     label.bottom(>=20)
+     label.bottom(20%)
+     
+    - Returns: Itself for chaining purposes
+    */
+    @discardableResult
+    func bottom(_ points: Int) -> Self {
         bottom(Double(points))
     }
 
@@ -234,8 +298,8 @@ public extension UIView {
     */
     
     @discardableResult
-    func leading<T: BinaryFloatingPoint>(_ points: T) -> UIView {
-        position(.leading, points: Double(points))
+    func leading(_ points: Double) -> UIView {
+        position(.leading, points: points)
     }
     
     /** Sets the leading margin for a view.
@@ -250,7 +314,23 @@ public extension UIView {
     - Returns: itself for chaining purposes
     */
     @discardableResult
-    func leading<T: BinaryInteger>(_ points: T) -> UIView {
+    func leading(_ points: CGFloat) -> UIView {
+        leading(Double(points))
+    }
+    
+    /** Sets the leading margin for a view.
+     
+    Example Usage :
+     
+     label.leading(20)
+     label.leading(<=20)
+     label.leading(>=20)
+     label.leading(20%)
+     
+    - Returns: itself for chaining purposes
+    */
+    @discardableResult
+    func leading(_ points: Int) -> UIView {
         leading(Double(points))
     }
     
@@ -271,8 +351,8 @@ public extension UIView {
     - Returns: itself for chaining purposes
     */
     @discardableResult
-    func trailing<T: BinaryFloatingPoint>(_ points: T) -> UIView {
-        position(.trailing, points: -Double(points))
+    func trailing(_ points: Double) -> UIView {
+        position(.trailing, points: -points)
     }
     
     /** Sets the trailing margin for a view.
@@ -287,7 +367,23 @@ public extension UIView {
     - Returns: itself for chaining purposes
     */
     @discardableResult
-    func trailing<T: BinaryInteger>(_ points: T) -> UIView {
+    func trailing(_ points: CGFloat) -> UIView {
+        trailing(Double(points))
+    }
+    
+    /** Sets the trailing margin for a view.
+     
+    Example Usage :
+     
+     label.trailing(20)
+     label.trailing(<=20)
+     label.trailing(>=20)
+     label.trailing(20%)
+     
+    - Returns: itself for chaining purposes
+    */
+    @discardableResult
+    func trailing(_ points: Int) -> UIView {
         trailing(Double(points))
     }
 

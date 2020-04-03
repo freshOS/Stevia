@@ -183,59 +183,86 @@ private func applyRelation(left: SteviaAttribute, right: SteviaAttribute, relate
 }
 
 @discardableResult
-public func + <T: BinaryFloatingPoint>(left: SteviaAttribute, right: T) -> SteviaAttribute {
-    SteviaAttribute(view: left.view, attribute: left.attribute, constant: Double(right), multiplier: left.multiplier)
+public func + (left: SteviaAttribute, right: Double) -> SteviaAttribute {
+    SteviaAttribute(view: left.view, attribute: left.attribute, constant: right, multiplier: left.multiplier)
 }
 
 @discardableResult
-public func + <T: BinaryInteger>(left: SteviaAttribute, right: T) -> SteviaAttribute {
+public func + (left: SteviaAttribute, right: CGFloat) -> SteviaAttribute {
     left + Double(right)
 }
 
 @discardableResult
-public func - <T: BinaryFloatingPoint>(left: SteviaAttribute, right: T) -> SteviaAttribute {
-    SteviaAttribute(view: left.view, attribute: left.attribute, constant: -Double(right), multiplier: left.multiplier)
+public func + (left: SteviaAttribute, right: Int) -> SteviaAttribute {
+    left + Double(right)
 }
 
 @discardableResult
-public func - <T: BinaryInteger>(left: SteviaAttribute, right: T) -> SteviaAttribute {
+public func - (left: SteviaAttribute, right: Double) -> SteviaAttribute {
+    SteviaAttribute(view: left.view, attribute: left.attribute, constant: -right, multiplier: left.multiplier)
+}
+
+@discardableResult
+public func - (left: SteviaAttribute, right: CGFloat) -> SteviaAttribute {
     left - Double(right)
 }
 
 @discardableResult
-public func * <T: BinaryFloatingPoint>(left: SteviaAttribute, right: T) -> SteviaAttribute {
-    SteviaAttribute(view: left.view, attribute: left.attribute, constant: left.constant, multiplier: Double(right))
+public func - (left: SteviaAttribute, right: Int) -> SteviaAttribute {
+    left - Double(right)
 }
 
 @discardableResult
-public func * <T: BinaryInteger>(left: SteviaAttribute, right: T) -> SteviaAttribute {
+public func * (left: SteviaAttribute, right: Double) -> SteviaAttribute {
+    SteviaAttribute(view: left.view, attribute: left.attribute, constant: left.constant, multiplier: right)
+}
+
+@discardableResult
+public func * (left: SteviaAttribute, right: CGFloat) -> SteviaAttribute {
     left * Double(right)
 }
 
 @discardableResult
-public func / <T: BinaryFloatingPoint>(left: SteviaAttribute, right: T) -> SteviaAttribute {
-    left * (1/Double(right))
+public func * (left: SteviaAttribute, right: Int) -> SteviaAttribute {
+    left * Double(right)
 }
 
 @discardableResult
-public func / <T: BinaryInteger>(left: SteviaAttribute, right: T) -> SteviaAttribute {
+public func / (left: SteviaAttribute, right: Double) -> SteviaAttribute {
+    left * (1/right)
+}
+
+@discardableResult
+public func / (left: SteviaAttribute, right: CGFloat) -> SteviaAttribute {
     left / Double(right)
 }
 
 @discardableResult
-public func % <T: BinaryFloatingPoint>(left: T, right: SteviaAttribute) -> SteviaAttribute {
-    right * (Double(left)/100)
+public func / (left: SteviaAttribute, right: Int) -> SteviaAttribute {
+    left / Double(right)
+}
+
+
+@discardableResult
+public func % (left: Double, right: SteviaAttribute) -> SteviaAttribute {
+    right * (left/100)
 }
 
 @discardableResult
-public func % <T: BinaryInteger>(left: T, right: SteviaAttribute) -> SteviaAttribute {
+public func % (left: CGFloat, right: SteviaAttribute) -> SteviaAttribute {
     Double(left) % right
 }
+
+@discardableResult
+public func % (left: Int, right: SteviaAttribute) -> SteviaAttribute {
+    Double(left) % right
+}
+
 
 // MARK: - Equations of type v.P == X
 
 @discardableResult
-public func == <T: BinaryFloatingPoint>(left: SteviaAttribute, right: T) -> NSLayoutConstraint {
+public func == (left: SteviaAttribute, right: Double) -> NSLayoutConstraint {
     if let spv = left.view.superview {
         var toItem: UIView? = spv
         var constant = right
@@ -254,12 +281,17 @@ public func == <T: BinaryFloatingPoint>(left: SteviaAttribute, right: T) -> NSLa
 }
 
 @discardableResult
-public func == <T: BinaryInteger>(left: SteviaAttribute, right: T) -> NSLayoutConstraint {
+public func == (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
     left == Double(right)
 }
 
 @discardableResult
-public func >= <T: BinaryFloatingPoint>(left: SteviaAttribute, right: T) -> NSLayoutConstraint {
+public func == (left: SteviaAttribute, right: Int) -> NSLayoutConstraint {
+    left == Double(right)
+}
+
+@discardableResult
+public func >= (left: SteviaAttribute, right: Double) -> NSLayoutConstraint {
     if let spv = left.view.superview {
         var toItem: UIView? = spv
         var constant = right
@@ -279,12 +311,17 @@ public func >= <T: BinaryFloatingPoint>(left: SteviaAttribute, right: T) -> NSLa
 }
 
 @discardableResult
-public func >= <T: BinaryInteger>(left: SteviaAttribute, right: T) -> NSLayoutConstraint {
+public func >= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
     left >= Double(right)
 }
 
 @discardableResult
-public func <= <T: BinaryFloatingPoint>(left: SteviaAttribute, right: T) -> NSLayoutConstraint {
+public func >= (left: SteviaAttribute, right: Int) -> NSLayoutConstraint {
+    left >= Double(right)
+}
+
+@discardableResult
+public func <= (left: SteviaAttribute, right: Double) -> NSLayoutConstraint {
     if let spv = left.view.superview {
         var toItem: UIView? = spv
         var constant = right
@@ -304,7 +341,12 @@ public func <= <T: BinaryFloatingPoint>(left: SteviaAttribute, right: T) -> NSLa
 }
 
 @discardableResult
-public func <= <T: BinaryInteger>(left: SteviaAttribute, right: T) -> NSLayoutConstraint {
+public func <= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
+    left <= Double(right)
+}
+
+@discardableResult
+public func <= (left: SteviaAttribute, right: Int) -> NSLayoutConstraint {
     left <= Double(right)
 }
 #endif
