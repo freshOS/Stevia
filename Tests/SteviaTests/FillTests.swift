@@ -27,7 +27,7 @@ class FillTests: XCTestCase {
 
     func testFillContainer() {
         let b = UIButton()
-        ctrler.view.Subviews { b }
+        ctrler.view.subviews { b }
         b.fillContainer()
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(ctrler.view.frame, b.frame)
@@ -36,7 +36,7 @@ class FillTests: XCTestCase {
     func testFillContainerWithPaddingDouble() {
         let padding: Double = 10.0
         let b = UIButton()
-        ctrler.view.Subviews { b }
+        ctrler.view.subviews { b }
         b.fillContainer(padding: padding)
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(ctrler.view.frame.height, b.frame.height + CGFloat(padding) * 2,
@@ -48,7 +48,7 @@ class FillTests: XCTestCase {
     func testFillContainerWithPaddingCGFloat() {
         let padding: CGFloat = 10.0
         let b = UIButton()
-        ctrler.view.Subviews { b }
+        ctrler.view.subviews { b }
         b.fillContainer(padding: padding)
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(ctrler.view.frame.height, b.frame.height + CGFloat(padding) * 2,
@@ -60,7 +60,7 @@ class FillTests: XCTestCase {
     func testFillContainerWithPaddingInt() {
         let padding: Int = 10
         let b = UIButton()
-        ctrler.view.Subviews { b }
+        ctrler.view.subviews { b }
         b.fillContainer(padding: padding)
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(ctrler.view.frame.height, b.frame.height + CGFloat(padding) * 2,
@@ -71,7 +71,7 @@ class FillTests: XCTestCase {
     
     func testFillVertically() {
         let b = UIButton()
-        ctrler.view.Subviews { b }
+        ctrler.view.subviews { b }
         b.width(10)
         b.fillVertically()
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
@@ -82,7 +82,7 @@ class FillTests: XCTestCase {
     func testFillVerticallyWithPaddingDouble() {
         let padding: Double = 40.0
         let b = UIButton()
-        ctrler.view.Subviews { b }
+        ctrler.view.subviews { b }
         b.fillVertically(padding: padding)
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(ctrler.view.frame.height, b.frame.height + CGFloat(padding) * 2,
@@ -92,7 +92,7 @@ class FillTests: XCTestCase {
     func testFillVerticallyWithPaddingCGFloat() {
         let padding: CGFloat = 30.0
         let b = UIButton()
-        ctrler.view.Subviews { b }
+        ctrler.view.subviews { b }
         b.fillVertically(padding: padding)
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(ctrler.view.frame.height, b.frame.height + CGFloat(padding) * 2,
@@ -102,7 +102,7 @@ class FillTests: XCTestCase {
     func testFillVerticallyWithPaddingInt() {
         let padding: Int = 14
         let b = UIButton()
-        ctrler.view.Subviews { b }
+        ctrler.view.subviews { b }
         b.fillVertically(padding: padding)
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(ctrler.view.frame.height, b.frame.height + CGFloat(padding) * 2,
@@ -112,7 +112,7 @@ class FillTests: XCTestCase {
     func testFillHorizontallyWithPaddingDouble() {
         let padding: Double = 40.0
         let b = UIButton()
-        ctrler.view.Subviews { b }
+        ctrler.view.subviews { b }
         b.fillHorizontally(padding: padding)
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(ctrler.view.frame.width, b.frame.width + CGFloat(padding) * 2,
@@ -122,7 +122,7 @@ class FillTests: XCTestCase {
     func testFillHorizontallyWithPaddingCGFloat() {
         let padding: CGFloat = 30.0
         let b = UIButton()
-        ctrler.view.Subviews { b }
+        ctrler.view.subviews { b }
         b.fillHorizontally(padding: padding)
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(ctrler.view.frame.width, b.frame.width + CGFloat(padding) * 2,
@@ -132,7 +132,7 @@ class FillTests: XCTestCase {
     func testFillHorizontallyWithPaddingInt() {
         let padding: Int = 14
         let b = UIButton()
-        ctrler.view.Subviews { b }
+        ctrler.view.subviews { b }
         b.fillHorizontally(padding: padding)
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(ctrler.view.frame.width, b.frame.width + CGFloat(padding) * 2,

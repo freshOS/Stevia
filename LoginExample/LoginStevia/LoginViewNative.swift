@@ -16,12 +16,8 @@ class LoginViewNative: UIView {
     
     convenience init() {
         self.init(frame:CGRect.zero)
-        render()
-    }
-    
-    func render() {
         
-        // View Hieararchy
+        // 01 - View Hieararchy
         email.translatesAutoresizingMaskIntoConstraints = false
         password.translatesAutoresizingMaskIntoConstraints = false
         login.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +25,7 @@ class LoginViewNative: UIView {
         addSubview(password)
         addSubview(login)
         
-        // Layout (using latest layoutAnchors)
+        // 02 - Layout (using latest layoutAnchors)
         email.topAnchor.constraint(equalTo: topAnchor, constant: 100).isActive = true
         email.leftAnchor.constraint(equalTo: leftAnchor, constant: 8).isActive = true
         email.rightAnchor.constraint(equalTo: rightAnchor, constant: -8).isActive = true
@@ -45,7 +41,7 @@ class LoginViewNative: UIView {
         login.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         login.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
-        // Styling
+        // 03 - Styling
         backgroundColor = .gray
         email.borderStyle = .roundedRect
         email.autocorrectionType = .no
@@ -58,7 +54,7 @@ class LoginViewNative: UIView {
         password.returnKeyType = .done
         login.backgroundColor = .lightGray
         
-        // Content
+        // 04 - Content
         email.placeholder = "Email"
         password.placeholder = "Password"
         login.setTitle("Login", for: .normal)

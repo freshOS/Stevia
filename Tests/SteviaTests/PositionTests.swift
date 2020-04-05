@@ -21,7 +21,7 @@ class PositionTests: XCTestCase {
         ctrler =  UIViewController()
         win.rootViewController = ctrler
         v = UIView()
-        ctrler.view.Subviews {v }
+        ctrler.view.subviews {v }
         v.size(100.0)
     }
     

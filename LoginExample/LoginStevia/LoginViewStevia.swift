@@ -19,19 +19,19 @@ class LoginViewStevia: UIView {
         self.init(frame:CGRect.zero)
         // Get injectionForXcode here : http://johnholdsworth.com/injection.html
 
-        // View Hierarchy
+        // 01 -View Hierarchy
         // This essentially does `translatesAutoresizingMaskIntoConstraints = false`
         // and `addSubsview()`. The neat benefit is that
         // (`Subviews` calls can be nested which will visually show hierarchy ! )
-        Subviews {
+        subviews {
             email
             password
             login
         }
-        
-        // Vertical + Horizontal Layout in one pass
+
+        // 02 - Vertical + Horizontal Layout in one pass
         // With type-safe visual format
-        Layout {
+        layout {
             100
             |-email-| ~ 80
             8
@@ -70,7 +70,7 @@ class LoginViewStevia: UIView {
 //        login.Height == 80
         
 
-        // Styling 🎨
+        // 03 - Styling 🎨
         backgroundColor = .gray
         email.style(commonFieldStyle)
         password.style(commonFieldStyle).style { f in
@@ -79,7 +79,7 @@ class LoginViewStevia: UIView {
         }
         login.backgroundColor = .lightGray
         
-        // Content 🖋
+        // 04 - Content 🖋
         email.placeholder = "Email"
         password.placeholder = "Password"
         login.setTitle("Login", for: .normal)

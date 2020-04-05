@@ -21,7 +21,7 @@ class FlexibleMarginTests: XCTestCase {
         ctrler =  UIViewController()
         win.rootViewController = ctrler
         v = UIView()
-        ctrler.view.Subviews { v }
+        ctrler.view.subviews { v }
         v.size(100.0)
     }
     
@@ -266,7 +266,7 @@ class FlexibleMarginTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews { v1; v2 }
+        ctrler.view.subviews { v1; v2 }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -292,7 +292,7 @@ class FlexibleMarginTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -321,7 +321,7 @@ class FlexibleMarginTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -350,7 +350,7 @@ class FlexibleMarginTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
