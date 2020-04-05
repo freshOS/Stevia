@@ -214,8 +214,15 @@ Like the project? Offer coffee or support us with a monthly donation and help us
 
 Many top-notch Apps with millions of users use Stevia to write better Auto Layout code:
 
-[<img src="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/4d/c1/70/4dc17011-3ca7-bf9a-5326-70db722686ca/AppIcon-0-0-1x_U007emarketing-0-0-0-6-0-0-85-220.png/230x0w.png" height="44px"/>](https://apps.apple.com/cn/app/mobike-smart-bike-sharing/id1044535426?l=en)
-[<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/ac/38/7a/ac387a00-893c-66c4-8595-856ad9907c84/AppIcon-0-0-1x_U007emarketing-0-0-0-6-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" height="44px"/>](https://apps.apple.com/us/app/id1001688546)
+[<img src="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/4d/c1/70/4dc17011-3ca7-bf9a-5326-70db722686ca/AppIcon-0-0-1x_U007emarketing-0-0-0-6-0-0-85-220.png/230x0w.png" height="60px"/>](https://apps.apple.com/cn/app/mobike-smart-bike-sharing/id1044535426?l=en)
+[<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/ac/38/7a/ac387a00-893c-66c4-8595-856ad9907c84/AppIcon-0-0-1x_U007emarketing-0-0-0-6-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" height="60px"/>](https://apps.apple.com/us/app/id1001688546)
+[<img src="https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/60/90/af/6090afc0-f2b1-40e7-d74f-78fd4f7309eb/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" height="60px"/>](https://apps.apple.com/us/app/nerdwallet/id1174471607)
+[<img src="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/30/0c/1c/300c1c5c-2ded-02bc-a073-14c2287509e4/AppIcon-0-1x_U007emarketing-0-0-85-220-0-7.png/230x0w.png" height="60px"/>](https://apps.apple.com/in/app/yatra-flights-hotels-cabs/id730234679)
+[<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/b5/a1/1d/b5a11d97-1982-6346-fab9-056ab6c55512/AppIcon-0-0-1x_U007emarketing-0-0-0-6-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" height="60px"/>](https://apps.apple.com/us/app/yummypets-pets/id527910229)
+[<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/8b/a0/64/8ba064be-c665-db32-9e63-5751c56dfb84/AppIcon-0-1x_U007emarketing-0-85-220-0-7.png/230x0w.png" height="60px"/>](https://apps.apple.com/us/app/invitation-maker-ecard/id1446598881)
+[<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/94/ed/1c/94ed1cc6-dc70-9458-5ee1-f42d89d97e50/AppIcon-0-1x_U007emarketing-0-85-220-0-7.png/230x0w.png" height="60px"/>](https://apps.apple.com/us/app/logo-maker-create-design/id1455008435)
+[<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/76/bf/ab/76bfabcd-d607-b944-c7ce-433ffbbd09c0/AppIconFREE-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" height="60px"/>](https://apps.apple.com/us/app/smart-cleaner-clean-storage/id1194582243)
+[<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple49/v4/dd/54/b5/dd54b556-b289-ce8f-4a21-d7d5fb688a69/pr_source.png/230x0w.png" height="60px"/>](https://apps.apple.com/us/app/tuner-eclipse-free-guitar-tuner/id1086479185)
 
 - [Mobike](https://apps.apple.com/cn/app/mobike-smart-bike-sharing/id1044535426?l=en) - The world’s first and largest bike sharing system.
 - [Brightspace Pulse](https://apps.apple.com/us/app/id1001688546) - Education app
