@@ -28,21 +28,73 @@ public extension UIView {
         }
         return self
     }
-    
+        
     /**
      Centers the view horizontally (X axis) in its container.
      
      ```
      button.centerHorizontally()
+     button.centerHorizontally(offset: 40)
      ```
      
      - Returns: Itself, enabling chaining,
      
      */
     @discardableResult
-    func centerHorizontally() -> Self {
+    func centerHorizontally(offset: Double = 0) -> Self {
         if let spv = superview {
-            align(vertically: self, spv)
+            align(.vertical, v1: self, with: spv, offset: offset)
+        }
+        return self
+    }
+    
+    /**
+     Centers the view horizontally (X axis) in its container.
+     
+     ```
+     button.centerHorizontally()
+     button.centerHorizontally(offset: 40)
+     ```
+     
+     - Returns: Itself, enabling chaining,
+     
+     */
+    @discardableResult
+    func centerHorizontally(offset: CGFloat) -> Self {
+        centerHorizontally(offset: Double(offset))
+    }
+    
+    /**
+     Centers the view horizontally (X axis) in its container.
+     
+     ```
+     button.centerHorizontally()
+     button.centerHorizontally(offset: 40)
+     ```
+     
+     - Returns: Itself, enabling chaining,
+     
+     */
+    @discardableResult
+    func centerHorizontally(offset: Int) -> Self {
+        centerHorizontally(offset: Double(offset))
+    }
+        
+    /**
+     Centers the view vertically (Y axis) in its container.
+     
+     ```
+     button.centerVertically()
+     button.centerVertically(offset: 40)
+     ```
+     
+     - Returns: Itself, enabling chaining,
+     
+     */
+    @discardableResult
+    func centerVertically(offset: Double = 0) -> Self {
+        if let spv = superview {
+            align(.horizontal, v1: self, with: spv, offset: offset)
         }
         return self
     }
@@ -52,53 +104,31 @@ public extension UIView {
      
      ```
      button.centerVertically()
+     button.centerVertically(offset: 40)
      ```
      
      - Returns: Itself, enabling chaining,
      
      */
     @discardableResult
-    func centerVertically() -> Self {
-        if let spv = superview {
-            align(horizontally: self, spv)
-        }
-        return self
+    func centerVertically(offset: CGFloat) -> Self {
+        centerVertically(offset: Double(offset))
     }
     
     /**
-     Centers the view horizontally (X axis) in its container, with an offset
+     Centers the view vertically (Y axis) in its container.
      
      ```
-     button.centerHorizontally(40)
-     ```
-     
-     - Returns: Itself, enabling chaining,
-     
-     */
-    @discardableResult
-    func centerHorizontally(_ offset: CGFloat) -> Self {
-        if let spv = superview {
-            alignVertically(self, with: spv, offset: offset)
-        }
-        return self
-    }
-    
-    /**
-     Centers the view vertically (Y axis) in its container, with an offset
-     
-     ```
-     button.centerVertically(40)
+     button.centerVertically()
+     button.centerVertically(offset: 40)
      ```
      
      - Returns: Itself, enabling chaining,
      
      */
     @discardableResult
-    func centerVertically(_ offset: CGFloat) -> Self {
-        if let spv = superview {
-            alignHorizontally(self, with: spv, offset: offset)
-        }
-        return self
+    func centerVertically(offset: Int) -> Self {
+        centerVertically(offset: Double(offset))
     }
 }
 #endif

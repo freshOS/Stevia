@@ -11,18 +11,38 @@ import UIKit
 
 prefix operator >=
 @discardableResult
+public prefix func >= (p: Double) -> SteviaFlexibleMargin {
+    SteviaFlexibleMargin(points: p, relation: .greaterThanOrEqual)
+}
+
+@discardableResult
 public prefix func >= (p: CGFloat) -> SteviaFlexibleMargin {
-    return SteviaFlexibleMargin(points: p, relation: .greaterThanOrEqual)
+    >=Double(p)
+}
+
+@discardableResult
+public prefix func >= (p: Int) -> SteviaFlexibleMargin {
+    >=Double(p)
 }
 
 prefix operator <=
 @discardableResult
+public prefix func <= (p: Double) -> SteviaFlexibleMargin {
+    SteviaFlexibleMargin(points: p, relation: .lessThanOrEqual)
+}
+
+@discardableResult
 public prefix func <= (p: CGFloat) -> SteviaFlexibleMargin {
-    return SteviaFlexibleMargin(points: p, relation: .lessThanOrEqual)
+    <=Double(p)
+}
+
+@discardableResult
+public prefix func <= (p: Int) -> SteviaFlexibleMargin {
+    <=Double(p)
 }
 
 public struct SteviaFlexibleMargin {
-    var points: CGFloat!
+    var points: Double!
     var relation: NSLayoutConstraint.Relation!
 }
 

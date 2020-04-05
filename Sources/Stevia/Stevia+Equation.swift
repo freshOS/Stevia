@@ -12,8 +12,8 @@ import UIKit
 public struct SteviaAttribute {
     let view: UIView
     let attribute: NSLayoutConstraint.Attribute
-    let constant: CGFloat?
-    let multiplier: CGFloat?
+    let constant: Double?
+    let multiplier: Double?
     
     init(view: UIView, attribute: NSLayoutConstraint.Attribute) {
         self.view = view
@@ -22,7 +22,7 @@ public struct SteviaAttribute {
         self.multiplier = nil
     }
     
-    init(view: UIView, attribute: NSLayoutConstraint.Attribute, constant: CGFloat?, multiplier: CGFloat?) {
+    init(view: UIView, attribute: NSLayoutConstraint.Attribute, constant: Double?, multiplier: Double?) {
         self.view = view
         self.attribute = attribute
         self.constant = constant
@@ -183,37 +183,89 @@ private func applyRelation(left: SteviaAttribute, right: SteviaAttribute, relate
 }
 
 @discardableResult
+public func + (left: SteviaAttribute, right: Double) -> SteviaAttribute {
+    SteviaAttribute(view: left.view, attribute: left.attribute, constant: right, multiplier: left.multiplier)
+}
+
+@discardableResult
 public func + (left: SteviaAttribute, right: CGFloat) -> SteviaAttribute {
-    return SteviaAttribute(view: left.view, attribute: left.attribute, constant: right, multiplier: left.multiplier)
+    left + Double(right)
+}
+
+@discardableResult
+public func + (left: SteviaAttribute, right: Int) -> SteviaAttribute {
+    left + Double(right)
+}
+
+@discardableResult
+public func - (left: SteviaAttribute, right: Double) -> SteviaAttribute {
+    SteviaAttribute(view: left.view, attribute: left.attribute, constant: -right, multiplier: left.multiplier)
 }
 
 @discardableResult
 public func - (left: SteviaAttribute, right: CGFloat) -> SteviaAttribute {
-    return SteviaAttribute(view: left.view, attribute: left.attribute, constant: -right, multiplier: left.multiplier)
+    left - Double(right)
+}
+
+@discardableResult
+public func - (left: SteviaAttribute, right: Int) -> SteviaAttribute {
+    left - Double(right)
+}
+
+@discardableResult
+public func * (left: SteviaAttribute, right: Double) -> SteviaAttribute {
+    SteviaAttribute(view: left.view, attribute: left.attribute, constant: left.constant, multiplier: right)
 }
 
 @discardableResult
 public func * (left: SteviaAttribute, right: CGFloat) -> SteviaAttribute {
-    return SteviaAttribute(view: left.view, attribute: left.attribute, constant: left.constant, multiplier: right)
+    left * Double(right)
+}
+
+@discardableResult
+public func * (left: SteviaAttribute, right: Int) -> SteviaAttribute {
+    left * Double(right)
+}
+
+@discardableResult
+public func / (left: SteviaAttribute, right: Double) -> SteviaAttribute {
+    left * (1/right)
 }
 
 @discardableResult
 public func / (left: SteviaAttribute, right: CGFloat) -> SteviaAttribute {
-    return left * (1/right)
+    left / Double(right)
+}
+
+@discardableResult
+public func / (left: SteviaAttribute, right: Int) -> SteviaAttribute {
+    left / Double(right)
+}
+
+
+@discardableResult
+public func % (left: Double, right: SteviaAttribute) -> SteviaAttribute {
+    right * (left/100)
 }
 
 @discardableResult
 public func % (left: CGFloat, right: SteviaAttribute) -> SteviaAttribute {
-    return right * (left/100)
+    Double(left) % right
 }
+
+@discardableResult
+public func % (left: Int, right: SteviaAttribute) -> SteviaAttribute {
+    Double(left) % right
+}
+
 
 // MARK: - Equations of type v.P == X
 
 @discardableResult
-public func == (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
+public func == (left: SteviaAttribute, right: Double) -> NSLayoutConstraint {
     if let spv = left.view.superview {
         var toItem: UIView? = spv
-        var constant: CGFloat = right
+        var constant = right
         if left.attribute == .width || left.attribute == .height {
             toItem = nil
         }
@@ -223,16 +275,26 @@ public func == (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
         return spv.addConstraint(item: left.view,
                                  attribute: left.attribute,
                                  toItem: toItem,
-                                 constant: constant)
+                                 constant: Double(constant))
     }
     return NSLayoutConstraint()
 }
 
 @discardableResult
-public func >= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
+public func == (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
+    left == Double(right)
+}
+
+@discardableResult
+public func == (left: SteviaAttribute, right: Int) -> NSLayoutConstraint {
+    left == Double(right)
+}
+
+@discardableResult
+public func >= (left: SteviaAttribute, right: Double) -> NSLayoutConstraint {
     if let spv = left.view.superview {
         var toItem: UIView? = spv
-        var constant: CGFloat = right
+        var constant = right
         if left.attribute == .width || left.attribute == .height {
             toItem = nil
         }
@@ -243,16 +305,26 @@ public func >= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
                                  attribute: left.attribute,
                                  relatedBy: .greaterThanOrEqual,
                                  toItem: toItem,
-                                 constant: constant)
+                                 constant: Double(constant))
     }
     return NSLayoutConstraint()
 }
 
 @discardableResult
-public func <= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
+public func >= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
+    left >= Double(right)
+}
+
+@discardableResult
+public func >= (left: SteviaAttribute, right: Int) -> NSLayoutConstraint {
+    left >= Double(right)
+}
+
+@discardableResult
+public func <= (left: SteviaAttribute, right: Double) -> NSLayoutConstraint {
     if let spv = left.view.superview {
         var toItem: UIView? = spv
-        var constant: CGFloat = right
+        var constant = right
         if left.attribute == .width || left.attribute == .height {
             toItem = nil
         }
@@ -263,8 +335,18 @@ public func <= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
                                  attribute: left.attribute,
                                  relatedBy: .lessThanOrEqual,
                                  toItem: toItem,
-                                 constant: constant)
+                                 constant: Double(constant))
     }
     return NSLayoutConstraint()
+}
+
+@discardableResult
+public func <= (left: SteviaAttribute, right: CGFloat) -> NSLayoutConstraint {
+    left <= Double(right)
+}
+
+@discardableResult
+public func <= (left: SteviaAttribute, right: Int) -> NSLayoutConstraint {
+    left <= Double(right)
 }
 #endif

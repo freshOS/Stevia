@@ -10,12 +10,20 @@
 import UIKit
 
 public struct SteviaPercentage {
-    let value: CGFloat
+    let value: Double
 }
 
 postfix operator %
+public postfix func % (v: Double) -> SteviaPercentage {
+    SteviaPercentage(value: Double(v))
+}
+
 public postfix func % (v: CGFloat) -> SteviaPercentage {
-    return SteviaPercentage(value: v)
+    Double(v)%
+}
+
+public postfix func % (v: Int) -> SteviaPercentage {
+    Double(v)%
 }
 
 public extension UIView {
@@ -195,7 +203,7 @@ public extension UIView {
             let lg = UILayoutGuide()
             spv.addLayoutGuide(lg)
             let constraints = [
-                lg.widthAnchor.constraint(equalTo: spv.widthAnchor, multiplier: p.value / 100),
+                lg.widthAnchor.constraint(equalTo: spv.widthAnchor, multiplier: CGFloat(p.value / 100.0)),
                 lg.leadingAnchor.constraint(equalTo: spv.leadingAnchor),
                 leadingAnchor.constraint(equalTo: lg.trailingAnchor)
             ]
@@ -226,7 +234,7 @@ public extension UIView {
             let lg = UILayoutGuide()
             spv.addLayoutGuide(lg)
             let constraints = [
-                lg.widthAnchor.constraint(equalTo: spv.widthAnchor, multiplier: p.value / 100),
+                lg.widthAnchor.constraint(equalTo: spv.widthAnchor, multiplier: CGFloat(p.value / Double(100))),
                 lg.trailingAnchor.constraint(equalTo: spv.trailingAnchor),
                 trailingAnchor.constraint(equalTo: lg.leadingAnchor)
             ]

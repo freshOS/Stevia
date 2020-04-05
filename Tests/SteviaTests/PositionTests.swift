@@ -21,7 +21,7 @@ class PositionTests: XCTestCase {
         ctrler =  UIViewController()
         win.rootViewController = ctrler
         v = UIView()
-        ctrler.view.sv(v)
+        ctrler.view.subviews {v }
         v.size(100.0)
     }
     
@@ -29,8 +29,8 @@ class PositionTests: XCTestCase {
         super.tearDown()
     }
     
-    func testTop() {
-        v.top(23)
+    func testTopDouble() {
+        v.top(Double(23))
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 23, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -38,8 +38,26 @@ class PositionTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
     
-    func testBottom() {
-        v.bottom(45)
+    func testTopCGFloat() {
+        v.top(CGFloat(23))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 23, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testTopInt() {
+        v.top(Int(23))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 23, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testBottomDouble() {
+        v.bottom(Double(45))
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height - v.frame.height - 45,
                                    accuracy: CGFloat(Float.ulpOfOne))
@@ -48,8 +66,28 @@ class PositionTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
     
-    func testLeft() {
-        v.left(12)
+    func testBottomCGFloat() {
+        v.bottom(CGFloat(45))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height - v.frame.height - 45,
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testBottomInt() {
+        v.bottom(Int(45))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, ctrler.view.frame.height - v.frame.height - 45,
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testLeftDouble() {
+        v.left(Double(12))
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x, 12, accuracy: CGFloat(Float.ulpOfOne))
@@ -57,8 +95,8 @@ class PositionTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
     
-    func testLeading() {
-        v.leading(12)
+    func testLeftCGFloat() {
+        v.left(CGFloat(12))
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x, 12, accuracy: CGFloat(Float.ulpOfOne))
@@ -66,8 +104,44 @@ class PositionTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
     
-    func testRight() {
-        v.right(74)
+    func testLeftInt() {
+        v.left(Int(12))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 12, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testLeadingDouble() {
+        v.leading(Double(12))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 12, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testLeadingCGFloat() {
+        v.leading(CGFloat(12))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 12, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testLeadingInt() {
+        v.leading(Int(12))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 12, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testRightDouble() {
+        v.right(Double(74))
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - 74,
@@ -76,8 +150,48 @@ class PositionTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
     
-    func testTrailing() {
-        v.trailing(74)
+    func testRightCGFloat() {
+        v.right(CGFloat(74))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - 74,
+                       accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testRightInt() {
+        v.right(Int(74))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - 74,
+                       accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testTrailingDouble() {
+        v.trailing(Double(74))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - 74,
+                       accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testTrailingCGFloat() {
+        v.trailing(CGFloat(74))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - 74,
+                       accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testTrailingInt() {
+        v.trailing(Int(74))
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x,  ctrler.view.frame.width - v.frame.width - 74,

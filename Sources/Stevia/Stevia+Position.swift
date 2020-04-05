@@ -23,8 +23,56 @@ public extension UIView {
      - Returns: Itself for chaining purposes
      */
     @discardableResult
+    func left(_ points: Double) -> Self {
+        position(.left, points: points)
+    }
+    
+    /** Sets the left margin for a view.
+     
+    Example Usage :
+     
+     label.left(20)
+     label.left(<=20)
+     label.left(>=20)
+     label.left(20%)
+     
+     - Returns: Itself for chaining purposes
+     */
+    @discardableResult
     func left(_ points: CGFloat) -> Self {
-        return position(.left, points: points)
+        left(Double(points))
+    }
+    
+    /** Sets the left margin for a view.
+     
+    Example Usage :
+     
+     label.left(20)
+     label.left(<=20)
+     label.left(>=20)
+     label.left(20%)
+     
+     - Returns: Itself for chaining purposes
+     */
+    @discardableResult
+    func left(_ points: Int) -> Self {
+        left(Double(points))
+    }
+    
+    /** Sets the right margin for a view.
+     
+    Example Usage :
+     
+     label.right(20)
+     label.right(<=20)
+     label.right(>=20)
+     label.right(20%)
+     
+     - Returns: Itself for chaining purposes
+     */
+    @discardableResult
+    func right(_ points: Double) -> Self {
+        position(.right, points: -points)
     }
     
     /** Sets the right margin for a view.
@@ -40,7 +88,39 @@ public extension UIView {
      */
     @discardableResult
     func right(_ points: CGFloat) -> Self {
-        return position(.right, points: -points)
+        right(Double(points))
+    }
+    
+    /** Sets the right margin for a view.
+     
+    Example Usage :
+     
+     label.right(20)
+     label.right(<=20)
+     label.right(>=20)
+     label.right(20%)
+     
+     - Returns: Itself for chaining purposes
+     */
+    @discardableResult
+    func right(_ points: Int) -> Self {
+        right(Double(points))
+    }
+    
+    /** Sets the top margin for a view.
+     
+    Example Usage :
+     
+     label.top(20)
+     label.top(<=20)
+     label.top(>=20)
+     label.top(20%)
+     
+    - Returns: Itself for chaining purposes
+    */
+    @discardableResult
+    func top(_ points: Double) -> Self {
+        position(.top, points: points)
     }
     
     /** Sets the top margin for a view.
@@ -56,7 +136,39 @@ public extension UIView {
     */
     @discardableResult
     func top(_ points: CGFloat) -> Self {
-        return position(.top, points: points)
+        top(Double(points))
+    }
+    
+    /** Sets the top margin for a view.
+     
+    Example Usage :
+     
+     label.top(20)
+     label.top(<=20)
+     label.top(>=20)
+     label.top(20%)
+     
+    - Returns: Itself for chaining purposes
+    */
+    @discardableResult
+    func top(_ points: Int) -> Self {
+        top(Double(points))
+    }
+    
+    /** Sets the bottom margin for a view.
+     
+    Example Usage :
+     
+     label.bottom(20)
+     label.bottom(<=20)
+     label.bottom(>=20)
+     label.bottom(20%)
+     
+    - Returns: Itself for chaining purposes
+    */
+    @discardableResult
+    func bottom(_ points: Double) -> Self {
+        position(.bottom, points: -points)
     }
     
     /** Sets the bottom margin for a view.
@@ -72,7 +184,23 @@ public extension UIView {
     */
     @discardableResult
     func bottom(_ points: CGFloat) -> Self {
-        return position(.bottom, points: -points)
+        bottom(Double(points))
+    }
+    
+    /** Sets the bottom margin for a view.
+     
+    Example Usage :
+     
+     label.bottom(20)
+     label.bottom(<=20)
+     label.bottom(>=20)
+     label.bottom(20%)
+     
+    - Returns: Itself for chaining purposes
+    */
+    @discardableResult
+    func bottom(_ points: Int) -> Self {
+        bottom(Double(points))
     }
 
     /** Sets the left margin for a view.
@@ -88,7 +216,7 @@ public extension UIView {
     */
     @discardableResult
     func left(_ fm: SteviaFlexibleMargin) -> Self {
-        return position(.left, relatedBy: fm.relation, points: fm.points)
+        position(.left, relatedBy: fm.relation, points: fm.points)
     }
     
     /** Sets the right margin for a view.
@@ -129,7 +257,7 @@ public extension UIView {
      */
     @discardableResult
     func top(_ fm: SteviaFlexibleMargin) -> Self {
-        return position(.top, relatedBy: fm.relation, points: fm.points)
+        position(.top, relatedBy: fm.relation, points: fm.points)
     }
     
     /** Sets the bottom margin for a view.
@@ -170,13 +298,61 @@ public extension UIView {
     */
     
     @discardableResult
+    func leading(_ points: Double) -> UIView {
+        position(.leading, points: points)
+    }
+    
+    /** Sets the leading margin for a view.
+     
+    Example Usage :
+     
+     label.leading(20)
+     label.leading(<=20)
+     label.leading(>=20)
+     label.leading(20%)
+     
+    - Returns: itself for chaining purposes
+    */
+    @discardableResult
     func leading(_ points: CGFloat) -> UIView {
-        return position(.leading, points: points)
+        leading(Double(points))
+    }
+    
+    /** Sets the leading margin for a view.
+     
+    Example Usage :
+     
+     label.leading(20)
+     label.leading(<=20)
+     label.leading(>=20)
+     label.leading(20%)
+     
+    - Returns: itself for chaining purposes
+    */
+    @discardableResult
+    func leading(_ points: Int) -> UIView {
+        leading(Double(points))
     }
     
     @discardableResult
     func leading(_ fm: SteviaFlexibleMargin) -> UIView {
-        return position(.leading, relatedBy: fm.relation, points: fm.points)
+        position(.leading, relatedBy: fm.relation, points: fm.points)
+    }
+    
+    /** Sets the trailing margin for a view.
+     
+    Example Usage :
+     
+     label.trailing(20)
+     label.trailing(<=20)
+     label.trailing(>=20)
+     label.trailing(20%)
+     
+    - Returns: itself for chaining purposes
+    */
+    @discardableResult
+    func trailing(_ points: Double) -> UIView {
+        position(.trailing, points: -points)
     }
     
     /** Sets the trailing margin for a view.
@@ -192,7 +368,23 @@ public extension UIView {
     */
     @discardableResult
     func trailing(_ points: CGFloat) -> UIView {
-        return position(.trailing, points: -points)
+        trailing(Double(points))
+    }
+    
+    /** Sets the trailing margin for a view.
+     
+    Example Usage :
+     
+     label.trailing(20)
+     label.trailing(<=20)
+     label.trailing(>=20)
+     label.trailing(20%)
+     
+    - Returns: itself for chaining purposes
+    */
+    @discardableResult
+    func trailing(_ points: Int) -> UIView {
+        trailing(Double(points))
     }
 
     @discardableResult
@@ -208,7 +400,7 @@ public extension UIView {
     
     fileprivate func position(_ position: NSLayoutConstraint.Attribute,
                               relatedBy: NSLayoutConstraint.Relation = .equal,
-                              points: CGFloat) -> Self {
+                              points: Double) -> Self {
         if let spv = superview {
             let c = constraint(item: self, attribute: position,
                                relatedBy: relatedBy,
