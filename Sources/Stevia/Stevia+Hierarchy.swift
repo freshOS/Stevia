@@ -167,19 +167,16 @@ public extension UIView {
      
      - Returns: Itself to enable nested layouts.
      */
-    @available(*, deprecated, renamed: "subviews")
     @objc
+    @available(*, deprecated, renamed: "subviews")
     @discardableResult
     func sv(_ subViews: [UIView]) -> UIView {
-        for sv in subViews {
-            addSubview(sv)
-            sv.translatesAutoresizingMaskIntoConstraints = false
-        }
-        return self
+        subviews(subViews)
     }
     
 
-    @objc @discardableResult
+    @discardableResult
+    @objc
     func subviews(_ subViews: [UIView]) -> UIView {
         for sv in subViews {
             addSubview(sv)
@@ -306,4 +303,30 @@ public extension UICollectionViewCell {
         contentView.subviews(subViews)
     }
 }
+
+
+public extension UIStackView {
+    
+    @discardableResult
+    func arrangedSubviews(@SubviewsBuilder content: () -> [UIView]) -> UIView {
+        arrangedSubviews(content())
+    }
+    
+    @discardableResult
+    func arrangedSubviews(@SubviewsBuilder content: () -> UIView) -> UIView {
+        arrangedSubviews([content()])
+    }
+
+    @discardableResult
+    private func arrangedSubviews(_ subViews: UIView...) -> UIView {
+        arrangedSubviews(subViews)
+    }
+
+    @discardableResult
+    func arrangedSubviews(_ subViews: [UIView]) -> UIView {
+        subViews.forEach { addArrangedSubview($0) }
+        return self
+    }
+}
+
 #endif
