@@ -113,7 +113,84 @@ and add `https://github.com/freshOS/Stevia`.
 For Carthage/Cocoapods support (legacy versions) see documentation [here](https://freshos.github.io/SteviaDocs/installation/).*
 
 ### 📖 Documentation
-You can find the full documentation [here](https://freshos.github.io/SteviaDocs/).
+The following will teach you the gist of Stevia in one minute.  
+To go further, you can refer to the full documentation [here](https://freshos.github.io/SteviaDocs/).
+
+
+Stevia enables you to write readable Auto Layout code. It does so by tackling the 3 main components of layout: **view hierarchy**, **layout** and **styling**.
+
+#### 01 - View hierarchy
+
+```swift
+email.translatesAutoresizingMaskIntoConstraints = false
+password.translatesAutoresizingMaskIntoConstraints = false
+login.translatesAutoresizingMaskIntoConstraints = false
+addSubview(email)
+addSubview(password)
+addSubview(login)
+```
+becomes
+
+```swift
+subviews {
+    email
+    password
+    login
+}
+```
+
+#### 02 - Layout
+```swift
+email.topAnchor.constraint(equalTo: topAnchor, constant: 100).isActive = true
+email.leftAnchor.constraint(equalTo: leftAnchor, constant: 8).isActive = true
+email.rightAnchor.constraint(equalTo: rightAnchor, constant: -8).isActive = true
+email.heightAnchor.constraint(equalToConstant: 80).isActive = true
+
+password.topAnchor.constraint(equalTo: email.bottomAnchor, constant: 8).isActive = true
+password.leftAnchor.constraint(equalTo: leftAnchor, constant: 8).isActive = true
+password.rightAnchor.constraint(equalTo: rightAnchor, constant: -8).isActive = true
+password.heightAnchor.constraint(equalToConstant: 80).isActive = true
+
+login.topAnchor.constraint(lessThanOrEqualTo: password.bottomAnchor, constant: 20).isActive = true
+login.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+login.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+login.heightAnchor.constraint(equalToConstant: 80).isActive = true
+login.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+```
+
+becomes
+
+```swift
+layout {
+    100
+    |-email-| ~ 80
+    8
+    |-password-| ~ 80
+    >=20
+    |login| ~ 80
+    0
+}
+```
+
+#### 03 - Styling
+
+```swift
+email.borderStyle = .roundedRect
+email.autocorrectionType = .no
+email.keyboardType = .emailAddress
+email.font = UIFont(name: "HelveticaNeue-Light", size: 26)
+```
+becomes
+```swift
+email.style { f in
+    f.borderStyle = .roundedRect
+    f.autocorrectionType = .no
+    f.keyboardType = .emailAddress
+    f.font = UIFont(name: "HelveticaNeue-Light", size: 26)
+    f.returnKeyType = .next
+}
+```
+
 
 ### 👨‍💻 Contributors
 

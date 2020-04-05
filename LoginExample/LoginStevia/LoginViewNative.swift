@@ -36,6 +36,8 @@ class LoginViewNative: UIView {
         password.rightAnchor.constraint(equalTo: rightAnchor, constant: -8).isActive = true
         password.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
+        
+        login.topAnchor.constraint(lessThanOrEqualTo: password.bottomAnchor, constant: 20).isActive = true
         login.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
         login.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         login.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
