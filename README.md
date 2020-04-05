@@ -214,8 +214,10 @@ Like the project? Offer coffee or support us with a monthly donation and help us
 
 Many top-notch Apps with millions of users use Stevia to write better Auto Layout code:
 
-- [Mobike](https://apps.apple.com/cn/app/mobike-smart-bike-sharing/id1044535426?l=en) - The world’s first and largest bike sharing system.
-- [Brightspace Pulse](https://apps.apple.com/us/app/id1001688546) - Education app
+
+
+- [<img src="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/4d/c1/70/4dc17011-3ca7-bf9a-5326-70db722686ca/AppIcon-0-0-1x_U007emarketing-0-0-0-6-0-0-85-220.png/230x0w.png" height="44px"/> Mobike](https://apps.apple.com/cn/app/mobike-smart-bike-sharing/id1044535426?l=en) - The world’s first and largest bike sharing system.
+- [<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/ac/38/7a/ac387a00-893c-66c4-8595-856ad9907c84/AppIcon-0-0-1x_U007emarketing-0-0-0-6-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" height="44px"/> Brightspace Pulse](https://apps.apple.com/us/app/id1001688546) - Education app
 - [NerdWallet](https://apps.apple.com/us/app/nerdwallet/id1174471607) - Credit Score, Budget, Finance
 - [Yatra](https://apps.apple.com/in/app/yatra-flights-hotels-cabs/id730234679) - Flights, Hotels & Cabs
 - [Yummypets](https://apps.apple.com/us/app/yummypets-pets/id527910229) - The world's cutest social network for pet lovers
