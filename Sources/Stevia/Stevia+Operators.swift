@@ -12,13 +12,13 @@ import UIKit
 prefix operator |
 @discardableResult
 public prefix func | (p: UIView) -> UIView {
-    return p.leading(0)
+    p.leading(0)
 }
 
 postfix operator |
 @discardableResult
 public postfix func | (p: UIView) -> UIView {
-    return p.trailing(0)
+    p.trailing(0)
 }
 
 infix operator ~ : HeightPrecedence
@@ -28,24 +28,44 @@ precedencegroup HeightPrecedence {
 }
 
 @discardableResult
+public func ~ (left: UIView, right: Double) -> UIView {
+    left.height(right)
+}
+
+@discardableResult
 public func ~ (left: UIView, right: CGFloat) -> UIView {
-    return left.height(right)
+    left ~ Double(right)
+}
+
+@discardableResult
+public func ~ (left: UIView, right: Int) -> UIView {
+    left ~ Double(right)
 }
 
 @discardableResult
 public func ~ (left: UIView, right: SteviaPercentage) -> UIView {
-    return left.height(right)
+    left.height(right)
 }
 
 @discardableResult
 public func ~ (left: UIView, right: SteviaFlexibleMargin) -> UIView {
-    return left.height(right)
+    left.height(right)
+}
+
+@discardableResult
+public func ~ (left: [UIView], right: Double) -> [UIView] {
+    for l in left { l.height(right) }
+    return left
 }
 
 @discardableResult
 public func ~ (left: [UIView], right: CGFloat) -> [UIView] {
-    for l in left { l.height(right) }
-    return left
+    left ~ Double(right)
+}
+
+@discardableResult
+public func ~ (left: [UIView], right: Int) -> [UIView] {
+    left ~ Double(right)
 }
 
 @discardableResult
@@ -56,48 +76,76 @@ public func ~ (left: [UIView], right: SteviaFlexibleMargin) -> [UIView] {
 
 prefix operator |-
 @discardableResult
-public prefix func |- (p: CGFloat) -> SideConstraint {
+public prefix func |- (p: Double) -> SideConstraint {
     var s = SideConstraint()
     s.constant = p
     return s
+}
+
+@discardableResult
+public prefix func |- (p: CGFloat) -> SideConstraint {
+    |-Double(p)
+}
+
+@discardableResult
+public prefix func |- (p: Int) -> SideConstraint {
+    |-Double(p)
 }
 
 @discardableResult
 public prefix func |- (v: UIView) -> UIView {
     v.leading(8)
-    return v
 }
 
 postfix operator -|
 @discardableResult
-public postfix func -| (p: CGFloat) -> SideConstraint {
+public postfix func -| (p: Double) -> SideConstraint {
     var s = SideConstraint()
     s.constant = p
     return s
 }
 
 @discardableResult
+public postfix func -| (p: CGFloat) -> SideConstraint {
+    Double(p)-|
+}
+
+@discardableResult
+public postfix func -| (p: Int) -> SideConstraint {
+    Double(p)-|
+}
+
+@discardableResult
 public postfix func -| (v: UIView) -> UIView {
     v.trailing(8)
-    return v
 }
 
 public struct SideConstraint {
-    var constant: CGFloat!
+    var constant: Double!
 }
 
 public struct PartialConstraint {
     var view1: UIView!
-    var constant: CGFloat!
+    var constant: Double!
     var views: [UIView]?
 }
 
 @discardableResult
-public func - (left: UIView, right: CGFloat) -> PartialConstraint {
+public func - (left: UIView, right: Double) -> PartialConstraint {
     var p = PartialConstraint()
     p.view1 = left
     p.constant = right
     return p
+}
+
+@discardableResult
+public func - (left: UIView, right: CGFloat) -> PartialConstraint {
+    left-Double(right)
+}
+
+@discardableResult
+public func - (left: UIView, right: Int) -> PartialConstraint {
+    left-Double(right)
 }
 
 // Side Constraints
@@ -172,12 +220,23 @@ public func - (left: UIView, right: UIView) -> [UIView] {
 }
 
 @discardableResult
-public func - (left: [UIView], right: CGFloat) -> PartialConstraint {
+public func - (left: [UIView], right: Double) -> PartialConstraint {
     var p = PartialConstraint()
     p.constant = right
     p.views = left
     return p
 }
+
+@discardableResult
+public func - (left: [UIView], right: CGFloat) -> PartialConstraint {
+    left-Double(right)
+}
+
+@discardableResult
+public func - (left: [UIView], right: Int) -> PartialConstraint {
+    left-Double(right)
+}
+
 
 @discardableResult
 public func - (left: [UIView], right: UIView) -> [UIView] {
@@ -198,12 +257,12 @@ public struct Space {
 
 @discardableResult
 public func - (left: UIView, right: String) -> Space {
-    return Space(previousViews: [left])
+    Space(previousViews: [left])
 }
 
 @discardableResult
 public func - (left: [UIView], right: String) -> Space {
-    return Space(previousViews: left)
+    Space(previousViews: left)
 }
 
 @discardableResult

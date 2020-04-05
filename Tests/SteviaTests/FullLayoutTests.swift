@@ -21,34 +21,35 @@ class TestView: UIView {
     convenience init() {
         self.init(frame: CGRect.zero)
         
-        sv(
-            email,
-            password,
+        subviews {
+            email
+            password
             login
-        )
-        
-        layout(
-            100,
-            |-email-22-| ~ 10%,
-            20,
-            |password.width(54) ~ 47,
-            "",
-            login.centerHorizontally() ~ 99,
+        }
+  
+        layout {
+            100.5
+            |-email-22-| ~ 10%
+            20
+            |password.width(54) ~ 47.0
+            >=0
+            login.centerHorizontally() ~ 99
             7
-        )
+        }
         
-        sv(
-            view1,
+        subviews {
+            view1
             view2
-        )
+        }
         
-        layout(
-            10%,
-            |view1| ~ 20,
-            33%,
-            |view2|,
+        layout {
+            10%
+            |view1| ~ 20
+            33%
+            |view2|
             20%
-        )
+        }
+        
     }
 }
 
@@ -83,7 +84,7 @@ class FullLayoutTests: XCTestCase {
         v.layoutIfNeeded()
 
         // Email
-        XCTAssertEqual(v.email.frame.origin.y, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.email.frame.origin.y, 100.5, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.email.frame.origin.x, 8, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.email.frame.width, win.frame.width - 8 - 22,
                                    accuracy: CGFloat(Float.ulpOfOne))
@@ -119,7 +120,7 @@ class FullLayoutTests: XCTestCase {
         v.layoutIfNeeded()
 
         // Email
-        XCTAssertEqual(v.email.frame.origin.y, 100, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.email.frame.origin.y, 100.5, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.email.frame.origin.x, 22, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.email.frame.width, win.frame.width - 8 - 22,
                                    accuracy: CGFloat(Float.ulpOfOne))

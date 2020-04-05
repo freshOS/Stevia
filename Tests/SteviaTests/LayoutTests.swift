@@ -21,12 +21,23 @@ class LayoutTests: XCTestCase {
         ctrler =  UIViewController()
         win.rootViewController = ctrler
         v = UIView()
-        ctrler.view.sv(v)
+        ctrler.view.subviews { v }
         verifyViewHasDefaultValues()
     }
     
     override func tearDown() {
         super.tearDown()
+    }
+    
+    func testComplexLayout() {
+        let featureA = UIView()
+        let featureB = UIView()
+        
+        let m1:Int = 6
+        let m2:Int = 2
+//        |-6-featureA-2-featureB-6-|
+        |-m1-featureA-m2-featureB-m1-|
+        //align(horizontally: |-6-feature1-2-feature2-6-|)
     }
     
     func testEmptyLeftMargin() {
@@ -67,8 +78,26 @@ class LayoutTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
     }
     
-    func testLeftMargin() {
-        |-75-v
+    func testLeftMarginDouble() {
+        |-Double(75)-v
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 75, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testLeftMarginCGFloat() {
+        |-CGFloat(75)-v
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 75, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+    }
+
+    func testLeftMarginInt() {
+        |-Int(75)-v
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x, 75, accuracy: CGFloat(Float.ulpOfOne))
@@ -128,8 +157,28 @@ class LayoutTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
     }
     
-    func testRightMargin() {
-        v-14-|
+    func testRightMarginDouble() {
+        v-Double(14)-|
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 14,
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testRightMarginCGFloat() {
+        v-CGFloat(14)-|
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 14,
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testRightMarginInt() {
+        v-Int(14)-|
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width - v.frame.width - 14,
@@ -149,8 +198,8 @@ class LayoutTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
     }
 
-    func testHeight() {
-        v ~ 180
+    func testHeightDouble() {
+        v ~ Double(180)
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -158,8 +207,26 @@ class LayoutTests: XCTestCase {
         XCTAssertEqual(v.frame.height, 180, accuracy: CGFloat(Float.ulpOfOne))
     }
     
-    func testHeightPercentage() {
-        v ~ 25%
+    func testHeightCGFloat() {
+        v ~ CGFloat(180)
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 180, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testHeightInt() {
+        v ~ Int(180)
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 180, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testHeightPercentageDouble() {
+        v ~ Double(25)%
         ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -167,19 +234,93 @@ class LayoutTests: XCTestCase {
         XCTAssertEqual(v.frame.height, ctrler.view.frame.height*0.25, accuracy: 0.5)
     }
     
-    func testMultipleHeightsAtOnce() {
+    func testHeightPercentageCGFloat() {
+        v ~ CGFloat(25)%
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, ctrler.view.frame.height*0.25, accuracy: 0.5)
+    }
+    
+    func testHeightPercentageInt() {
+        v ~ Int(25)%
+        ctrler.view.layoutIfNeeded() // This is needed to force auto-layout to kick-in
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, ctrler.view.frame.height*0.25, accuracy: 0.5)
+    }
+    
+    func testMultipleHeightsAtOnceDouble() {
         let v1 = UIView()
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1, v2, v3)
+        ctrler.view.subviews {
+            v1
+            v2
+            v3
+        }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         }
-        [v1, v2, v3] ~ 63
+        [v1, v2, v3] ~ Double(63)
+        ctrler.view.layoutIfNeeded()
+        for view in ctrler.view.subviews {
+            XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.height, 63, accuracy: CGFloat(Float.ulpOfOne))
+        }
+    }
+    
+    func testMultipleHeightsAtOnceCGFloat() {
+        let v1 = UIView()
+        let v2 = UIView()
+        let v3 = UIView()
+        v.removeFromSuperview()
+        ctrler.view.subviews {
+            v1
+            v2
+            v3
+        }
+        for view in ctrler.view.subviews {
+            XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        }
+        [v1, v2, v3] ~ CGFloat(63)
+        ctrler.view.layoutIfNeeded()
+        for view in ctrler.view.subviews {
+            XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.height, 63, accuracy: CGFloat(Float.ulpOfOne))
+        }
+    }
+    
+    func testMultipleHeightsAtOnceInt() {
+        let v1 = UIView()
+        let v2 = UIView()
+        let v3 = UIView()
+        v.removeFromSuperview()
+        ctrler.view.subviews {
+            v1
+            v2
+            v3
+        }
+        for view in ctrler.view.subviews {
+            XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        }
+        [v1, v2, v3] ~ Int(63)
         ctrler.view.layoutIfNeeded()
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -193,7 +334,10 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1, v2)
+        ctrler.view.subviews {
+            v1
+            v2
+        }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -219,7 +363,10 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1, v2)
+        ctrler.view.subviews {
+            v1
+            v2
+        }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -240,19 +387,22 @@ class LayoutTests: XCTestCase {
         XCTAssertEqual(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
     }
     
-    func testMarginBetweenTwoViews() {
+    func testMarginBetweenTwoViewsDouble() {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1, v2)
+        ctrler.view.subviews {
+            v1
+            v2
+        }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         }
-        
-        |v1.width(10)-52-v2
+        let m: Double = 52
+        |v1.width(10)-m-v2
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -265,12 +415,73 @@ class LayoutTests: XCTestCase {
         XCTAssertEqual(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
     }
     
+    func testMarginBetweenTwoViewsCGFloat() {
+        let v1 = UIView()
+        let v2 = UIView()
+        v.removeFromSuperview()
+        ctrler.view.subviews {
+            v1
+            v2
+        }
+        for view in ctrler.view.subviews {
+            XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        }
+
+        let m: CGFloat = 52
+        |v1.width(10)-m-v2
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.width, 10, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+
+        XCTAssertEqual(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.origin.x, 62, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
+    func testMarginBetweenTwoViewsInt() {
+        let v1 = UIView()
+        let v2 = UIView()
+        v.removeFromSuperview()
+        ctrler.view.subviews {
+            v1
+            v2
+        }
+        for view in ctrler.view.subviews {
+            XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        }
+
+        let m: Int = 52
+        |v1.width(10)-m-v2
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.width, 10, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+
+        XCTAssertEqual(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.origin.x, 62, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+    }
+    
     func testMarginBetweenTwoViewsRTL() {
         ctrler.view.semanticContentAttribute = .forceRightToLeft
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1, v2)
+        ctrler.view.subviews {
+            v1
+            v2
+        }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -294,7 +505,10 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1, v2)
+        ctrler.view.subviews {
+            v1
+            v2
+        }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -325,7 +539,10 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1, v2)
+        ctrler.view.subviews {
+            v1
+            v2
+        }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -353,7 +570,11 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1, v2, v3)
+        ctrler.view.subviews {
+            v1
+            v2
+            v3
+        }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -362,7 +583,7 @@ class LayoutTests: XCTestCase {
         }
         
 
-        |v1.width(20)--v2.width(20)--v3
+        |v1.width(20)⁃v2.width(20)⁃v3
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -381,12 +602,16 @@ class LayoutTests: XCTestCase {
         
     }
     
-    func testMarginsBetweenThreeViews() {
+    func testMarginsBetweenThreeViewsDouble() {
         let v1 = UIView()
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1, v2, v3)
+        ctrler.view.subviews {
+            v1
+            v2
+            v3
+        }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -394,7 +619,90 @@ class LayoutTests: XCTestCase {
             XCTAssertEqual(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
         }
         
-        |v1.width(20)-43-v2.width(20)-27-v3
+        let m1: Double = 43
+        let m2: Double = 27
+        
+        |v1.width(20)-m1-v2.width(20)-m2-v3
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.width, 20, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        
+        XCTAssertEqual(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.origin.x, v1.frame.origin.x + v1.frame.width + 43,
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.width, 20, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v3.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v3.frame.origin.x, v2.frame.origin.x + v2.frame.width + 27,
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v3.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v3.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        
+    }
+    
+    func testMarginsBetweenThreeViewsCGFloat() {
+        let v1 = UIView()
+        let v2 = UIView()
+        let v3 = UIView()
+        v.removeFromSuperview()
+        ctrler.view.subviews {
+            v1
+            v2
+            v3
+        }
+        for view in ctrler.view.subviews {
+            XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        }
+        
+        let m1: CGFloat = 43
+        let m2: CGFloat = 27
+        
+        |v1.width(20)-m1-v2.width(20)-m2-v3
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.width, 20, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v1.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        
+        XCTAssertEqual(v2.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.origin.x, v1.frame.origin.x + v1.frame.width + 43,
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.width, 20, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v2.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v3.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v3.frame.origin.x, v2.frame.origin.x + v2.frame.width + 27,
+                                   accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v3.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v3.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        
+    }
+    
+    func testMarginsBetweenThreeViewsInt() {
+        let v1 = UIView()
+        let v2 = UIView()
+        let v3 = UIView()
+        v.removeFromSuperview()
+        ctrler.view.subviews {
+            v1
+            v2
+            v3
+        }
+        for view in ctrler.view.subviews {
+            XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
+            XCTAssertEqual(view.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
+        }
+        
+        let m1: Int = 43
+        let m2: Int = 27
+        
+        |v1.width(20)-m1-v2.width(20)-m2-v3
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -420,7 +728,11 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1, v2, v3)
+        ctrler.view.subviews {
+            v1
+            v2
+            v3
+        }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -452,7 +764,10 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1, v2)
+        ctrler.view.subviews {
+            v1
+            v2
+        }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -480,7 +795,10 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1, v2)
+        ctrler.view.subviews {
+            v1
+            v2
+        }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -508,7 +826,7 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.sv(v1, v2, v3)
+        ctrler.view.subviews { v1; v2; v3 }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))

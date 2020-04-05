@@ -17,7 +17,7 @@ class GetConstraintsTests: XCTestCase {
     override func setUp() {
         spv = UIView()
         v = UIView()
-        spv.sv(v)
+        spv.subviews { v }
     }
     
     func testCanGetLeftConstraint() {
