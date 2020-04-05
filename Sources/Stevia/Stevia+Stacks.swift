@@ -40,15 +40,13 @@ public struct FlexibleSpace {
 
 public extension UIView {
     @discardableResult
-    func Layout(@SteviaLayoutBuilder content: () -> [SteviaLayoutItem]) -> UIView {
+    func layout(@SteviaLayoutBuilder content: () -> [SteviaLayoutItem]) -> UIView {
         let subviews = content()
-        
         let anys = subviews.map { $0.any }
         layout(anys)
         return self
     }
 }
-
 
 #if canImport(UIKit)
 import UIKit

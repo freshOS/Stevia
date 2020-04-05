@@ -25,7 +25,7 @@ class BaselineTests: XCTestCase {
         label1 = UILabel()
         label2 = UILabel()
             
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             label1
             label2
         }

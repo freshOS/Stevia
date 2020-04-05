@@ -78,7 +78,7 @@ public extension UIView {
         convenience init() {
         self.init(frame: CGRect.zero)
      
-         Subviews {
+         subviews {
             email
             password
             login
@@ -115,7 +115,7 @@ public extension UIView {
         convenience init() {
         self.init(frame: CGRect.zero)
      
-         Subviews {
+         subviews {
             email
             password
             login

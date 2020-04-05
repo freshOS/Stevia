@@ -21,7 +21,7 @@ class LayoutTests: XCTestCase {
         ctrler =  UIViewController()
         win.rootViewController = ctrler
         v = UIView()
-        ctrler.view.Subviews { v }
+        ctrler.view.subviews { v }
         verifyViewHasDefaultValues()
     }
     
@@ -257,7 +257,7 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
             v3
@@ -283,7 +283,7 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
             v3
@@ -309,7 +309,7 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
             v3
@@ -334,7 +334,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -363,7 +363,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews{
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -391,7 +391,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -419,7 +419,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -448,7 +448,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -478,7 +478,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -505,7 +505,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -539,7 +539,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -570,7 +570,7 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
             v3
@@ -583,7 +583,7 @@ class LayoutTests: XCTestCase {
         }
         
 
-        |v1.width(20)--v2.width(20)--v3
+        |v1.width(20)⁃v2.width(20)⁃v3
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v1.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
@@ -607,7 +607,7 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
             v3
@@ -647,7 +647,7 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
             v3
@@ -687,7 +687,7 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
             v3
@@ -728,7 +728,7 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
             v3
@@ -764,7 +764,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -795,7 +795,7 @@ class LayoutTests: XCTestCase {
         let v1 = UIView()
         let v2 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -826,7 +826,7 @@ class LayoutTests: XCTestCase {
         let v2 = UIView()
         let v3 = UIView()
         v.removeFromSuperview()
-        ctrler.view.Subviews { v1; v2; v3 }
+        ctrler.view.subviews { v1; v2; v3 }
         for view in ctrler.view.subviews {
             XCTAssertEqual(view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
             XCTAssertEqual(view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))

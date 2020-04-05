@@ -21,13 +21,13 @@ class TestView: UIView {
     convenience init() {
         self.init(frame: CGRect.zero)
         
-        Subviews {
+        subviews {
             email
             password
             login
         }
   
-        Layout {
+        layout {
             100.5
             |-email-22-| ~ 10%
             20
@@ -37,12 +37,12 @@ class TestView: UIView {
             7
         }
         
-        Subviews {
+        subviews {
             view1
             view2
         }
         
-        Layout {
+        layout {
             10%
             |view1| ~ 20
             33%

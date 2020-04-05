@@ -21,7 +21,7 @@ class SizeTests: XCTestCase {
         ctrler =  UIViewController()
         win.rootViewController = ctrler
         v = UIView()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v
         }
     }
@@ -112,7 +112,7 @@ class SizeTests: XCTestCase {
         let height = 267.0
         let v1 = UIView()
         let v2 = UIView()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -129,7 +129,7 @@ class SizeTests: XCTestCase {
         let height = 267.0
         let v1 = UIView()
         let v2 = UIView()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
@@ -144,14 +144,14 @@ class SizeTests: XCTestCase {
     func testFollwEdges() {
         let v1 = UIView()
         let v2 = UIView()
-        ctrler.view.Subviews {
+        ctrler.view.subviews {
             v1
             v2
         }
         
         let test = ctrler.view
         
-        test!.Layout {
+        test!.layout {
             10
             |-20-v1| ~ 32
         }
@@ -207,13 +207,14 @@ class SizeTests: XCTestCase {
         v.removeFromSuperview()
         v.height(80)
         v.width(80)
-        ctrler.view?.Subviews { v }
+        ctrler.view?.subviews { v }
         
-        let view = ctrler.view
-        view?.Layout {
+        let view: UIView = ctrler.view
+        view.layout {
             0
-            |v
+            |v!
         }
+        
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.width, 80, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 80, accuracy: CGFloat(Float.ulpOfOne))
