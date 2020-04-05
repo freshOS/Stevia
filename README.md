@@ -210,6 +210,24 @@ email.style { f in
 ### 👥 Backers
 Like the project? Offer coffee or support us with a monthly donation and help us continue our activities :)
 
+### 📲 Apps using Stevia
+
+Many top-notch Apps with millions of users use Stevia to write better Auto Layout code:
+
+- [Mobike](https://apps.apple.com/cn/app/mobike-smart-bike-sharing/id1044535426?l=en) - The world’s first and largest bike sharing system.
+- [Brightspace Pulse](https://apps.apple.com/us/app/id1001688546) - Education app
+- [NerdWallet](https://apps.apple.com/us/app/nerdwallet/id1174471607) - Credit Score, Budget, Finance
+- [Yatra](https://apps.apple.com/in/app/yatra-flights-hotels-cabs/id730234679) - Flights, Hotels & Cabs
+- [Yummypets](https://apps.apple.com/us/app/yummypets-pets/id527910229) - The world's cutest social network for pet lovers
+- [Invitation Maker](https://apps.apple.com/us/app/invitation-maker-ecard/id1446598881) - Greetings, Invite & Wishes
+- [Logo Maker](https://apps.apple.com/us/app/logo-maker-create-design/id1455008435) - Create & Design 10,000+ Professional Logos
+- [Smart Cleaner](https://apps.apple.com/us/app/smart-cleaner-clean-storage/id1194582243) - Delete Phone Photos, Contacts
+- [Tuner Eclipse](https://apps.apple.com/us/app/tuner-eclipse-free-guitar-tuner/id1086479185) - Free Guitar Tuner
+- and many more...
+
+You are using Stevia ? Please let me know @[sachadso@gmail.com](sachadso@gmail.com) and I'll add you to the list 😍!
+
+
 <a href="https://opencollective.com/freshos/backer/0/website" target="_blank"><img src="https://opencollective.com/freshos/backer/0/avatar.svg"></a>
 <a href="https://opencollective.com/freshos/backer/1/website" target="_blank"><img src="https://opencollective.com/freshos/backer/1/avatar.svg"></a>
 <a href="https://opencollective.com/freshos/backer/2/website" target="_blank"><img src="https://opencollective.com/freshos/backer/2/avatar.svg"></a>
