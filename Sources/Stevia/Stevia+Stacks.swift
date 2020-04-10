@@ -195,7 +195,7 @@ public extension UIView {
             m = Double(i)
         } else if let d = o as? Double {
             m = d
-        } else if let cg = o as? Double {
+        } else if let cg = o as? CGFloat {
             m = Double(cg)
         }
         return m
