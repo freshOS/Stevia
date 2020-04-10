@@ -36,15 +36,15 @@
 
 ### 🖼 Visual Layout Api
 ```swift
-layout(
-    100,
-    |-email-| ~ 80,
-    8,
-    |-password-forgot-| ~ 80,
-    >=20,
-    |login| ~ 80,
+layout {
+    100
+    |-email-| ~ 80
+    10%
+    |-password-forgot-| ~ 80
+    >=20
+    |login| ~ 80
     0
-)
+}
 ```
 ### ⛓ Chainable Api
 ```swift
