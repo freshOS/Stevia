@@ -231,7 +231,7 @@ class PositionTests: XCTestCase {
         v.right(10%)
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0 , accuracy: CGFloat(0.1))
-        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width * (90/100) - v.frame.width, accuracy: CGFloat(0.1))
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width * (90/100) - v.frame.width, accuracy: CGFloat(0.2))
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
@@ -249,7 +249,7 @@ class PositionTests: XCTestCase {
         v.trailing(10%)
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0 , accuracy: CGFloat(0.1))
-        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width * (90/100) - v.frame.width, accuracy: CGFloat(0.1))
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width * (90/100) - v.frame.width, accuracy: CGFloat(0.2))
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
@@ -259,7 +259,7 @@ class PositionTests: XCTestCase {
         v.leading(10%)
         ctrler.view.layoutIfNeeded()
         XCTAssertEqual(v.frame.origin.y, 0 , accuracy: CGFloat(0.1))
-        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width * (90/100) - v.frame.width, accuracy: CGFloat(0.1))
+        XCTAssertEqual(v.frame.origin.x, ctrler.view.frame.width * (90/100) - v.frame.width, accuracy: CGFloat(0.2))
         XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
