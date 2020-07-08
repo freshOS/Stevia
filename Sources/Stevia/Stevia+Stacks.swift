@@ -6,6 +6,9 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
+#if canImport(UIKit)
+import UIKit
+
 //enum SteviaLayoutItemType {
 //
 //}
@@ -47,9 +50,6 @@ public extension UIView {
         return self
     }
 }
-
-#if canImport(UIKit)
-import UIKit
 
 public extension UIView {
     
