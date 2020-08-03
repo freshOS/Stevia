@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 Put unreleased changes here
+- Preprocessor flag `#if canImport(UIKit)` moved to wrap all UIKit related types.
 
 ## [4.6.0] - 2019-09-30
 ### Changed
