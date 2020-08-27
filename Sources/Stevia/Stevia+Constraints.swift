@@ -111,18 +111,19 @@ public extension UIView {
     /**
      Makes a view follow another view's frame.
      For instance if we want a button to be on top of an image :
+     You can also set how much you want to cover the image, like set the leading, trailing, top and bottom alignment.
      
      ```
      button.followEdges(image)
      ```
      */
-    func followEdges(_ otherView: UIView) {
+    func followEdges(_ otherView: UIView, top : Double = 0.0, bottom : Double = 0.0, leading : Double = 0.0, trailing : Double = 0.0) {
         if let spv = superview {
             let cs = [
-                constraint(item: self, attribute: .top, toItem: otherView),
-                constraint(item: self, attribute: .trailing, toItem: otherView),
-                constraint(item: self, attribute: .bottom, toItem: otherView),
-                constraint(item: self, attribute: .leading, toItem: otherView)
+                constraint(item: self, attribute: .top, toItem: otherView, constant: top),
+                constraint(item: self, attribute: .trailing, toItem: otherView, constant: trailing),
+                constraint(item: self, attribute: .bottom, toItem: otherView, constant: bottom),
+                constraint(item: self, attribute: .leading, toItem: otherView, constant: leading)
             ]
             spv.addConstraints(cs)
         }
