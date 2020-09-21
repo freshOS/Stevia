@@ -84,7 +84,7 @@ class FullLayoutTests: XCTestCase {
         v.layoutIfNeeded()
 
         // Email
-        XCTAssertEqual(v.email.frame.origin.y, 100.5, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.email.frame.origin.y, 100.5, accuracy: 0.5)
         XCTAssertEqual(v.email.frame.origin.x, 8, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.email.frame.width, win.frame.width - 8 - 22,
                                    accuracy: CGFloat(Float.ulpOfOne))
@@ -120,7 +120,7 @@ class FullLayoutTests: XCTestCase {
         v.layoutIfNeeded()
 
         // Email
-        XCTAssertEqual(v.email.frame.origin.y, 100.5, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.email.frame.origin.y, 100.5, accuracy: 0.5)
         XCTAssertEqual(v.email.frame.origin.x, 22, accuracy: CGFloat(Float.ulpOfOne))
         XCTAssertEqual(v.email.frame.width, win.frame.width - 8 - 22,
                                    accuracy: CGFloat(Float.ulpOfOne))

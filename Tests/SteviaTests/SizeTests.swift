@@ -22,7 +22,7 @@ class SizeTests: XCTestCase {
         win.rootViewController = ctrler
         v = UIView()
         ctrler.view.subviews {
-            v
+            v!
         }
     }
     
@@ -207,7 +207,7 @@ class SizeTests: XCTestCase {
         v.removeFromSuperview()
         v.height(80)
         v.width(80)
-        ctrler.view?.subviews { v }
+        ctrler.view?.subviews { v! }
         
         let view: UIView = ctrler.view
         view.layout {

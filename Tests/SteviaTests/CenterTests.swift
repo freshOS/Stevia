@@ -22,7 +22,7 @@ class CenterTests: XCTestCase {
         ctrler =  UIViewController()
         win.rootViewController = ctrler
         v = UIView()
-        ctrler.view.subviews { v }
+        ctrler.view.subviews { v! }
         
         // verify view h as default values
         XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))

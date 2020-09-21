@@ -37,6 +37,4 @@ class StyleTests: XCTestCase {
         }
         XCTAssertEqual(label.textColor, UIColor.blue)
     }
-
-
 }

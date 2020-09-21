@@ -16,8 +16,6 @@ class BaselineTests: XCTestCase {
     var label1 = UILabel()
     var label2 = UILabel()
     
-
-    
     override func setUp() {
         win = UIWindow(frame: UIScreen.main.bounds)
         ctrler =  UIViewController()
