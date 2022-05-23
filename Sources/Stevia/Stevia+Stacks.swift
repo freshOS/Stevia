@@ -35,7 +35,7 @@ public struct FlexibleSpace {
     public init() {}
 }
 
-@_functionBuilder public struct SteviaLayoutBuilder {
+@resultBuilder public struct SteviaLayoutBuilder {
     public static func buildBlock(_ content: SteviaLayoutItem...) -> [SteviaLayoutItem] {
         return content
     }

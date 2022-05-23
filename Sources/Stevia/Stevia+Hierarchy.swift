@@ -9,7 +9,7 @@
 #if canImport(UIKit)
 import UIKit
 
-@_functionBuilder public struct SubviewsBuilder {
+@resultBuilder public struct SubviewsBuilder {
     public static func buildBlock(_ content: UIView...) -> [UIView] {
         return content
     }
