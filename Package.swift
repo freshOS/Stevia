@@ -1,10 +1,13 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.9
 
 import PackageDescription
 
 let package = Package(
     name: "Stevia",
-    platforms: [.iOS(.v9), .tvOS(.v10)],
+    platforms: [
+        .iOS(.v12),
+        .tvOS(.v12)
+    ],
     products: [.library(name: "Stevia", targets: ["Stevia"])],
     targets: [
         .target(name: "Stevia", path: "Sources", resources: [.copy("PrivacyInfo.xcprivacy")]),
