@@ -7,7 +7,7 @@ let package = Package(
     platforms: [.iOS(.v9), .tvOS(.v10)],
     products: [.library(name: "Stevia", targets: ["Stevia"])],
     targets: [
-        .target(name: "Stevia"),
+        .target(name: "Stevia", path: "Sources", resources: [.copy("PrivacyInfo.xcprivacy")]),
         .testTarget(name: "SteviaTests", dependencies: ["Stevia"]),
     ]
 )
