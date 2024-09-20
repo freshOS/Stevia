@@ -9,14 +9,24 @@
 import XCTest
 import Stevia
 
-class SizeTests: XCTestCase {
+@MainActor class SizeTests: XCTestCase {
     
     var win: UIWindow!
     var ctrler: UIViewController!
     var v: UIView!
     
-    override func setUp() {
-        super.setUp()
+    override func setUp() async throws {
+//        try await super.setUp()
+        win = UIWindow(frame: UIScreen.main.bounds)
+        ctrler =  UIViewController()
+        win.rootViewController = ctrler
+        v = UIView()
+        ctrler.view.subviews {
+            v!
+        }
+    }
+    
+    func uiSetUp() {
         win = UIWindow(frame: UIScreen.main.bounds)
         ctrler =  UIViewController()
         win.rootViewController = ctrler

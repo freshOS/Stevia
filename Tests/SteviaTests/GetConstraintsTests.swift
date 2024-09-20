@@ -9,14 +9,14 @@
 import XCTest
 import Stevia
 
-class GetConstraintsTests: XCTestCase {
+@MainActor class GetConstraintsTests: XCTestCase {
     
     var v: UIView!
     var spv: UIView!
     
-    override func setUp() {
-        spv = UIView()
-        v = UIView()
+    override func setUp() async throws {
+        spv = await UIView()
+        v = await UIView()
         spv.subviews { v! }
     }
     
@@ -68,7 +68,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.isActive, true)
     }
     
-    func testCanGetBottomConstraint() {
+    @MainActor func testCanGetBottomConstraint() {
         XCTAssertNil(v.bottomConstraint)
         v.bottom(145)
         let c = v.bottomConstraint
@@ -84,7 +84,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.isActive, true)
     }
     
-    func testCanGetHeightConstraint() {
+    @MainActor func testCanGetHeightConstraint() {
         XCTAssertNil(v.heightConstraint)
         v.height(35)
         let c = v.heightConstraint
@@ -100,7 +100,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.isActive, true)
     }
     
-    func testCanGetWidthConstraint() {
+    @MainActor func testCanGetWidthConstraint() {
         XCTAssertNil(v.widthConstraint)
         v.width(51)
         let c = v.widthConstraint
@@ -116,7 +116,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.isActive, true)
     }
     
-    func testCanGetTrailingConstraint() {
+    @MainActor func testCanGetTrailingConstraint() {
         XCTAssertNil(v.trailingConstraint)
         v.trailingAnchor.constraint(equalTo: spv.trailingAnchor, constant: 104).isActive = true
         let c = v.trailingConstraint
@@ -132,7 +132,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.isActive, true)
     }
     
-    func testCanGetLeadingonstraint() {
+    @MainActor func testCanGetLeadingonstraint() {
         XCTAssertNil(v.leadingConstraint)
         v.leadingAnchor.constraint(equalTo: spv.leadingAnchor, constant: 73).isActive = true
         let c = v.leadingConstraint
@@ -148,7 +148,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.isActive, true)
     }
     
-    func testCanGetCenterXConstraint() {
+    @MainActor func testCanGetCenterXConstraint() {
         XCTAssertNil(v.centerXConstraint)
         v.CenterX == spv.CenterX + 27
         let c = v.centerXConstraint
@@ -164,7 +164,7 @@ class GetConstraintsTests: XCTestCase {
         XCTAssertEqual(c?.isActive, true)
     }
     
-    func testCanGetCenterYConstraint() {
+    @MainActor func testCanGetCenterYConstraint() {
         XCTAssertNil(v.centerYConstraint)
         v.CenterY == spv.CenterY - 32
         let c = v.centerYConstraint

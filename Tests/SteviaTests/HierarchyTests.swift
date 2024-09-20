@@ -9,7 +9,7 @@
 import XCTest
 import Stevia
 
-class HierarchyTests: XCTestCase {
+@MainActor class HierarchyTests: XCTestCase {
 
     override func setUp() {
         super.setUp()

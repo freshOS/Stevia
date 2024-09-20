@@ -9,7 +9,7 @@
 import XCTest
 import Stevia
 
-class StyleTests: XCTestCase {
+@MainActor class StyleTests: XCTestCase {
 
     func styleView(_ view: UIView) {
         view.backgroundColor = UIColor.yellow

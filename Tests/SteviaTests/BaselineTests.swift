@@ -9,14 +9,14 @@
 import XCTest
 import Stevia
 
-class BaselineTests: XCTestCase {
+@MainActor class BaselineTests: XCTestCase {
     
     var win: UIWindow!
     var ctrler: UIViewController!
     var label1 = UILabel()
     var label2 = UILabel()
     
-    override func setUp() {
+    override func setUp() async throws {
         win = UIWindow(frame: UIScreen.main.bounds)
         ctrler =  UIViewController()
         win.rootViewController = ctrler
@@ -28,6 +28,8 @@ class BaselineTests: XCTestCase {
             label2
         }
     }
+    
+    
     
     func testAlignLastBaselines() {
         label1.top(100)

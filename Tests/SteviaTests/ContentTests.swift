@@ -12,11 +12,11 @@ import Stevia
 
 let title = "TitleTest"
 
-class UIButtonContentTests: XCTestCase {
+@MainActor class UIButtonContentTests: XCTestCase {
     var button = UIButton()
 
-    override func setUp() {
-        super.setUp()
+    override func setUp() async throws {
+//
         button = UIButton()
     }
     
@@ -41,11 +41,12 @@ class UIButtonContentTests: XCTestCase {
     }
 }
 
-class UILabelContentTests: XCTestCase {
+
+@MainActor class UILabelContentTests: XCTestCase {
     var label = UILabel()
     
-    override func setUp() {
-        super.setUp()
+    override func setUp() async throws {
+//        super.setUp()
         label = UILabel()
     }
     
@@ -64,11 +65,11 @@ class UILabelContentTests: XCTestCase {
     }
 }
 
-class UITextFieldContentTests: XCTestCase {
+@MainActor class UITextFieldContentTests: XCTestCase {
     var textField = UITextField()
     
-    override func setUp() {
-        super.setUp()
+    override func setUp() async throws {
+//        super.setUp()
         textField = UITextField()
     }
     
@@ -82,11 +83,11 @@ class UITextFieldContentTests: XCTestCase {
     }
 }
 
-class UIImageViewContentTests: XCTestCase {
+@MainActor class UIImageViewContentTests: XCTestCase {
     var imageView = UIImageView()
     
-    override func setUp() {
-        super.setUp()
+    override func setUp() async throws {
+//        super.setUp()
         imageView = UIImageView()
     }
     

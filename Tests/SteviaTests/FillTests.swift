@@ -10,12 +10,12 @@ import XCTest
 
 import Stevia
 
-class FillTests: XCTestCase {
+@MainActor class FillTests: XCTestCase {
     var win: UIWindow!
     var ctrler: UIViewController!
 
-    override func setUp() {
-        super.setUp()
+    override func setUp() async throws {
+//        super.setUp()
         win = UIWindow(frame: UIScreen.main.bounds)
         ctrler =  UIViewController()
         win.rootViewController = ctrler
