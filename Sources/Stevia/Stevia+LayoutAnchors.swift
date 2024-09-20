@@ -69,7 +69,7 @@ public extension UILayoutGuide {
 
 @available(iOS 9.0, *)
 @discardableResult
-public func == (left: SteviaAttribute, right: SteviaLayoutYAxisAnchor) -> NSLayoutConstraint {
+@MainActor public func == (left: SteviaAttribute, right: SteviaLayoutYAxisAnchor) -> NSLayoutConstraint {
     
     var constraint = NSLayoutConstraint()
     
@@ -91,7 +91,7 @@ public func == (left: SteviaAttribute, right: SteviaLayoutYAxisAnchor) -> NSLayo
 
 @available(iOS 9.0, *)
 @discardableResult
-public func == (left: SteviaAttribute, right: SteviaLayoutXAxisAnchor) -> NSLayoutConstraint {
+@MainActor public func == (left: SteviaAttribute, right: SteviaLayoutXAxisAnchor) -> NSLayoutConstraint {
     
     var constraint = NSLayoutConstraint()
     
