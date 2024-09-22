@@ -53,14 +53,14 @@ class TestView: UIView {
     }
 }
 
-class FullLayoutTests: XCTestCase {
+@MainActor class FullLayoutTests: XCTestCase {
         
     var win: UIWindow!
     var vc: UIViewController!
     var v: TestView!
     
-    override func setUp() {
-        super.setUp()
+    override func setUp() async throws  {
+//        super.setUp()
         win = UIWindow(frame: UIScreen.main.bounds)
         vc = UIViewController()///TestVC()
         win.rootViewController = vc

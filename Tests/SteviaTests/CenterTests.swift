@@ -10,14 +10,14 @@ import XCTest
 
 let magicalIphoneXShift = 0.17
 
-class CenterTests: XCTestCase {
+@MainActor class CenterTests: XCTestCase {
     
     var win: UIWindow!
     var ctrler: UIViewController!
     var v: UIView!
     
-    override func setUp() {
-        super.setUp()
+    override func setUp() async throws {
+//        try await super.setUp()
         win = UIWindow(frame: UIScreen.main.bounds)
         ctrler =  UIViewController()
         win.rootViewController = ctrler

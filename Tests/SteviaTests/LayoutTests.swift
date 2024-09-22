@@ -9,14 +9,14 @@
 import XCTest
 import Stevia
 
-class LayoutTests: XCTestCase {
+@MainActor class LayoutTests: XCTestCase {
     
     var win: UIWindow!
     var ctrler: UIViewController!
     var v: UIView!
     
-    override func setUp() {
-        super.setUp()
+    override func setUp() async throws {
+//        super.setUp()
         win = UIWindow(frame: UIScreen.main.bounds)
         ctrler =  UIViewController()
         win.rootViewController = ctrler

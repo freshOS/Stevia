@@ -25,12 +25,12 @@ import UIKit
  
  */
 @discardableResult
-public func align(lastBaselines views: UIView...) -> [UIView] {
+@MainActor public func align(lastBaselines views: UIView...) -> [UIView] {
     return align(lastBaselines: views)
 }
 
 @discardableResult
-public func align(lastBaselines views: [UIView]) -> [UIView] {
+@MainActor public func align(lastBaselines views: [UIView]) -> [UIView] {
     for (i, v) in views.enumerated() where views.count > i+1 {
         let v2 = views[i+1]
         if #available(iOS 9.0, *) {
@@ -59,12 +59,12 @@ public func align(lastBaselines views: [UIView]) -> [UIView] {
  
  */
 @discardableResult
-public func align(firstBaselines views: UIView...) -> [UIView] {
+@MainActor public func align(firstBaselines views: UIView...) -> [UIView] {
     return align(firstBaselines: views)
 }
 
 @discardableResult
-public func align(firstBaselines views: [UIView]) -> [UIView] {
+@MainActor public func align(firstBaselines views: [UIView]) -> [UIView] {
     for (i, v) in views.enumerated() where views.count > i+1 {
         let v2 = views[i+1]
         if #available(iOS 9.0, *) {
