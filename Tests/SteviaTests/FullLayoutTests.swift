@@ -163,3 +163,5 @@ class TestView: UIView {
         XCTAssertEqual(v.view2.frame.width, v.frame.width, accuracy: CGFloat(Float.ulpOfOne))
     }
 }
+
+let magicalIphoneXShift = 1.0

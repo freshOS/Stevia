@@ -95,7 +95,7 @@ import Stevia
         #expect(v.frame.origin.y == 0)
         #expect(v.frame.origin.x == 0)
         #expect(v.frame.width == 100)
-        expectDelta(v.frame.height, ctrler.view.frame.height*0.4)
+        #expect(isApproximatelyEqual(v.frame.height, ctrler.view.frame.height*0.4))
     }
     
     @Test
@@ -106,7 +106,7 @@ import Stevia
         #expect(v.frame.origin.y == 0)
         #expect(v.frame.origin.x == 0)
         #expect(v.frame.height == 100)
-        expectDelta(v.frame.width, ctrler.view.frame.width*0.87)
+        #expect(isApproximatelyEqual(v.frame.width, ctrler.view.frame.width*0.87))
     }
     
     @Test
