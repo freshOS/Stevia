@@ -6,7 +6,8 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
-import XCTest
+import Testing
+import UIKit
 import Stevia
 
 class TestView: UIView {
@@ -53,115 +54,89 @@ class TestView: UIView {
     }
 }
 
-@MainActor class FullLayoutTests: XCTestCase {
+@Suite
+@MainActor class FullLayoutTests {
         
-    var win: UIWindow!
-    var vc: UIViewController!
-    var v: TestView!
+    let win = UIWindow(frame: UIScreen.main.bounds)
+    let vc = UIViewController()
+    let v = TestView()
     
-    override func setUp() async throws  {
-//        super.setUp()
-        win = UIWindow(frame: UIScreen.main.bounds)
-        vc = UIViewController()///TestVC()
+    init() {
         win.rootViewController = vc
-        v = TestView()
         v.frame = vc.view.frame
         vc.view = v
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
+    @Test
     func testFullLayout() {
-        XCTAssertEqual(vc.view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(vc.view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(vc.view.frame.width, win.frame.width,
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(vc.view.frame.height, win.frame.height,
-                                   accuracy: CGFloat(Float.ulpOfOne))
+        #expect(vc.view.frame.origin.x == 0)
+        #expect(vc.view.frame.origin.y == 0)
+        #expect(vc.view.frame.width == win.frame.width)
+        #expect(vc.view.frame.height == win.frame.height)
         
         v.layoutIfNeeded()
 
         // Email
-        XCTAssertEqual(v.email.frame.origin.y, 100.5, accuracy: 0.5)
-        XCTAssertEqual(v.email.frame.origin.x, 8, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.email.frame.width, win.frame.width - 8 - 22,
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.email.frame.height, win.frame.height*0.1, accuracy: 0.5)
+        #expect(isApproximatelyEqual(v.email.frame.origin.y, 100.5))
+        #expect(v.email.frame.origin.x == 8)
+        #expect(v.email.frame.width == win.frame.width - 8 - 22)
+        #expect(isApproximatelyEqual(v.email.frame.height, win.frame.height*0.1))
         
         // Password
-        XCTAssertEqual(v.password.frame.origin.y,
-                                   v.email.frame.origin.y+v.email.frame.height + 20,
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.password.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.password.frame.width, 54, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.password.frame.height, 47, accuracy: CGFloat(Float.ulpOfOne))
+        #expect(isApproximatelyEqual(v.password.frame.origin.y, v.email.frame.origin.y+v.email.frame.height + 20))
+        #expect(v.password.frame.origin.x == 0)
+        #expect(v.password.frame.width == 54)
+        #expect(v.password.frame.height == 47)
         
         // Password
-        XCTAssertEqual(v.login.frame.origin.y,
-                                   win.frame.height - v.login.frame.height - 7,
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.login.frame.origin.x,
-                                   win.frame.width/2.0 - (v.login.frame.width/2.0),
-                                   accuracy: CGFloat(magicalIphoneXShift))
-        XCTAssertEqual(v.login.frame.height, 99, accuracy: CGFloat(Float.ulpOfOne))
+        #expect(v.login.frame.origin.y == win.frame.height - v.login.frame.height - 7)
+        #expect(isApproximatelyEqual(v.login.frame.origin.x, win.frame.width/2.0 - (v.login.frame.width/2.0)))
+        #expect(v.login.frame.height == 99)
     }
     
+    @Test
     func testFullLayoutRTL() {
         vc.view.semanticContentAttribute = .forceRightToLeft
-        XCTAssertEqual(vc.view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(vc.view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(vc.view.frame.width, win.frame.width,
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(vc.view.frame.height, win.frame.height,
-                                   accuracy: CGFloat(Float.ulpOfOne))
+        #expect(vc.view.frame.origin.x == 0)
+        #expect(vc.view.frame.origin.y == 0)
+        #expect(vc.view.frame.width == win.frame.width)
+        #expect(vc.view.frame.height == win.frame.height)
         
         v.layoutIfNeeded()
 
         // Email
-        XCTAssertEqual(v.email.frame.origin.y, 100.5, accuracy: 0.5)
-        XCTAssertEqual(v.email.frame.origin.x, 22, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.email.frame.width, win.frame.width - 8 - 22,
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.email.frame.height, win.frame.height*0.1, accuracy: 0.5)
+        #expect(isApproximatelyEqual(v.email.frame.origin.y, 100.5))
+        #expect(v.email.frame.origin.x == 22)
+        #expect(v.email.frame.width == win.frame.width - 8 - 22)
+        #expect(isApproximatelyEqual(v.email.frame.height, win.frame.height*0.1))
+
+        // Password
+        #expect(isApproximatelyEqual(v.password.frame.origin.y, v.email.frame.origin.y+v.email.frame.height + 20))
+        #expect(v.password.frame.origin.x == vc.view.frame.width - 54)
+        #expect(v.password.frame.width == 54)
+        #expect(v.password.frame.height == 47)
         
         // Password
-        XCTAssertEqual(v.password.frame.origin.y,
-                                   v.email.frame.origin.y+v.email.frame.height + 20,
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.password.frame.origin.x, vc.view.frame.width - 54, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.password.frame.width, 54, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.password.frame.height, 47, accuracy: CGFloat(Float.ulpOfOne))
-        
-        // Password
-        XCTAssertEqual(v.login.frame.origin.y,
-                                   win.frame.height - v.login.frame.height - 7,
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.login.frame.origin.x,
-                                   win.frame.width/2.0 - (v.login.frame.width/2.0),
-                                   accuracy: CGFloat(magicalIphoneXShift))
-        XCTAssertEqual(v.login.frame.height, 99, accuracy: CGFloat(Float.ulpOfOne))
+        #expect(v.login.frame.origin.y == win.frame.height - v.login.frame.height - 7)
+        #expect(isApproximatelyEqual(v.login.frame.origin.x, win.frame.width/2.0 - (v.login.frame.width/2.0)))
+        #expect(v.login.frame.height == 99)
     }
-    
+
+    @Test
     func testPercentLayout() {
-        XCTAssertEqual(vc.view.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(vc.view.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(vc.view.frame.width, win.frame.width,
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(vc.view.frame.height, win.frame.height,
-                                   accuracy: CGFloat(Float.ulpOfOne))
+        #expect(vc.view.frame.origin.x == 0)
+        #expect(vc.view.frame.origin.y == 0)
+        #expect(vc.view.frame.width == win.frame.width)
+        #expect(vc.view.frame.height == win.frame.height)
         
         v.layoutIfNeeded()
         
-        XCTAssertEqual(v.view1.frame.origin.y, v.frame.height*0.1, accuracy: 0.5)
-        XCTAssertEqual(v.view1.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.view1.frame.width, v.frame.width, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.view2.frame.origin.y, (v.frame.height*0.1) + 20 + (v.frame.height*0.33), accuracy: 0.5)
-        XCTAssertEqual(v.view2.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.view2.frame.origin.y + v.view2.frame.height, (v.frame.height*0.8), accuracy: 0.5)
-        XCTAssertEqual(v.view2.frame.width, v.frame.width, accuracy: CGFloat(Float.ulpOfOne))
+        #expect(isApproximatelyEqual(v.view1.frame.origin.y, v.frame.height*0.1))
+        #expect(v.view1.frame.origin.x == 0)
+        #expect(v.view1.frame.width == v.frame.width)
+        #expect(isApproximatelyEqual(v.view2.frame.origin.y, (v.frame.height*0.1) + 20 + (v.frame.height*0.33)))
+        #expect(v.view2.frame.origin.x == 0)
+        #expect(isApproximatelyEqual(v.view2.frame.origin.y + v.view2.frame.height, (v.frame.height*0.8)))
+        #expect(v.view2.frame.width == v.frame.width)
     }
 }
-
-let magicalIphoneXShift = 1.0

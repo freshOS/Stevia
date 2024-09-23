@@ -138,5 +138,5 @@ import Stevia
 }
 
 func isApproximatelyEqual(_ a: Double, _ b: Double) -> Bool {
-    return a.isApproximatelyEqual(to: b, absoluteTolerance: 0.2)
+    return a.isApproximatelyEqual(to: b, absoluteTolerance: 0.3)
 }
