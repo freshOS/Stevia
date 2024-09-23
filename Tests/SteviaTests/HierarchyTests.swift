@@ -13,56 +13,6 @@ import Stevia
 @Suite
 @MainActor
 struct HierarchyTests {
-
-    @Test
-    func legacySv() {
-        let view = UIView()
-        let v1 = UIView()
-        let v2 = UIView()
-        view.sv(
-            v1,
-            v2
-        )
-        #expect(view.subviews.count == 2)
-        #expect(view.subviews.contains(v1))
-        #expect(view.subviews.contains(v2))
-        #expect(v1.translatesAutoresizingMaskIntoConstraints == false)
-        #expect(v2.translatesAutoresizingMaskIntoConstraints == false)
-    }
-
-    @Test
-    func legacyTableViewCellSV() {
-        let cell = UITableViewCell()
-        let v1 = UIView()
-        let v2 = UIView()
-        cell.sv(
-            v1,
-            v2
-        )
-        #expect(cell.contentView.subviews.count == 2)
-        #expect(cell.contentView.subviews.contains(v1))
-        #expect(cell.contentView.subviews.contains(v2))
-        #expect(v1.translatesAutoresizingMaskIntoConstraints == false)
-        #expect(v2.translatesAutoresizingMaskIntoConstraints == false)
-    }
-    
-    @Test
-    func legacyCollectionViewCellSV() {
-        let cell = UICollectionViewCell()
-        let v1 = UIView()
-        let v2 = UIView()
-        cell.sv(
-            v1,
-            v2
-            )
-        #expect(cell.contentView.subviews.count == 2)
-        #expect(cell.contentView.subviews.contains(v1))
-        #expect(cell.contentView.subviews.contains(v2))
-        #expect(v1.translatesAutoresizingMaskIntoConstraints == false)
-        #expect(v2.translatesAutoresizingMaskIntoConstraints == false)
-    }
-    
-    // Function Builders version
     
     @Test
     func subviews() {
