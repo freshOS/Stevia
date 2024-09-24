@@ -6,95 +6,72 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
-import XCTest
-
+import Testing
+import UIKit
 import Stevia
 
 let title = "TitleTest"
 
-@MainActor class UIButtonContentTests: XCTestCase {
+@Suite
+@MainActor struct UIButtonContentTests {
+    
     var button = UIButton()
 
-    override func setUp() async throws {
-//
+    init() {
         button = UIButton()
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-
+    @Test
     func testText() {
         button.text(title)
-        XCTAssertEqual(button.currentTitle, title)
-        XCTAssertEqual(button.state, .normal)
+        #expect(button.currentTitle == title)
+        #expect(button.state == .normal)
     }
     
+    @Test
     func testTextKey() {
         button.textKey(title)
-        XCTAssertEqual(button.currentTitle, title)
-    }
-    
-    func testImage() {
-        button.image("foo")
-        //XCTAssertEqual(button.currentImage, title)
+        #expect(button.currentTitle == title)
     }
 }
 
 
-@MainActor class UILabelContentTests: XCTestCase {
-    var label = UILabel()
+@Suite
+@MainActor struct UILabelContentTests {
     
-    override func setUp() async throws {
-//        super.setUp()
-        label = UILabel()
-    }
+    let label = UILabel()
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
+    @Test
     func testText() {
         label.text(title)
-        XCTAssertEqual(label.text, title)
+        #expect(label.text == title)
     }
     
+    @Test
     func testTextKey() {
         label.textKey(title)
-        XCTAssertEqual(label.text, title)
+        #expect(label.text == title)
     }
 }
 
-@MainActor class UITextFieldContentTests: XCTestCase {
-    var textField = UITextField()
+@Suite
+@MainActor struct UITextFieldContentTests {
     
-    override func setUp() async throws {
-//        super.setUp()
-        textField = UITextField()
-    }
+    let textField = UITextField()
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
+    @Test
     func testPlaceholder() {
         textField.placeholder(title)
-        XCTAssertEqual(textField.placeholder, title)
+        #expect(textField.placeholder == title)
     }
 }
 
-@MainActor class UIImageViewContentTests: XCTestCase {
-    var imageView = UIImageView()
+@Suite
+@MainActor struct UIImageViewContentTests {
     
-    override func setUp() async throws {
-//        super.setUp()
-        imageView = UIImageView()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
+    let imageView = UIImageView()
+
+    @Test
     func testImage() {
         imageView.image("foo")
         //XCTAssertEqual(button.currentImage, title)

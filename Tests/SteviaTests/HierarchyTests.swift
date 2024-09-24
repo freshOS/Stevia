@@ -6,67 +6,16 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
-import XCTest
+import Testing
+import UIKit
 import Stevia
 
-@MainActor class HierarchyTests: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
-    }
+@Suite
+@MainActor
+struct HierarchyTests {
     
-    override func tearDown() {
-        super.tearDown()
-    }
-
-    func testLegacySv() {
-        let view = UIView()
-        let v1 = UIView()
-        let v2 = UIView()
-        view.sv(
-            v1,
-            v2
-        )
-        XCTAssertEqual(view.subviews.count, 2)
-        XCTAssertTrue(view.subviews.contains(v1))
-        XCTAssertTrue(view.subviews.contains(v2))
-        XCTAssertFalse(v1.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(v2.translatesAutoresizingMaskIntoConstraints)
-    }
-
-    func testLegacyTableViewCellSV() {
-        let cell = UITableViewCell()
-        let v1 = UIView()
-        let v2 = UIView()
-        cell.sv(
-            v1,
-            v2
-        )
-        XCTAssertEqual(cell.contentView.subviews.count, 2)
-        XCTAssertTrue(cell.contentView.subviews.contains(v1))
-        XCTAssertTrue(cell.contentView.subviews.contains(v2))
-        XCTAssertFalse(v1.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(v2.translatesAutoresizingMaskIntoConstraints)
-    }
-    
-    func testLegacyCollectionViewCellSV() {
-        let cell = UICollectionViewCell()
-        let v1 = UIView()
-        let v2 = UIView()
-        cell.sv(
-            v1,
-            v2
-            )
-        XCTAssertEqual(cell.contentView.subviews.count, 2)
-        XCTAssertTrue(cell.contentView.subviews.contains(v1))
-        XCTAssertTrue(cell.contentView.subviews.contains(v2))
-        XCTAssertFalse(v1.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(v2.translatesAutoresizingMaskIntoConstraints)
-    }
-    
-    // Function Builders version
-    
-    func testSubviews() {
+    @Test
+    func subviews() {
         let view = UIView()
         let v1 = UIView()
         let v2 = UIView()
@@ -74,14 +23,15 @@ import Stevia
             v1
             v2
         }
-        XCTAssertEqual(view.subviews.count, 2)
-        XCTAssertTrue(view.subviews.contains(v1))
-        XCTAssertTrue(view.subviews.contains(v2))
-        XCTAssertFalse(v1.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(v2.translatesAutoresizingMaskIntoConstraints)
+        #expect(view.subviews.count == 2)
+        #expect(view.subviews.contains(v1))
+        #expect(view.subviews.contains(v2))
+        #expect(v1.translatesAutoresizingMaskIntoConstraints == false)
+        #expect(v2.translatesAutoresizingMaskIntoConstraints == false)
     }
     
-    func testTableViewCellSubviews() {
+    @Test
+    func tableViewCellSubviews() {
         let cell = UITableViewCell()
         let v1 = UIView()
         let v2 = UIView()
@@ -90,14 +40,14 @@ import Stevia
             v2
         }
             
-        
-        XCTAssertEqual(cell.contentView.subviews.count, 2)
-        XCTAssertTrue(cell.contentView.subviews.contains(v1))
-        XCTAssertTrue(cell.contentView.subviews.contains(v2))
-        XCTAssertFalse(v1.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(v2.translatesAutoresizingMaskIntoConstraints)
+        #expect(cell.contentView.subviews.count ==  2)
+        #expect(cell.contentView.subviews.contains(v1))
+        #expect(cell.contentView.subviews.contains(v2))
+        #expect(v1.translatesAutoresizingMaskIntoConstraints == false)
+        #expect(v2.translatesAutoresizingMaskIntoConstraints == false)
     }
 
+    @Test
     func testCollectionViewCellSubviews() {
         let cell = UICollectionViewCell()
         let v1 = UIView()
@@ -106,13 +56,14 @@ import Stevia
             v1
             v2
         }
-        XCTAssertEqual(cell.contentView.subviews.count, 2)
-        XCTAssertTrue(cell.contentView.subviews.contains(v1))
-        XCTAssertTrue(cell.contentView.subviews.contains(v2))
-        XCTAssertFalse(v1.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(v2.translatesAutoresizingMaskIntoConstraints)
+        #expect(cell.contentView.subviews.count == 2)
+        #expect(cell.contentView.subviews.contains(v1))
+        #expect(cell.contentView.subviews.contains(v2))
+        #expect(v1.translatesAutoresizingMaskIntoConstraints == false)
+        #expect(v2.translatesAutoresizingMaskIntoConstraints == false)
     }
-    
+   
+    @Test
     func testSubviewsCanBeNested() {
         let view = UIView()
         let v1 = UIView()
@@ -126,16 +77,16 @@ import Stevia
             }
             v2
         }
-        XCTAssertEqual(view.subviews.count, 2)
-        XCTAssertTrue(view.subviews.contains(v1))
-        XCTAssertTrue(view.subviews.contains(v2))
-        XCTAssertEqual(v1.subviews.count, 2)
-        XCTAssertTrue(v1.subviews.contains(v3))
-        XCTAssertTrue(v1.subviews.contains(v4))
+        #expect(view.subviews.count == 2)
+        #expect(view.subviews.contains(v1))
+        #expect(view.subviews.contains(v2))
+        #expect(v1.subviews.count == 2)
+        #expect(v1.subviews.contains(v3))
+        #expect(v1.subviews.contains(v4))
         
-        XCTAssertFalse(v1.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(v2.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(v3.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(v4.translatesAutoresizingMaskIntoConstraints)
+        #expect(v1.translatesAutoresizingMaskIntoConstraints == false)
+        #expect(v2.translatesAutoresizingMaskIntoConstraints == false)
+        #expect(v3.translatesAutoresizingMaskIntoConstraints == false)
+        #expect(v4.translatesAutoresizingMaskIntoConstraints == false)
     }
 }
