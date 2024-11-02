@@ -10,7 +10,73 @@
 import UIKit
 
 public extension UIView {
-    
+
+    /**
+     Adds an Autolayout constraint to provide the aspect ratio for the view.
+
+     ```
+     image.aspectRatio(3.0/2.0)
+     image.aspectRatio(150%)
+
+     // is equivalent to
+
+     image.Width == image.Height * 1.5
+     image.Width == 150 % image.Height
+     ```
+
+     - Returns: Itself, enabling chaining,
+
+     */
+    @discardableResult
+    func aspectRatio(_ ratio: Double = 1) -> Self {
+        Width == Height * ratio
+        return self
+    }
+
+    /**
+     Adds an Autolayout constraint to provide the aspect ratio for the view.
+
+     ```
+     image.aspectRatio(3.0/2.0)
+     image.aspectRatio(150%)
+
+     // is equivalent to
+
+     image.Width == image.Height * 1.5
+     image.Width == 150 % image.Height
+     ```
+
+     - Returns: Itself, enabling chaining,
+
+     */
+    @discardableResult
+    func aspectRatio(_ ratio: CGFloat = 1) -> Self {
+        aspectRatio(Double(ratio))
+        return self
+    }
+
+    /**
+     Adds an Autolayout constraint to provide the aspect ratio for the view.
+
+     ```
+     image.aspectRatio(3.0/2.0)
+     image.aspectRatio(150%)
+
+     // is equivalent to
+
+     image.Width == image.Height * 1.5
+     image.Width == 150 % image.Height
+     ```
+
+     - Returns: Itself, enabling chaining,
+
+     */
+    @discardableResult
+    func aspectRatio(_ ratio: Int = 1) -> Self {
+        aspectRatio(Double(ratio))
+        return self
+    }
+
     /**
      Adds an Autolayout constraint for sizing the view.
      
