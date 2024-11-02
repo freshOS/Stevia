@@ -29,6 +29,42 @@ class SizeTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
+
+    func testAspectRatioDouble() {
+        v.width(150).aspectRatio(Double(3.0/2.0))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 150, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+
+    func testAspectRatioCGFloat() {
+        v.width(150).aspectRatio(CGFloat(3.0/2.0))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 150, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
+
+    func testAspectRatioInt() {
+        v.width(150).aspectRatio(Int(3))
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 150, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 50, accuracy: CGFloat(Float.ulpOfOne))
+    }
+
+    func testAspectRatioPercentage() {
+        v.width(150).aspectRatio(150%)
+        ctrler.view.layoutIfNeeded()
+        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.origin.x,  0, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.width, 150, accuracy: CGFloat(Float.ulpOfOne))
+        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+    }
     
     func testSizeDouble() {
         v.size(Double(57))
