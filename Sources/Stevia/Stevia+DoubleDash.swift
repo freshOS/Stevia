@@ -26,27 +26,27 @@ public func -- (left: UIView, right: Int) -> PartialConstraint {
 }
 
 @discardableResult
-public func -- (left: SideConstraint, right: UIView) -> UIView {
+@MainActor public func -- (left: SideConstraint, right: UIView) -> UIView {
     return left-right
 }
 
 @discardableResult
-public func -- (left: [UIView], right: SideConstraint) -> [UIView] {
+@MainActor public func -- (left: [UIView], right: SideConstraint) -> [UIView] {
     return left-right
 }
 
 @discardableResult
-public func -- (left: UIView, right: SideConstraint) -> UIView {
+@MainActor public func -- (left: UIView, right: SideConstraint) -> UIView {
     return left-right
 }
 
 @discardableResult
-public func -- (left: PartialConstraint, right: UIView) -> [UIView] {
+@MainActor public func -- (left: PartialConstraint, right: UIView) -> [UIView] {
     return left-right
 }
 
 @discardableResult
-public func -- (left: UIView, right: UIView) -> [UIView] {
+@MainActor public func -- (left: UIView, right: UIView) -> [UIView] {
     return left-right
 }
 
@@ -66,7 +66,7 @@ public func -- (left: [UIView], right: Int) -> PartialConstraint {
 }
 
 @discardableResult
-public func -- (left: [UIView], right: UIView) -> [UIView] {
+@MainActor public func -- (left: [UIView], right: UIView) -> [UIView] {
     return left-right
 }
 
@@ -98,22 +98,22 @@ public func -- (left: [UIView],
 }
 
 @discardableResult
-public func -- (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
+@MainActor public func -- (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
     return left-right
 }
 
 @discardableResult
-public func -- (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
+@MainActor public func -- (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
     return left-right
 }
 
 @discardableResult
-public func -- (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
+@MainActor public func -- (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
     return left-right
 }
 
 @discardableResult
-public func -- (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
+@MainActor public func -- (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
     return left-right
 }
 #endif
@@ -141,27 +141,27 @@ public func ⁃ (left: UIView, right: Int) -> PartialConstraint {
 }
 
 @discardableResult
-public func ⁃ (left: SideConstraint, right: UIView) -> UIView {
+@MainActor public func ⁃ (left: SideConstraint, right: UIView) -> UIView {
     return left-right
 }
 
 @discardableResult
-public func ⁃ (left: [UIView], right: SideConstraint) -> [UIView] {
+@MainActor public func ⁃ (left: [UIView], right: SideConstraint) -> [UIView] {
     return left-right
 }
 
 @discardableResult
-public func ⁃ (left: UIView, right: SideConstraint) -> UIView {
+@MainActor public func ⁃ (left: UIView, right: SideConstraint) -> UIView {
     return left-right
 }
 
 @discardableResult
-public func ⁃ (left: PartialConstraint, right: UIView) -> [UIView] {
+@MainActor public func ⁃ (left: PartialConstraint, right: UIView) -> [UIView] {
     return left-right
 }
 
 @discardableResult
-public func ⁃ (left: UIView, right: UIView) -> [UIView] {
+@MainActor public func ⁃ (left: UIView, right: UIView) -> [UIView] {
     return left-right
 }
 
@@ -181,7 +181,7 @@ public func ⁃ (left: [UIView], right: Int) -> PartialConstraint {
 }
 
 @discardableResult
-public func ⁃ (left: [UIView], right: UIView) -> [UIView] {
+@MainActor public func ⁃ (left: [UIView], right: UIView) -> [UIView] {
     return left-right
 }
 
@@ -213,22 +213,22 @@ public func ⁃ (left: [UIView],
 }
 
 @discardableResult
-public func ⁃ (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
+@MainActor public func ⁃ (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
     return left-right
 }
 
 @discardableResult
-public func ⁃ (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
+@MainActor public func ⁃ (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
     return left-right
 }
 
 @discardableResult
-public func ⁃ (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
+@MainActor public func ⁃ (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
     return left-right
 }
 
 @discardableResult
-public func ⁃ (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
+@MainActor public func ⁃ (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
     return left-right
 }
 #endif

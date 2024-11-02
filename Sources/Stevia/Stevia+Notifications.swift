@@ -11,7 +11,7 @@ import UIKit
 
 public extension NSObject {
     
-    func on(_ event: String, _ callback:@escaping () -> Void) {
+    func on(_ event: String, _ callback:@escaping @Sendable() -> Void) {
         _ = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: event),
                                                                 object: nil,
                                                                 queue: nil) { _ in

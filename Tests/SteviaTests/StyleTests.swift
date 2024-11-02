@@ -6,10 +6,12 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
-import XCTest
+import Testing
+import UIKit
 import Stevia
 
-class StyleTests: XCTestCase {
+@Suite
+@MainActor struct StyleTests {
 
     func styleView(_ view: UIView) {
         view.backgroundColor = UIColor.yellow
@@ -19,7 +21,8 @@ class StyleTests: XCTestCase {
         label.textColor = UIColor.yellow
     }
 
-    func testStyle() {
+    @Test
+    func canCallStyle() {
         let label = UILabel()
         
         label.style(styleLabel).style(styleView)
@@ -28,13 +31,13 @@ class StyleTests: XCTestCase {
         let view: UIView = label
         view.style(styleView)
         
-        XCTAssertEqual(view.backgroundColor, UIColor.yellow)
-        XCTAssertEqual(label.textColor, UIColor.yellow)
+        #expect(view.backgroundColor == UIColor.yellow)
+        #expect(label.textColor == UIColor.yellow)
         
         //check type deduction
         label.style { (label) -> () in
             label.textColor = UIColor.blue
         }
-        XCTAssertEqual(label.textColor, UIColor.blue)
+        #expect(label.textColor == UIColor.blue)
     }
 }

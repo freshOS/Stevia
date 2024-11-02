@@ -171,7 +171,7 @@ public extension UIView {
     }
 }
 
-func constraintForView(_ v: UIView, attribute: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
+@MainActor func constraintForView(_ v: UIView, attribute: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
     
     func lookForConstraint(in view: UIView?) -> NSLayoutConstraint? {
         guard let constraints = view?.constraints else {

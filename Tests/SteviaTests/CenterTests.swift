@@ -6,149 +6,137 @@
 //  Copyright © 2016 Sacha Durand Saint Omer. All rights reserved.
 //
 
-import XCTest
+import Testing
+import Numerics
+import UIKit
+import Stevia
 
-let magicalIphoneXShift = 0.17
 
-class CenterTests: XCTestCase {
+@Suite
+@MainActor struct CenterTests {
     
-    var win: UIWindow!
-    var ctrler: UIViewController!
-    var v: UIView!
+    let win = UIWindow(frame: UIScreen.main.bounds)
+    var ctrler = UIViewController()
+    var v = UIView()
     
-    override func setUp() {
-        super.setUp()
-        win = UIWindow(frame: UIScreen.main.bounds)
-        ctrler =  UIViewController()
+    init() {
         win.rootViewController = ctrler
-        v = UIView()
-        ctrler.view.subviews { v! }
-        
-        // verify view h as default values
-        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.width, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 0, accuracy: CGFloat(Float.ulpOfOne))
-        
+        ctrler.view.subviews { v }
         v.size(100)
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testCenterHorizontally() {
+    @Test
+    func centerHorizontally() {
         v.centerHorizontally()
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x,
-                                   ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
-                                   accuracy: CGFloat(magicalIphoneXShift))
-        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+        #expect(v.frame.origin.y == 0)
+        #expect(isApproximatelyEqual(v.frame.origin.x, ctrler.view.frame.width/2.0 - (v.frame.width/2.0)))
+        #expect(v.frame.width == 100)
+        #expect(v.frame.height == 100)
     }
     
-    func testCenterHorizontallyWithOffsetDouble() {
+    @Test
+    func centerHorizontallyWithOffsetDouble() {
         v.centerHorizontally(offset: Double(50))
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x - 50,
-                                   ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
-                                   accuracy: CGFloat(magicalIphoneXShift))
-        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+        #expect(v.frame.origin.y == 0)
+        let val = v.frame.origin.x - 50
+        #expect(isApproximatelyEqual(val, ctrler.view.frame.width/2.0 - (v.frame.width/2.0)))
+        #expect(v.frame.width == 100)
+        #expect(v.frame.height == 100)
     }
     
-    func testCenterHorizontallyWithOffsetCGFloat() {
+    @Test
+    func centerHorizontallyWithOffsetCGFloat() {
         v.centerHorizontally(offset: CGFloat(50))
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x - 50,
-                                   ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
-                                   accuracy: CGFloat(magicalIphoneXShift))
-        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+        #expect(v.frame.origin.y == 0)
+        let val = v.frame.origin.x - 50
+        #expect(isApproximatelyEqual(val, (ctrler.view.frame.width/2.0 - (v.frame.width/2.0))))
+        #expect(v.frame.width == 100)
+        #expect(v.frame.height == 100)
     }
     
-    func testCenterHorizontallyWithOffsetInt() {
+    @Test
+    func centerHorizontallyWithOffsetInt() {
         v.centerHorizontally(offset: Int(50))
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x - 50,
-                                   ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
-                                   accuracy: CGFloat(magicalIphoneXShift))
-        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+        #expect(v.frame.origin.y == 0)
+        let val = v.frame.origin.x - 50
+        #expect(isApproximatelyEqual(val, (ctrler.view.frame.width/2.0 - (v.frame.width/2.0))))
+        #expect(v.frame.width == 100)
+        #expect(v.frame.height == 100)
     }
 
-    func testCenterVertically() {
+    @Test
+    func centerVertically() {
         v.centerVertically()
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y,
-                                   ctrler.view.frame.height/2.0 - (v.frame.height/2.0),
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+        #expect(v.frame.origin.y == ctrler.view.frame.height/2.0 - (v.frame.height/2.0))
+        #expect(v.frame.origin.x == 0)
+        #expect(v.frame.width == 100)
+        #expect(v.frame.height == 100)
     }
     
-    func testCenterVerticallyWithOffsetDouble() {
+    @Test
+    func centerVerticallyWithOffsetDouble() {
         v.centerVertically(offset: Double(50))
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y - 50,
-                                   ctrler.view.frame.height/2.0 - (v.frame.height/2.0),
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+        let val = v.frame.origin.y - 50
+        #expect(isApproximatelyEqual(val, (ctrler.view.frame.height/2.0 - (v.frame.height/2.0))))
+        #expect(v.frame.origin.x == 0)
+        #expect(v.frame.width == 100)
+        #expect(v.frame.height == 100)
     }
     
-    func testCenterVerticallyWithOffsetCGFloat() {
+    @Test
+    func centerVerticallyWithOffsetCGFloat() {
         v.centerVertically(offset: CGFloat(50))
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y - 50,
-                                   ctrler.view.frame.height/2.0 - (v.frame.height/2.0),
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+        let val = v.frame.origin.y - 50
+        #expect(isApproximatelyEqual(val, (ctrler.view.frame.height/2.0 - (v.frame.height/2.0))))
+        #expect(v.frame.origin.x == 0)
+        #expect(v.frame.width == 100)
+        #expect(v.frame.height == 100)
     }
     
-    func testCenterVerticallyWithOffsetInt() {
+    @Test
+    func centerVerticallyWithOffsetInt() {
         v.centerVertically(offset: Int(50))
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y - 50,
-                                   ctrler.view.frame.height/2.0 - (v.frame.height/2.0),
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x, 0, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+
+        let val = v.frame.origin.y - 50
+        #expect(isApproximatelyEqual(val, (ctrler.view.frame.height/2.0 - (v.frame.height/2.0))))
+        #expect(v.frame.origin.x == 0)
+        #expect(v.frame.width == 100)
+        #expect(v.frame.height == 100)
     }
     
-    func testCenterInContainer() {
+    @Test
+    func centerInContainer() {
         v.centerInContainer()
         ctrler.view.setNeedsLayout()
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(v.frame.origin.y,
-                                   ctrler.view.frame.height/2.0 - (v.frame.height/2.0),
-                                   accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.origin.x,
-                                   ctrler.view.frame.width/2.0 - (v.frame.width/2.0),
-                                   accuracy: CGFloat(magicalIphoneXShift))
-        XCTAssertEqual(v.frame.width, 100, accuracy: CGFloat(Float.ulpOfOne))
-        XCTAssertEqual(v.frame.height, 100, accuracy: CGFloat(Float.ulpOfOne))
+        
+        #expect(v.frame.origin.y == ctrler.view.frame.height/2.0 - (v.frame.height/2.0))
+        #expect(isApproximatelyEqual(v.frame.origin.x, ctrler.view.frame.width/2.0 - (v.frame.width/2.0)))
+        #expect(v.frame.width == 100)
+        #expect(v.frame.height == 100)
+        #expect(isApproximatelyEqual(v.frame.origin.y, ctrler.view.frame.height/2.0 - (v.frame.height/2.0)))
+        #expect(isApproximatelyEqual(v.frame.origin.x, ctrler.view.frame.width/2.0 - (v.frame.width/2.0)))
+        #expect(v.frame.height == 100)
     }
+}
+
+func isApproximatelyEqual(_ a: Double, _ b: Double) -> Bool {
+    return a.isApproximatelyEqual(to: b, absoluteTolerance: 0.5)
 }

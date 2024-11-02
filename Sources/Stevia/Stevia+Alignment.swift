@@ -25,13 +25,13 @@ import UIKit
  
  */
 @discardableResult
-public func align(horizontally views: UIView...) -> [UIView] {
+@MainActor public func align(horizontally views: UIView...) -> [UIView] {
     return align(horizontally: views)
 }
 
 @available(*, deprecated, renamed: "align(horizontally:)")
 @discardableResult
-public func alignHorizontally(_ views: UIView...) -> [UIView] {
+@MainActor public func alignHorizontally(_ views: UIView...) -> [UIView] {
     return align(horizontally: views)
 }
 
@@ -51,14 +51,14 @@ public func alignHorizontally(_ views: UIView...) -> [UIView] {
  
  */
 @discardableResult
-public func align(horizontally views: [UIView]) -> [UIView] {
+@MainActor public func align(horizontally views: [UIView]) -> [UIView] {
     align(.horizontal, views: views)
     return views
 }
 
 @available(*, deprecated, renamed: "align(horizontally:)")
 @discardableResult
-public func alignHorizontally(_ views: [UIView]) -> [UIView] {
+@MainActor public func alignHorizontally(_ views: [UIView]) -> [UIView] {
     align(.horizontal, views: views)
     return views
 }
@@ -73,12 +73,12 @@ public func alignHorizontally(_ views: [UIView]) -> [UIView] {
  - Returns: The array of views, enabling chaining,
  
  */
-public func align(vertically views: UIView...) {
+@MainActor public func align(vertically views: UIView...) {
     align(vertically: views)
 }
 
 @available(*, deprecated, renamed: "align(vertically:)")
-public func alignVertically(_ views: UIView...) {
+@MainActor public func alignVertically(_ views: UIView...) {
     align(vertically: views)
 }
 
@@ -92,12 +92,12 @@ public func alignVertically(_ views: UIView...) {
  - Returns: The array of views, enabling chaining,
  
  */
-public func align(vertically views: [UIView]) {
+@MainActor public func align(vertically views: [UIView]) {
     align(.vertical, views: views)
 }
 
 @available(*, deprecated, renamed: "align(vertically:)")
-public func alignVertically(_ views: [UIView]) {
+@MainActor public func alignVertically(_ views: [UIView]) {
     align(.vertical, views: views)
 }
 
@@ -108,7 +108,7 @@ public func alignVertically(_ views: [UIView]) {
  alignCenter(button, with:image)
  ```
  */
-public func alignCenter(_ v1: UIView, with v2: UIView) {
+@MainActor public func alignCenter(_ v1: UIView, with v2: UIView) {
     alignHorizontally(v1, with: v2)
     alignVertically(v1, with: v2)
 }
@@ -121,7 +121,7 @@ public func alignCenter(_ v1: UIView, with v2: UIView) {
  ```
  
  */
-public func alignHorizontally(_ v1: UIView, with v2: UIView, offset: Double = 0) {
+@MainActor public func alignHorizontally(_ v1: UIView, with v2: UIView, offset: Double = 0) {
     align(.horizontal, v1: v1, with: v2, offset: offset)
 }
 
@@ -133,11 +133,11 @@ public func alignHorizontally(_ v1: UIView, with v2: UIView, offset: Double = 0)
  ```
  
  */
-public func alignVertically(_ v1: UIView, with v2: UIView, offset: Double = 0) {
+@MainActor public func alignVertically(_ v1: UIView, with v2: UIView, offset: Double = 0) {
     align(.vertical, v1: v1, with: v2, offset: offset)
 }
 
-private func align(_ axis: NSLayoutConstraint.Axis, views: [UIView]) {
+@MainActor private func align(_ axis: NSLayoutConstraint.Axis, views: [UIView]) {
     for (i, v) in views.enumerated() where views.count > i+1 {
         let v2 = views[i+1]
         if axis == .horizontal {
@@ -148,7 +148,7 @@ private func align(_ axis: NSLayoutConstraint.Axis, views: [UIView]) {
     }
 }
 
-func align(_ axis: NSLayoutConstraint.Axis, v1: UIView, with v2: UIView, offset: Double) {
+@MainActor func align(_ axis: NSLayoutConstraint.Axis, v1: UIView, with v2: UIView, offset: Double) {
     if let spv = v1.superview {
         let center: NSLayoutConstraint.Attribute = axis == .horizontal ? .centerY : .centerX
         let c = constraint(item: v1, attribute: center, toItem: v2, constant: offset)
@@ -174,13 +174,13 @@ func align(_ axis: NSLayoutConstraint.Axis, v1: UIView, with v2: UIView, offset:
  
  */
 @discardableResult
-public func align(tops views: UIView...) -> [UIView] {
+@MainActor public func align(tops views: UIView...) -> [UIView] {
     return align(tops: views)
 }
 
 @available(*, deprecated, renamed: "align(tops:)")
 @discardableResult
-public func alignTops(_ views: UIView...) -> [UIView] {
+@MainActor public func alignTops(_ views: UIView...) -> [UIView] {
     return align(tops: views)
 }
 
@@ -200,14 +200,14 @@ public func alignTops(_ views: UIView...) -> [UIView] {
  
  */
 @discardableResult
-public func align(tops views: [UIView]) -> [UIView] {
+@MainActor public func align(tops views: [UIView]) -> [UIView] {
     align(.top, views: views)
     return views
 }
 
 @available(*, deprecated, renamed: "align(tops:)")
 @discardableResult
-public func alignTops(_ views: [UIView]) -> [UIView] {
+@MainActor public func alignTops(_ views: [UIView]) -> [UIView] {
     align(.top, views: views)
     return views
 }
@@ -228,13 +228,13 @@ public func alignTops(_ views: [UIView]) -> [UIView] {
  
  */
 @discardableResult
-public func align(bottoms views: UIView...) -> [UIView] {
+@MainActor public func align(bottoms views: UIView...) -> [UIView] {
     return align(bottoms: views)
 }
 
 @available(*, deprecated, renamed: "align(bottoms:)")
 @discardableResult
-public func alignBottoms(_ views: UIView...) -> [UIView] {
+@MainActor public func alignBottoms(_ views: UIView...) -> [UIView] {
     return align(bottoms: views)
 }
 
@@ -254,14 +254,14 @@ public func alignBottoms(_ views: UIView...) -> [UIView] {
  
  */
 @discardableResult
-public func align(bottoms views: [UIView]) -> [UIView] {
+@MainActor public func align(bottoms views: [UIView]) -> [UIView] {
     align(.bottom, views: views)
     return views
 }
 
 @available(*, deprecated, renamed: "align(bottoms:)")
 @discardableResult
-public func alignBottoms(_ views: [UIView]) -> [UIView] {
+@MainActor public func alignBottoms(_ views: [UIView]) -> [UIView] {
     align(.bottom, views: views)
     return views
 }
@@ -277,13 +277,13 @@ public func alignBottoms(_ views: [UIView]) -> [UIView] {
  
  */
 @discardableResult
-public func align(lefts views: UIView...) -> [UIView] {
+@MainActor public func align(lefts views: UIView...) -> [UIView] {
     return align(lefts: views)
 }
 
 @available(*, deprecated, renamed: "align(lefts:)")
 @discardableResult
-public func alignLefts(_ views: UIView...) -> [UIView] {
+@MainActor public func alignLefts(_ views: UIView...) -> [UIView] {
     return align(lefts: views)
 }
 
@@ -298,14 +298,14 @@ public func alignLefts(_ views: UIView...) -> [UIView] {
  
  */
 @discardableResult
-public func align(lefts views: [UIView]) -> [UIView] {
+@MainActor public func align(lefts views: [UIView]) -> [UIView] {
     align(.left, views: views)
     return views
 }
 
 @available(*, deprecated, renamed: "align(lefts:)")
 @discardableResult
-public func alignLefts(_ views: [UIView]) -> [UIView] {
+@MainActor public func alignLefts(_ views: [UIView]) -> [UIView] {
     align(.left, views: views)
     return views
 }
@@ -321,13 +321,13 @@ public func alignLefts(_ views: [UIView]) -> [UIView] {
  
  */
 @discardableResult
-public func align(rights views: UIView...) -> [UIView] {
+@MainActor public func align(rights views: UIView...) -> [UIView] {
     return align(rights: views)
 }
 
 @available(*, deprecated, renamed: "align(rights:)")
 @discardableResult
-public func alignRights(_ views: UIView...) -> [UIView] {
+@MainActor public func alignRights(_ views: UIView...) -> [UIView] {
     return align(rights: views)
 }
 
@@ -342,14 +342,14 @@ public func alignRights(_ views: UIView...) -> [UIView] {
  
  */
 @discardableResult
-public func align(rights views: [UIView]) -> [UIView] {
+@MainActor public func align(rights views: [UIView]) -> [UIView] {
     align(.right, views: views)
     return views
 }
 
 @available(*, deprecated, renamed: "align(rights:)")
 @discardableResult
-public func alignRights(_ views: [UIView]) -> [UIView] {
+@MainActor public func alignRights(_ views: [UIView]) -> [UIView] {
     align(.right, views: views)
     return views
 }
@@ -365,7 +365,7 @@ align(leadings: [label,field,button])
 
 */
 @discardableResult
-public func align(leadings views: [UIView]) -> [UIView] {
+@MainActor public func align(leadings views: [UIView]) -> [UIView] {
     align(.leading, views: views)
     return views
 }
@@ -381,7 +381,7 @@ align(leadings: label,field,button)
 
 */
 @discardableResult
-public func align(leadings views: UIView...) -> [UIView] {
+@MainActor public func align(leadings views: UIView...) -> [UIView] {
     align(.leading, views: views)
     return views
 }
@@ -397,7 +397,7 @@ align(trailing: [label,field,button])
 
 */
 @discardableResult
-public func align(trailings views: [UIView]) -> [UIView] {
+@MainActor public func align(trailings views: [UIView]) -> [UIView] {
     align(.trailing, views: views)
     return views
 }
@@ -413,13 +413,13 @@ align(trailing: label,field,button)
 
 */
 @discardableResult
-public func align(trailings views: UIView...) -> [UIView] {
+@MainActor public func align(trailings views: UIView...) -> [UIView] {
     align(.trailing, views: views)
     return views
 }
 
 @discardableResult
-public func align(_ attribute: NSLayoutConstraint.Attribute, views: [UIView]) -> [UIView] {
+@MainActor public func align(_ attribute: NSLayoutConstraint.Attribute, views: [UIView]) -> [UIView] {
     for (i, v) in views.enumerated() where views.count > i+1 {
         let v2 = views[i+1]
         if let spv = v.superview {

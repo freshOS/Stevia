@@ -6,41 +6,40 @@
 //  Copyright © 2018 Sacha Durand Saint Omer. All rights reserved.
 //
 
-import XCTest
+import UIKit
 import Stevia
+import Testing
 
-class BaselineTests: XCTestCase {
+@Suite
+@MainActor struct BaselineTests {
     
-    var win: UIWindow!
-    var ctrler: UIViewController!
-    var label1 = UILabel()
-    var label2 = UILabel()
+    let win = UIWindow(frame: UIScreen.main.bounds)
+    let ctrler = UIViewController()
+    let label1 = UILabel()
+    let label2 = UILabel()
     
-    override func setUp() {
-        win = UIWindow(frame: UIScreen.main.bounds)
-        ctrler =  UIViewController()
+    init() {
         win.rootViewController = ctrler
-        label1 = UILabel()
-        label2 = UILabel()
-            
         ctrler.view.subviews {
             label1
             label2
         }
     }
     
-    func testAlignLastBaselines() {
+    @Test
+    func alignLastBaselines() {
         label1.top(100)
         align(lastBaselines: label1, label2)
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(label1.forLastBaselineLayout.frame.minY, label2.forLastBaselineLayout.frame.minY)
+        #expect(label1.forLastBaselineLayout.frame.minY == label2.forLastBaselineLayout.frame.minY)
     }
     
-    func testAlignFirstBaselines() {
+    @Test
+    func alignFirstBaselines() {
         label1.top(100)
         align(firstBaselines: label1, label2)
         ctrler.view.layoutIfNeeded()
-        XCTAssertEqual(label1.forLastBaselineLayout.frame.minY, label2.forLastBaselineLayout.frame.minY)
+        #expect(label1.forLastBaselineLayout.frame.minY == label2.forLastBaselineLayout.frame.minY)
     }
 }
 

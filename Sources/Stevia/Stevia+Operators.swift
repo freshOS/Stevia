@@ -11,13 +11,13 @@ import UIKit
 
 prefix operator |
 @discardableResult
-public prefix func | (p: UIView) -> UIView {
+@MainActor public prefix func | (p: UIView) -> UIView {
     p.leading(0)
 }
 
 postfix operator |
 @discardableResult
-public postfix func | (p: UIView) -> UIView {
+@MainActor public postfix func | (p: UIView) -> UIView {
     p.trailing(0)
 }
 
@@ -28,48 +28,48 @@ precedencegroup HeightPrecedence {
 }
 
 @discardableResult
-public func ~ (left: UIView, right: Double) -> UIView {
+@MainActor public func ~ (left: UIView, right: Double) -> UIView {
     left.height(right)
 }
 
 @discardableResult
-public func ~ (left: UIView, right: CGFloat) -> UIView {
+@MainActor public func ~ (left: UIView, right: CGFloat) -> UIView {
     left ~ Double(right)
 }
 
 @discardableResult
-public func ~ (left: UIView, right: Int) -> UIView {
+@MainActor public func ~ (left: UIView, right: Int) -> UIView {
     left ~ Double(right)
 }
 
 @discardableResult
-public func ~ (left: UIView, right: SteviaPercentage) -> UIView {
+@MainActor public func ~ (left: UIView, right: SteviaPercentage) -> UIView {
     left.height(right)
 }
 
 @discardableResult
-public func ~ (left: UIView, right: SteviaFlexibleMargin) -> UIView {
+@MainActor public func ~ (left: UIView, right: SteviaFlexibleMargin) -> UIView {
     left.height(right)
 }
 
 @discardableResult
-public func ~ (left: [UIView], right: Double) -> [UIView] {
+@MainActor public func ~ (left: [UIView], right: Double) -> [UIView] {
     for l in left { l.height(right) }
     return left
 }
 
 @discardableResult
-public func ~ (left: [UIView], right: CGFloat) -> [UIView] {
+@MainActor public func ~ (left: [UIView], right: CGFloat) -> [UIView] {
     left ~ Double(right)
 }
 
 @discardableResult
-public func ~ (left: [UIView], right: Int) -> [UIView] {
+@MainActor public func ~ (left: [UIView], right: Int) -> [UIView] {
     left ~ Double(right)
 }
 
 @discardableResult
-public func ~ (left: [UIView], right: SteviaFlexibleMargin) -> [UIView] {
+@MainActor public func ~ (left: [UIView], right: SteviaFlexibleMargin) -> [UIView] {
     for l in left { l.height(right) }
     return left
 }
@@ -93,7 +93,7 @@ public prefix func |- (p: Int) -> SideConstraint {
 }
 
 @discardableResult
-public prefix func |- (v: UIView) -> UIView {
+@MainActor public prefix func |- (v: UIView) -> UIView {
     v.leading(8)
 }
 
@@ -116,7 +116,7 @@ public postfix func -| (p: Int) -> SideConstraint {
 }
 
 @discardableResult
-public postfix func -| (v: UIView) -> UIView {
+@MainActor public postfix func -| (v: UIView) -> UIView {
     v.trailing(8)
 }
 
@@ -151,7 +151,7 @@ public func - (left: UIView, right: Int) -> PartialConstraint {
 // Side Constraints
 
 @discardableResult
-public func - (left: SideConstraint, right: UIView) -> UIView {
+@MainActor public func - (left: SideConstraint, right: UIView) -> UIView {
     if let spv = right.superview {
         let c = constraint(item: right, attribute: .leading,
                            toItem: spv, attribute: .leading,
@@ -162,7 +162,7 @@ public func - (left: SideConstraint, right: UIView) -> UIView {
 }
 
 @discardableResult
-public func - (left: [UIView], right: SideConstraint) -> [UIView] {
+@MainActor public func - (left: [UIView], right: SideConstraint) -> [UIView] {
     let lastView = left[left.count-1]
     if let spv = lastView.superview {
         let c = constraint(item: lastView, attribute: .trailing,
@@ -174,7 +174,7 @@ public func - (left: [UIView], right: SideConstraint) -> [UIView] {
 }
 
 @discardableResult
-public func - (left: UIView, right: SideConstraint) -> UIView {
+@MainActor public func - (left: UIView, right: SideConstraint) -> UIView {
     if let spv = left.superview {
         let c = constraint(item: left, attribute: .trailing,
                            toItem: spv, attribute: .trailing,
@@ -185,7 +185,7 @@ public func - (left: UIView, right: SideConstraint) -> UIView {
 }
 
 @discardableResult
-public func - (left: PartialConstraint, right: UIView) -> [UIView] {
+@MainActor public func - (left: PartialConstraint, right: UIView) -> [UIView] {
     if let views = left.views {
         if let spv = right.superview {
             let lastView = views[views.count-1]
@@ -209,7 +209,7 @@ public func - (left: PartialConstraint, right: UIView) -> [UIView] {
 }
 
 @discardableResult
-public func - (left: UIView, right: UIView) -> [UIView] {
+@MainActor public func - (left: UIView, right: UIView) -> [UIView] {
     if let spv = left.superview {
         let c = constraint(item: right, attribute: .leading,
                            toItem: left, attribute: .trailing,
@@ -239,7 +239,7 @@ public func - (left: [UIView], right: Int) -> PartialConstraint {
 
 
 @discardableResult
-public func - (left: [UIView], right: UIView) -> [UIView] {
+@MainActor public func - (left: [UIView], right: UIView) -> [UIView] {
     let lastView = left[left.count-1]
     if let spv = lastView.superview {
         let c = constraint(item: lastView, attribute: .trailing,

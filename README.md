@@ -1,10 +1,8 @@
 ![Stevia](https://raw.githubusercontent.com/s4cha/Stevia/master/banner.png)
 
 [![Documentation](https://img.shields.io/badge/Read_the-Docs-67ad5c.svg)](https://freshos.github.io/SteviaDocs/)
-[![Language: Swift 2, 3, 4 and 5](https://img.shields.io/badge/language-swift%205-f48041.svg?style=flat)](https://developer.apple.com/swift)
+[![Language: Swift 2, 3, 4, 5 and 6](https://img.shields.io/badge/language-swift%206-f48041.svg?style=flat)](https://developer.apple.com/swift)
 ![Platform: iOS 8+](https://img.shields.io/badge/platform-iOS%20|%20tvOS-blue.svg?style=flat)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CocoaPods compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org/pods/SteviaLayout)
 ![Swift](https://github.com/freshOS/Stevia/workflows/Swift/badge.svg)
 [![Build Status](https://app.bitrise.io/app/4478e29045c5f12e/status.svg?token=pti6g-HVKBUPv9mIR3baIw)](https://app.bitrise.io/app/4478e29045c5f12e)
 [![codebeat badge](https://codebeat.co/badges/5b81e292-552c-4cf1-9ccc-89d333ec8b79)](https://codebeat.co/projects/github-com-freshos-stevia-master)

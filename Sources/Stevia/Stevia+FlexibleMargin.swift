@@ -65,7 +65,7 @@ public func - (left: [UIView],
 }
 
 @discardableResult
-public func - (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
+@MainActor public func - (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
     if let views = left.views {
         if let spv = right.superview {
             let c = constraint(item: right, attribute: .leading,
@@ -99,7 +99,7 @@ public prefix func |- (fm: SteviaFlexibleMargin) -> SteviaLeftFlexibleMargin {
 }
 
 @discardableResult
-public func - (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
+@MainActor public func - (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
     if let spv = right.superview {
         let c = constraint(item: right, attribute: .leading,
                            relatedBy: left.fm.relation, toItem: spv,
@@ -122,7 +122,7 @@ public postfix func -| (fm: SteviaFlexibleMargin) -> SteviaRightFlexibleMargin {
 }
 
 @discardableResult
-public func - (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
+@MainActor public func - (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
     if let spv = left.superview {
         let c = constraint(item: spv, attribute: .trailing,
                            relatedBy: right.fm.relation, toItem: left,
@@ -134,7 +134,7 @@ public func - (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
 }
 
 @discardableResult
-public func - (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
+@MainActor public func - (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
     if let spv = left.last!.superview {
         let c = constraint(item: spv, attribute: .trailing,
                            relatedBy: right.fm.relation,
