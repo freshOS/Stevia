@@ -51,7 +51,7 @@ import Stevia
         #expect(v.frame.origin.y == 0)
         #expect(v.frame.origin.x == 0)
         #expect(v.frame.width == 150)
-        #expect(v.frame.height == 100)
+        #expect(v.frame.height == 50)
     }
     
     @Test
