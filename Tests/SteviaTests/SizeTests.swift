@@ -25,6 +25,46 @@ import Stevia
     }
     
     @Test
+    func testAspectRatioDouble() {
+        v.width(150).aspectRatio(Double(3.0/2.0))
+        ctrler.view.layoutIfNeeded()
+        #expect(v.frame.origin.y == 0)
+        #expect(v.frame.origin.x == 0)
+        #expect(v.frame.width == 150)
+        #expect(v.frame.height == 100)
+    }
+    
+    @Test
+    func testAspectRatioCGFloat() {
+        v.width(150).aspectRatio(CGFloat(3.0/2.0))
+        ctrler.view.layoutIfNeeded()
+        #expect(v.frame.origin.y == 0)
+        #expect(v.frame.origin.x == 0)
+        #expect(v.frame.width == 150)
+        #expect(v.frame.height == 100)
+    }
+    
+    @Test
+    func testAspectRatioInt() {
+        v.width(150).aspectRatio(Int(3))
+        ctrler.view.layoutIfNeeded()
+        #expect(v.frame.origin.y == 0)
+        #expect(v.frame.origin.x == 0)
+        #expect(v.frame.width == 150)
+        #expect(v.frame.height == 50)
+    }
+    
+    @Test
+    func testAspectRatioPercentage() {
+        v.width(150).aspectRatio(150%)
+        ctrler.view.layoutIfNeeded()
+        #expect(v.frame.origin.y == 0)
+        #expect(v.frame.origin.x == 0)
+        #expect(v.frame.width == 150)
+        #expect(v.frame.height == 100)
+    }
+    
+    @Test
     func testSizeDouble() {
         v.size(Double(57))
         ctrler.view.layoutIfNeeded()

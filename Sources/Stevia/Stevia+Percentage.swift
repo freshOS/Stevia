@@ -27,6 +27,28 @@ public postfix func % (v: Int) -> SteviaPercentage {
 }
 
 public extension UIView {
+
+    /**
+     Adds an Autolayout constraint to provide the aspect ratio for the view.
+
+     ```
+     image.aspectRatio(3/2)
+     image.aspectRatio(150%)
+
+     // is equivalent to
+
+     image.Width == image.Height * 1.5
+     image.Width == 150 % image.Height
+     ```
+
+     - Returns: Itself, enabling chaining,
+
+     */
+    @discardableResult
+    func aspectRatio(_ p: SteviaPercentage) -> Self {
+        Width == p.value % Height
+        return self
+    }
     
     /**
      Adds an Autolayout constraint for sizing the view.
