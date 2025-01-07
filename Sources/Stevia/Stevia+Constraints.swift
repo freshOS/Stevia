@@ -9,6 +9,11 @@
 #if canImport(UIKit)
 import UIKit
 
+public class SteviaLayoutConstraint: NSLayoutConstraint {
+    public static defaultPriority:Float = UILayoutPriority.defaultHigh + 1
+}
+
+
 // MARK: - Shortcut
 
 public extension UIView {
@@ -76,11 +81,11 @@ public extension UIView {
                        attribute attr2: NSLayoutConstraint.Attribute? = nil, // Not an attribute??
                        multiplier: Double = 1,
                        constant: Double = 0) -> NSLayoutConstraint {
-        let c =  NSLayoutConstraint(item: view1, attribute: attr1,
+        let c =  SteviaLayoutConstraint(item: view1, attribute: attr1,
                                   relatedBy: relatedBy,
                                   toItem: view2, attribute: ((attr2 == nil) ? attr1 : attr2! ),
                                   multiplier: CGFloat(multiplier), constant: CGFloat(constant))
-    c.priority = UILayoutPriority(rawValue: UILayoutPriority.defaultHigh.rawValue + 1)
+    c.priority = UILayoutPriority(rawValue: SteviaLayoutConstraint.defaultPriority)
     return c
 }
 
@@ -98,8 +103,7 @@ public extension UIView {
 */
     var userAddedConstraints: [NSLayoutConstraint] {
         return constraints.filter { c in
-            guard let cId = c.identifier else { return true }
-            return !cId.contains("UIView-Encapsulated-Layout") && !cId.contains("Margin-guide-constraint")
+            c is SteviaLayoutConstraint
         }
     }
 }
