@@ -10,7 +10,7 @@
 import UIKit
 
 public class SteviaLayoutConstraint: NSLayoutConstraint {
-    public static var defaultPriority: Float = UILayoutPriority.defaultHigh + 1
+    public static var defaultPriority: Float = UILayoutPriority.defaultHigh.rawValue + 1
 }
 
 
@@ -105,6 +105,20 @@ public extension UIView {
         return constraints.filter { c in
             c is SteviaLayoutConstraint
         }
+    }
+    
+    @MainActor
+    @discardableResult
+    func removeUserAddedConstraints() -> Self {
+        removeConstraints(userAddedConstraints.filter {
+            $0.firstItem === self
+        })
+        if let superview {
+            superview.removeConstraints(superview.userAddedConstraints.filter {
+                $0.firstItem === self
+            })
+        }
+        return self
     }
 }
 
