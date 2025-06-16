@@ -10,7 +10,7 @@
 import UIKit
 
 public class SteviaLayoutConstraint: NSLayoutConstraint {
-    public static var defaultPriority: Float = UILayoutPriority.defaultHigh + 1
+  public static var defaultPriority: Float = UILayoutPriority.defaultHigh.rawValue + 1
 }
 
 

@@ -24,7 +24,7 @@ public extension UIView {
     @discardableResult
     func centerInContainer() -> Self {
         if let spv = superview {
-            alignCenter(self, with: spv)
+          Stevia.alignCenter(self, with: spv)
         }
         return self
     }
